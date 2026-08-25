@@ -74,7 +74,10 @@
             <a href="layanan.html" class="premium-link">Layanan</a>
             <a href="karir.html" class="premium-link">Karir</a>
         </nav>
-<button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Buka menu">
+</nav>
+
+<!-- HAMBURGER KHUSUS HP -->
+<button class="mobile-hamburger" id="mobileHamburger" type="button">
     <span></span>
     <span></span>
     <span></span>
@@ -103,184 +106,200 @@
         </div>
     </div>
 </header>
-<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<!-- MOBILE NAVIGATION -->
+<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
-<aside class="mobile-menu" id="mobileMenu">
+<div class="mobile-nav-panel" id="mobileNavPanel">
 
-    <div class="mobile-menu-top">
+    <div class="mobile-nav-header">
         <div>
-            <span class="mobile-menu-label">NAVIGASI</span>
-            <h3>KPH PEMALANG</h3>
+            <small>NAVIGASI</small>
+            <strong>KPH PEMALANG</strong>
         </div>
 
-        <button class="mobile-menu-close" id="mobileMenuClose" type="button">
+        <button id="mobileNavClose" type="button">
             <i class="fa-solid fa-xmark"></i>
         </button>
     </div>
 
-    <div class="mobile-menu-line"></div>
+    <div class="mobile-nav-divider"></div>
 
-    <div class="mobile-nav">
+    <!-- BERANDA -->
+    <a href="index.html" class="mobile-main-link">
+        <span>
+            <i class="fa-solid fa-house"></i>
+            Beranda
+        </span>
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
 
-        <a href="index.html" class="mobile-nav-link active">
+    <!-- TENTANG KAMI -->
+    <div class="mobile-group">
+
+        <button class="mobile-group-title" type="button">
             <span>
-                <i class="fa-solid fa-house"></i>
-                Beranda
+                <i class="fa-solid fa-building"></i>
+                Tentang Kami
             </span>
-            <i class="fa-solid fa-arrow-right"></i>
-        </a>
 
-        <div class="mobile-dropdown">
-            <button class="mobile-nav-link mobile-dropdown-btn" type="button">
-                <span>
-                    <i class="fa-solid fa-building"></i>
-                    Tentang Kami
-                </span>
-                <i class="fa-solid fa-chevron-down mobile-chevron"></i>
-            </button>
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
 
-            <div class="mobile-submenu">
+        <div class="mobile-group-content">
 
-                <a href="tentangkami.html">
-                    <i class="fa-solid fa-circle-info"></i>
-                    Tentang Kami
-                </a>
+            <a href="profil.html">
+                <i class="fa-solid fa-building"></i>
+                Profil Perusahaan
+            </a>
 
-                <a href="profil.html">
-                    <i class="fa-solid fa-building"></i>
-                    Profil Perusahaan
-                </a>
+            <a href="sejarah.html">
+                <i class="fa-solid fa-timeline"></i>
+                Sejarah Perusahaan
+            </a>
 
-                <a href="sejarah.html">
-                    <i class="fa-solid fa-timeline"></i>
-                    Sejarah Perusahaan
-                </a>
+            <a href="tugasfungsi.html">
+                <i class="fa-solid fa-list-check"></i>
+                Tugas dan Fungsi
+            </a>
 
-                <a href="tugasfungsi.html">
-                    <i class="fa-solid fa-list-check"></i>
-                    Tugas dan Fungsi
-                </a>
+            <a href="visimisitatanilai.html">
+                <i class="fa-solid fa-compass"></i>
+                Visi Misi & Tata Nilai
+            </a>
 
-                <a href="visimisitatanilai.html">
-                    <i class="fa-solid fa-compass"></i>
-                    Visi Misi & Tata Nilai
-                </a>
+            <a href="struktur.html">
+                <i class="fa-solid fa-sitemap"></i>
+                Struktur Organisasi
+            </a>
 
-                <a href="struktur.html">
-                    <i class="fa-solid fa-sitemap"></i>
-                    Struktur Organisasi
-                </a>
+            <a href="kepemilikansaham.html">
+                <i class="fa-solid fa-chart-pie"></i>
+                Kepemilikan Saham
+            </a>
 
-                <a href="kepemilikansaham.html">
-                    <i class="fa-solid fa-chart-pie"></i>
-                    Kepemilikan Saham
-                </a>
+            <a href="program.html">
+                <i class="fa-solid fa-seedling"></i>
+                Program Kerja
+            </a>
 
-                <a href="program.html">
-                    <i class="fa-solid fa-seedling"></i>
-                    Program Kerja
-                </a>
-
-            </div>
         </div>
-        <div class="mobile-dropdown">
-            <button class="mobile-nav-link mobile-dropdown-btn" type="button">
-                <span>
-                    <i class="fa-solid fa-tree"></i>
-                    Unit Bisnis
-                </span>
-                <i class="fa-solid fa-chevron-down mobile-chevron"></i>
-            </button>
-
-            <div class="mobile-submenu">
-
-                <a href="unitbisnis.html">
-                    <i class="fa-solid fa-layer-group"></i>
-                    Unit Bisnis
-                </a>
-
-                <a href="herbal.html">
-                    <i class="fa-solid fa-leaf"></i>
-                    Herbal
-                </a>
-
-                <a href="kayu.html">
-                    <i class="fa-solid fa-tree"></i>
-                    Kayu
-                </a>
-
-                <a href="nonkayu.html">
-                    <i class="fa-solid fa-spa"></i>
-                    Non Kayu
-                </a>
-
-                <a href="ekowisata.html">
-                    <i class="fa-solid fa-mountain-sun"></i>
-                    Ekowisata
-                </a>
-
-                <a href="solusiberbasisalam.html">
-                    <i class="fa-solid fa-water"></i>
-                    Solusi Berbasis Alam
-                </a>
-
-                <a href="pengelolaanhutan.html">
-                    <i class="fa-solid fa-earth-asia"></i>
-                    Pengelolaan Hutan
-                </a>
-
-            </div>
-        </div>
-        <div class="mobile-dropdown">
-            <button class="mobile-nav-link mobile-dropdown-btn" type="button">
-                <span>
-                    <i class="fa-solid fa-newspaper"></i>
-                    Publikasi
-                </span>
-                <i class="fa-solid fa-chevron-down mobile-chevron"></i>
-            </button>
-
-            <div class="mobile-submenu">
-
-                <a href="publikasi.html">
-                    <i class="fa-solid fa-newspaper"></i>
-                    Publikasi
-                </a>
-
-                <a href="suararimba.html">
-                    <i class="fa-solid fa-microphone-lines"></i>
-                    Suara Rimba
-                </a>
-
-                <a href="pengumuman.html">
-                    <i class="fa-solid fa-bullhorn"></i>
-                    Pengumuman
-                </a>
-
-            </div>
-        </div>
-        <a href="layanan.html" class="mobile-nav-link">
-            <span>
-                <i class="fa-solid fa-handshake"></i>
-                Layanan
-            </span>
-            <i class="fa-solid fa-arrow-right"></i>
-        </a>
-        <a href="karir.html" class="mobile-nav-link">
-            <span>
-                <i class="fa-solid fa-briefcase"></i>
-                Karir
-            </span>
-            <i class="fa-solid fa-arrow-right"></i>
-        </a>
-
-    </div>
-    <div class="mobile-menu-footer">
-        <span>PERHUTANI</span>
-        <small>KPH PEMALANG</small>
     </div>
 
-</aside>
+
+    <!-- UNIT BISNIS -->
+    <div class="mobile-group">
+
+        <button class="mobile-group-title" type="button">
+            <span>
+                <i class="fa-solid fa-tree"></i>
+                Unit Bisnis
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-group-content">
+
+            <a href="unitbisnis.html">
+                <i class="fa-solid fa-layer-group"></i>
+                Unit Bisnis
+            </a>
+
+            <a href="herbal.html">
+                <i class="fa-solid fa-leaf"></i>
+                Herbal
+            </a>
+
+            <a href="kayu.html">
+                <i class="fa-solid fa-tree"></i>
+                Kayu
+            </a>
+
+            <a href="nonkayu.html">
+                <i class="fa-solid fa-spa"></i>
+                Non Kayu
+            </a>
+
+            <a href="ekowisata.html">
+                <i class="fa-solid fa-mountain-sun"></i>
+                Ekowisata
+            </a>
+
+            <a href="solusiberbasisalam.html">
+                <i class="fa-solid fa-water"></i>
+                Solusi Berbasis Alam
+            </a>
+
+            <a href="pengelolaanhutan.html">
+                <i class="fa-solid fa-earth-asia"></i>
+                Pengelolaan Hutan
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- PUBLIKASI -->
+    <div class="mobile-group">
+
+        <button class="mobile-group-title" type="button">
+            <span>
+                <i class="fa-solid fa-newspaper"></i>
+                Publikasi
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="mobile-group-content">
+
+            <a href="publikasi.html">
+                <i class="fa-solid fa-newspaper"></i>
+                Publikasi
+            </a>
+
+            <a href="suararimba.html">
+                <i class="fa-solid fa-microphone-lines"></i>
+                Suara Rimba
+            </a>
+
+            <a href="pengumuman.html">
+                <i class="fa-solid fa-bullhorn"></i>
+                Pengumuman
+            </a>
+
+        </div>
+    </div>
+
+
+    <!-- LAYANAN -->
+    <a href="layanan.html" class="mobile-main-link">
+        <span>
+            <i class="fa-solid fa-handshake"></i>
+            Layanan
+        </span>
+
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+
+    <!-- KARIR -->
+    <a href="karir.html" class="mobile-main-link">
+        <span>
+            <i class="fa-solid fa-briefcase"></i>
+            Karir
+        </span>
+
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+
+    <div class="mobile-nav-bottom">
+        <b>PERHUTANI</b>
+        <span>KPH PEMALANG</span>
+    </div>
+
+</div>
     <main class="main-content-full" style="padding-top: 90px; background: rgba(6, 17, 11, 0.92);">
 
         <section style="position: relative; min-height: 85vh; display: flex; align-items: center; background: linear-gradient(135deg, rgba(6, 17, 11, 0.9), rgba(6, 17, 11, 0.8)), url('https://images.unsplash.com/photo-1511497584788-876761142212?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; padding: 80px 5%; overflow: hidden;">
@@ -320,10 +339,18 @@
                         <p style="color: #bbf7d0; font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px;" data-i18n="cert_desc">
                             Komitmen penuh pada standar kualitas tinggi dalam perlindungan keanekaragaman hayati dan operasional ramah lingkungan.
                         </p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(6, 17, 11, 0.7); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.15);">
-                            <span style="color: #dcfce7; font-size: 0.85rem; font-weight: 600;" data-i18n="status_kawasan">Status Kawasan</span>
-                            <span style="color: #4ade80; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 5px;">
-                                <i class="fa-solid fa-circle-check"></i> <span data-i18n="status_aman">Produktif & Aman</span>
+                     <div class="status-kawasan-box">
+
+    <span class="status-kawasan-title"
+          data-i18n="status_kawasan">
+        Status Kawasan
+    </span>
+
+    <span class="status-kawasan-value">
+        <i class="fa-solid fa-circle-check"></i>
+        <span data-i18n="status_aman">
+            Produktif & Aman
+        </span>
                             </span>
                         </div>
                     </div>
