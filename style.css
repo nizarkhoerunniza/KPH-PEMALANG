@@ -1975,3 +1975,549 @@ body {
     }
 
 }
+/* =====================================================
+   HAMBURGER MOBILE
+   ===================================================== */
+
+.mobile-hamburger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(139,214,157,.25);
+    border-radius: 13px;
+    background: rgba(20,45,29,.75);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    position: relative;
+    z-index: 10001;
+}
+
+.mobile-hamburger span {
+    width: 20px;
+    height: 2px;
+    border-radius: 10px;
+    background: #ffffff;
+    transition: .3s;
+}
+
+.mobile-hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* OVERLAY */
+
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.65);
+    backdrop-filter: blur(5px);
+    z-index: 9998;
+}
+
+.mobile-nav-overlay.active {
+    display: block;
+}
+
+
+/* PANEL */
+
+.mobile-nav-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(88vw,390px);
+    height: 100vh;
+    overflow-y: auto;
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(74,222,128,.14),
+            transparent 35%
+        ),
+        #07160e;
+    border-left: 1px solid rgba(139,214,157,.18);
+    box-shadow: -20px 0 60px rgba(0,0,0,.5);
+    z-index: 10000;
+    padding: 25px 18px;
+    transform: translateX(110%);
+    transition: transform .4s cubic-bezier(.22,.8,.25,1);
+}
+
+.mobile-nav-panel.active {
+    transform: translateX(0);
+}
+
+
+/* HEADER PANEL */
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-nav-header small {
+    display: block;
+    color: #70c982;
+    font-size: .55rem;
+    letter-spacing: .25em;
+    margin-bottom: 5px;
+}
+
+.mobile-nav-header strong {
+    display: block;
+    color: white;
+    font-size: .95rem;
+    letter-spacing: .12em;
+}
+
+.mobile-nav-header button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(139,214,157,.2);
+    background: rgba(255,255,255,.05);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.mobile-nav-divider {
+    height: 1px;
+    margin: 20px 0 12px;
+    background: linear-gradient(
+        90deg,
+        #4ade80,
+        rgba(216,181,106,.4),
+        transparent
+    );
+}
+
+
+/* MENU UTAMA */
+
+.mobile-main-link,
+.mobile-group-title {
+    width: 100%;
+    min-height: 53px;
+    box-sizing: border-box;
+    padding: 13px 14px;
+    margin-bottom: 6px;
+    border-radius: 13px;
+    border: 1px solid transparent;
+    background: rgba(255,255,255,.025);
+    color: #dce9df;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: .85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mobile-main-link span,
+.mobile-group-title span {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.mobile-main-link span i,
+.mobile-group-title span i {
+    width: 20px;
+    text-align: center;
+    color: #71c983;
+}
+
+.mobile-main-link > i {
+    color: #688070;
+    font-size: .7rem;
+}
+
+.mobile-main-link:hover,
+.mobile-group-title:hover {
+    color: white;
+    background: rgba(74,222,128,.1);
+    border-color: rgba(116,211,139,.2);
+}
+
+
+/* DROPDOWN */
+
+.mobile-group-title > i {
+    color: #688070;
+    font-size: .7rem;
+    transition: .3s;
+}
+
+.mobile-group.open .mobile-group-title {
+    color: white;
+    background: rgba(74,222,128,.09);
+}
+
+.mobile-group.open .mobile-group-title > i {
+    transform: rotate(180deg);
+    color: #4ade80;
+}
+
+.mobile-group-content {
+    display: none;
+    margin: 0 0 8px 14px;
+    padding-left: 10px;
+    border-left: 1px solid rgba(116,211,139,.2);
+}
+
+.mobile-group.open .mobile-group-content {
+    display: block;
+}
+
+.mobile-group-content a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 42px;
+    padding: 8px 10px;
+    color: #9caf9f;
+    text-decoration: none;
+    font-size: .76rem;
+    border-radius: 8px;
+}
+
+.mobile-group-content a i {
+    width: 18px;
+    text-align: center;
+    color: #6cae79;
+}
+
+.mobile-group-content a:hover {
+    color: white;
+    background: rgba(74,222,128,.07);
+}
+
+.mobile-group-content a:hover i {
+    color: #4ade80;
+}
+
+
+/* BOTTOM */
+
+.mobile-nav-bottom {
+    margin-top: 35px;
+    padding: 18px 5px;
+    border-top: 1px solid rgba(139,214,157,.12);
+}
+
+.mobile-nav-bottom b {
+    display: block;
+    color: #d8b56a;
+    letter-spacing: .2em;
+    font-size: .7rem;
+}
+
+.mobile-nav-bottom span {
+    display: block;
+    margin-top: 5px;
+    color: #667d6c;
+    font-size: .55rem;
+    letter-spacing: .18em;
+}
+
+
+@media (max-width: 850px) {
+
+    .premium-nav {
+        display: none !important;
+    }
+
+    .mobile-hamburger {
+        display: flex;
+    }
+}
+
+@media (min-width: 851px) {
+
+    .mobile-hamburger,
+    .mobile-nav-panel,
+    .mobile-nav-overlay {
+        display: none !important;
+    }
+}
+/* =====================================================
+   FIX RESPONSIVE HP - HEADER & STATUS KAWASAN
+   ===================================================== */
+
+@media (max-width: 850px) {
+
+    /* HEADER */
+    .premium-header {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .header-inner {
+        width: 100%;
+        min-height: 70px;
+        padding: 9px 12px;
+        gap: 8px;
+        box-sizing: border-box;
+    }
+
+    /* LOGO */
+    .brand-premium {
+        min-width: 0 !important;
+        max-width: 145px;
+        flex-shrink: 1;
+    }
+
+    .brand-logo-ring {
+        width: 40px !important;
+        height: 40px !important;
+        flex-shrink: 0;
+    }
+
+    .brand-copy {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .brand-copy strong {
+        font-size: .72rem !important;
+        white-space: nowrap;
+    }
+
+    .brand-copy small {
+        font-size: .45rem !important;
+        white-space: nowrap;
+    }
+
+
+    /* NAVBAR DESKTOP HILANG */
+    .premium-nav {
+        display: none !important;
+    }
+
+
+    /* HAMBURGER */
+    .mobile-hamburger {
+        display: flex !important;
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+
+
+    /* AREA KANAN HEADER */
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        min-width: 0;
+        flex-shrink: 1;
+    }
+
+
+    /* SEARCH & QUIZ */
+    .header-action {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px;
+        flex-shrink: 0;
+    }
+
+
+    /* CUACA */
+    .weather-widget {
+        display: flex !important;
+        min-width: 0;
+        width: auto;
+        max-width: 105px;
+        padding: 5px 7px !important;
+        gap: 5px !important;
+        border-radius: 12px !important;
+        flex-shrink: 1;
+        overflow: hidden;
+    }
+
+    .weather-icon {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .weather-icon i {
+        font-size: .9rem !important;
+    }
+
+    .weather-info {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .weather-info .temp {
+        font-size: .65rem !important;
+        white-space: nowrap;
+    }
+
+    .weather-info .temp small {
+        display: block;
+        font-size: .48rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 65px;
+    }
+
+    .weather-info .location {
+        display: block;
+        font-size: .42rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 65px;
+    }
+
+
+    /* SEARCH BOX JANGAN KELUAR LAYAR */
+    .premium-search .search-box {
+        right: -5px !important;
+        left: auto !important;
+        width: calc(100vw - 30px);
+        max-width: 330px;
+    }
+
+
+    /* =================================================
+       STATUS KAWASAN
+       ================================================= */
+
+    .status-kawasan,
+    [data-i18n="status_kawasan"] {
+        max-width: 100%;
+        white-space: normal !important;
+        word-break: normal;
+    }
+
+}
+
+
+/* HP KECIL */
+@media (max-width: 480px) {
+
+    .header-inner {
+        padding-left: 9px;
+        padding-right: 9px;
+        gap: 5px;
+    }
+
+    .brand-premium {
+        max-width: 115px;
+    }
+
+    .brand-logo-ring {
+        width: 37px !important;
+        height: 37px !important;
+    }
+
+    .brand-copy strong {
+        font-size: .62rem !important;
+    }
+
+    .brand-copy small {
+        font-size: .4rem !important;
+    }
+
+    .header-action {
+        width: 34px !important;
+        height: 34px !important;
+        min-width: 34px;
+    }
+
+    .weather-widget {
+        max-width: 82px;
+        padding: 4px 5px !important;
+    }
+
+    .weather-icon {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+    }
+
+    .weather-info .temp {
+        font-size: .58rem !important;
+    }
+
+    .weather-info .temp small {
+        font-size: .42rem !important;
+        max-width: 48px;
+    }
+
+    .weather-info .location {
+        font-size: .38rem !important;
+        max-width: 48px;
+    }
+
+}
+.status-kawasan-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: rgba(6, 17, 11, 0.7);
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(74, 222, 128, 0.15);
+}
+
+.status-kawasan-title {
+    color: #dcfce7;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.status-kawasan-value {
+    color: #4ade80;
+    font-size: .85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+
+    .status-kawasan-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 12px 14px;
+    }
+
+    .status-kawasan-title {
+        font-size: .76rem;
+    }
+
+    .status-kawasan-value {
+        font-size: .74rem;
+    }
+
+}
