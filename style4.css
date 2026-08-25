@@ -1,0 +1,504 @@
+/* ==========================================
+   KONTEN UTAMA - SOLUSI BERBASIS ALAM
+   ========================================== */
+
+:root {
+    --bg-main: #06110b;
+    --primary-green: #4ade80;
+    --light-green: #86efac;
+    --text-main: #f0fdf4;
+    --text-muted: #bbf7d0;
+    --border-color: rgba(74, 222, 128, 0.2);
+}
+
+/* Hero Section */
+.sba-hero {
+    position: relative;
+    min-height: 85vh;
+    background: linear-gradient(180deg, rgba(6, 17, 11, 0.4) 0%, rgba(6, 17, 11, 0.95) 100%), url('https://images.unsplash.com/photo-1542224566-6e85f2d6771f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 5% 50px;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0 0 40px 40px;
+}
+
+/* Grid Layouts */
+.sba-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.sba-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Responsive Rules */
+@media (max-width: 1200px) {
+    .sba-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .sba-grid-6, 
+    .sba-grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .sba-hero > div {
+        grid-template-columns: 1fr !important;
+    }
+}
+/* --- HERO SECTION SEJARAH --- */
+.sejarah-hero-section {
+    background: linear-gradient(135deg, rgba(10,24,18,0.92) 0%, rgba(5,15,10,0.96) 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=80') no-repeat center center/cover;
+    padding: 90px 50px 60px 50px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(74, 222, 128, 0.15);
+    color: var(--primary-green);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.sejarah-hero-section h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.sejarah-hero-section h1 span {
+    color: var(--primary-green);
+}
+
+.sejarah-hero-section p {
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* --- TIMELINE SECTION --- */
+.timeline-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: rgba(74, 222, 128, 0.3);
+    transform: translateX(-50%);
+}
+
+.timeline-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-col {
+    width: 45%;
+    background: rgba(18, 38, 28, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.timeline-center-dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--primary-green);
+    border: 4px solid var(--bg-dark);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-header-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.timeline-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(74, 222, 128, 0.15);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-green);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.timeline-col h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-green);
+    margin: 0;
+}
+
+.timeline-col p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.timeline-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 900px) {
+    .timeline-container::before { left: 20px; }
+    .timeline-row { flex-direction: column; align-items: flex-start; padding-left: 40px; }
+    .timeline-col { width: 100%; margin-bottom: 20px; }
+    .timeline-center-dot { left: 20px; }
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-emblem-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cute-tree-badge {
+    width: 40px;
+    height: 40px;
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
+
+.logo-avatar-slot img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.brand-sub {
+    font-size: 0.75rem;
+    color: #4ade80;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+/* Navigasi & Dropdown */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #4ade80;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0f2d1c;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    padding: 8px 0;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-menu a {
+    color: #cbd5e1;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+}
+
+/* Header Right Actions (Search & Weather) */
+.header-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-btn {
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background: rgba(74, 222, 128, 0.25);
+}
+
+.weather-widget {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15, 45, 28, 0.6);
+    padding: 6px 14px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.weather-icon {
+    color: #4ade80;
+    font-size: 1.2rem;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-info .temp {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.weather-info .temp small {
+    font-weight: 400;
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.weather-info .location {
+    font-size: 0.7rem;
+    color: #cbd5e1;
+}
+
+/* Glass Card Umum */
+.glass-card {
+    background: rgba(15, 45, 28, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.glass-card:hover {
+    border-color: rgba(74, 222, 128, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ================= STYLING FOOTER LAYANAN ================= */
+.footer {
+    background-color: #07140e;
+    color: #cbd5e1;
+    padding: 60px 0 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 35px;
+    height: 2px;
+    background-color: #4ade80;
+}
+
+.footer-col p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s, padding-left 0.3s;
+    display: inline-block;
+    font-size: 0.85rem;
+}
+
+.footer-col ul li a:hover {
+    color: #4ade80;
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    width: 36px;
+    height: 36px;
+    background: rgba(15, 45, 28, 0.8);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    color: #4ade80;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    background: #4ade80;
+    color: #0b1e14;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    font-size: 0.8rem;
+}
+
+/* Responsif untuk Layar Kecil / Mobile */
+@media (max-width: 768px) {
+    .timeline-line-resp {
+        left: 30px !important;
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+    .timeline-year {
+        text-align: left !important;
+        width: auto !important;
+    }
+    .nav-menu, .header-right-actions {
+        display: none; 
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
