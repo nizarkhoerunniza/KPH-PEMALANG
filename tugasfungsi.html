@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhutani KPH Pemalang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+ <header class="premium-header">
+    <div class="header-inner">
+        <a href="index.html" class="brand-premium">
+            <span class="brand-logo-ring">
+                <img src="perhutanii.png" alt="Logo Perhutani">
+            </span>
+            <span class="brand-copy">
+                <strong>PERHUTANI</strong>
+                <small>KPH PEMALANG</small>
+            </span>
+        </a>
+
+        <nav class="premium-nav" aria-label="Navigasi utama">
+            <a href="index.html" class="premium-link">Beranda</a>
+
+            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
+            <div class="premium-dropdown">
+                <a href="tentangkami.html" class="premium-link dropdown-trigger">
+                    Tentang Kami <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu">
+                    <div class="menu-heading"><span>Eksplorasi</span><small>Informasi KPH Pemalang</small></div>
+                    <a href="profil.html"><i class="fa-solid fa-building"></i><span><b>Profil Perusahaan</b><small>Identitas & informasi perusahaan</small></span></a>
+                    <a href="sejarah.html"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
+                    <a href="tugasfungsi.html" class="active"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
+                    <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
+                    <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
+                    <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
+                    <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
+            <div class="premium-dropdown">
+                <a href="unitbisnis.html" class="premium-link dropdown-trigger">
+                    Unit Bisnis <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu business-menu">
+                    <div class="menu-heading"><span>Unit Bisnis</span><small>Potensi & layanan berbasis hutan</small></div>
+                    <a href="herbal.html"><i class="fa-solid fa-leaf"></i><span><b>Herbal</b><small>Produk herbal hutan</small></span></a>
+                    <a href="kayu.html"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
+                    <a href="nonkayu.html"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
+                    <a href="ekowisata.html"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
+                    <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
+                    <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
+            <div class="premium-dropdown">
+                <a href="publikasi.html" class="premium-link dropdown-trigger">
+                    Publikasi <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu compact-menu">
+                    <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
+                    <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
+                    <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
+                </div>
+            </div>
+
+            <a href="layanan.html" class="premium-link">Layanan</a>
+            <a href="karir.html" class="premium-link">Karir</a>
+        </nav>
+
+        <div class="header-actions">
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <div class="search-wrapper premium-search">
+                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-box" id="searchBox">
+                    <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
+                    <div class="search-result" id="searchResult"></div>
+                </div>
+            </div>
+            <div class="weather-widget" id="weatherWidget">
+                <div class="weather-icon">
+                    <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="weather-info">
+                    <span class="temp">
+                        <span id="temperature">--°C</span>
+                        <small id="weatherDescription" data-i18n="weather_loading">Memuat cuaca...</small>
+                    </span>
+                    <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <div class="main-content-wrapper">
+
+        <section class="tugas-hero">
+            <div class="hero-inner">
+                <div class="hero-text-area">
+                    <h1 class="hero-title">Tugas Dan Fungsi</h1>
+                    <p class="hero-subtitle">Perhutani untuk Hutan, Untuk Negeri</p>
+                    <p class="hero-desc">Tugas dan Fungsi Perusahaan berdasarkan Maksud dan Tujuan sebagaimana diatur dalam Peraturan Pemerintah Republik Indonesia Nomor 72 Tahun 2010 tentang Perusahaan Umum (Perum) Kehutanan Negara
+                        Maksud dan tujuan Perusahaan adalah menyelenggarakan usaha yang bertujuan untuk kemanfaatan umum berupa barang dan/atau jasa yang berhubungan dengan Pengelolaan Hutan dan hasil hutan yang berkualitas dengan harga yang terjangkau oleh masyarakat berdasarkan prinsip Pengelolaan Hutan lestari dan prinsip tata kelola perusahaan yang baik.
+                    </p>
+                </div>
+                <div class="hero-quote-box">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p>Untuk mencapai maksud dan tujuan sebagimana dimaksud diatas, Perusahaan menyelenggarakan kegiatan usaha utama:</p>
+                </div>
+            </div>
+            </section>
+
+        <!-- 2. SECTION UTAMA: TUGAS PERHUTANI & DIAGRAM TENGAH -->
+        <section class="tugas-grid-section">
+            <div class="section-heading">
+                <i class="fa-solid fa-seedling"></i>
+                <h2>Tugas Perhutani</h2>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="grid-layout-complex">
+                
+                <!-- Kolom Kiri -->
+                <div class="left-cards">
+                    <div class="t-card shape-type-1">
+                        <div class="t-icon"><i class="fa-solid fa-tree"></i></div>
+                        <div class="t-text">
+                            <h3>1. Tata hutan dan penyusanan rencana Pengelolaan Hutan</h3>
+                            <p>Mengelola hutan negara secara lestari dengan memperhatikan aspek ekologis, ekonomi, dan sosial budaya secara terpadu.</p>
+                        </div>
+                    </div>
+
+                    <div class="t-card shape-type-2">
+                        <div class="t-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                        <div class="t-text">
+                            <h3>2. Pemanfaatan hutan</h3>
+                            <p>meliputi pemanfaatan kawasan, pemanfaatan jasa lingkungan, pemanfaatan hasil hutan kayu dan bukan kayu, pemungutan hasil hutan kayu dan bukan kayu.</p>
+                        </div>
+                    </div>
+
+                    <div class="t-card shape-type-3">
+                        <div class="t-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="t-text">
+                            <h3>3. Tata hutan dan penyusanan rencana Pengelolaan Hutan</h3>
+                            <p>Memelihara fungsi ekologis hutan untuk melindungi keanekaragaman hayati dan keseimbangan siklus air.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian Tengah: Hub Lingkaran Kayu -->
+                <div class="center-hub">
+                    <div class="hub-circle">
+                        <i class="fa-solid fa-tree hub-center-icon"></i>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan -->
+                <div class="right-cards">
+                    <div class="t-card shape-type-4">
+                        <div class="t-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <div class="t-text">
+                            <h3>4. Rehabilitasi dan reklamasi</h3>
+                            <p>Melakukan inovasi pengelolaan berbasis teknologi untuk meningkatkan nilai tambah hasil hutan kayu maupun non-kayu.</p>
+                        </div>
+                    </div>
+
+                    <div class="t-card shape-type-5">
+                        <div class="t-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="t-text">
+                            <h3>5. Perlindungan hutan dan konservasi alam</h3>
+                            <p>Mengembangkan kolaborasi aktif dengan masyarakat melalui program perhutanan sosial dan pendampingan intensif.</p>
+                        </div>
+                    </div>
+
+                    <div class="t-card shape-type-6">
+                        <div class="t-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <div class="t-text">
+                            <h3>6. Pengolahan hasil hutan menjadi bahan baku atau bahan jadi</h3>
+                            <p>Menjalankan seluruh prosedur operasional berdasarkan kepatuhan hukum dan standar tata kelola perusahaan yang bersih.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Paling Kanan: Statistik Lengkap -->
+                <div class="stats-sidebar">
+                    <h3>Tugas dalam Angka</h3>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-tree"></i>
+                        <div>
+                            <h4>2,4 Juta Ha</h4>
+                            <span>Luas Kelola Hutan</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-users"></i>
+                        <div>
+                            <h4>15.000+</h4>
+                            <span>Insan Perhutani</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>7</h4>
+                            <span>Divisi Regional</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-leaf"></i>
+                        <div>
+                            <h4>100+ Tahun</h4>
+                            <span>Pengalaman Mengelola Hutan</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-water"></i>
+                        <div>
+                            <h4>1.200+</h4>
+                            <span>Desa Sekitar Hutan</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fa-solid fa-shield-cat"></i>
+                        <div>
+                            <h4>100%</h4>
+                            <span>Komitmen Ekologis</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. SECTION BAWAH: KUTIPAN, PRINSIP, & FOTO HUTAN DIMODIF -->
+        <section class="bottom-banner-section">
+            <div class="bottom-content-grid">
+                
+                <!-- Kutipan Bawah -->
+                <div class="bottom-quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <p>Tugas kami hari ini, warisan lestari untuk anak cucu negeri.</p>
+                </div>
+
+                <!-- Prinsip Pelaksanaan -->
+                <div class="prinsip-wrapper">
+                    <h4>Prinsip Pelaksanaan Tugas</h4>
+                    <div class="prinsip-icons">
+                        <div class="p-item"><i class="fa-solid fa-seedling"></i><span>Lestari</span></div>
+                        <div class="p-item"><i class="fa-solid fa-user-tie"></i><span>Profesional</span></div>
+                        <div class="p-item"><i class="fa-solid fa-shield"></i><span>Integritas</span></div>
+                        <div class="p-item"><i class="fa-solid fa-lightbulb"></i><span>Inovatif</span></div>
+                        <div class="p-item"><i class="fa-solid fa-users-gear"></i><span>Kolaboratif</span></div>
+                    </div>
+                </div>
+
+                <!-- Komitmen Kami -->
+                <div class="komitmen-box">
+                    <h4>Komitmen Kami</h4>
+                    <p>Menjalankan tugas negara dengan integritas penuh, mengawal kelestarian ekosistem hutan, serta memastikan kesejahteraan sosial masyarakat tapak berjalan selaras.</p>
+                </div>
+
+            </div>
+
+            <!-- FOTO HUTAN DIMODIF BENTUK ESTETIK DI BAGIAN BAWAH -->
+            <div class="bottom-forest-banner">
+                <div class="forest-img-frame">
+                    <!-- Ganti link Unsplash ini dengan file foto lokal Anda misal: ../assets/img/hutan_bawah.jpg -->
+                    <img src="hutanpml.jpg" alt="Kawasan Hutan Pemalang">
+                    <div class="forest-img-overlay">
+                        <span class="forest-badge"><i class="fa-solid fa-leaf"></i> Konservasi & Alam</span>
+                        <h3>Menjaga Jantung Hijau Pemalang</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+ <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4>Kontak Kami</h4>
+                </div>
+                <ul class="contact-list">
+                     <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi</li>
+                    <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
+                    <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
+                    <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
+                        <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Jam Kerja</h4>
+                </div>
+                <ul class="schedule-list">
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Senin – Kamis</strong>
+                            <p>08.00 – 16.00 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Jumat</strong>
+                            <p>08.00 – 16.30 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <div>
+                            <strong>Sabtu – Minggu</strong>
+                            <p>Tutup</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Lokasi Kantor</h4>
+                </div>
+                <p class="office-address">
+                    Perhutani KPH Pemalang<br>
+                    Jl. Jenderal Sudirman Timur No. 3,<br>
+                    Wanarejan Selatan, Pemalang,<br>
+                    Jawa Tengah 52311
+                </p>
+                <div class="embedded-map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="120" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi Perhutani KPH Pemalang">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <h4>Email & Layanan</h4>
+                </div>
+                <ul class="service-links-footer">
+                    <li>
+                        <i class="fa-solid fa-file-shield"></i>
+                        <div>
+                            <span>Laporan Pengaduan</span>
+                            <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <span>Permohonan Informasi</span>
+                            <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-building-shield"></i>
+                        <div>
+                            <span>PPID Perhutani</span>
+                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="photo-wrapper-small" style="margin-top: 15px;">
+                    <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
+                        <div class="photo-caption" style="padding: 10px;">
+                            <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;">BUMN Hadir</span>
+                            <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;">Komitmen nyata untuk negeri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
+            <div class="policy-links">
+                <a href="#">Kebijakan Privasi</a>
+                <span>•</span>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+    <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
+        
+        <!-- Header Modal -->
+        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+            </h3>
+            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Konten Pertanyaan & Pilihan -->
+        <div style="padding: 20px;" id="quizBody">
+            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                Pertanyaan akan muncul di sini...
+            </div>
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer Modal (Skor / Status) -->
+        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+            Pertanyaan 1 dari 3
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
