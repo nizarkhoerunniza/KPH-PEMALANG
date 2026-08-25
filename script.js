@@ -499,6 +499,7 @@ const appLauncherBtn = document.getElementById("appLauncherBtn");
         loadQuestion();
     }
 
+    // Tampilkan Hasil Akhir Kuis
     function showResult() {
         quizQuestion.textContent = "🎉 Kuis Selesai!";
         quizOptions.innerHTML = `
@@ -516,7 +517,4 @@ const appLauncherBtn = document.getElementById("appLauncherBtn");
             loadQuestion();
         };
     }
-});
-
-
 });
