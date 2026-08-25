@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Perusahaan - Perhutani KPH Pemalang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="premium-header">
+    <div class="header-inner">
+        <a href="index.html" class="brand-premium">
+            <span class="brand-logo-ring">
+                <img src="perhutanii.png" alt="Logo Perhutani">
+            </span>
+            <span class="brand-copy">
+                <strong>PERHUTANI</strong>
+                <small>KPH PEMALANG</small>
+            </span>
+        </a>
+
+        <nav class="premium-nav" aria-label="Navigasi utama">
+            <a href="index.html" class="premium-link">Beranda</a>
+
+            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
+            <div class="premium-dropdown">
+                <a href="tentangkami.html" class="premium-link dropdown-trigger">
+                    Tentang Kami <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu">
+                    <div class="menu-heading"><span>Eksplorasi</span><small>Informasi KPH Pemalang</small></div>
+                    <a href="profil.html"><i class="fa-solid fa-building"></i><span><b>Profil Perusahaan</b><small>Identitas & informasi perusahaan</small></span></a>
+                    <a href="sejarah.html" class="active"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
+                    <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
+                    <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
+                    <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
+                    <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
+                    <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
+            <div class="premium-dropdown">
+                <a href="unitbisnis.html" class="premium-link dropdown-trigger">
+                    Unit Bisnis <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu business-menu">
+                    <div class="menu-heading"><span>Unit Bisnis</span><small>Potensi & layanan berbasis hutan</small></div>
+                    <a href="herbal.html"><i class="fa-solid fa-leaf"></i><span><b>Herbal</b><small>Produk herbal hutan</small></span></a>
+                    <a href="kayu.html"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
+                    <a href="nonkayu.html"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
+                    <a href="ekowisata.html"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
+                    <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
+                    <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
+            <div class="premium-dropdown">
+                <a href="publikasi.html" class="premium-link dropdown-trigger">
+                    Publikasi <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu compact-menu">
+                    <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
+                    <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
+                    <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
+                </div>
+            </div>
+
+            <a href="layanan.html" class="premium-link">Layanan</a>
+            <a href="karir.html" class="premium-link">Karir</a>
+        </nav>
+
+        <div class="header-actions">
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <div class="search-wrapper premium-search">
+                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-box" id="searchBox">
+                    <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
+                    <div class="search-result" id="searchResult"></div>
+                </div>
+            </div>
+            <div class="weather-widget" id="weatherWidget">
+                <div class="weather-icon">
+                    <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="weather-info">
+                    <span class="temp">
+                        <span id="temperature">--°C</span>
+                        <small id="weatherDescription" data-i18n="weather_loading">Memuat cuaca...</small>
+                    </span>
+                    <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- ================= KONTEN UTAMA: SEJARAH & TIMELINE ================= -->
+    <main class="main-content" style="background-color: #0b1e14; background-image: radial-gradient(circle at top right, rgba(20, 55, 38, 0.6), transparent 50%), radial-gradient(circle at bottom left, rgba(10, 30, 20, 0.8), transparent 50%); padding-bottom: 60px;">
+        
+        <!-- Bagian Header Sejarah & Counter 125 Tahun -->
+        <section class="page-header-section" style="background: transparent; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 55px 0 45px 0; margin-bottom: 40px;">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 35px; max-width: 1050px; margin: 0 auto;">
+                    
+                    <div style="flex: 1; min-width: 280px; padding-left: 10px;">
+                        <div style="background: rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); font-size: 0.8rem; padding: 6px 14px; display: inline-flex; align-items: center; gap: 8px; border-radius: 50px; font-weight: 600; letter-spacing: 0.5px;">
+                            <i class="fa-solid fa-leaf"></i> SEJARAH PERHUTANI
+                        </div>
+                        <h1 style="font-size: 2.4rem; font-weight: 800; color: #ffffff; line-height: 1.25; margin-top: 12px; margin-bottom: 12px;">
+                            Perjalanan Panjang,<br><span style="color: #4ade80;">Komitmen Lestari.</span>
+                        </h1>
+                        <p style="font-size: 1rem; color: #cbd5e1; line-height: 1.6; max-width: 540px; margin: 0;">
+                            Jejak sejarah pengelolaan hutan di Jawa dan Madura yang terus bertransformasi untuk kelestarian ekologis dan kemanfaatan bersama.
+                        </p>
+                    </div>
+
+                    <div style="padding-right: 10px;">
+                        <div class="glass-card" style="background: rgba(15, 45, 28, 0.8); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 16px; padding: 22px 26px; display: flex; align-items: center; gap: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                            <div style="font-size: 1.6rem; color: #4ade80; background: rgba(74, 222, 128, 0.1); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0;">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            <div>
+                                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.8px; color: #94a3b8; display: block; font-weight: 700;">Lebih dari</span>
+                                <h2 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; line-height: 1; margin: 2px 0 4px 0;">125 Tahun</h2>
+                                <p style="font-size: 0.78rem; color: #cbd5e1; margin: 0; max-width: 190px; line-height: 1.4;">Mengelola hutan secara profesional dan berkelanjutan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Timeline Sejarah (1 sampai 12 dengan Tahun 2022) -->
+        <section class="services-section" style="padding-top: 0;">
+            <div class="container">
+                <div style="max-width: 950px; margin: 0 auto; position: relative;">
+                    
+                    <div style="position: absolute; left: 130px; top: 20px; bottom: 20px; width: 3px; background: linear-gradient(to bottom, #4ade80, #15803d, rgba(74,222,128,0.2)); z-index: 1;" class="timeline-line-resp"></div>
+
+                    <div style="display: flex; flex-direction: column; gap: 25px; position: relative; z-index: 2;">
+                        
+                        <!-- 1897 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1897</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-landmark"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Sejarah pengelolaan hutan di Jawa dan Madura, secara modern-institusional dimulai tahun 1897 dengan dikeluarkannya “Reglement voor het beheer der bosschen van den Lande op Java en Madoera”, Staatsblad 1897 nomor 61 (disingkat “Bosreglement”) selain itu terbit pula “Reglement voor den dienst van het Boschwezen op Java en Madoera” (disingkat “Dienst Reglement”) yang menetapkan aturan tentang organisasi Jawatan Kehutanan, dimana dibentuk Jawatan Kehutanan dengan Gouvernement Besluit (Keputusan Pemerintah) tanggal 9 Februari 1897 nomor 21, termuat dalam Bijblad 5164".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">01</span>
+                            </div>
+                        </div>
+
+                        <!-- 1913 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1913</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Penetapan “Reglement voor het beheer der bosschen van den Lande op Java en Madoera”, Staatsblad 1913 nomor 495, yang mengatur tentang “eksploitasi sendiri (eigen beheer) atau penebangan borong (door particuliere aannemer)".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">02</span>
+                            </div>
+                        </div>
+
+                        <!-- 1927 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1927</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-feather"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Terbit Bosch_Ordonnantie, termuat dalam Staatsblad Tahun 1927 nomor 221 dan peraturan pelaksanaannya berupa Bosch_Verordening 1932, nama lengkap dokumen: “Bepalingen met Betrekking Tot’s Lands Boschbeheer op Java en Madoera” yang menjadi dasar pengurusan dan pengelolaan hutan di Jawa dan Madura oleh Jawatan Kehutanan (den dienst van het Boschwezen).
+
+".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">03</span>
+                            </div>
+                        </div>
+
+                        <!-- 1930 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1930</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-tree"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Pengelolaan hutan Jati diserahkan kepada badan “Djatibedrijf” atau perusahaan hutan Jati dari
+Pemerintah (Jawatan Kehutanan). Perusahaan hutan Jati tersebut tidak berdiri lama, karena pada
+tahun 1938 oleh Directeur van Financien (Direktur Keuangan Pemerintahan Hindia Belanda)
+dinyatakan bahwa perusahaan yang bertujuan komersiil sebulat-bulatnya harus dihentikan,".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">04</span>
+                            </div>
+                        </div>
+
+                        <!-- 1940 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1940</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Pengurusan hutan Jati dari “Djatibedrijf” dikembalikan lagi ke Jawatan Kehutanan. Pada tanggal
+8 Maret 1942 Hindia Belanda jatuh ke tangan Jepang (Dai Nippon), Jawatan Kehutanannya (i.c.
+Boschwezen) diberi nama Ringyo Tyuoo Zimusyo (RTZ),".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">05</span>
+                            </div>
+                        </div>
+
+                        <!-- 1945 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1945</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-flag"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Pasca Kemerdekaan Republik Indonesia tanggal 17 Agustus 1945 dan berdirinya Negara Indonesia
+tanggal 18 Agustus 1945, hak, kewajiban, tanggung-jawab dan kewenangan pengelolaan hutan di Jawa".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">06</span>
+                            </div>
+                        </div>
+
+                        <!-- 1960 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1960</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Diterbitkan Pengaturan Pemerintah Pengganti Undang-Undang Nomor 19 tahun 1960 tentang Perusahaan Negara. Untuk mewujudkan perubahan status Jawatan Kehutanan menjadi Perusahaan Negara, Pemerintah mengeluarkan Peraturan Pemerintah Nomor 17 sampai dengan Nomor 30, tahun 1961, tentang "Pembentukan Perusahaan-Perusahaan Kehutanan Negara (PERHUTANI)".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">07</span>
+                            </div>
+                        </div>
+
+                        <!-- 1972 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1972</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Diterbitkan Peraturan Pemerintah Nomor 15 Tahun 1972, meleburkan PN Jawa Timur & Jawa Tengah menjadi Perum Perhutani. Pemerintah Nomor 2 Tahun 1978, menambah wilayah kerja seluruh areal hutan di Dearah Tingkat I Jawa Barat".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">08</span>
+                            </div>
+                        </div>
+
+                        <!-- 1978 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">1978</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Diterbitkan Peraturan Pemerintah Nomor 15 Tahun 1972, meleburkan PN Jawa Timur & Jawa Tengah menjadi Perum Perhutani. Pemerintah Nomor 2 Tahun 1978, menambah wilayah kerja seluruh areal hutan di Dearah Tingkat I Jawa Barat"</p>.</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">09</span>
+                            </div>
+                        </div>
+
+                        <!-- 2010 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">2010</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Peraturan Pemerintah RI Nomor 72 Tahun 2010 dikeluarkan pemerintah Republik Indonesia sebagai dasar hukum pelaksanaan pengelolaan sumberdaya hutan di Jawa dan Madura oleh Perum Perhutani".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">10</span>
+                            </div>
+                        </div>
+
+                        <!-- 2014 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">2014</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Peraturan Pemerintah RI No 73 tahun 2014 tentang Penambahan Penyertaan Modal Negara Republik Indonesia ke Dalam Modal Perusahaan Umum (Perum) Kehutanan Negara. Perum Perhutani ditunjuk sebagai induk Holding BUMN Kehutanan (Perhutani Group) dengan anak perusahaan PT Inhutani I, PT Inhutani II, PT Inhutani III, PT Inhutani IV, PT Inhutani V
+".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">11</span>
+                            </div>
+                        </div>
+
+                        <!-- 2022 -->
+                        <div class="timeline-item" style="display: flex; align-items: center; gap: 30px;">
+                            <div class="timeline-year" style="width: 100px; text-align: right; font-size: 1.8rem; font-weight: 800; color: #4ade80; flex-shrink: 0;">2022</div>
+                            <div style="width: 60px; height: 60px; background: #0f2d1c; border: 2px solid #4ade80; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 0 15px rgba(74,222,128,0.3);">
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+                            <div class="glass-card" style="flex-grow: 1; background: rgba(15, 45, 28, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; gap: 15px; backdrop-filter: blur(10px);">
+                                <p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.6; margin: 0;">"Perum Perhutani melakukan merger Anak Perusahaannya. Merger dilakukan pada PT Inhutani I, PT Inhutani II dan PT Inhutani III yang bergabung ke dalam entitas PT Inhutani I. Sedangkan PT Inhutani IV, PT Inhutani V dan PT Perhutani Anugerah Kimia bergabung ke dalam entitas PT Inhutani V. Selanjutnya bisnis wisata yang dikelola oleh Perum Perhutani dialihkelolakan secara bertahap kepada PT Palawi Risorsis yang berubah nama menjadi Econique.".</p>
+                                <span style="background: rgba(74, 222, 128, 0.15); color: #4ade80; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 8px; flex-shrink: 0;">12</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Tambahan: Quote & Call to Action (CTA) Interaktif -->
+        <section style="padding: 40px 0 10px 0; position: relative; z-index: 2;">
+            <div class="container">
+                <div class="glass-card" style="background: linear-gradient(135deg, rgba(15, 45, 28, 0.9), rgba(10, 30, 20, 0.95)); border: 1px solid rgba(74, 222, 128, 0.25); border-radius: 20px; padding: 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                    
+                    <div style="position: absolute; right: -20px; bottom: -20px; font-size: 10rem; color: rgba(74, 222, 128, 0.03); pointer-events: none;">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+
+                    <div style="max-width: 700px; margin: 0 auto;">
+                        <div style="font-size: 2rem; color: #4ade80; margin-bottom: 15px;">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <h3 style="font-size: 1.45rem; font-weight: 700; color: #ffffff; line-height: 1.4; margin-bottom: 15px;">
+                            "Mengelola hutan bukan hanya tentang menjaga pohon tetap berdiri, tetapi tentang merawat masa depan kehidupan."
+                        </h3>
+                        <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 30px; line-height: 1.5;">
+                            Perum Perhutani KPH Pemalang terus berkomitmen menghadirkan keseimbangan antara kelestarian ekologis dan kesejahteraan masyarakat sekitar hutan.
+                        </p>
+                        
+                        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                            <a href="visimisitatanilai.html" style="background: #4ade80; color: #0b1e14; font-weight: 700; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(74, 222, 128, 0.3);">
+                                <i class="fa-solid fa-compass"></i> Lihat Visi & Misi
+                            </a>
+                            <a href="tugasfungsi.html" style="background: rgba(255, 255, 255, 0.05); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.15); font-weight: 600; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s ease;">
+                                <i class="fa-solid fa-circle-info"></i> Tugas & Fungsi
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+<footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4>Kontak Kami</h4>
+                </div>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi</li>
+                    <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
+                    <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
+                    <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
+                        <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Jam Kerja</h4>
+                </div>
+                <ul class="schedule-list">
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Senin – Kamis</strong>
+                            <p>08.00 – 16.00 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Jumat</strong>
+                            <p>08.00 – 16.30 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <div>
+                            <strong>Sabtu – Minggu</strong>
+                            <p>Tutup</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Lokasi Kantor</h4>
+                </div>
+                <p class="office-address">
+                    Perhutani KPH Pemalang<br>
+                    Jl. Jenderal Sudirman Timur No. 3,<br>
+                    Wanarejan Selatan, Pemalang,<br>
+                    Jawa Tengah 52311
+                </p>
+                <div class="embedded-map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="120" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi Perhutani KPH Pemalang">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <h4>Email & Layanan</h4>
+                </div>
+                <ul class="service-links-footer">
+                    <li>
+                        <i class="fa-solid fa-file-shield"></i>
+                        <div>
+                            <span>Laporan Pengaduan</span>
+                            <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <span>Permohonan Informasi</span>
+                            <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-building-shield"></i>
+                        <div>
+                            <span>PPID Perhutani</span>
+                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="photo-wrapper-small" style="margin-top: 15px;">
+                    <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="../assets/bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
+                        <div class="photo-caption" style="padding: 10px;">
+                            <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;">BUMN Hadir</span>
+                            <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;">Komitmen nyata untuk negeri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
+            <div class="policy-links">
+                <a href="#">Kebijakan Privasi</a>
+                <span>•</span>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal / Pop-up Kuis Lingkungan -->
+<div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
+        
+        <!-- Header Modal -->
+        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+            </h3>
+            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Konten Pertanyaan & Pilihan -->
+        <div style="padding: 20px;" id="quizBody">
+            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                Pertanyaan akan muncul di sini...
+            </div>
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer Modal (Skor / Status) -->
+        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+            Pertanyaan 1 dari 3
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
