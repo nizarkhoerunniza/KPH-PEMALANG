@@ -499,7 +499,6 @@ const appLauncherBtn = document.getElementById("appLauncherBtn");
         loadQuestion();
     }
 
-    // Tampilkan Hasil Akhir Kuis
     function showResult() {
         quizQuestion.textContent = "🎉 Kuis Selesai!";
         quizOptions.innerHTML = `
@@ -517,4 +516,80 @@ const appLauncherBtn = document.getElementById("appLauncherBtn");
             loadQuestion();
         };
     }
+});
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const overlay = document.getElementById("mobileMenuOverlay");
+    const closeBtn = document.getElementById("mobileMenuClose");
+
+    function openMobileMenu() {
+        mobileMenu.classList.add("active");
+        overlay.classList.add("active");
+        menuBtn.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        menuBtn.classList.remove("active");
+
+        document.body.style.overflow = "";
+    }
+
+    menuBtn.addEventListener("click", function () {
+
+        if (mobileMenu.classList.contains("active")) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+
+    });
+
+    closeBtn.addEventListener("click", closeMobileMenu);
+    overlay.addEventListener("click", closeMobileMenu);
+    const dropdownButtons = document.querySelectorAll(".mobile-dropdown-btn");
+    dropdownButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const parent = this.closest(".mobile-dropdown");
+           
+            document.querySelectorAll(".mobile-dropdown").forEach(function (item) {
+
+                if (item !== parent) {
+                    item.classList.remove("open");
+                }
+
+            });
+
+            parent.classList.toggle("open");
+
+        });
+
+    });
+
+    document.querySelectorAll(
+        ".mobile-nav > .mobile-nav-link:not(.mobile-dropdown-btn), .mobile-submenu a"
+    ).forEach(function (link) {
+        link.addEventListener("click", function () {
+            closeMobileMenu();
+        });
+
+    });
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeMobileMenu();
+        }
+
+    });
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 850) {
+            closeMobileMenu();
+        }
+
+    });
+
 });
