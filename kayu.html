@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhutani KPH Pemalang - Kayu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+     <header class="premium-header">
+    <div class="header-inner">
+        <a href="index.html" class="brand-premium">
+            <span class="brand-logo-ring">
+                <img src="perhutanii.png" alt="Logo Perhutani">
+            </span>
+            <span class="brand-copy">
+                <strong>PERHUTANI</strong>
+                <small>KPH PEMALANG</small>
+            </span>
+        </a>
+
+        <nav class="premium-nav" aria-label="Navigasi utama">
+            <a href="index.html" class="premium-link">Beranda</a>
+
+            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
+            <div class="premium-dropdown">
+                <a href="tentangkami.html" class="premium-link dropdown-trigger">
+                    Tentang Kami <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu">
+                    <div class="menu-heading"><span>Eksplorasi</span><small>Informasi KPH Pemalang</small></div>
+                    <a href="profil.html"><i class="fa-solid fa-building"></i><span><b>Profil Perusahaan</b><small>Identitas & informasi perusahaan</small></span></a>
+                    <a href="sejarah.html"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
+                    <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
+                    <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
+                    <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
+                    <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
+                    <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
+            <div class="premium-dropdown">
+                <a href="unitbisnis.html" class="premium-link dropdown-trigger">
+                    Unit Bisnis <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu business-menu">
+                    <div class="menu-heading"><span>Unit Bisnis</span><small>Potensi & layanan berbasis hutan</small></div>
+                    <a href="herbal.html"><i class="fa-solid fa-leaf"></i><span><b>Herbal</b><small>Produk herbal hutan</small></span></a>
+                    <a href="kayu.html" class="active"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
+                    <a href="nonkayu.html"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
+                    <a href="ekowisata.html"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
+                    <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
+                    <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
+            <div class="premium-dropdown">
+                <a href="publikasi.html" class="premium-link dropdown-trigger">
+                    Publikasi <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu compact-menu">
+                    <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
+                    <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
+                    <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
+                </div>
+            </div>
+
+            <a href="layanan.html" class="premium-link">Layanan</a>
+            <a href="karir.html" class="premium-link">Karir</a>
+        </nav>
+
+        <div class="header-actions">
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <div class="search-wrapper premium-search">
+                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-box" id="searchBox">
+                    <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
+                    <div class="search-result" id="searchResult"></div>
+                </div>
+            </div>
+            <div class="weather-widget" id="weatherWidget">
+                <div class="weather-icon">
+                    <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="weather-info">
+                    <span class="temp">
+                        <span id="temperature">--°C</span>
+                        <small id="weatherDescription" data-i18n="weather_loading">Memuat cuaca...</small>
+                    </span>
+                    <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content dengan padding-top agar tidak tertutup navbar fixed/sticky -->
+    <main class="main-content-full" style="padding-top: 110px;">
+
+        <!-- Hero Banner Kayu -->
+        <section class="herbal-hero-banner">
+            <div class="hero-text-content">
+                <h1>Kayu</h1>
+                <p class="hero-subtitle">Produk Kayu Berkualitas Tinggi dari Hutan Lestari</p>
+                <div class="title-underline"><i class="fa-solid fa-tree"></i></div>
+                <p class="hero-desc">Perhutani menyediakan berbagai produk hasil hutan kayu pilihan seperti Kayu Jati dan Mahoni berkualitas tinggi yang legal, tersertifikasi, serta dikelola secara lestari.</p>
+            </div>
+        </section>
+
+        <!-- LAYOUT UTAMA: KONTEN KIRI & SIDEBAR KANAN -->
+        <div class="content-grid-layout">
+            
+            <!-- KOLOM KIRI (Kategori & Daftar Produk Kayu) -->
+            <div class="announcement-main-column">
+                
+                <!-- Filter Kategori Produk Kayu -->
+                <div class="herbal-category-scroll">
+                      <a href="unitbisnis.html"class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
+                    <a href="herbal.html"class="cat-pill"><i class="fa-solid fa-mug-hot"></i>Herbal</a>
+                    <a href="kayu.html"class="cat-pill active"><i class="fa-solid fa-cubes"></i>Kayu</a>
+                    <a href="nonkayu.html"class="cat-pill"><i class="fa-solid fa-box-open"></i>Nonkayu</a>
+                    <a href="ekowisata.html" class="cat-pill"><i class="fa-solid fa-mountain" ></i>Ekowisata</a>
+                </div>
+
+                <div class="section-filter-bar">
+                    <h3 class="section-title"><i class="fa-solid fa-hammer"></i>Solusi Berbasi Alam</h3>
+                    <div class="header-buttons">
+                        <a href="unitbisnis.html" class="btn-top">Lihat Semua →</a>
+                    </div>
+                </div>
+
+                <!-- Grid Kartu Produk Kayu (Total 6 Produk) -->
+                <div class="herbal-products-grid">
+                    
+                    <!-- Produk 1 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="kayubalsa.jpg" alt="Kayu Jati Perhutani Grade A">
+                            <span class="product-badge">Kayu Balsa</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Kayu Balsa Grade A</h4>
+                            <p><b>Ciri Anatomi:</b>&nbsp;
+Balsa merupakan jenis tanaman cepat tumbuh dan bernilai ekonomi tinggi. Pohon balsa memiliki banyak keunikan, di mana salah satunya adalah proses tumbuh yang berjalan cepat, yakni sekitar lima tahun saja untuk bisa tumbuh setinggi 20 meter.<br><b>Sifat Kayu Balsa:</b>&nbsp;
+Salah satu keunggulan kayu balsa yang paling terkenal adalah bobotnya yang ringan dan berbeda dengan jenis bahan kayu hmr.Kayu balsa memiliki karakter berupa sel besar serta dinding tipis, bahkan hanya sekitar 40% dari potongan kayu balsa yang merupakan material padat. Berat Jenis: 90 – 220 kg/m3 dengan MC 12%. Kelas Awet: II – III , Kelas Kuat: V<br><b>Kegunaan:</b>&nbsp;
+Dikarenakan kayu balsa memiliki tingkat kepadatan yang rendah serta berbobot ringan, maka material yang satu ini pun sangat mudah dibentuk untuk dijadikan bahan utama dari pembuatan berbagai jenis perabotan rumah tangga seperti sandaran kursi makan.Namun, terdapat hal menarik lain di mana kayu balsa juga dapat menyerap getaran ataupun guncangan sehingga lebih mudah untuk dipotong serta direkatkan.Adapun, tingkat kepadatan kayu balsa saat ini terbagi menjadi tiga kategori, yaitu:
+– Kayu balsa ringan berbobot di bawah 120 kg per m³ untuk penggunaan hobi serta aeromodelling.
+– Kayu balsa sedang berbobot 120 kg hingga 180 kg per m³ untuk penggunaan industri komposit.
+– Kayu balsa berat berbobot di atas 180 kg per m³ untuk penggunaan yang lebih luas.
+ </p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 5.0 (48)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 2 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="kayujati.jpg" alt="Kayu Mahoni Perhutani">
+                            <span class="product-badge">Kayu Jati</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Kayu Jati Pilihan</h4>
+                            <p><b>Ciri Umum :</b> &nbsp;
+Warna : teras berwarna kuning emas kecoklatan sampai coklat kemerahan, mudah dibedakan dari gubal yang berwarna putih agak ke abu abuan. Corak: Dekoratif yang indah berkat jelasnya lingkaran tumbuh, sedikit buram dan berminyak. Tekstur: agak kasar sampai kasar dan tidak rata. <br><b>Ciri Anatomi:</b> &nbsp;
+Pembuluh/Pori : tata lingkar, bentuk bundar sampai bundar telur, diameter tangensial bagian kayu awal sekitar 340-370 mikron, pada kayu akhirya sekitar 50-290 mikron, bidang perforasi sederhana, berisi tilosis atau endapan berwarna putih.<br><b>Sifat dan Kegunaan:</b>&nbsp;
+Berat Jenis: rata-rata 0,67 (0,62 – 0,75); Kelas awet: I-II; Kelas Kuat: II; Kegunaan: dipakai untuk berbagai keperluan, antara lain bahan bangunan, rangka pintu dan jendela, panel pintu, bantalan kereta api, perabot rumah tangga, karoseri badan truk, dek kapal, lumber sering, vinir indah.<br><b>Nama Lain:
+</b> &nbsp; Deleg, dodolan, jate, jateh, jatih, jatos, kulidawa</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (36)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 3 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="kayumahoni.jpg" alt="Balok Kayu Jati Konstruksi">
+                            <span class="product-badge">Kayu Mahoni</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Balok Kayu Mahoni</h4>
+                            <p><b>Morfologi dan penyebaran</b>&nbsp;
+Mahoni termasuk pohon besar dengan tinggi pohon mencapai 35–40 m dan diameter mencapai 125 cm. Batang lurus berbentuk silindris dan tidak berbanir. Kulit luar berwarna cokelat kehitaman, beralur dangkal seperti sisik, sedangkan kulit batang berwarna abu-abu dan halus ketika masih muda, berubah menjadi cokelat tua, beralur dan mengelupas setelah tua.<br><b>Manfaat</b>&nbsp;
+Buah mahoni untuk pengobatan
+Pohon mahoni bisa mengurangi polusi udara sekitar 47% – 69% sehingga disebut sebagai pohon pelindung sekaligus filter udara dan daerah tangkapan air.<br>Mahoni sebagai peneduh jalan. Bagi penduduk Indonesia khususnya Jawa, tanaman ini bukanlah tanaman yang baru, karena sejak zaman penjajahan Belanda mahoni dan rekannya, Pohon Asam, sudah banyak ditanam di pinggir jalan.<br><b>Syarat Tum</b>
+Mahoni dapat tumbuh dengan subur di pasir payau dekat dengan pantai dan menyukai tempat yang cukup sinar matahari langsung.<br>Kegunaan Kayu Mahoni
+Kayu mahoni untuk furniture Jepara sudah lama dipakai sebagai bahan baku utama furniture jepara selain kayu jati.<br><b>Kelebihan Kayu Mahoni</b>&nbsp;
+<br>1. Serat kayu halus dan beragam. Penampilan yang seperti ini sangat bagus jika difinishing dengan warna-warna natural atau klasik.
+<br>2. Penampang kayu yang sangat stabil, kayu mahoni dikenal untuk kekuatan penyusutan dan perubahan bentuk</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (29)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 4 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="kayumerbau.jpg" alt="Papan Kayu Jati Serut">
+                            <span class="product-badge">Kayu Merbau</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Kayu Merbau Halus</h4>
+                            <p><b>Pengenalan</b>&nbsp;Merbau atau ipil adalah nama sejenis pohon penghasil kayu keras berkualitas tinggi anggota famili Fabaceae (Leguminosae). Karena kekerasannya, di wilayah Maluku dan Papua barat kayu ini juga dinamai kayu besi. <br><b>Sifat</b>ayu teras berwarna kelabu coklat atau kuning coklat sampai coklat merah cerah atau hampir hitam. Kayu gubal berwarna kuning pucat sampai kuning muda, jelas dibedakan dari kayu teras. Merbau memiliki tekstur kayu yang kasar dan merata, dengan arah serat yang kebanyakan lurus. Kayu yang telah diolah memiliki permukaan yang licin dan mengkilap indah.<br><b>Manfaat</b>&nbsp;Merbau terutama dimanfaatkan kayunya, yang biasa digunakan dalam konstruksi berat seperti balok-balok, tiang dan bantalan pada bangunan rumah maupun jembatan.</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.7 (50)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 5 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="kayupinus.jpg" alt="Kayu Pinus Perhutani">
+                            <span class="product-badge">Kayu Pinus</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Kayu Pinus (Merkusii)</h4>
+                            <p>Terdapat lebih dari 20 jenis kayu pinus dengan nama species yang berbeda. Jenis kayu pinus yang sering digunakan dan secara umum dikenal memiliki kualitas yang baik ada 2 jenis kayu pinus yaitu Pinus Radiata dan Pinus Merkusii. PINUS RADIATA (Radiata Pine) Area Tumbuh: Australia (740 ribu hektar), Chili (sekitar 1,3 juta hektar), Selandia Baru (1,2 juta hektar), Afrika Selatan dan Amerika. Hutan paling besar untuk kayu ini diketahui adalah dari Chili. Beberapa eksporter juga berasal dari Selandia Baru namun tidak murni plantation. Biasanya Selandia Baru mengekspor kayu ini sudah dalam bentuk S2S atau S4S. Pohon: Antara 15 – 25 tahun kayu Pinus Radiata bisa memiliki diameter batang 30 – 80 cm dan tinggi antara 15 – 30 meter. Pinus Radiata termasuk jenis pohon yang cepat tumbuh dan berbatang lurus. Warna Kayu: Kayu teras berwarna merah kecoklatan dan kayu gubal berwarna kuning dan krem. Garis lingkaran tahun pinus radiata lumayan jelas terlihat sehingga garis serat kayu pada pembelahan tangensial bisa terlihat jelas pula. Densitas: 480 – 520 kg/m3 pada MC 12% Serat kayu: Cenderung lurus tapi terdapat banyak mata kayu karena pohon pinus radiata memiliki banyak cabang kecil pada batangnya.</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (62)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 6 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="kayusonokeling.jpg" alt="Bahan Baku Kerajinan Kayu">
+                            <span class="product-badge">Kayu Sonokeling</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Kayu Sonokeling kualitas terbaik</h4>
+                            <p><b>Ciri Umum :</b>&nbsp;
+Warna: teras berwarna kecoklatan dengan garis-garis berwarna agak hitam, gubal berwarna putih keabu-abuan. Corak: permukaan bercorak indah berkat adanya garis yang berlainan warnanya. Tekstur: hampir halus.<br><b>Ciri Anatomi:</b>
+Pembuluh/Pori: baur, soliter dan sebagian berganda radial yang terdiri dari atas 2-3 pori, jumlah sekitar 5-8 per mm2, diameter tangensial sekitar 80-175 mikron, beidang perforasi sederhana, berisi endapan berwarna merah kecoklatan.<br><b>Sifat dan Kegunaan:</b>
+Berat Jenis: kayu berat sedang sampai berat, dengan berat jenis rata-rata 0,83 (0,77-0,86); Kelas Awet: I; kelas kuat: II. kegunaan: bahan perabot rumah tangga kelas tinggi, vinir indah, rangka pintu dan jendela, alat musik, barang ukiran, kayu perpatungan, barang yang perlu dilengkungkan.<br><b>Nama Lain:</b>&nbsp;
+Angsana brits, sonosungu (jawa).<br><b>Jenis yang mirip:</b>&nbsp;
+Sonosiso (Dalbergia sissoides)</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.6 (19)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bagian Keunggulan Bawah -->
+                <div class="herbal-features-box">
+                    <h4><i class="fa-solid fa-circle-question"></i> Mengapa Memilih Produk Kayu Perhutani?</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h5>Legalitas Terjamin</h5>
+                            <p>Dilengkapi sertifikasi resmi pengelolaan hutan lestari (SVLK).</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-award"></i></div>
+                            <h5>Kualitas Premium</h5>
+                            <p>Berasal dari pohon pilihan dengan usia tebang matang.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-earth-asia"></i></div>
+                            <h5>Eco-Friendly</h5>
+                            <p>Sistem tebang-tanam kembali untuk kelestarian alam.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-handshake"></i></div>
+                            <h5>Terpercaya</h5>
+                            <p>Menjadi mitra utama industri perkayuan nasional dan global.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- KOLOM KANAN (Sidebar Widget) -->
+            <div class="announcement-sidebar-column">
+
+                <!-- Kualitas Terjamin Widget -->
+                <div class="sidebar-widget sidebar-dark-box">
+                    <h4><i class="fa-solid fa-shield-halved"></i> Standar Mutu Kayu</h4>
+                    <div class="sidebar-list-content">
+                        <div>
+                            <strong><i class="fa-solid fa-certificate"></i> Tersertifikasi Resmi</strong>
+                            <span>Menjamin legalitas kayu dari hulu hingga hilir.</span>
+                        </div>
+                        <div>
+                            <strong><i class="fa-solid fa-temperature-arrow-down"></i> Pengeringan Standar</strong>
+                            <span>Kadar air terjaga untuk menghindari susut dan retak.</span>
+                        </div>
+                        <div>
+                            <strong><i class="fa-solid fa-boxes-stacked"></i> Grading Ketat</strong>
+                            <span>Disortir teliti berdasarkan spesifikasi ukuran dan mutu.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tahukah Anda? Widget -->
+                <div class="sidebar-widget sidebar-info-box">
+                    <h4><i class="fa-solid fa-circle-info"></i> Tahukah Anda?</h4>
+                    <p>Kayu Jati Perhutani dikenal di seluruh dunia karena kekuatan alaminya serta ketahanan yang tinggi terhadap cuaca dan rayap.</p>
+                </div>
+
+                <!-- Banner Promosi Hutan Lestari -->
+                <div class="sidebar-widget sidebar-banner-box">
+                    <h4>Hutan Lestari,<br>Kayu Berkualitas</h4>
+                    <a href="program.html" class="sidebar-banner-btn">Pelajari Lebih Lanjut →</a>
+                    
+                    <div class="sidebar-extra-info" style="margin-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 12px; text-align: left;">
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #cbd5e1; display: flex; flex-direction: column; gap: 8px;">
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> Legalitas Kayu Tersertifikasi</li>
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> Usia Tebang Matang Optimal</li>
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> Berkontribusi pada Reboisasi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Widget Bantuan -->
+                <div class="sidebar-widget" style="margin-top: 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: left;">
+                    <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-headset" style="color: #15803d;"></i> Butuh Bantuan?
+                    </h4>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 15px;">
+                        Punya pertanyaan seputar ketersediaan stok kayu atau ingin melakukan pemesanan dalam jumlah besar? Hubungi tim kami.
+                    </p>
+                    <a href="layanan.html" style="display: block; text-align: center; background: #f1f5f9; color: #15803d; padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Layanan
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4>Kontak Kami</h4>
+                </div>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi</li>
+                    <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
+                    <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
+                    <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
+                        <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Jam Kerja</h4>
+                </div>
+                <ul class="schedule-list">
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Senin – Kamis</strong>
+                            <p>08.00 – 16.00 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Jumat</strong>
+                            <p>08.00 – 16.30 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <div>
+                            <strong>Sabtu – Minggu</strong>
+                            <p>Tutup</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Lokasi Kantor</h4>
+                </div>
+                <p class="office-address">
+                    Perhutani KPH Pemalang<br>
+                    Jl. Jenderal Sudirman Timur No. 3,<br>
+                    Wanarejan Selatan, Pemalang,<br>
+                    Jawa Tengah 52311
+                </p>
+                <div class="embedded-map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="120" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi Perhutani KPH Pemalang">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <h4>Email & Layanan</h4>
+                </div>
+                <ul class="service-links-footer">
+                    <li>
+                        <i class="fa-solid fa-file-shield"></i>
+                        <div>
+                            <span>Laporan Pengaduan</span>
+                            <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <span>Permohonan Informasi</span>
+                            <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-building-shield"></i>
+                        <div>
+                            <span>PPID Perhutani</span>
+                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="photo-wrapper-small" style="margin-top: 15px;">
+                    <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
+                        <div class="photo-caption" style="padding: 10px;">
+                            <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;">BUMN Hadir</span>
+                            <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;">Komitmen nyata untuk negeri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
+            <div class="policy-links">
+                <a href="#">Kebijakan Privasi</a>
+                <span>•</span>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+    <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
+    <button class="image-modal-close">&times;</button>
+    <img id="fullImageDisplay" src="" alt="Full Preview">
+</div>
+<div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
+        
+        <!-- Header Modal -->
+        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+            </h3>
+            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Konten Pertanyaan & Pilihan -->
+        <div style="padding: 20px;" id="quizBody">
+            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                Pertanyaan akan muncul di sini...
+            </div>
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer Modal (Skor / Status) -->
+        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+            Pertanyaan 1 dari 3
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

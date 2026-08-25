@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhutani KPH Pemalang - Ekowisata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+   <header class="premium-header">
+    <div class="header-inner">
+        <a href="index.html" class="brand-premium">
+            <span class="brand-logo-ring">
+                <img src="perhutanii.png" alt="Logo Perhutani">
+            </span>
+            <span class="brand-copy">
+                <strong>PERHUTANI</strong>
+                <small>KPH PEMALANG</small>
+            </span>
+        </a>
+
+        <nav class="premium-nav" aria-label="Navigasi utama">
+            <a href="index.html" class="premium-link">Beranda</a>
+
+            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
+            <div class="premium-dropdown">
+                <a href="tentangkami.html" class="premium-link dropdown-trigger">
+                    Tentang Kami <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu">
+                    <div class="menu-heading"><span>Eksplorasi</span><small>Informasi KPH Pemalang</small></div>
+                    <a href="profil.html"><i class="fa-solid fa-building"></i><span><b>Profil Perusahaan</b><small>Identitas & informasi perusahaan</small></span></a>
+                    <a href="sejarah.html"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
+                    <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
+                    <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
+                    <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
+                    <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
+                    <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
+            <div class="premium-dropdown">
+                <a href="unitbisnis.html" class="premium-link dropdown-trigger">
+                    Unit Bisnis <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu business-menu">
+                    <div class="menu-heading"><span>Unit Bisnis</span><small>Potensi & layanan berbasis hutan</small></div>
+                    <a href="herbal.html"><i class="fa-solid fa-leaf"></i><span><b>Herbal</b><small>Produk herbal hutan</small></span></a>
+                    <a href="kayu.html"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
+                    <a href="nonkayu.html"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
+                    <a href="ekowisata.html" class="active"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
+                    <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
+                    <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
+            <div class="premium-dropdown">
+                <a href="publikasi.html" class="premium-link dropdown-trigger">
+                    Publikasi <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu compact-menu">
+                    <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
+                    <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
+                    <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
+                </div>
+            </div>
+
+            <a href="layanan.html" class="premium-link">Layanan</a>
+            <a href="karir.html" class="premium-link">Karir</a>
+        </nav>
+
+        <div class="header-actions">
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <div class="search-wrapper premium-search">
+                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-box" id="searchBox">
+                    <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
+                    <div class="search-result" id="searchResult"></div>
+                </div>
+            </div>
+            <div class="weather-widget" id="weatherWidget">
+                <div class="weather-icon">
+                    <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="weather-info">
+                    <span class="temp">
+                        <span id="temperature">--°C</span>
+                        <small id="weatherDescription" data-i18n="weather_loading">Memuat cuaca...</small>
+                    </span>
+                    <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="main-content-full" style="padding-top: 110px;">
+
+        <!-- Hero Banner Ekowisata -->
+        <section class="herbal-hero-banner">
+            <div class="hero-text-content">
+                <h1 data-i18n="eco_hero_title">Ekowisata</h1>
+                <p class="hero-subtitle" data-i18n="eco_hero_subtitle">Menjelajah Keindahan Alam Lestari</p>
+                <div class="title-underline"><i class="fa-solid fa-leaf"></i></div>
+                <p class="hero-desc" data-i18n="eco_hero_desc" contenteditable="#ffffff">Perhutani menghadirkan destinasi ekowisata yang menawan, menyatu dengan keasrian hutan untuk pengalaman rekreasi yang edukatif dan menenangkan.</p>
+            </div>
+        </section>
+
+        <!-- LAYOUT UTAMA -->
+        <div class="content-grid-layout">
+            
+            <!-- KOLOM KIRI -->
+            <div class="announcement-main-column">
+                
+                <!-- Filter Kategori Wisata -->
+                <div class="herbal-category-scroll">
+                     <a href="unitbisnis.html"class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
+                    <a href="herbal.html"class="cat-pill"><i class="fa-solid fa-mug-hot"></i>Herbal</a>
+                    <a href="kayu.html"class="cat-pill"><i class="fa-solid fa-cubes"></i>Kayu</a>
+                    <a href="nonkayu.html"class="cat-pill"><i class="fa-solid fa-box-open"></i>Nonkayu</a>
+                    <a href="ekowisata.html" class="cat-pill active"><i class="fa-solid fa-mountain" ></i>Ekowisata</a>
+                </div>
+
+                <div class="section-filter-bar">
+                    <h3 class="section-title"><i class="fa-solid fa-compass"></i> <span data-i18n="dest_title">Solusi Berbasi Alam</span></h3>
+                    <div class="header-buttons">
+                        <a href="unitbisnis.html" class="btn-top" data-i18n="btn_see_all">Lihat Semua →</a>
+                    </div>
+                </div>
+
+                <!-- Grid Kartu Wisata -->
+                <div class="herbal-products-grid">
+                    
+                    <!-- Destinasi 1 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="hutanpinus.jpg" alt="Hutan Pinus">
+                            <span class="product-badge" data-i18n="badge_mountain">Pegunungan</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4 data-i18n="dest1_name">Hutan Pinus Asri</h4>
+                            <p data-i18n="dest1_desc">Nikmati suasana sejuk dan pemandangan hijau yang menenangkan di tengah hutan pinus.</p>
+                            <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 10.000</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (120)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Pesan Tiket"><i class="fa-solid fa-ticket"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destinasi 2 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="tamansenja.jpg" alt="Air Terjun">
+                            <span class="product-badge" data-i18n="cat_waterfall">Air Terjun</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4 data-i18n="dest2_name">Taman Senja</h4>
+                            <p data-i18n="dest2_desc">Wisata Taman Senja Kwasen adalah destinasi wana wisata (wisata hutan) berbasis alam yang terletak di Desa Kwasen, Kecamatan Bodeh, Kabupaten Pemalang, Jawa Tengah. Berdiri di atas lahan seluas 5,48 hektar milik Perum Perhutani KPH Pemalang, objek wisata ini menawarkan suasana rekreasi yang asri dan sejuk di bawah naungan kerindangan pohon rimba campuran, menjadikannya pilihan berlibur favorit warga Pemalang bagian selatan.</p>
+                            <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 15.000</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (95)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Pesan Tiket"><i class="fa-solid fa-ticket"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destinasi 3 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="benowopark.jpg" alt="Camping">
+                            <span class="product-badge" data-i18n="cat_camping">Benowo Park</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4 data-i18n="dest3_name">Benowo Park</h4>
+                            <p data-i18n="dest3_desc">Tempat berkemah ideal untuk keluarga atau komunitas yang menyukai petualangan alam.</p>
+                            <div class="product-price"><span data-i18n="starting_label">Mulai</span>: Rp 25.000</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.7 (78)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Pesan Tiket"><i class="fa-solid fa-ticket"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destinasi 4 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="tangkeban.jpg" alt="Jalur Hiking">
+                            <span class="product-badge" data-i18n="cat_hiking">Jalur Hiking</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4 data-i18n="dest4_name">Bukit Tangkeban</h4>
+                            <p data-i18n="dest4_desc">Bukit Tangkeban adalah salah satu destinasi wisata alam unggulan di lereng Gunung Slamet yang terletak di Desa Nyalembeng, Kecamatan Pulosari, Kabupaten Pemalang, Jawa Tengah. Berada di ketinggian sekitar 1.250 meter di atas permukaan laut (MDPL), tempat ini menawarkan udara yang sejuk dan pemandangan megah Gunung Slamet sebagai latar belakang utamanya.</p>
+                            <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 10.000</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.6 (62)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Pesan Tiket"><i class="fa-solid fa-ticket"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destinasi 5 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="lembahgematung.jpg" alt="Forest Resort Tretes">
+                            <span class="product-badge" data-i18n="badge_water">Wisata Air</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4 data-i18n="dest5_name">Lembah Gematung</h4>
+                            <p data-i18n="dest5_desc">Wisata Lembah Gemantung adalah destinasi wisata alam buatan berkonsep modern yang terletak di tengah hutan pinus Desa Wisnu, Kecamatan Watukumpul, Kabupaten Pemalang, Jawa Tengah. Berjarak sekitar 45 kilometer dari pusat Kota Pemalang, tempat ini menyuguhkan kombinasi udara pegunungan yang sejuk, pemandangan pedesaan dari ketinggian, serta area nongkrong kekinian.</p>
+                            <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 10.000</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (88)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Pesan Tiket"><i class="fa-solid fa-ticket"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destinasi 6 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="hutanmangrovemojo.jpg" alt="Outbound">
+                            <span class="product-badge" data-i18n="badge_outbound">Outbound</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4 data-i18n="dest6_name">Hutan Mangrove Mojo</h4>
+                            <p data-i18n="dest6_desc">Hutan Mangrove Mojo adalah kawasan konservasi alam dan destinasi ekowisata yang terletak di Muara Sungai Comal, Desa Mojo, Kecamatan Ulujami, Kabupaten Pemalang, Jawa Tengah. Memiliki peran penting sebagai benteng alami pesisir utara, kawasan inti seluas 14,5 hektar ini telah ditetapkan sebagai Kawasan Ekosistem Esensial (KEE) berdasarkan keputusan resmi Pemerintah Kabupaten Pemalang.</p>
+                            <div class="product-price"><span data-i18n="starting_label">Mulai</span>: Rp 10.000</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (105)</span>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Pesan Tiket"><i class="fa-solid fa-ticket"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+              
+                <!-- Bagian Keunggulan Bawah -->
+                <div class="herbal-features-box">
+                    <h4 data-i18n="feat_main_title"><i class="fa-solid fa-circle-question"></i> Mengapa Memilih Ekowisata Perhutani?</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <h5 data-i18n="feat1_title">Wisata Alam</h5>
+                            <p data-i18n="feat1_desc">Destinasi yang terjaga keasliannya dan lestari.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-users"></i></div>
+                            <h5 data-i18n="feat2_title">Edukasi Hutan</h5>
+                            <p data-i18n="feat2_desc">Mengenal ekosistem hutan secara langsung.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                            <h5 data-i18n="feat3_title">Aman & Nyaman</h5>
+                            <p data-i18n="feat3_desc">Fasilitas yang dikelola secara profesional.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-handshake"></i></div>
+                            <h5 data-i18n="feat4_title">Dampak Lokal</h5>
+                            <p data-i18n="feat4_desc">Wisata Anda mendukung ekonomi masyarakat.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- KOLOM KANAN (Sidebar Widget) -->
+            <div class="announcement-sidebar-column">
+
+                <!-- Informasi Keamanan Widget -->
+                <div class="sidebar-widget sidebar-dark-box">
+                    <h4 data-i18n="side1_title"><i class="fa-solid fa-shield-halved"></i> Kenyamanan Anda</h4>
+                    <div class="sidebar-list-content">
+                        <div>
+                            <strong><i class="fa-solid fa-check"></i> <span data-i18n="side1_item1_title">Fasilitas Lengkap</span></strong>
+                            <span data-i18n="side1_item1_desc">Area parkir, toilet, dan gazebo tersedia.</span>
+                        </div>
+                        <div>
+                            <strong><i class="fa-solid fa-user-shield"></i> <span data-i18n="side1_item2_title">Tim Pengelola</span></strong>
+                            <span data-i18n="side1_item2_desc">Kesiapsiagaan petugas untuk keamanan pengunjung.</span>
+                        </div>
+                        <div>
+                            <strong><i class="fa-solid fa-leaf"></i> <span data-i18n="side1_item3_title">Ramah Lingkungan</span></strong>
+                            <span data-i18n="side1_item3_desc">Menjaga kebersihan dan kelestarian alam.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tahukah Anda? Widget -->
+                <div class="sidebar-widget sidebar-info-box">
+                    <h4 data-i18n="side2_title"><i class="fa-solid fa-circle-info"></i> Tahukah Anda?</h4>
+                    <p data-i18n="side2_desc">Berwisata ke hutan terbukti efektif menurunkan tingkat stres dan meningkatkan kesehatan mental melalui terapi alam.</p>
+                </div>
+
+                <!-- Banner Promosi -->
+                <div class="sidebar-widget sidebar-banner-box">
+                    <h4 data-i18n="side3_title">Jelajahi Hutan<br>Temukan Ketenangan</h4>
+                    <a href="program.html" class="sidebar-banner-btn" data-i18n="side3_btn">Lihat Lokasi Lainnya →</a>
+                    
+                    <div class="sidebar-extra-info" style="margin-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 12px; text-align: left;">
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #cbd5e1; display: flex; flex-direction: column; gap: 8px;">
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> <span data-i18n="side3_chk1">Destinasi Terverifikasi</span></li>
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> <span data-i18n="side3_chk2">Aman untuk Keluarga</span></li>
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> <span data-i18n="side3_chk3">Mendukung Konservasi</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Widget Layanan Pelanggan -->
+                <div class="sidebar-widget" style="margin-top: 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: left;">
+                    <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-headset" style="color: #15803d;"></i> <span data-i18n="side4_title">Perlu Bantuan?</span>
+                    </h4>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 15px;" data-i18n="side4_desc">
+                        Punya pertanyaan seputar destinasi, harga tiket, atau pemesanan paket wisata grup? Hubungi layanan kami.
+                    </p>
+                    <a href="layanan.html" style="display: block; text-align: center; background: #f1f5f9; color: #15803d; padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#15803d'; this.style.color='#fff';" onmouseout="this.style.background='#f1f5f9'; this.style.color='#15803d';" data-i18n="side4_btn">
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Layanan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4 data-i18n="foot_contact_title">Kontak Kami</h4>
+                </div>
+                <ul class="contact-list">
+                     <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi</li>
+                    <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
+                    <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
+                    <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
+                        <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4 data-i18n="foot_hours_title">Jam Kerja</h4>
+                </div>
+                <ul class="schedule-list">
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong data-i18n="foot_days1">Senin – Kamis</strong>
+                            <p>08.00 – 16.00 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong data-i18n="foot_days2">Jumat</strong>
+                            <p>08.00 – 16.30 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <div>
+                            <strong data-i18n="foot_days3">Sabtu – Minggu</strong>
+                            <p data-i18n="foot_closed">Tutup</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4 data-i18n="foot_office_title">Lokasi Kantor</h4>
+                </div>
+                <p class="office-address" data-i18n="foot_address_text">
+                    Perhutani KPH Pemalang<br>
+                    Jl. Jenderal Sudirman Timur No. 3,<br>
+                    Wanarejan Selatan, Pemalang,<br>
+                    Jawa Tengah 52311
+                </p>
+                <div class="embedded-map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="120" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi Perhutani KPH Pemalang">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <h4 data-i18n="foot_service_title">Email & Layanan</h4>
+                </div>
+                <ul class="service-links-footer">
+                    <li>
+                        <i class="fa-solid fa-file-shield"></i>
+                        <div>
+                            <span data-i18n="foot_complaint">Laporan Pengaduan</span>
+                            <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <span data-i18n="foot_info_req">Permohonan Informasi</span>
+                            <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-building-shield"></i>
+                        <div>
+                            <span data-i18n="foot_ppid">PPID Perhutani</span>
+                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="photo-wrapper-small" style="margin-top: 15px;">
+                    <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
+                        <div class="photo-caption" style="padding: 10px;">
+                            <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;" data-i18n="bumn_tag">BUMN Hadir</span>
+                            <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;" data-i18n="bumn_desc">Komitmen nyata untuk negeri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p data-i18n="foot_copy">© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
+            <div class="policy-links">
+                <a href="#" data-i18n="privacy_policy">Kebijakan Privasi</a>
+                <span>•</span>
+                <a href="#" data-i18n="terms_cond">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+    <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
+        
+        <!-- Header Modal -->
+        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+            </h3>
+            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Konten Pertanyaan & Pilihan -->
+        <div style="padding: 20px;" id="quizBody">
+            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                Pertanyaan akan muncul di sini...
+            </div>
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer Modal (Skor / Status) -->
+        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+            Pertanyaan 1 dari 3
+        </div>
+    </div>
+</div>
+ <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
+    <button class="image-modal-close">&times;</button>
+    <img id="fullImageDisplay" src="" alt="Full Preview">
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
