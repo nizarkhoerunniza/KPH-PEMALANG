@@ -593,3 +593,92 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const hamburger = document.getElementById("mobileHamburger");
+    const panel = document.getElementById("mobileNavPanel");
+    const overlay = document.getElementById("mobileNavOverlay");
+    const close = document.getElementById("mobileNavClose");
+
+    if (!hamburger || !panel || !overlay) {
+        console.error("Mobile navigation tidak ditemukan.");
+        return;
+    }
+
+    function bukaMenu() {
+        hamburger.classList.add("active");
+        panel.classList.add("active");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+    function tutupMenu() {
+        hamburger.classList.remove("active");
+        panel.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    hamburger.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        if (panel.classList.contains("active")) {
+            tutupMenu();
+        } else {
+            bukaMenu();
+        }
+    });
+
+    close.addEventListener("click", tutupMenu);
+
+    overlay.addEventListener("click", tutupMenu);
+
+
+    /* DROPDOWN */
+
+    document.querySelectorAll(".mobile-group-title").forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const group = this.parentElement;
+
+            document.querySelectorAll(".mobile-group").forEach(function (item) {
+
+                if (item !== group) {
+                    item.classList.remove("open");
+                }
+
+            });
+
+            group.classList.toggle("open");
+
+        });
+
+    });
+
+
+    /* KLIK LINK → TUTUP MENU */
+
+    document.querySelectorAll(
+        ".mobile-main-link, .mobile-group-content a"
+    ).forEach(function (link) {
+
+        link.addEventListener("click", function () {
+            tutupMenu();
+        });
+
+    });
+
+
+    /* ESC */
+
+    document.addEventListener("keydown", function (e) {
+
+        if (e.key === "Escape") {
+            tutupMenu();
+        }
+
+    });
+
+});
