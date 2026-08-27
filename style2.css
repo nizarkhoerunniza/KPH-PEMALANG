@@ -1557,3 +1557,40 @@ body {
         display: none !important;
     }
 }
+/* --- TAMPILAN CUACA UNTUK MOBILE / HP --- */
+
+@media (max-width: 850px) {
+    /* Pastikan container cuaca tetap muncul & rapi */
+    .premium-weather {
+        display: flex !important;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 8px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+    }
+
+    /* Kecilkan ukuran ikon cuaca */
+    .premium-weather .weather-icon {
+        font-size: 1.1rem;
+    }
+
+    /* Sembunyikan lokasi (Pemalang, Jawa Tengah) di HP agar hemat ruang */
+    .premium-weather .location {
+        display: none !important;
+    }
+
+    /* Penyesuaian ukuran teks suhu & deskripsi */
+    .premium-weather .temp {
+        font-size: 0.85rem;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+    }
+
+    .premium-weather .temp small {
+        font-size: 0.65rem;
+        opacity: 0.8;
+    }
+}
