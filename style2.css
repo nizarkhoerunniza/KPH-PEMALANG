@@ -1530,72 +1530,70 @@ body {
     border: none;
 }
 /* =========================================================
-   PERBAIKAN TOTAL: BURGER MENU HP & WIDGET CUACA KUNING
+   STYLE GOOGLE CUACA REAL + BURGER MENU (SAMSUNG A04 PORTRAIT)
    ========================================================= */
 
-/* --- 1. PAKSA WARNA WIDGET CUACA JADI KUNING --- */
+/* 1. Ikon Matahari ala Google (Kuning Oranye Cerah) */
 .premium-weather .weather-icon i,
-#weatherIcon {
-    color: #fbbf24 !important; /* Kuning Emas */
+#weatherIcon,
+.premium-weather i {
+    color: #fbbc04 !important; /* Warna khas Google Sun */
+    filter: drop-shadow(0 0 3px rgba(251, 188, 4, 0.6));
 }
 
-.premium-weather .temp {
-    color: #fef08a !important; /* Kuning Terang */
+/* 2. Suhu & Teks ala Google Weather (Putih / Biru Muda Terang) */
+.premium-weather .temp,
+.premium-weather span {
+    color: #e8eaed !important; /* Teks terang ala Google Dark Mode */
+    font-weight: 700 !important;
 }
 
-.premium-weather .location,
 .premium-weather .temp small {
-    color: #fde047 !important; /* Kuning Aksen */
+    color: #8ab4f8 !important; /* Biru Google untuk aksen tambahan */
 }
 
-.premium-weather:hover {
-    border-color: rgba(251, 191, 36, 0.4) !important;
-    background: rgba(251, 191, 36, 0.1) !important;
-}
-
-
-/* --- 2. LAYAR LAPTOP / DESKTOP (KECUALIKAN BURGER) --- */
-@media (min-width: 1025px) {
-    .mobile-menu-toggle {
-        display: none !important;
-    }
-    .premium-nav {
-        display: flex !important;
-    }
+/* 3. Container Widget ala Card Google */
+.premium-weather {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(251, 188, 4, 0.4) !important; /* Ring kuning tipis */
+    border-radius: 20px !important; /* Khas bentuk membulat Google */
+    padding: 5px 12px !important;
 }
 
 
-/* --- 3. LAYAR HP & TABLET (PORTRAIT & LANDSCAPE SAMSUNG A04) --- */
+/* --- TAMPILAN SAMSUNG A04 PORTRAIT & LANDSCAPE --- */
 @media (max-width: 1024px) {
-    /* Sembunyikan navigasi teks panjang desktop */
+    /* Sembunyikan navigasi panjang agar tidak jebol */
     .premium-nav {
         display: none !important;
     }
 
-    /* Paksa tombol burger selalu tampil di semua ukuran HP */
+    /* Bikin elemen kanan berjejer (Cuaca -> Quiz -> Burger) */
+    .header-right-actions,
+    header .right-content,
+    .nav-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+    }
+
+    /* Tombol Burger Warna Kuning Google */
     .mobile-menu-toggle {
         display: flex !important;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        border: 1px solid rgba(251, 191, 36, 0.4) !important;
-        background: rgba(255, 255, 255, 0.08) !important;
-        color: #fbbf24 !important; /* Ikon burger warna kuning */
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgba(251, 188, 4, 0.5) !important;
+        background: rgba(251, 188, 4, 0.12) !important;
+        color: #fbbc04 !important; /* Garis tiga kuning khas */
         cursor: pointer;
         z-index: 999;
     }
 
-    /* Penyesuaian cuaca di HP tegak */
-    .premium-weather {
-        display: flex !important;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 8px;
-    }
-
+    /* Sembunyikan lokasi agar pas di HP tegak */
     .premium-weather .location {
-        display: none !important; /* Sembunyikan teks kota agar ringkas di HP */
+        display: none !important;
     }
 }
