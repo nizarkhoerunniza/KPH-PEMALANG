@@ -1557,40 +1557,37 @@ body {
         display: none !important;
     }
 }
-/* --- TAMPILAN CUACA UNTUK MOBILE / HP --- */
+/* --- PAKSA BURGER MUNCUL DI HP (PORTRAIT & LANDSCAPE) --- */
 
-@media (max-width: 850px) {
-    /* Pastikan container cuaca tetap muncul & rapi */
-    .premium-weather {
-        display: flex !important;
-        align-items: center;
-        gap: 6px;
-        padding: 4px 8px;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 8px;
-    }
-
-    /* Kecilkan ukuran ikon cuaca */
-    .premium-weather .weather-icon {
-        font-size: 1.1rem;
-    }
-
-    /* Sembunyikan lokasi (Pemalang, Jawa Tengah) di HP agar hemat ruang */
-    .premium-weather .location {
+/* 1. Sembunyikan tombol burger khusus di layar Laptop/Desktop besar */
+@media (min-width: 1025px) {
+    .mobile-menu-toggle {
         display: none !important;
     }
+    .premium-nav {
+        display: flex !important;
+    }
+}
 
-    /* Penyesuaian ukuran teks suhu & deskripsi */
-    .premium-weather .temp {
-        font-size: 0.85rem;
-        font-weight: 600;
-        display: flex;
-        flex-direction: column;
-        line-height: 1.1;
+/* 2. Tampilkan tombol burger di SEMUA kondisi HP/Tablet (Portrait & Landscape) */
+@media (max-width: 1024px) {
+    /* Tampilkan tombol burger */
+    .mobile-menu-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        cursor: pointer;
+        z-index: 999;
     }
 
-    .premium-weather .temp small {
-        font-size: 0.65rem;
-        opacity: 0.8;
+    /* Sembunyikan menu teks panjang agar header tidak berantakan */
+    .premium-nav {
+        display: none !important;
     }
 }
