@@ -518,3 +518,50 @@ const appLauncherBtn = document.getElementById("appLauncherBtn");
         };
     }
 });
+
+// ==========================================
+// LOGIKA BURGER MENU DRAWER & ACCORDION (HP)
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+
+    function openMobileMenu() {
+        if(mobileNavDrawer && mobileMenuOverlay) {
+            mobileNavDrawer.classList.add('active');
+            mobileMenuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Mencegah scroll layar
+        }
+    }
+
+    function closeMobileMenu() {
+        if(mobileNavDrawer && mobileMenuOverlay) {
+            mobileNavDrawer.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = ''; // Mengembalikan scroll
+        }
+    }
+
+    if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', openMobileMenu);
+    if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeMobileMenu);
+    if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+    // Toggle Submenu (Accordion)
+    const mobileDropdowns = document.querySelectorAll('.mobile-dropdown-btn');
+    mobileDropdowns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+
+            document.querySelectorAll('.mobile-dropdown').forEach(item => {
+                if (item !== parent) {
+                    item.classList.remove('open');
+                }
+            });
+
+            parent.classList.toggle('open');
+        });
+    });
+});
