@@ -11,7 +11,7 @@
 </head>
 <body style="background: #06110b url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; color: #f0fdf4;">
 
-  <header class="premium-header">
+ <header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
             <span class="brand-logo-ring">
@@ -23,6 +23,7 @@
             </span>
         </a>
 
+        <!-- Navigasi Utama Laptop/Desktop -->
         <nav class="premium-nav" aria-label="Navigasi utama">
             <a href="index.html" class="premium-link active">Beranda</a>
 
@@ -72,13 +73,9 @@
             <a href="karir.html" class="premium-link">Karir</a>
         </nav>
 
+        <!-- Aksi Kanan Header -->
         <div class="header-actions">
-            <!-- Tombol Burger (Tampil di Layar HP) -->
-            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <!-- Tombol Kuis (Tunggal) -->
+            <!-- Tombol Kuis -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
@@ -95,7 +92,7 @@
             </div>
 
             <!-- Weather Widget -->
-            <div class="weather-widget" id="weatherWidget">
+            <div class="weather-widget premium-weather" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
                 </div>
@@ -107,6 +104,11 @@
                     <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
                 </div>
             </div>
+
+            <!-- Tombol Burger (Hanya Tampil di Layar HP) -->
+            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </div>
 </header>
