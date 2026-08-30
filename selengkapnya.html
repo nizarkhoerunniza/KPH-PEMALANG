@@ -8,9 +8,118 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
+<style>
+/* ========================================================================== */
+/* Responsif untuk HP Android / Layar Portret (Mengenal Selengkapnya)         */
+/* ========================================================================== */
+@media screen and (max-width: 768px) {
+    /* 1. Atur Kontainer Utama agar ada jarak aman di sisi kiri-kanan */
+    .main-content-full .container {
+        padding: 20px 15px !important;
+    }
+
+    /* 2. Hero Section: Ubah susunan teks dan visual menjadi satu kolom */
+    .selengkapnya-hero {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+    }
+
+    .selengkapnya-hero .hero-left h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.25 !important;
+    }
+
+    .selengkapnya-hero .hero-left p {
+        font-size: 0.9rem !important;
+    }
+
+    /* 3. Bagian Visual Lingkaran Foto di Hero agar pas di layar kecil */
+    .selengkapnya-hero .hero-visual {
+        width: 100% !important;
+        height: 260px !important;
+        margin: 10px 0 !important;
+    }
+
+    .selengkapnya-hero .circle-main {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    /* 4. Statistik Hero: Ubah grid menjadi 2 kolom agar tidak terlalu panjang ke bawah */
+    .selengkapnya-hero .hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    .selengkapnya-hero .stat-item {
+        padding: 12px !important;
+    }
+
+    .selengkapnya-hero .stat-info h4 {
+        font-size: 1.1rem !important;
+    }
+
+    /* 5. Main Layout Grid: Ubah Kartu Informasi dan Sidebar Dokumen menjadi satu kolom */
+    .main-grid-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .info-cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    .info-card {
+        padding: 18px !important;
+    }
+
+    /* 6. Bottom Layout Grid: Ubah Banner Misi & Newsletter menjadi satu kolom */
+    .bottom-grid-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .forest-banner {
+        padding: 25px 20px !important;
+    }
+
+    .forest-banner h3 {
+        font-size: 1.25rem !important;
+    }
+
+    .forest-banner .pillars-row {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .newsletter-widget {
+        padding: 25px 20px !important;
+    }
+
+    .newsletter-form {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .newsletter-form input {
+        width: 100% !important;
+    }
+
+    .newsletter-form button {
+        width: 100% !important;
+        padding: 12px !important;
+    }
+}
+</style>
 </head>
 <body>
- <header class="premium-header">
+<header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
             <span class="brand-logo-ring">
@@ -23,9 +132,8 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link">Beranda</a>
+            <a href="index.html" class="premium-link active">Beranda</a>
 
-            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
                     Tentang Kami <i class="fa-solid fa-angle-down"></i>
@@ -42,7 +150,6 @@
                 </div>
             </div>
 
-            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
             <div class="premium-dropdown">
                 <a href="unitbisnis.html" class="premium-link dropdown-trigger">
                     Unit Bisnis <i class="fa-solid fa-angle-down"></i>
@@ -58,7 +165,6 @@
                 </div>
             </div>
 
-            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
             <div class="premium-dropdown">
                 <a href="publikasi.html" class="premium-link dropdown-trigger">
                     Publikasi <i class="fa-solid fa-angle-down"></i>
@@ -75,14 +181,28 @@
         </nav>
 
         <div class="header-actions">
-            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <!-- Tombol Burger (Tampil di Layar HP) -->
+            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Tombol Kuis (Tunggal) -->
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
+                <i class="fa-solid fa-puzzle-piece"></i>
+            </button>
+
+            <!-- Search -->
             <div class="search-wrapper premium-search">
-                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="searchBtn" class="header-action" title="Cari">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <div class="search-box" id="searchBox">
                     <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
+
+            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -98,7 +218,6 @@
         </div>
     </div>
 </header>
- 
     <main class="main-content-full">
         <div class="container" style="padding: 40px 20px;">
             
@@ -461,6 +580,86 @@
         </div>
     </div>
 </div>
+ <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+ </div>
+
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+        <div class="mobile-drawer-header">
+            <div class="mobile-brand">
+                <img src="perhutanii.png" alt="Logo">
+                <span>KPH PEMALANG</span>
+            </div>
+            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="mobile-drawer-body">
+            <ul class="mobile-nav-list">
+                <li>
+                    <a href="index.html" class="mobile-link">
+                        <span><i class="fa-solid fa-house"></i> Beranda</span>
+                    </a>
+                </li>
+
+                <li class="mobile-dropdown">
+                    <button type="button" class="mobile-dropdown-btn">
+                        <span><i class="fa-solid fa-building"></i> Tentang Kami</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </button>
+                    <div class="mobile-submenu">
+                        <a href="tentangkami.html" class="sub-main">Semua Tentang Kami</a>
+                        <a href="profil.html">Profil Perusahaan</a>
+                        <a href="sejarah.html">Sejarah Perusahaan</a>
+                        <a href="tugasfungsi.html">Tugas dan Fungsi</a>
+                        <a href="visimisitatanilai.html">Visi Misi & Tata Nilai</a>
+                        <a href="struktur.html">Struktur Organisasi</a>
+                        <a href="kepemilikansaham.html">Kepemilikan Saham</a>
+                        <a href="program.html">Program Kerja</a>
+                    </div>
+                </li>
+
+                <li class="mobile-dropdown">
+                    <button type="button" class="mobile-dropdown-btn">
+                        <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </button>
+                    <div class="mobile-submenu">
+                        <a href="unitbisnis.html" class="sub-main">Semua Unit Bisnis</a>
+                        <a href="herbal.html">Herbal</a>
+                        <a href="kayu.html">Kayu</a>
+                        <a href="nonkayu.html">Non Kayu</a>
+                        <a href="ekowisata.html">Ekowisata</a>
+                        <a href="solusiberbasisalam.html">Solusi Berbasis Alam</a>
+                        <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
+                    </div>
+                </li>
+
+                <li class="mobile-dropdown">
+                    <button type="button" class="mobile-dropdown-btn">
+                        <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </button>
+                    <div class="mobile-submenu">
+                        <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
+                        <a href="suararimba.html">Suara Rimba</a>
+                        <a href="pengumuman.html">Pengumuman</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="layanan.html" class="mobile-link">
+                        <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="karir.html" class="mobile-link">
+                        <span><i class="fa-solid fa-user-tie"></i> Karir</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <script src="script.js"></script>
 </body>
 </html>
