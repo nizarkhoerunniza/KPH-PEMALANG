@@ -7,7 +7,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+<style>
+    /* Penyesuaian Responsif Tampilan Potret HP untuk Halaman Struktur Organisasi */
+    @media screen and (max-width: 768px) {
+        /* Mengubah layout Hero menjadi satu kolom ke bawah */
+        .hero-section {
+            padding: 40px 5% !important;
+            flex-direction: column !important;
+            text-align: center !important;
+        }
 
+        .hero-content {
+            text-align: center !important;
+            min-width: 100% !important;
+        }
+
+        .hero-image-container {
+            min-width: 100% !important;
+            margin-top: 20px;
+        }
+
+        /* Menyesuaikan ukuran kontainer bentuk hexagon agar pas di layar HP */
+        .hero-image-container > div {
+            width: 280px !important;
+            height: 320px !important;
+            outline-offset: 6px !important;
+        }
+
+        /* Mengatur ukuran judul utama */
+        .hero-content h1 {
+            font-size: 2rem !important;
+            line-height: 1.2 !important;
+        }
+
+        /* Mencegah card box dan bagan organisasi terpotong dengan mengaktifkan horizontal scroll yang rapi */
+        .content-card-box {
+            padding: 15px !important;
+            overflow-x: auto;
+        }
+
+        .org-chart-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            padding: 10px !important;
+        }
+
+        /* Mencegah elemen gambar keluar dari layar */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    }
+
+    /* Penyesuaian ekstra untuk layar HP yang lebih kecil (< 480px) */
+    @media screen and (max-width: 480px) {
+        .hero-image-container > div {
+            width: 240px !important;
+            height: 280px !important;
+        }
+    }
+</style>
 </head>
 <body>
 <header class="premium-header">
