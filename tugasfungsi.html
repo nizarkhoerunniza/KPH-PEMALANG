@@ -101,6 +101,38 @@
         word-break: break-word !important;
     }
 }
+/* Tambahan Khusus Agar Pohon Bulat Muncul Saat Mode Landscape di HP */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    .grid-layout-complex {
+        display: grid !important;
+        grid-template-columns: 1fr 60px 1fr !important; /* Kolom kiri, lebar pasti pohon tengah, kolom kanan */
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .center-hub {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .hub-circle {
+        width: 55px !important;
+        height: 55px !important;
+        min-width: 55px !important;
+        min-height: 55px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
 </style>
 </head>
 <body>
