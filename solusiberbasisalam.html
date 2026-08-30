@@ -8,6 +8,75 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
+<!-- CSS TAMBAHAN UNTUK SLIDER & RESPONSIF DI HP ANDROID -->
+    <style>
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+            box-sizing: border-box !important;
+        }
+
+        *, *:before, *:after {
+            box-sizing: border-box !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            /* Membuat grid pilar strategis (Section 2) & portofolio (Section 3) menjadi slider horizontal */
+            #fokus > div:nth-child(2),
+            main > section:nth-child(3) > div:nth-child(2) {
+                display: flex !important;
+                flex-direction: row !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 15px !important;
+                padding: 10px 4px 20px 4px !important;
+                width: 100% !important;
+                margin: 0 !important;
+                scrollbar-width: thin;
+            }
+
+            #fokus > div:nth-child(2)::-webkit-scrollbar,
+            main > section:nth-child(3) > div:nth-child(2)::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            #fokus > div:nth-child(2)::-webkit-scrollbar-thumb,
+            main > section:nth-child(3) > div:nth-child(2)::-webkit-scrollbar-thumb {
+                background: rgba(74, 222, 128, 0.4);
+                border-radius: 10px;
+            }
+
+            /* Mengatur ukuran kartu di dalam slider agar pas di layar HP */
+            #fokus > div:nth-child(2) > div,
+            main > section:nth-child(3) > div:nth-child(2) > div {
+                flex: 0 0 81% !important;
+                max-width: 280px !important;
+                scroll-snap-align: start !important;
+                margin: 0 !important;
+            }
+
+            /* Perbaikan tata letak grid statistik agar tidak menumpuk di HP */
+            main > section:nth-child(4) div[style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 15px !important;
+            }
+
+            /* Penyesuaian Hero Section di HP */
+            .sba-hero > div {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+
+            .sba-hero h1 {
+                font-size: 2.2rem !important;
+            }
+
+            h1, h2, h3, h4, p, span {
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+        }
+    </style>
 </head>
 <body>
 <header class="premium-header">
