@@ -2,14 +2,6 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perhutani KPH Pemalang - Ekowisata</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style3.css">
-<head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Perhutani KPH Pemalang - Ekowisata</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,9 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
 
-    <!-- CSS UTAMA UNTUK MENCEGAH KEPOTONG KE KANAN DI HP -->
+    <!-- CSS UTAMA UNTUK SLIDER 6 CARD & MENCEGAH KEPOTONG DI HP -->
     <style>
-        /* Mencegah seluruh elemen keluar dari batas layar HP */
         html, body {
             max-width: 100% !important;
             overflow-x: hidden !important;
@@ -31,7 +22,6 @@
         }
 
         @media screen and (max-width: 768px) {
-            /* Perbaiki Layout Utama agar bertumpuk ke bawah */
             .content-grid-layout {
                 display: flex !important;
                 flex-direction: column !important;
@@ -49,29 +39,42 @@
                 margin: 0 !important;
             }
 
-            /* Perbaiki Grid Produk & Card agar pas di layar HP */
+            /* --- MENGUBAH GRID MENJADI SLIDER GESER KESAMPING --- */
             .herbal-products-grid {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
+                display: flex !important;
+                flex-direction: row !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
                 gap: 15px !important;
+                padding: 10px 4px 20px 4px !important;
                 width: 100% !important;
                 margin: 0 !important;
+                /* Sembunyikan scrollbar bawaan agar rapi */
+                scrollbar-width: thin; 
+            }
+
+            .herbal-products-grid::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .herbal-products-grid::-webkit-scrollbar-thumb {
+                background: rgba(74, 222, 128, 0.4);
+                border-radius: 10px;
             }
 
             .product-card, .announcement-card {
-                width: 100% !important;
-                max-width: 100% !important;
+                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
+                max-width: 280px !important;
+                scroll-snap-align: start !important;
                 margin: 0 !important;
             }
 
-            /* Perbaiki gambar agar tidak meluber */
             .ann-img img, .product-card img {
                 width: 100% !important;
-                height: auto !important;
+                height: 160px !important;
                 object-fit: cover !important;
             }
 
-            /* Perbaiki Judul / Teks Panjang agar turun ke bawah (tidak dorong ke kanan) */
             h1, h2, h3, h4, p, span {
                 word-break: break-word !important;
                 overflow-wrap: break-word !important;
@@ -83,7 +86,6 @@
                 gap: 10px !important;
             }
 
-            /* Scroll kategori agar tidak merusak layout */
             .herbal-category-scroll {
                 white-space: nowrap !important;
                 overflow-x: auto !important;
