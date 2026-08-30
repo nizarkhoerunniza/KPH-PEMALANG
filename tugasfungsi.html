@@ -11,41 +11,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    /* Mengatur agar kontainer tugas dan fungsi bisa digeser ke kanan secara leluasa di HP */
+    /* Styling agar kontainer tugas dan fungsi bisa digeser ke samping (horizontal scroll) dengan rapi di HP */
     @media screen and (max-width: 1200px) {
-        /* Bungkus area grid agar melebar ke samping dan bisa digeser */
         .grid-layout-complex, 
-        .tugas-grid-section {
+        .tugas-grid-section,
+        .tugas-container {
             display: flex !important;
             flex-direction: row !important;
             flex-wrap: nowrap !important;
             overflow-x: auto !important;
             -webkit-overflow-scrolling: touch !important;
             width: 100% !important;
-            gap: 15px !important;
-            padding-bottom: 20px !important; /* Ruang untuk jari/scroll bar */
+            gap: 16px !important;
+            padding: 10px 10px 25px 10px !important;
+            box-sizing: border-box !important;
+            scroll-snap-type: x mandatory !important;
         }
 
-        /* Pastikan setiap kartu mempertahankan lebarnya agar tidak hancur saat digeser */
+        /* Mengatur ukuran tiap kartu agar pas dan nyaman saat digeser satu per satu */
         .left-cards, 
         .right-cards, 
         .t-card {
-            flex: 0 0 280px !important; /* Lebar tetap per kartu saat digeser */
+            flex: 0 0 280px !important;
             min-width: 280px !important;
+            max-width: 280px !important;
             box-sizing: border-box !important;
+            margin: 0 !important;
+            scroll-snap-align: start !important;
         }
 
-        /* Sembunyikan hiasan tengah agar tidak mengganggu jalur geser */
+        /* Sembunyikan elemen hiasan tengah agar tidak merusak jalur geser */
         .center-hub, 
         .tugas-center-decoration {
             display: none !important;
         }
     }
 
-    /* Izinkan halaman digeser secara horizontal khusus untuk area ini */
+    /* Memastikan halaman aman dari geseran liar ke samping luar layar */
     html, body {
-        overflow-x: auto !important;
+        overflow-x: hidden !important;
         max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 </style>
 </head>
