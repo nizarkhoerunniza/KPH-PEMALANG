@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-
-   <header class="premium-header">
+<header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
             <span class="brand-logo-ring">
@@ -24,9 +23,8 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link">Beranda</a>
+            <a href="index.html" class="premium-link active">Beranda</a>
 
-            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
                     Tentang Kami <i class="fa-solid fa-angle-down"></i>
@@ -43,9 +41,8 @@
                 </div>
             </div>
 
-            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
             <div class="premium-dropdown">
-                <a href="unitbisnis.html" class="premium-link dropdown-trigger active">
+                <a href="unitbisnis.html" class="premium-link dropdown-trigger">
                     Unit Bisnis <i class="fa-solid fa-angle-down"></i>
                 </a>
                 <div class="premium-menu business-menu">
@@ -59,7 +56,6 @@
                 </div>
             </div>
 
-            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
             <div class="premium-dropdown">
                 <a href="publikasi.html" class="premium-link dropdown-trigger">
                     Publikasi <i class="fa-solid fa-angle-down"></i>
@@ -76,14 +72,28 @@
         </nav>
 
         <div class="header-actions">
-            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <!-- Tombol Burger (Tampil di Layar HP) -->
+            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Tombol Kuis (Tunggal) -->
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
+                <i class="fa-solid fa-puzzle-piece"></i>
+            </button>
+
+            <!-- Search -->
             <div class="search-wrapper premium-search">
-                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="searchBtn" class="header-action" title="Cari">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <div class="search-box" id="searchBox">
                     <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
+
+            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -336,7 +346,86 @@
         </div>
     </div>
 </div>
-    <script src="script.js"></script>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+ </div>
 
+    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
+        <div class="mobile-drawer-header">
+            <div class="mobile-brand">
+                <img src="perhutanii.png" alt="Logo">
+                <span>KPH PEMALANG</span>
+            </div>
+            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="mobile-drawer-body">
+            <ul class="mobile-nav-list">
+                <li>
+                    <a href="index.html" class="mobile-link">
+                        <span><i class="fa-solid fa-house"></i> Beranda</span>
+                    </a>
+                </li>
+
+                <li class="mobile-dropdown">
+                    <button type="button" class="mobile-dropdown-btn">
+                        <span><i class="fa-solid fa-building"></i> Tentang Kami</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </button>
+                    <div class="mobile-submenu">
+                        <a href="tentangkami.html" class="sub-main">Semua Tentang Kami</a>
+                        <a href="profil.html">Profil Perusahaan</a>
+                        <a href="sejarah.html">Sejarah Perusahaan</a>
+                        <a href="tugasfungsi.html">Tugas dan Fungsi</a>
+                        <a href="visimisitatanilai.html">Visi Misi & Tata Nilai</a>
+                        <a href="struktur.html">Struktur Organisasi</a>
+                        <a href="kepemilikansaham.html">Kepemilikan Saham</a>
+                        <a href="program.html">Program Kerja</a>
+                    </div>
+                </li>
+
+                <li class="mobile-dropdown">
+                    <button type="button" class="mobile-dropdown-btn">
+                        <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </button>
+                    <div class="mobile-submenu">
+                        <a href="unitbisnis.html" class="sub-main">Semua Unit Bisnis</a>
+                        <a href="herbal.html">Herbal</a>
+                        <a href="kayu.html">Kayu</a>
+                        <a href="nonkayu.html">Non Kayu</a>
+                        <a href="ekowisata.html">Ekowisata</a>
+                        <a href="solusiberbasisalam.html">Solusi Berbasis Alam</a>
+                        <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
+                    </div>
+                </li>
+
+                <li class="mobile-dropdown">
+                    <button type="button" class="mobile-dropdown-btn">
+                        <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </button>
+                    <div class="mobile-submenu">
+                        <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
+                        <a href="suararimba.html">Suara Rimba</a>
+                        <a href="pengumuman.html">Pengumuman</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="layanan.html" class="mobile-link">
+                        <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="karir.html" class="mobile-link">
+                        <span><i class="fa-solid fa-user-tie"></i> Karir</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <script src="script.js"></script>
 </body>
 </html>
