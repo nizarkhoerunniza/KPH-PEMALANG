@@ -11,89 +11,154 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
- /* =================================================ual
-   CSS Perbaikan Tampilan Responsif HP Android (Potret)
-   ================================================= */
+/* ==========================================================================
+   MASTER CSS PERBAIKAN TAMPILAN MOBILE (ANDROID POTRET)
+   ========================================================================== */
 
-/* Pengaturan Universal Box-Sizing */
+/* 1. Pengaturan Dasar & Mencegah Layar Geser ke Samping */
 *, *::before, *::after {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
 
-/* Mengatasi Overflow Horizontal di Level Dokumen */
-body, html {
-    overflow-x: hidden;
-    width: 100%;
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden !important;
     margin: 0;
     padding: 0;
 }
 
-/* Pengaturan Gambar agar Fleksibel & Tidak Meluber */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Media Query Khusus Perangkat Mobile (Max Width 768px) */
+/* 2. Media Query Khusus HP / Layar Kecil (Maksimal 768px) */
 @media screen and (max-width: 768px) {
-    /* Penyesuaian Kontainer Utama */
-    .main-content-wrapper {
-        padding: 10px;
-        width: 100%;
-        overflow-x: hidden;
+    
+    /* Pengaturan Kontainer Utama & Section */
+    .main-content-wrapper, 
+    .tugas-hero, 
+    .tugas-grid-section, 
+    .bottom-banner-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
     }
 
     /* Penyesuaian Hero Section */
+    .hero-inner, .hero-text-area, .hero-quote-box {
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
     .hero-title {
-        font-size: 1.75rem !important;
-        line-height: 1.2;
+        font-size: 1.5rem !important;
+        line-height: 1.3 !important;
     }
 
     .hero-subtitle {
-        font-size: 1rem !important;
+        font-size: 0.95rem !important;
     }
 
     .hero-desc {
-        font-size: 0.9rem;
+        font-size: 0.85rem !important;
     }
 
-    /* Penyesuaian Grid Kompleks Tugas Perhutani */
+    /* Penyesuaian Grid Kompleks (Tugas Perhutani) Menjadi Satu Kolom Rapi */
     .grid-layout-complex {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        padding: 0 5px;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 0 !important;
     }
 
-    /* Memastikan Kolom Kartu & Sidebar Mengisi Penuh Layar */
     .left-cards, 
     .right-cards, 
     .stats-sidebar, 
     .center-hub {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
-    /* Penyesuaian Bagian Bawah Banner / Komitmen */
-    .bottom-content-grid {
+    /* Sembunyikan titik hub tengah jika merusak layout mobile, atau jadikan statis */
+    .center-hub {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    /* Penyesuaian Kartu Tugas & Statistik */
+    .t-card, .stat-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+    }
+
+    /* Penyesuaian Bagian Bawah Banner & Prinsip */
+    .bottom-content-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .prinsip-icons {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .p-item {
+        width: 100% !important;
+    }
+
+    /* Penyesuaian Gambar & Banner Hutan */
+    img, .forest-img-frame img, .bumn-photo-card img {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
+
+    .forest-img-frame {
+        width: 100% !important;
+        height: auto !important;
     }
 
     /* Penyesuaian Footer Menjadi Satu Kolom Vertikal */
-    .footer-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 10px;
+    .footer-section {
+        padding: 20px 10px !important;
+        width: 100% !important;
     }
 
-    /* Penyesuaian Lebar Peta di Footer agar Pas di HP */
+    .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
+    .footer-col {
+        width: 100% !important;
+    }
+
+    /* Penyesuaian Peta Google Maps di Footer */
+    .embedded-map-container, 
     .embedded-map-container iframe {
         width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Penyesuaian Header & Menu Navigasi Mobile */
+    .header-inner {
+        padding: 10px !important;
+        flex-wrap: wrap !important;
+    }
+
+    .premium-nav {
+        width: 100% !important;
+        overflow-x: auto !important;
     }
 }
 </style>
