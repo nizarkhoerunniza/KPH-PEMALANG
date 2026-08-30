@@ -7,6 +7,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+ <style>
+        /* Penyesuaian Responsif Tampilan HP Potret untuk Visi, Misi & Tata Nilai */
+        @media screen and (max-width: 992px) {
+            /* Mengubah bento grid Visi & Misi menjadi 1 kolom ke bawah */
+            .vm-bento-section {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            /* Mengatur tata letak bagian AKHLAK agar tersusun vertikal ke bawah */
+            .akhlak-grid-wrap {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .akhlak-showcase-box, 
+            .akhlak-mini-cards {
+                width: 100% !important;
+            }
+
+            /* Mengatur mini cards AKHLAK agar rapi dalam formasi grid 2 kolom di HP */
+            .akhlak-mini-cards {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 12px !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .akhlak-mini-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 8px !important;
+            }
+            
+            .mini-card {
+                padding: 12px 8px !important;
+                font-size: 0.85rem !important;
+            }
+        }
+
+        /* Mencegah elemen meluber ke samping */
+        body {
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -151,7 +203,7 @@
                 <!-- Foto AKHLAK -->
                 <div class="akhlak-showcase-box">
                     <div class="akhlak-image-frame">
-                        <img src="a.jpg" alt="Budaya AKHLAK" class="akhlak-main-img">
+                        <img src="a.JPG" alt="Budaya AKHLAK" class="akhlak-main-img">
                     </div>
                     <p class="akhlak-photo-caption">Komitmen SDM KPH Pemalang dalam melayani.</p>
                 </div>
