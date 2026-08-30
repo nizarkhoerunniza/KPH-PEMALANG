@@ -11,75 +11,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    /* Perbaikan total agar tidak ada elemen tugas dan fungsi yang terpotong ke kanan */
-    @media screen and (max-width: 1200px) {
-        .grid-layout-complex {
+    /* Perbaikan agar bagian Kolaboratif dan mini-cards tidak terpotong ke kanan di HP */
+    @media screen and (max-width: 992px) {
+        .akhlak-grid-wrap {
             display: flex !important;
             flex-direction: column !important;
-            gap: 20px !important;
             width: 100% !important;
             box-sizing: border-box !important;
-            margin: 0 !important;
-            padding: 0 !important;
+            overflow-x: hidden !important;
         }
 
-        .left-cards, 
-        .right-cards, 
-        .stats-sidebar,
-        .center-hub {
+        .akhlak-showcase-box, 
+        .akhlak-mini-cards {
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
+        }
+
+        .akhlak-mini-cards {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 12px !important;
+            padding: 0 !important;
             margin: 0 !important;
         }
 
-        .center-hub {
-            display: none !important;
+        .mini-card {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            word-break: break-word !important;
         }
     }
 
-    /* Memastikan card individu, teks, dan ikon tidak keluar layar */
-    .t-card {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: flex-start !important;
-        padding: 15px !important;
-        word-break: break-word !important;
-    }
-
-    .t-text {
-        flex: 1 !important;
-        min-width: 0 !important;
-    }
-
-    .t-text h3, .t-text p {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        word-wrap: break-word !important;
-    }
-
-    /* Kontrol ukuran bodi dan halaman agar terkunci aman di dalam layar HP */
+    /* Mencegah seluruh halaman bergeser ke kanan */
     html, body {
-        width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
-        box-sizing: border-box !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    .main-content-wrapper, 
-    .tugas-grid-section, 
-    .tugas-hero {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        margin: 0 !important;
     }
 </style>
 </head>
