@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhutani KPH Pemalang - Non Kayu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+   <header class="premium-header">
+    <div class="header-inner">
+        <a href="index.html" class="brand-premium">
+            <span class="brand-logo-ring">
+                <img src="perhutanii.png" alt="Logo Perhutani">
+            </span>
+            <span class="brand-copy">
+                <strong>PERHUTANI</strong>
+                <small>KPH PEMALANG</small>
+            </span>
+        </a>
+
+        <nav class="premium-nav" aria-label="Navigasi utama">
+            <a href="index.html" class="premium-link">Beranda</a>
+
+            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
+            <div class="premium-dropdown">
+                <a href="tentangkami.html" class="premium-link dropdown-trigger">
+                    Tentang Kami <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu">
+                    <div class="menu-heading"><span>Eksplorasi</span><small>Informasi KPH Pemalang</small></div>
+                    <a href="profil.html"><i class="fa-solid fa-building"></i><span><b>Profil Perusahaan</b><small>Identitas & informasi perusahaan</small></span></a>
+                    <a href="sejarah.html"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
+                    <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
+                    <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
+                    <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
+                    <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
+                    <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
+            <div class="premium-dropdown">
+                <a href="unitbisnis.html" class="premium-link dropdown-trigger">
+                    Unit Bisnis <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu business-menu">
+                    <div class="menu-heading"><span>Unit Bisnis</span><small>Potensi & layanan berbasis hutan</small></div>
+                    <a href="herbal.html"><i class="fa-solid fa-leaf"></i><span><b>Herbal</b><small>Produk herbal hutan</small></span></a>
+                    <a href="kayu.html"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
+                    <a href="nonkayu.html" class="active"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
+                    <a href="ekowisata.html"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
+                    <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
+                    <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
+                </div>
+            </div>
+
+            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
+            <div class="premium-dropdown">
+                <a href="publikasi.html" class="premium-link dropdown-trigger">
+                    Publikasi <i class="fa-solid fa-angle-down"></i>
+                </a>
+                <div class="premium-menu compact-menu">
+                    <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
+                    <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
+                    <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
+                </div>
+            </div>
+
+            <a href="layanan.html" class="premium-link">Layanan</a>
+            <a href="karir.html" class="premium-link">Karir</a>
+        </nav>
+
+        <div class="header-actions">
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <div class="search-wrapper premium-search">
+                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div class="search-box" id="searchBox">
+                    <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
+                    <div class="search-result" id="searchResult"></div>
+                </div>
+            </div>
+            <div class="weather-widget" id="weatherWidget">
+                <div class="weather-icon">
+                    <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="weather-info">
+                    <span class="temp">
+                        <span id="temperature">--°C</span>
+                        <small id="weatherDescription" data-i18n="weather_loading">Memuat cuaca...</small>
+                    </span>
+                    <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- Main Content dengan padding-top agar tidak tertutup navbar fixed/sticky -->
+    <main class="main-content-full" style="padding-top: 110px;">
+
+        <!-- Hero Banner Non Kayu -->
+        <section class="herbal-hero-banner">
+            <div class="hero-text-content">
+                <h1>Hasil Hutan Bukan Kayu</h1>
+                <p class="hero-subtitle">Potensi Unggulan Lainnya dari Kawasan Hutan Lestari</p>
+                <div class="title-underline"><i class="fa-solid fa-feather"></i></div>
+                <p class="hero-desc">Perhutani mengembangkan berbagai produk Hasil Hutan Bukan Kayu (HHBK) berkualitas tinggi seperti getah pinus, gondorukem, terpentin, dan madu murni yang dikelola secara profesional dan ramah lingkungan.</p>
+            </div>
+        </section>
+
+        <!-- LAYOUT UTAMA: KONTEN KIRI & SIDEBAR KANAN -->
+        <div class="content-grid-layout">
+            
+            <!-- KOLOM KIRI (Kategori & Daftar Produk Non Kayu) -->
+            <div class="announcement-main-column">
+                
+                <!-- Filter Kategori Produk Non Kayu -->
+                <div class="herbal-category-scroll">
+                    <a href="unitbisnis.html"class="cat-pill"><i class="fa-solid fa-seedling"></i>Semua Produk</a>
+                    <a href="herbal.html"class="cat-pill"><i class="fa-solid fa-mug-hot"></i>Herbal</a>
+                    <a href="kayu.html"class="cat-pill"><i class="fa-solid fa-cubes"></i>Kayu</a>
+                    <a href="nonkayu.html"class="cat-pill active"><i class="fa-solid fa-box-open"></i>Nonkayu</a>
+                    <a href="ekowisata.html" class="cat-pill"><i class="fa-solid fa-mountain" ></i>Ekowisata</a>
+                </div>
+
+                <div class="section-filter-bar">
+                    <h3 class="section-title"><i class="fa-solid fa-boxes-stacked"></i>Solusi Berbasis Alam</h3>
+                    <div class="header-buttons">
+                        <a href="unitbisnis.html" class="btn-top">Lihat Semua →</a>
+                    </div>
+                </div>
+
+                <!-- Grid Kartu Produk (Total 6 Produk Non Kayu) -->
+                <div class="herbal-products-grid">
+                    
+                    <!-- Produk 1 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="getahpinus.jpg" alt="Getah Pinus Mentah">
+                            <span class="product-badge">Getah Pinus</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Getah Pinus (Merkusii)</h4>
+                            <p>Bahan baku industri kimia berkualitas tinggi yang disadap langsung dari tegakan pinus perhutani.Bahan utama pembuatan Gondorukem sebagai campuran malam/lilin untuk batik tulis.Meredakan Nyeri: Ekstraknya digunakan dalam pembuatan balsem atau krim untuk meredakan nyeri otot dan sendi. </p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (45)</span>
+                                  <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 2 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="gondorukem.jpg" alt="Gondorukem Mutu Utama">
+                            <span class="product-badge">Gondorukem</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Gondorukem (Gum Rosin)</h4>
+                            <p>Gondorukem merupakan produk olahan getah pinus dari hasil destilasi yang berbentuk padat. Gondorukem banyak digunakan di bidang farmasi dan industri lain. Kegunaannya adalah untuk bahan dasar industri cat, lem, sabun, tinta, pelapis kertas, sabun, politur, dll. Produk turunan dari gondorukem juga berguna untuk industri lem (adhesive)
+Perhutani memiliki delapan pabrik gondorukem dan terpentin (PGT) yang tersebar di Jawa Tengah, Jawa Timur dan Jawa Barat.
+Produk Gondorukem Perhutani juga sesuai dengan SNI 7636 : 2020 
+Info lebih lanjut tentang Safety Data Sheet (SDS), Technical Data Sheet (TDS)</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (38)</span>
+                                   <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 3 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="terpentin.jpg" alt="Terpentin">
+                            <span class="product-badge">Terpentin</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Pohon Kayu Putih</h4>
+                            <p>Terpentin merupakan produk olahan getah pinus dari hasil destilasi yang berbentuk cair. Terpentin beserta produk turunanannya adalah pelarut yang kuat dan digunakan sebagai bahan baku pelarut cat, bahan baku parfum, desinfektan, dan campuran kimia lainnya.
+Perhutani memiliki delapan pabrik gondorukem dan terpentin (PGT) yang tersebar di Jawa Tengah, Jawa Timur dan Jawa Barat.
+Produk Terpentin Perhutani juga telah sesuai dengan SNI 7633:2020
+Info lebih lanjut tentang Safety Data Sheet (SDS), Technical Data Sheet (TDS)</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (56)</span>
+                                  <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 4 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="tebu.jpg" alt="Madu Hutan Murni">
+                            <span class="product-badge">Tebu</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Tebu Hutan Murni Perhutani</h4>
+                            <p>Pengembangan tanaman tebu dalam mendukung ketahanan pangan nasional seluas 23.636 ha dengan produksi rata-rata tebu sebanyak 55 ton/ha. Mekanisme yang dilakukan berupa kerjasama dengan BUMN dan swasta. Lokasi pengembangan tebu pada wilayah Brebes, Bojonegoro, Tuban, Jombang dan Mojokerto.</p>
+                            <div class="product-price">Rp 95.000</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 5.0 (140)</span>
+                                 <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 5 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="benangsutra.jpg" alt="Sutra Alam Perhutani">
+                            <span class="product-badge">Sutra Alam</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Kokon & Benang Sutra Alam</h4>
+                            <p>Hasil budidaya ulat sutra di kawasan hutan sosial yang menghasilkan tekstil berkualitas tinggi. Dunia Kecantikan: Kepompong kosong sering digunakan sebagai alat facial alami untuk membantu mengangkat sel kulit mati dan menghaluskan kulit wajah.</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.7 (24)</span>
+                                 <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 6 -->
+                    <div class="announcement-card product-card">
+                        <div class="ann-img">
+                            <img src="jagung.jpg" alt="Sagu & Hasil Hutan Lainnya">
+                            <span class="product-badge">Jagung</span>
+                        </div>
+                        <div class="ann-body">
+                            <h4>Jagung</h4>
+                            <p>Pengembangan tanaman jagung menggunakan sistem tumpangsari dalam mendukung ketahanan pangan nasional seluas 43 ribu ha dengan rata-rata produksi per tahun 22 ribu ton. Mekanisme yang dilakukan berupa kerjasama bersama masyarakat desa hutan dengan sistem bagi hasil. Lokasi pengembangan jagung pada wilayah Grobogan, Pemalang, Pati, Blora, Bojonegoro, Mojokerto, Madiun, dan Tuban.</p>
+                            <div class="product-price">Hubungi CS</div>
+                            <div class="product-card-footer">
+                                <span class="product-rating"><i class="fa-solid fa-star"></i> 4.6 (31)</span>
+                                  <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Bagian Keunggulan Bawah -->
+                <div class="herbal-features-box">
+                    <h4><i class="fa-solid fa-circle-question"></i> Mengapa Memilih Produk Non Kayu Perhutani?</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <h5>Potensi Lestari</h5>
+                            <p>Memanfaatkan hasil hutan tanpa harus menebang pohon.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-industry"></i></div>
+                            <h5>Standar Industri</h5>
+                            <p>Memenuhi spesifikasi mutu untuk kebutuhan industri global.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                            <h5>Pemberdayaan Warga</h5>
+                            <p>Melibatkan pesanggem dan masyarakat sekitar hutan.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                            <h5>Kualitas Teruji</h5>
+                            <p>Diproses dengan pengawasan ketat dan higienis.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- KOLOM KANAN (Sidebar Widget) -->
+            <div class="announcement-sidebar-column">
+
+                <!-- Kualitas Terjamin Widget -->
+                <div class="sidebar-widget sidebar-dark-box">
+                    <h4><i class="fa-solid fa-shield-halved"></i> Keunggulan HHBK</h4>
+                    <div class="sidebar-list-content">
+                        <div>
+                            <strong><i class="fa-solid fa-tree"></i> Ramah Lingkungan</strong>
+                            <span>Produksi berkelanjutan yang menjaga ekosistem hutan.</span>
+                        </div>
+                        <div>
+                            <strong><i class="fa-solid fa-gears"></i> Proses Optimal</strong>
+                            <span>Pengolahan mutakhir menghasilkan turunan produk bernilai tinggi.</span>
+                        </div>
+                        <div>
+                            <strong><i class="fa-solid fa-handshake"></i> Kemitraan Sosial</strong>
+                            <span>Meningkatkan taraf hidup masyarakat desa hutan.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tahukah Anda? Widget -->
+                <div class="sidebar-widget sidebar-info-box">
+                    <h4><i class="fa-solid fa-circle-info"></i> Tahukah Anda?</h4>
+                    <p>Hasil Hutan Bukan Kayu (HHBK) seperti getah pinus dan gondorukem merupakan salah satu komoditas ekspor andalan yang menyumbang devisa negara.</p>
+                </div>
+
+                <!-- Banner Promosi Hutan Lestari -->
+                <div class="sidebar-widget sidebar-banner-box">
+                    <h4>Hutan Lestari,<br>Produk Non Kayu Unggul</h4>
+                    <a href="program.html" class="sidebar-banner-btn">Pelajari Lebih Lanjut →</a>
+                    
+                    <div class="sidebar-extra-info" style="margin-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 12px; text-align: left;">
+                        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: #cbd5e1; display: flex; flex-direction: column; gap: 8px;">
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> Pengelolaan Hutan Multiguna</li>
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> Standar Mutu Industri Nasional</li>
+                            <li><i class="fa-solid fa-check-circle" style="color: #4ade80; margin-right: 6px;"></i> Penggerak Ekonomi Kerakyatan</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Widget Bantuan -->
+                <div class="sidebar-widget" style="margin-top: 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: left;">
+                    <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-headset" style="color: #15803d;"></i> Butuh Bantuan?
+                    </h4>
+                    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 15px;">
+                        Punya pertanyaan seputar ketersediaan produk non-kayu atau pengadaan bahan baku industri? Hubungi tim kami.
+                    </p>
+                    <a href="layanan.html" style="display: block; text-align: center; background: #f1f5f9; color: #15803d; padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none;">
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Layanan
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <h4>Kontak Kami</h4>
+                </div>
+                <ul class="contact-list">
+                     <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi</li>
+                    <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
+                    <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
+                    <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
+                        <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Jam Kerja</h4>
+                </div>
+                <ul class="schedule-list">
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Senin – Kamis</strong>
+                            <p>08.00 – 16.00 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet active"></span>
+                        <div>
+                            <strong>Jumat</strong>
+                            <p>08.00 – 16.30 WIB</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="bullet"></span>
+                        <div>
+                            <strong>Sabtu – Minggu</strong>
+                            <p>Tutup</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Lokasi Kantor</h4>
+                </div>
+                <p class="office-address">
+                    Perhutani KPH Pemalang<br>
+                    Jl. Jenderal Sudirman Timur No. 3,<br>
+                    Wanarejan Selatan, Pemalang,<br>
+                    Jawa Tengah 52311
+                </p>
+                <div class="embedded-map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="120" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Peta Lokasi Perhutani KPH Pemalang">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-heading">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <h4>Email & Layanan</h4>
+                </div>
+                <ul class="service-links-footer">
+                    <li>
+                        <i class="fa-solid fa-file-shield"></i>
+                        <div>
+                            <span>Laporan Pengaduan</span>
+                            <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            <span>Permohonan Informasi</span>
+                            <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-building-shield"></i>
+                        <div>
+                            <span>PPID Perhutani</span>
+                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="photo-wrapper-small" style="margin-top: 15px;">
+                    <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                        <img src="bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
+                        <div class="photo-caption" style="padding: 10px;">
+                            <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;">BUMN Hadir</span>
+                            <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;">Komitmen nyata untuk negeri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
+            <div class="policy-links">
+                <a href="#">Kebijakan Privasi</a>
+                <span>•</span>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+    <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
+    <button class="image-modal-close">&times;</button>
+    <img id="fullImageDisplay" src="" alt="Full Preview">
+</div>
+<div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
+        
+        <!-- Header Modal -->
+        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+            </h3>
+            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Konten Pertanyaan & Pilihan -->
+        <div style="padding: 20px;" id="quizBody">
+            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                Pertanyaan akan muncul di sini...
+            </div>
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Footer Modal (Skor / Status) -->
+        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+            Pertanyaan 1 dari 3
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
