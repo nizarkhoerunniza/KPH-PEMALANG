@@ -11,54 +11,91 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    /* Mengembalikan tata letak tugas & fungsi utama ke setelan awal (normal/turun ke bawah) */
-    .grid-layout-complex, 
-    .tugas-grid-section {
-        display: grid !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+ /* =================================================ual
+   CSS Perbaikan Tampilan Responsif HP Android (Potret)
+   ================================================= */
+
+/* Pengaturan Universal Box-Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Mengatasi Overflow Horizontal di Level Dokumen */
+body, html {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pengaturan Gambar agar Fleksibel & Tidak Meluber */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media Query Khusus Perangkat Mobile (Max Width 768px) */
+@media screen and (max-width: 768px) {
+    /* Penyesuaian Kontainer Utama */
+    .main-content-wrapper {
+        padding: 10px;
+        width: 100%;
+        overflow-x: hidden;
     }
 
+    /* Penyesuaian Hero Section */
+    .hero-title {
+        font-size: 1.75rem !important;
+        line-height: 1.2;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+    }
+
+    /* Penyesuaian Grid Kompleks Tugas Perhutani */
+    .grid-layout-complex {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    /* Memastikan Kolom Kartu & Sidebar Mengisi Penuh Layar */
+    .left-cards, 
+    .right-cards, 
+    .stats-sidebar, 
     .center-hub {
-        display: flex !important;
+        width: 100%;
     }
 
-    /* KHUSUS BAGIAN BAWAH: Prinsip Pelaksanaan Tugas agar bisa digeser ke kanan-kiri di HP */
-    @media screen and (max-width: 1200px) {
-        /* Targetkan khusus wadah kartu prinsip pelaksanaan tugas di bawah */
-        .prinsip-pelaksanaan-container, 
-        .akhlak-grid-wrap, 
-        .prinsip-grid-scroll {
-            display: flex !important;
-            flex-direction: row !important;
-            flex-wrap: nowrap !important;
-            overflow-x: auto !important;
-            -webkit-overflow-scrolling: touch !important;
-            width: 100% !important;
-            gap: 15px !important;
-            padding: 10px 5px 25px 5px !important;
-            box-sizing: border-box !important;
-            scroll-snap-type: x mandatory !important;
-        }
-
-        /* Tetapkan ukuran kartu prinsip agar rapi saat digeser */
-        .prinsip-card, 
-        .akhlak-mini-cards .mini-card,
-        .prinsip-item {
-            flex: 0 0 260px !important;
-            min-width: 260px !important;
-            max-width: 260px !important;
-            box-sizing: border-box !important;
-            scroll-snap-align: start !important;
-        }
+    /* Penyesuaian Bagian Bawah Banner / Komitmen */
+    .bottom-content-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
     }
 
-    /* Keamanan layar agar bodi tidak ikut bergeser liar */
-    html, body {
-        overflow-x: hidden !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
+    /* Penyesuaian Footer Menjadi Satu Kolom Vertikal */
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 10px;
     }
+
+    /* Penyesuaian Lebar Peta di Footer agar Pas di HP */
+    .embedded-map-container iframe {
+        width: 100% !important;
+    }
+}
 </style>
 </head>
 <body>
