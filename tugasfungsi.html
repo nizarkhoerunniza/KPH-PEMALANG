@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    /* Solusi total agar isi tugasfungsi.html tidak terpotong di sebelah kanan */
+    /* Perbaikan total agar tidak ada elemen tugas dan fungsi yang terpotong ke kanan */
     @media screen and (max-width: 1200px) {
         .grid-layout-complex {
             display: flex !important;
@@ -19,6 +19,8 @@
             gap: 20px !important;
             width: 100% !important;
             box-sizing: border-box !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         .left-cards, 
@@ -28,36 +30,56 @@
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
+            margin: 0 !important;
         }
 
         .center-hub {
-            display: none !important; /* Sembunyikan hub tengah di mobile agar tidak merusak layout */
+            display: none !important;
         }
     }
 
-    /* Memastikan seluruh elemen di dalam container tidak meluber ke kanan */
-    body, html {
+    /* Memastikan card individu, teks, dan ikon tidak keluar layar */
+    .t-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        padding: 15px !important;
+        word-break: break-word !important;
+    }
+
+    .t-text {
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    .t-text h3, .t-text p {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        word-wrap: break-word !important;
+    }
+
+    /* Kontrol ukuran bodi dan halaman agar terkunci aman di dalam layar HP */
+    html, body {
+        width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .main-content-wrapper, 
     .tugas-grid-section, 
-    .grid-layout-complex, 
-    .stats-sidebar {
+    .tugas-hero {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
         padding-left: 15px !important;
         padding-right: 15px !important;
-    }
-
-    /* Menyesuaikan ukuran card agar pas di layar kecil */
-    .t-card, .stat-item {
-        width: 100% !important;
-        box-sizing: border-box !important;
+        margin: 0 !important;
     }
 </style>
 </head>
