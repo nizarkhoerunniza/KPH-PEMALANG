@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style3.css">
 </head>
 <body>
-   <header class="premium-header">
+ <header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
             <span class="brand-logo-ring">
@@ -23,9 +23,8 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link">Beranda</a>
+            <a href="index.html" class="premium-link active">Beranda</a>
 
-            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
                     Tentang Kami <i class="fa-solid fa-angle-down"></i>
@@ -42,7 +41,6 @@
                 </div>
             </div>
 
-            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
             <div class="premium-dropdown">
                 <a href="unitbisnis.html" class="premium-link dropdown-trigger">
                     Unit Bisnis <i class="fa-solid fa-angle-down"></i>
@@ -52,13 +50,12 @@
                     <a href="herbal.html"><i class="fa-solid fa-leaf"></i><span><b>Herbal</b><small>Produk herbal hutan</small></span></a>
                     <a href="kayu.html"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
                     <a href="nonkayu.html"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
-                    <a href="ekowisata.html" class="active"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
+                    <a href="ekowisata.html"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
                     <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
                     <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
                 </div>
             </div>
 
-            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
             <div class="premium-dropdown">
                 <a href="publikasi.html" class="premium-link dropdown-trigger">
                     Publikasi <i class="fa-solid fa-angle-down"></i>
@@ -75,14 +72,28 @@
         </nav>
 
         <div class="header-actions">
-            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <!-- Tombol Burger (Tampil di Layar HP) -->
+            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Tombol Kuis (Tunggal) -->
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
+                <i class="fa-solid fa-puzzle-piece"></i>
+            </button>
+
+            <!-- Search -->
             <div class="search-wrapper premium-search">
-                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="searchBtn" class="header-action" title="Cari">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <div class="search-box" id="searchBox">
                     <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
+
+            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
