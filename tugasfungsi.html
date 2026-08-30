@@ -90,6 +90,45 @@
         overflow-x: hidden !important;
     }
 }
+/* Perbaikan Prinsip (Inovatif, Kolaboratif, dll) agar Tidak Kepotong ke Kanan di HP (Potret) */
+@media screen and (max-width: 768px) {
+    
+    /* Pastikan kontainer pembungkus prinsip mengikuti lebar layar penuh */
+    .prinsip-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 10px !important;
+    }
+
+    /* Ubah susunan ikon prinsip menjadi grid 2 atau 3 kolom rapi di dalam layar HP */
+    .prinsip-icons {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important; /* Menjadi 2 kolom ke bawah agar tidak memanjang ke kanan */
+        gap: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Pastikan setiap item prinsip menyesuaikan kotak dan teksnya tidak meluber */
+    .p-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 12px 8px !important;
+        word-break: break-word !important;
+    }
+
+    .p-item span {
+        font-size: 0.85rem !important;
+        margin-top: 5px !important;
+    }
+}
 </style>
 </head>
 <body>
