@@ -60,6 +60,41 @@
         word-break: break-word !important;
     }
 }
+/* Perbaikan khusus untuk bagian Kesejahteraan / Pilar di selengkapnya.html */
+@media screen and (max-width: 768px) {
+    /* Memastikan container pilar misi fleksibel dan tidak melebihi layar */
+    .forest-banner .pillars-row {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 15px !important;
+    }
+
+    /* Memastikan setiap item pilar (termasuk Kesejahteraan) menyesuaikan lebar layar */
+    .forest-banner .pillar-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 !important;
+    }
+
+    /* Membungkus teks di dalam pilar agar otomatis turun baris (tidak terpotong ke kanan) */
+    .forest-banner .pillar-text {
+        flex: 1 !important;
+        min-width: 0 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+
+    .forest-banner .pillar-text h5,
+    .forest-banner .pillar-text p {
+        white-space: normal !important;
+        word-break: break-word !important;
+    }
+}
 </style>
 </head>
 <body>
