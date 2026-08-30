@@ -11,42 +11,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    /* Perbaikan agar bagian Kolaboratif dan mini-cards tidak terpotong ke kanan di HP */
+    /* Perbaikan mutlak untuk tampilan HP Android agar kotak tugas dan fungsi tidak tertutup/meluber */
     @media screen and (max-width: 992px) {
-        .akhlak-grid-wrap {
+        /* Pastikan pembungkus grid berubah total menjadi 1 kolom vertikal ke bawah */
+        .grid-layout-complex, 
+        .tugas-grid-section,
+        .tugas-container {
             display: flex !important;
             flex-direction: column !important;
             width: 100% !important;
+            max-width: 100% !important;
             box-sizing: border-box !important;
-            overflow-x: hidden !important;
+            gap: 15px !important;
+            margin: 0 !important;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
         }
 
-        .akhlak-showcase-box, 
-        .akhlak-mini-cards {
+        /* Lebarkan seluruh kartu kiri dan kanan menjadi 100% */
+        .left-cards, 
+        .right-cards, 
+        .t-card {
             width: 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
         }
 
-        .akhlak-mini-cards {
-            display: grid !important;
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            gap: 12px !important;
-            padding: 0 !important;
-            margin: 0 !important;
+        /* Sembunyikan elemen hub tengah/hiasan dekoratif yang sering memakan ruang layar HP */
+        .center-hub, 
+        .tugas-center-decoration {
+            display: none !important;
         }
 
-        .mini-card {
-            width: 100% !important;
-            box-sizing: border-box !important;
+        /* Perbaiki susunan kartu individual agar teks dan ikon tidak saling tumpuk */
+        .t-card {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: flex-start !important;
+            padding: 14px !important;
+            height: auto !important;
+        }
+
+        .t-text {
+            flex: 1 !important;
+            min-width: 0 !important;
+        }
+
+        .t-text h3, .t-text p {
+            white-space: normal !important;
             word-break: break-word !important;
         }
     }
 
-    /* Mencegah seluruh halaman bergeser ke kanan */
+    /* Kunci pengaman layar agar tidak bisa digeser ke kanan (overflow) */
     html, body {
+        width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 </style>
 </head>
