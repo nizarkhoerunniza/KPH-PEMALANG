@@ -7,60 +7,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-<style>
-    /* Penbaikan tag penutup yang tidak valid sebelumnya secara visual */
-    /* Penyesuaian Responsif Tampilan HP Potret untuk Visi, Misi & Tata Nilai */
-    @media screen and (max-width: 992px) {
-        /* Mengubah bento grid Visi & Misi menjadi 1 kolom ke bawah */
-        .vm-bento-section {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 20px !important;
+    <style>
+        /* Penyesuaian Responsif Tampilan HP Potret untuk Visi, Misi & Tata Nilai */
+        @media screen and (max-width: 992px) {
+            /* Mengubah bento grid Visi & Misi menjadi 1 kolom ke bawah */
+            .vm-bento-section {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            /* Mengatur tata letak bagian AKHLAK agar tersusun vertikal ke bawah */
+            .akhlak-grid-wrap {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .akhlak-showcase-box, 
+            .akhlak-mini-cards {
+                width: 100% !important;
+            }
+
+            /* Mengatur mini cards AKHLAK agar rapi dalam formasi grid 2 kolom di HP */
+            .akhlak-mini-cards {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 12px !important;
+            }
         }
 
-        /* Mengatur tata letak bagian AKHLAK agar tersusun vertikal ke bawah */
-        .akhlak-grid-wrap {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 20px !important;
+        @media screen and (max-width: 480px) {
+            .akhlak-mini-cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 8px !important;
+            }
+            
+            .mini-card {
+                padding: 12px 8px !important;
+                font-size: 0.85rem !important;
+            }
         }
 
-        .akhlak-showcase-box, 
-        .akhlak-mini-cards {
-            width: 100% !important;
-        }
-
-        /* Mengatur mini cards AKHLAK agar rapi dalam formasi grid 2 kolom di HP */
-        .akhlak-mini-cards {
-            display: grid !important;
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            gap: 12px !important;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        /* Untuk layar HP yang sangat kecil, ubah mini cards menjadi 1 kolom penuh atau pertahankan 2 kolom yang ringkas */
-        .akhlak-mini-cards {
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            gap: 8px !important;
+        /* Mencegah elemen meluber ke samping */
+        body {
+            overflow-x: hidden;
         }
         
-        .mini-card {
-            padding: 12px 8px !important;
-            font-size: 0.85rem !important;
+        img {
+            max-width: 100%;
+            height: auto;
         }
-    }
-
-    /* Mencegah elemen meluber ke samping */
-    body {
-        overflow-x: hidden;
-    }
-    
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-</style>
+    </style>
 </head>
 <body>
 <header class="premium-header">
@@ -76,7 +74,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link active">Beranda</a>
+            <a href="index.html" class="premium-link">Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
@@ -87,7 +85,7 @@
                     <a href="profil.html"><i class="fa-solid fa-building"></i><span><b>Profil Perusahaan</b><small>Identitas & informasi perusahaan</small></span></a>
                     <a href="sejarah.html"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
                     <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
-                    <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
+                    <a href="visimisitatanilai.html" class="active"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
                     <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
                     <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
                     <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
@@ -125,17 +123,12 @@
         </nav>
 
         <div class="header-actions">
-            <!-- Tombol Burger (Tampil di Layar HP) -->
             <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
-            <!-- Tombol Kuis (Tunggal) -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
-
-            <!-- Search -->
             <div class="search-wrapper premium-search">
                 <button id="searchBtn" class="header-action" title="Cari">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -145,8 +138,6 @@
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
-
-            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -162,6 +153,7 @@
         </div>
     </div>
 </header>
+
 <main class="visimisitatanilai-main">
     <div class="visimisitatanilai-container">
         
@@ -198,7 +190,7 @@
                 <ul class="mission-pro-list">
                     <li><div class="list-bullet-icon"><i class="fa-solid fa-check"></i></div> Mengelola Sumberdaya Hutan Secara Lestari.</li>
                     <li><div class="list-bullet-icon"><i class="fa-solid fa-check"></i></div> Peduli Kepada Kepentingan Masyarakat dan Lingkungan.</li>
-                    <li><div class="list-bullet-icon"><i class="fa-solid fa-check"></i></div>Mengoptimalkan Bisnis Kehutanan dengan Prinsip Good Corporate Governance.</li>
+                    <li><div class="list-bullet-icon"><i class="fa-solid fa-check"></i></div> Mengoptimalkan Bisnis Kehutanan dengan Prinsip Good Corporate Governance.</li>
                 </ul>
             </div>
         </section>
@@ -219,174 +211,176 @@
                     </div>
                     <p class="akhlak-photo-caption">Komitmen SDM KPH Pemalang dalam melayani.</p>
                 </div>
-<div class="akhlak-mini-cards">
-    <!-- Mengganti huruf dengan ikon -->
-    <div class="mini-card">
-        <i class="fa-solid fa-hand-holding-heart"></i>
-        <span>Amanah</span>
+
+                <div class="akhlak-mini-cards">
+                    <div class="mini-card">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <span>Amanah</span>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Kompeten</span>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <span>Harmonis</span>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Loyal</span>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <span>Adaptif</span>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Kolaboratif</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
-    <div class="mini-card">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <span>Kompeten</span>
-    </div>
-    <div class="mini-card">
-        <i class="fa-solid fa-handshake-angle"></i>
-        <span>Harmonis</span>
-    </div>
-    <div class="mini-card">
-        <i class="fa-solid fa-shield-halved"></i>
-        <span>Loyal</span>
-    </div>
-    <div class="mini-card">
-        <i class="fa-solid fa-arrows-rotate"></i>
-        <span>Adaptif</span>
-    </div>
-    <div class="mini-card">
-        <i class="fa-solid fa-users"></i>
-        <span>Kolaboratif</span>
-    </div>
-</div>
-</section>
 </main>
     
-    <footer class="footer-section">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <h4>Kontak Kami</h4>
-                </div>
-                <ul class="contact-list">
-                    <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi</li>
-                    <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
-                    <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
-                    <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
-                </ul>
-                <div class="social-links">
-                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
-                        <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                </div>
+<footer class="footer-section">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="footer-heading">
+                <i class="fa-solid fa-phone-volume"></i>
+                <h4>Kontak Kami</h4>
             </div>
-
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-clock"></i>
-                    <h4>Jam Kerja</h4>
-                </div>
-                <ul class="schedule-list">
-                    <li>
-                        <span class="bullet active"></span>
-                        <div>
-                            <strong>Senin – Kamis</strong>
-                            <p>08.00 – 16.00 WIB</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="bullet active"></span>
-                        <div>
-                            <strong>Jumat</strong>
-                            <p>08.00 – 16.30 WIB</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="bullet"></span>
-                        <div>
-                            <strong>Sabtu – Minggu</strong>
-                            <p>Tutup</p>
-                        </div>
-                    </li>
-                </ul>
+            <ul class="contact-list">
+                <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi</li>
+                <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
+                <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
+                <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
+            </ul>
+            <div class="social-links">
+                <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
+                    <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
             </div>
+        </div>
 
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h4>Lokasi Kantor</h4>
-                </div>
-                <p class="office-address">
-                    Perhutani KPH Pemalang<br>
-                    Jl. Jenderal Sudirman Timur No. 3,<br>
-                    Wanarejan Selatan, Pemalang,<br>
-                    Jawa Tengah 52311
-                </p>
-                <div class="embedded-map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="120" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Peta Lokasi Perhutani KPH Pemalang">
-                    </iframe>
-                </div>
+        <div class="footer-col">
+            <div class="footer-heading">
+                <i class="fa-solid fa-clock"></i>
+                <h4>Jam Kerja</h4>
             </div>
+            <ul class="schedule-list">
+                <li>
+                    <span class="bullet active"></span>
+                    <div>
+                        <strong>Senin – Kamis</strong>
+                        <p>08.00 – 16.00 WIB</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="bullet active"></span>
+                    <div>
+                        <strong>Jumat</strong>
+                        <p>08.00 – 16.30 WIB</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="bullet"></span>
+                    <div>
+                        <strong>Sabtu – Minggu</strong>
+                        <p>Tutup</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <h4>Email & Layanan</h4>
-                </div>
-                <ul class="service-links-footer">
-                    <li>
-                        <i class="fa-solid fa-file-shield"></i>
-                        <div>
-                            <span>Laporan Pengaduan</span>
-                            <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-circle-info"></i>
-                        <div>
-                            <span>Permohonan Informasi</span>
-                            <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-building-shield"></i>
-                        <div>
-                            <span>PPID Perhutani</span>
-                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
-                        </div>
-                    </li>
-                </ul>
+        <div class="footer-col">
+            <div class="footer-heading">
+                <i class="fa-solid fa-location-dot"></i>
+                <h4>Lokasi Kantor</h4>
+            </div>
+            <p class="office-address">
+                Perhutani KPH Pemalang<br>
+                Jl. Jenderal Sudirman Timur No. 3,<br>
+                Wanarejan Selatan, Pemalang,<br>
+                Jawa Tengah 52311
+            </p>
+            <div class="embedded-map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="120" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Peta Lokasi Perhutani KPH Pemalang">
+                </iframe>
+            </div>
+        </div>
 
-                <div class="photo-wrapper-small" style="margin-top: 15px;">
-                    <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-                        <img src="bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
-                        <div class="photo-caption" style="padding: 10px;">
-                            <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;">BUMN Hadir</span>
-                            <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;">Komitmen nyata untuk negeri.</p>
-                        </div>
+        <div class="footer-col">
+            <div class="footer-heading">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <h4>Email & Layanan</h4>
+            </div>
+            <ul class="service-links-footer">
+                <li>
+                    <i class="fa-solid fa-file-shield"></i>
+                    <div>
+                        <span>Laporan Pengaduan</span>
+                        <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        <span>Permohonan Informasi</span>
+                        <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-building-shield"></i>
+                    <div>
+                        <span>PPID Perhutani</span>
+                        <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="photo-wrapper-small" style="margin-top: 15px;">
+                <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                    <img src="bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
+                    <div class="photo-caption" style="padding: 10px;">
+                        <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;">BUMN Hadir</span>
+                        <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;">Komitmen nyata untuk negeri.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="footer-bottom-bar">
-            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
-            <div class="policy-links">
-                <a href="#">Kebijakan Privasi</a>
-                <span>•</span>
-                <a href="#">Syarat & Ketentuan</a>
-            </div>
+    <div class="footer-bottom-bar">
+        <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
+        <div class="policy-links">
+            <a href="#">Kebijakan Privasi</a>
+            <span>•</span>
+            <a href="#">Syarat & Ketentuan</a>
         </div>
-    </footer>
-    <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+    </div>
+</footer>
+
+<div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
     <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
-        
-        <!-- Header Modal -->
         <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
             <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
@@ -395,103 +389,98 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-
-        <!-- Konten Pertanyaan & Pilihan -->
         <div style="padding: 20px;" id="quizBody">
             <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
                 Pertanyaan akan muncul di sini...
             </div>
-            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
-                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
-            </div>
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;"></div>
         </div>
-
-        <!-- Footer Modal (Skor / Status) -->
         <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
             Pertanyaan 1 dari 3
         </div>
     </div>
 </div>
- <div class="mobile-menu-overlay" id="mobileMenuOverlay">
- </div>
 
-    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
-        <div class="mobile-drawer-header">
-            <div class="mobile-brand">
-                <img src="perhutanii.png" alt="Logo">
-                <span>KPH PEMALANG</span>
-            </div>
-            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+<nav class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+        <div class="mobile-brand">
+            <img src="perhutanii.png" alt="Logo">
+            <span>KPH PEMALANG</span>
         </div>
+        <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
 
-        <div class="mobile-drawer-body">
-            <ul class="mobile-nav-list">
-                <li>
-                    <a href="index.html" class="mobile-link">
-                        <span><i class="fa-solid fa-house"></i> Beranda</span>
-                    </a>
-                </li>
+    <div class="mobile-drawer-body">
+        <ul class="mobile-nav-list">
+            <li>
+                <a href="index.html" class="mobile-link">
+                    <span><i class="fa-solid fa-house"></i> Beranda</span>
+                </a>
+            </li>
 
-                <li class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-building"></i> Tentang Kami</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="tentangkami.html" class="sub-main">Semua Tentang Kami</a>
-                        <a href="profil.html">Profil Perusahaan</a>
-                        <a href="sejarah.html">Sejarah Perusahaan</a>
-                        <a href="tugasfungsi.html">Tugas dan Fungsi</a>
-                        <a href="visimisitatanilai.html">Visi Misi & Tata Nilai</a>
-                        <a href="struktur.html">Struktur Organisasi</a>
-                        <a href="kepemilikansaham.html">Kepemilikan Saham</a>
-                        <a href="program.html">Program Kerja</a>
-                    </div>
-                </li>
+            <li class="mobile-dropdown">
+                <button type="button" class="mobile-dropdown-btn">
+                    <span><i class="fa-solid fa-building"></i> Tentang Kami</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="tentangkami.html" class="sub-main">Semua Tentang Kami</a>
+                    <a href="profil.html">Profil Perusahaan</a>
+                    <a href="sejarah.html">Sejarah Perusahaan</a>
+                    <a href="tugasfungsi.html">Tugas dan Fungsi</a>
+                    <a href="visimisitatanilai.html">Visi Misi & Tata Nilai</a>
+                    <a href="struktur.html">Struktur Organisasi</a>
+                    <a href="kepemilikansaham.html">Kepemilikan Saham</a>
+                    <a href="program.html">Program Kerja</a>
+                </div>
+            </li>
 
-                <li class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="unitbisnis.html" class="sub-main">Semua Unit Bisnis</a>
-                        <a href="herbal.html">Herbal</a>
-                        <a href="kayu.html">Kayu</a>
-                        <a href="nonkayu.html">Non Kayu</a>
-                        <a href="ekowisata.html">Ekowisata</a>
-                        <a href="solusiberbasisalam.html">Solusi Berbasis Alam</a>
-                        <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
-                    </div>
-                </li>
+            <li class="mobile-dropdown">
+                <button type="button" class="mobile-dropdown-btn">
+                    <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="unitbisnis.html" class="sub-main">Semua Unit Bisnis</a>
+                    <a href="herbal.html">Herbal</a>
+                    <a href="kayu.html">Kayu</a>
+                    <a href="nonkayu.html">Non Kayu</a>
+                    <a href="ekowisata.html">Ekowisata</a>
+                    <a href="solusiberbasisalam.html">Solusi Berbasis Alam</a>
+                    <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
+                </div>
+            </li>
 
-                <li class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
-                        <a href="suararimba.html">Suara Rimba</a>
-                        <a href="pengumuman.html">Pengumuman</a>
-                    </div>
-                </li>
+            <li class="mobile-dropdown">
+                <button type="button" class="mobile-dropdown-btn">
+                    <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
+                    <a href="suararimba.html">Suara Rimba</a>
+                    <a href="pengumuman.html">Pengumuman</a>
+                </div>
+            </li>
 
-                <li>
-                    <a href="layanan.html" class="mobile-link">
-                        <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="karir.html" class="mobile-link">
-                        <span><i class="fa-solid fa-user-tie"></i> Karir</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>               
-    <script src="script.js"></script>
+            <li>
+                <a href="layanan.html" class="mobile-link">
+                    <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
+                </a>
+            </li>
+            <li>
+                <a href="karir.html" class="mobile-link">
+                    <span><i class="fa-solid fa-user-tie"></i> Karir</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script src="script.js"></script>
 </body>
 </html>
