@@ -56,6 +56,68 @@
         box-sizing: border-box !important;
     }
 }
+/* Perbaikan Tampilan HP dalam Mode Lanskap (Landscape) */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    
+    /* Kembalikan grid kompleks menjadi sejajar ke samping agar pohon di tengah dan kartu tidak hilang/menumpuk */
+    .grid-layout-complex {
+        display: grid !important;
+        grid-template-columns: 1fr auto 1fr !important; /* Kolom Kiri, Pohon Tengah, Kolom Kanan */
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    /* Pastikan pohon bulat di tengah tampil sempurna dan tidak tersembunyi */
+    .center-hub {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    .hub-circle {
+        width: 60px !important;
+        height: 60px !important;
+        min-width: 60px !important;
+        min-height: 60px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Sesuaikan ukuran kartu dan sidebar statistik agar muat dalam layar lanskap yang pendek */
+    .left-cards, 
+    .right-cards {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    .t-card {
+        padding: 10px !important;
+    }
+
+    .t-card h3 {
+        font-size: 0.85rem !important;
+    }
+
+    .t-card p {
+        font-size: 0.75rem !important;
+    }
+
+    /* Posisikan sidebar statistik di bawah atau atur agar tidak merusak layout utama */
+    .stats-sidebar {
+        grid-column: 1 / -1 !important; /* Membuat statistik melebar di bawah grid utama */
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+        margin-top: 15px !important;
+    }
+}
 </style>
 </head>
 <body>
