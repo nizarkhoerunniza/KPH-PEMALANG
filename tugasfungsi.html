@@ -34,7 +34,70 @@
         padding: 10px 5px !important;
         word-break: break-word !important;
     }
+}/* Perbaikan Komprehensif: Pohon Tengah Muncul & Kotak Prinsip Rapi di HP (Potret) */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Memastikan Pohon Bulat di Tengah Tetap Muncul dan Rapi */
+    .grid-layout-complex {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .center-hub {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+
+    .hub-circle {
+        width: 60px !important;
+        height: 60px !important;
+        min-width: 60px !important;
+        min-height: 60px !important;
+        border-radius: 50% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* 2. Memperbaiki Kotak Prinsip (Inovatif, Kolaboratif, dll) Agar Tidak Kepotong ke Kanan */
+    .prinsip-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0 5px !important;
+    }
+
+    .prinsip-icons {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .p-item {
+        flex: 1 1 42% !important;
+        max-width: 48% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        padding: 10px 5px !important;
+        word-break: break-word !important;
+    }
 }
+
 </style>
 </head>
 <body>
