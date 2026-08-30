@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <header class="premium-header">
+  <header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
             <span class="brand-logo-ring">
@@ -23,10 +23,10 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link">Beranda</a>
+            <a href="index.html" class="premium-link active">Beranda</a>
 
             <div class="premium-dropdown">
-                <a href="tentangkami.html" class="premium-link dropdown-trigger active">
+                <a href="tentangkami.html" class="premium-link dropdown-trigger">
                     Tentang Kami <i class="fa-solid fa-angle-down"></i>
                 </a>
                 <div class="premium-menu">
@@ -72,98 +72,38 @@
         </nav>
 
         <div class="header-actions">
-            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <!-- Tombol Burger (Tampil di Layar HP) -->
+            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Tombol Kuis (Tunggal) -->
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
+                <i class="fa-solid fa-puzzle-piece"></i>
+            </button>
+
+            <!-- Search -->
             <div class="search-wrapper premium-search">
-                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="searchBtn" class="header-action" title="Cari">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <div class="search-box" id="searchBox">
                     <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
-            
-            <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Buka Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </div>
 
-    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
-    <div class="mobile-nav-drawer" id="mobileNavDrawer">
-        <div class="mobile-drawer-header">
-            <div class="brand-premium">
-                <span class="brand-logo-ring">
-                    <img src="perhutanii.png" alt="Logo Perhutani">
-                </span>
-                <span class="brand-copy">
-                    <strong>PERHUTANI</strong>
-                    <small>KPH PEMALANG</small>
-                </span>
-            </div>
-            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-
-        <div class="mobile-drawer-body">
-            <div class="mobile-nav-links">
-                <a href="index.html" class="mobile-link">
-                    <span><i class="fa-solid fa-house"></i> Beranda</span>
-                </a>
-
-                <div class="mobile-dropdown active">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-building-user"></i> Tentang Kami</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu" style="display: flex;">
-                        <a href="tentangkami.html" class="sub-main active">Semua Tentang Kami</a>
-                        <a href="profil.html">Profil Perusahaan</a>
-                        <a href="sejarah.html">Sejarah Perusahaan</a>
-                        <a href="tugasfungsi.html">Tugas dan Fungsi</a>
-                        <a href="visimisitatanilai.html">Visi Misi & Tata Nilai</a>
-                        <a href="struktur.html">Struktur Organisasi</a>
-                        <a href="kepemilikansaham.html">Kepemilikan Saham</a>
-                        <a href="program.html">Program Kerja</a>
-                    </div>
+            <!-- Weather Widget -->
+            <div class="weather-widget" id="weatherWidget">
+                <div class="weather-icon">
+                    <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
                 </div>
-
-                <div class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="unitbisnis.html" class="sub-main">Semua Unit Bisnis</a>
-                        <a href="herbal.html">Herbal</a>
-                        <a href="kayu.html">Kayu</a>
-                        <a href="nonkayu.html">Non Kayu</a>
-                        <a href="ekowisata.html">Ekowisata</a>
-                        <a href="solusiberbasisalam.html">Solusi Berbasis Alam</a>
-                        <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
-                    </div>
-                </div>
-
-                <div class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
-                        <a href="suararimba.html">Suara Rimba</a>
-                        <a href="pengumuman.html">Pengumuman</a>
-                    </div>
-                </div>
-
-                <div>
-                    <a href="layanan.html" class="mobile-link">
-                        <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
-                    </a>
-                </div>
-                <div>
-                    <a href="karir.html" class="mobile-link">
-                        <span><i class="fa-solid fa-user-tie"></i> Karir</span>
-                    </a>
+                <div class="weather-info">
+                    <span class="temp">
+                        <span id="temperature">--°C</span>
+                        <small id="weatherDescription" data-i18n="weather_loading">Memuat cuaca...</small>
+                    </span>
+                    <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
                 </div>
             </div>
         </div>
