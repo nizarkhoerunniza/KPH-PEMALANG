@@ -11,68 +11,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    /* Perbaikan mutlak untuk tampilan HP Android agar kotak tugas dan fungsi tidak tertutup/meluber */
-    @media screen and (max-width: 992px) {
-        /* Pastikan pembungkus grid berubah total menjadi 1 kolom vertikal ke bawah */
+    /* Mengatur agar kontainer tugas dan fungsi bisa digeser ke kanan secara leluasa di HP */
+    @media screen and (max-width: 1200px) {
+        /* Bungkus area grid agar melebar ke samping dan bisa digeser */
         .grid-layout-complex, 
-        .tugas-grid-section,
-        .tugas-container {
+        .tugas-grid-section {
             display: flex !important;
-            flex-direction: column !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
             width: 100% !important;
-            max-width: 100% !important;
-            box-sizing: border-box !important;
             gap: 15px !important;
-            margin: 0 !important;
-            padding-left: 10px !important;
-            padding-right: 10px !important;
+            padding-bottom: 20px !important; /* Ruang untuk jari/scroll bar */
         }
 
-        /* Lebarkan seluruh kartu kiri dan kanan menjadi 100% */
+        /* Pastikan setiap kartu mempertahankan lebarnya agar tidak hancur saat digeser */
         .left-cards, 
         .right-cards, 
         .t-card {
-            width: 100% !important;
-            max-width: 100% !important;
+            flex: 0 0 280px !important; /* Lebar tetap per kartu saat digeser */
+            min-width: 280px !important;
             box-sizing: border-box !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
         }
 
-        /* Sembunyikan elemen hub tengah/hiasan dekoratif yang sering memakan ruang layar HP */
+        /* Sembunyikan hiasan tengah agar tidak mengganggu jalur geser */
         .center-hub, 
         .tugas-center-decoration {
             display: none !important;
         }
-
-        /* Perbaiki susunan kartu individual agar teks dan ikon tidak saling tumpuk */
-        .t-card {
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: flex-start !important;
-            padding: 14px !important;
-            height: auto !important;
-        }
-
-        .t-text {
-            flex: 1 !important;
-            min-width: 0 !important;
-        }
-
-        .t-text h3, .t-text p {
-            white-space: normal !important;
-            word-break: break-word !important;
-        }
     }
 
-    /* Kunci pengaman layar agar tidak bisa digeser ke kanan (overflow) */
+    /* Izinkan halaman digeser secara horizontal khusus untuk area ini */
     html, body {
-        width: 100% !important;
+        overflow-x: auto !important;
         max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-        margin: 0 !important;
-        padding: 0 !important;
     }
 </style>
 </head>
