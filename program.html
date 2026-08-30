@@ -8,6 +8,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
+    <style>
+        /* Perbaikan Utama agar Tampilan HP Android Portrait / Layar Kecil Tidak Kepotong */
+        * {
+            box-sizing: border-box;
+        }
+        body, html {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        @media screen and (max-width: 992px) {
+            /* Hero Section Grid */
+            .sba-hero > div {
+                grid-template-columns: 1fr !important;
+                gap: 25px !important;
+            }
+            .sba-hero h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* Pilar Program Kerja (5 Kolom jadi 1 Kolom) */
+            #pilar div[style*="grid-template-columns: repeat(5"] {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            /* Program Unggulan & Target (2 Kolom jadi 1 Kolom) */
+            main > section div[style*="grid-template-columns: 2fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+
+            /* Grid Kartu Program Unggulan (2 Kolom jadi 1 Kolom) */
+            main > section div[style*="grid-template-columns: repeat(2"] {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+
+            /* Tahapan Pelaksanaan Program (4 Kolom jadi 1 Kolom) */
+            main > section div[style*="grid-template-columns: repeat(4"] {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+
+            /* Padding section penyesuaian mobile */
+            main > section {
+                margin: 45px auto !important;
+                padding: 0 15px !important;
+            }
+            .sba-hero {
+                padding: 30px 15px !important;
+            }
+        }
+    </style>
 </head>
 <body>
 <header class="premium-header">
