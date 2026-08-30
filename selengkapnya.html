@@ -8,15 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
-<style
-/* Perbaikan Tambahan untuk Mencegah Konten Terpotong / Overflow di HP */
+<style>
+/* ========================================================================== */
+/* Perbaikan Menyeluruh Responsif HP Android (selengkapnya.html)              */
+/* ========================================================================== */
 @media screen and (max-width: 768px) {
-    /* Mencegah seluruh elemen bodi dan kontainer keluar dari batas layar (overflow) */
+    /* 1. Kunci layar agar tidak bisa digeser ke samping (mencegah overflow horizontal) */
     html, body {
         overflow-x: hidden !important;
         width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    * {
+        box-sizing: border-box !important;
     }
 
     .main-content-full {
@@ -24,64 +31,116 @@
         overflow-x: hidden !important;
     }
 
-    /* Memastikan semua grid atau flex container tidak memaksa lebar melebihi layar */
+    /* 2. Container Utama */
     .main-content-full .container {
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
         padding-left: 15px !important;
         padding-right: 15px !important;
         margin: 0 !important;
     }
 
-    /* Memperbaiki ukuran teks judul panjang agar tidak terpotong */
+    /* 3. Hero Section */
+    .selengkapnya-hero {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+        width: 100% !important;
+    }
+
     .selengkapnya-hero .hero-left h1 {
+        font-size: 1.8rem !important;
         word-wrap: break-word !important;
         overflow-wrap: break-word !important;
     }
 
-    /* Memastikan gambar atau lingkaran visual hero responsif sempurna */
     .selengkapnya-hero .hero-visual {
+        width: 100% !important;
+        height: 260px !important;
         max-width: 100% !important;
         overflow: hidden !important;
+        margin: 10px 0 !important;
     }
 
-    /* Memperbaiki lebar card informasi dan widget dokumen agar pas di layar kecil */
-    .info-card, .documents-widget, .forest-banner, .newsletter-widget {
+    .selengkapnya-hero .circle-main {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    /* 4. Hero Stats (2 Kolom) */
+    .selengkapnya-hero .hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
         width: 100% !important;
-        box-sizing: border-box !important;
     }
 
-    /* Memperbaiki tampilan list dokumen agar teks panjang tidak keluar kotak */
+    .selengkapnya-hero .stat-item {
+        padding: 12px !important;
+        width: 100% !important;
+    }
+
+    /* 5. Main Layout Grid (Card & Sidebar Dokumen) */
+    .main-grid-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    .info-cards-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+
+    .info-card, 
+    .documents-widget {
+        width: 100% !important;
+    }
+
     .doc-item {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
         word-break: break-word !important;
     }
-}
-/* Perbaikan khusus untuk bagian Kesejahteraan / Pilar di selengkapnya.html */
-@media screen and (max-width: 768px) {
-    /* Memastikan container pilar misi fleksibel dan tidak melebihi layar */
+
+    /* 6. Bottom Layout (Banner Misi & Pilar Kesejahteraan) */
+    .bottom-grid-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    .forest-banner, 
+    .newsletter-widget {
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    .forest-banner h3 {
+        font-size: 1.25rem !important;
+        word-wrap: break-word !important;
+    }
+
+    /* Perbaikan Khusus Pilar (Kelestarian, Keberlanjutan, Kesejahteraan) agar tidak terpotong ke kanan */
     .forest-banner .pillars-row {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        box-sizing: border-box !important;
         gap: 15px !important;
     }
 
-    /* Memastikan setiap item pilar (termasuk Kesejahteraan) menyesuaikan lebar layar */
     .forest-banner .pillar-item {
         display: flex !important;
         align-items: flex-start !important;
         gap: 12px !important;
         width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 0 !important;
     }
 
-    /* Membungkus teks di dalam pilar agar otomatis turun baris (tidak terpotong ke kanan) */
     .forest-banner .pillar-text {
         flex: 1 !important;
         min-width: 0 !important;
@@ -93,6 +152,19 @@
     .forest-banner .pillar-text p {
         white-space: normal !important;
         word-break: break-word !important;
+    }
+
+    /* 7. Newsletter Form */
+    .newsletter-form {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100% !important;
     }
 }
 </style>
