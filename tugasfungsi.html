@@ -11,122 +11,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* ==========================================================================
-   PERBAIKAN FINAL: POHON BULAT LANDSCAPE & PRINSIP KOLABORATIF DI HP
-   ========================================================================== */
-
-@media screen and (max-width: 900px) and (orientation: landscape) {
-    
-    /* 1. MEMASTIKAN POHON BULAT DI TENGAH MUNCUL & RAPI */
-    .grid-layout-complex {
-        display: grid !important;
-        grid-template-columns: 1fr 70px 1fr !important; /* Kolom Kiri, Lebar Pasti Pohon, Kolom Kanan */
-        align-items: center !important;
-        gap: 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    .center-hub {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-    }
-
-    .hub-circle {
-        width: 55px !important;
-        height: 55px !important;
-        min-width: 55px !important;
-        min-height: 55px !important;
-        border-radius: 50% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        background-color: #15803d !important; /* Sesuaikan warna hijau perhutani jika perlu */
-        color: #fff !important;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .hub-center-icon {
-        font-size: 1.3rem !important;
-    }
-
-
-    /* 2. MENGATASI BAGIAN BAWAH (PRINSIP KOLABORATIF) AGAR TIDAK KEPOTONG KE KANAN */
-    .bottom-banner-section, 
-    .bottom-content-grid, 
-    .prinsip-wrapper, 
-    .prinsip-icons {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
-
-    /* Mengubah grid prinsip ikon bawah menjadi 3-5 kolom kecil yang fleksibel (tidak melebar ke samping) */
-    .prinsip-icons {
-        display: grid !important;
-        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)) !important;
-        gap: 8px !important;
-        padding: 0 !important;
-    }
-
-    .p-item {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 8px 4px !important;
-        font-size: 0.8rem !important;
-        text-align: center;
-    }
-
-    /* Mencegah seluruh halaman bergeser/kepotong ke kanan saat landscape */
-    body, html {
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-    }
-}
-/* Perbaikan Prinsip (Inovatif, Kolaboratif, dll) agar Tidak Kepotong ke Kanan di HP (Potret) */
+/* Perbaikan Total Agar Kotak Prinsip (Inovatif & Kolaboratif) Tidak Kepotong ke Kanan */
 @media screen and (max-width: 768px) {
-    
-    /* Pastikan kontainer pembungkus prinsip mengikuti lebar layar penuh */
-    .prinsip-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        padding: 0 10px !important;
-    }
-
-    /* Ubah susunan ikon prinsip menjadi grid 2 atau 3 kolom rapi di dalam layar HP */
+    .prinsip-wrapper,
     .prinsip-icons {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important; /* Menjadi 2 kolom ke bawah agar tidak memanjang ke kanan */
-        gap: 10px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Pastikan setiap item prinsip menyesuaikan kotak dan teksnya tidak meluber */
-    .p-item {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 12px 8px !important;
-        word-break: break-word !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
-    .p-item span {
-        font-size: 0.85rem !important;
-        margin-top: 5px !important;
+    .p-item {
+        flex: 1 1 42% !important; /* Membuat setiap kotak memakan sekitar setengah lebar layar secara seimbang */
+        max-width: 48% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        padding: 10px 5px !important;
+        word-break: break-word !important;
     }
 }
 </style>
