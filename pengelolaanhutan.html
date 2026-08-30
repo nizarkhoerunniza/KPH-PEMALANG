@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style3.css">
 <style>
-        /* CSS Responsive Tambahan untuk HP Android */
+        /* CSS Responsive Diperbaiki untuk HP Android & Layar Kecil */
         @media screen and (max-width: 992px) {
             main div[style*="grid-template-columns"],
             section div[style*="grid-template-columns"],
@@ -19,13 +19,24 @@
             .sba-hero h1 {
                 font-size: 2.3rem !important;
             }
-        }
-        @media screen and (max-width: 768px) {
+            /* Memperbaiki 4 Badge Hero agar turun ke bawah rapi di HP */
+            .hero-badges-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            /* Memperbaiki Section Fokus agar tidak melebar */
+            #fokus div[style*="grid-template-columns: 2fr 1.1fr"] {
+                grid-template-columns: 1fr !important;
+            }
             #fokus div[style*="grid-template-columns: repeat(3"] {
                 grid-template-columns: 1fr !important;
             }
             #fokus div[style*="grid-column: span 2"] {
                 grid-column: span 1 !important;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .hero-badges-grid {
+                grid-template-columns: 1fr !important;
             }
         }
     </style>
