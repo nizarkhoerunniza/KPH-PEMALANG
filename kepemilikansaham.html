@@ -8,6 +8,85 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
+
+    <!-- CSS khusus untuk perbaikan tampilan HP Android Portrait -->
+    <style>
+        @media screen and (max-width: 768px) {
+            /* 1. Mencegah Elemen Keluar dari Layar HP */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+
+            .saham-wrapper {
+                padding: 15px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 2. Mengubah Grid Utama Menjadi 1 Kolom Vertikal */
+            .saham-hero,
+            .saham-main-grid,
+            .chart-flex-layout {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                gap: 20px !important;
+            }
+
+            /* 3. Menyesuaikan Card Box Agar Pas di Layar */
+            .card-box, 
+            .struktur-box, 
+            .info-bar-box, 
+            .table-box,
+            .wood-art-card {
+                width: 100% !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                padding: 15px !important;
+            }
+
+            /* 4. Mencegah Tabel Komposisi Saham Terpotong */
+            .table-box {
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .saham-table {
+                width: 100% !important;
+                min-width: 280px;
+                font-size: 0.8rem !important;
+            }
+
+            .saham-table th, 
+            .saham-table td {
+                padding: 8px 6px !important;
+            }
+
+            /* 5. Menyesuaikan Donut Chart & Legend */
+            .donut-chart-container {
+                margin: 0 auto !important;
+            }
+
+            .chart-legends .legend-item {
+                flex-direction: row !important;
+                align-items: flex-start !important;
+                gap: 10px !important;
+            }
+
+            /* 6. Menyesuaikan Grid Prinsip Tata Kelola */
+            .principles-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 12px !important;
+            }
+
+            .principle-item {
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+        }
+    </style>
 </head>
 <body>
 <header class="premium-header">
