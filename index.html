@@ -12,43 +12,43 @@
 <body style="background: #06110b url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; color: #f0fdf4;">
 <style>
 /* =========================================================
-   PENGATURAN WIDGET CUACA (RESPONSIF HP & DESKTOP)
+   HANYA TAMPILKAN ANGKA & SUHU DI HP (PEMALANG DISEMBUNYIKAN)
    ========================================================= */
 
-/* 1. Tampilan Default (Komputer / Laptop) - TIDAK DIUBAH */
+/* Tampilan di Komputer/Laptop: Tidak diubah */
 .weather-widget {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
-    white-space: nowrap !important;
 }
 
-/* 2. Khusus Tampilan HP (Portrait & Landscape / Max Width 950px) */
+/* Khusus Tampilan HP (Portrait & Landscape) */
 @media screen and (max-width: 950px) {
     .weather-widget {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
-        padding: 4px 8px !important;
-        gap: 5px !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
         background: rgba(15, 35, 25, 0.85) !important;
         border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 14px !important;
-        backdrop-filter: blur(8px);
+        border-radius: 12px !important;
     }
 
-    /* Sembunyikan teks nama lokasi (Pemalang) khusus di HP */
-    .weather-widget .location {
+    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
         display: none !important;
     }
 
-    /* Pastikan ikon dan angka suhu tetap muncul dengan pas */
-    .weather-widget .weather-icon {
-        font-size: 0.9rem !important;
-    }
-    
+    /* 2. Paksa hanya Ikon dan Suhu (°C) yang tampil */
+    .weather-widget .weather-icon,
     .weather-widget .temp {
-        font-size: 0.8rem !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
     }
 }
 </style>
