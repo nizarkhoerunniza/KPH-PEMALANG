@@ -2040,6 +2040,7 @@ body {
     display: none !important; /* Sembunyikan bawaan desktop */
 }
 
+
 @media screen and (max-width: 768px) and (orientation: portrait) {
     /* Munculkan widget cuaca ringkas khusus HP Portrait di kanan */
     .weather-widget.mobile-only-right {
