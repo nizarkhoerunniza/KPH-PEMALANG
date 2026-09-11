@@ -33,6 +33,67 @@
         font-size: 1.6rem !important;
     }
 }
+    /* Styling Utama Widget Cuaca */
+.weather-widget {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.weather-icon {
+    font-size: 1.2rem;
+    color: #4ade80;
+    flex-shrink: 0; /* Mencegah ikon ikut menyusut */
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    overflow: hidden; /* Mencegah teks meluber keluar container */
+}
+
+.weather-info .temp {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap; /* Mencegah suhu terpotong ke bawah */
+}
+
+.weather-info .location {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Menambahkan titik-titik (...) jika teks lokasi terlalu panjang di layar kecil */
+}
+
+/* Penyesuaian Khusus Layar HP (Portrait & Landscape) */
+@media screen and (max-width: 768px) {
+    .header-actions {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+    }
+    
+    .weather-widget {
+        padding: 4px 8px;
+    }
+    
+    .weather-info .temp {
+        font-size: 0.75rem;
+    }
+
+    .weather-info .location {
+        font-size: 0.65rem;
+    }
+}
 </style>
 </head>
 <body>
@@ -49,7 +110,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link active">Beranda</a>
+            <a href="index.html" class="premium-link">Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
