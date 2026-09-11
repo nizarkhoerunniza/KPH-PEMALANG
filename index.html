@@ -12,7 +12,7 @@
 <body style="background: #06110b url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; color: #f0fdf4;">
 <style>
 /* =========================================================
-   STYLE WIDGET CUACA (EMBEDDED DI HTML)
+   STYLE WIDGET CUACA (PORTRAIT & LANDSCAPE)
    ========================================================= */
 .weather-widget {
     display: flex !important;
@@ -28,8 +28,8 @@
     opacity: 1 !important;
 }
 
-/* Pengaturan khusus tampilan HP / Portrait */
-@media screen and (max-width: 768px) {
+/* 1. Tampilan khusus HP / Layar Sempit (Portrait) */
+@media screen and (max-width: 768px) and (orientation: portrait) {
     .weather-widget {
         display: flex !important;
         padding: 4px 8px !important;
@@ -45,8 +45,25 @@
         font-size: 0.65rem !important;
     }
 }
-</style>
 
+/* 2. Tampilan khusus HP saat posisi Landscape (Miring) */
+@media screen and (max-width: 900px) and (orientation: landscape) {
+    .weather-widget {
+        display: flex !important;
+        padding: 4px 10px !important;
+        gap: 6px !important;
+    }
+    .weather-widget .weather-icon {
+        font-size: 0.9rem !important;
+    }
+    .weather-widget .temp {
+        font-size: 0.75rem !important;
+    }
+    .weather-widget .location {
+        font-size: 0.6rem !important;
+    }
+}
+</style>
   <header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
