@@ -2091,8 +2091,3 @@ body {
         display: block !important; /* Teks KPH PEMALANG di logo muncul kembali */
     }
 }
-
-    .brand-copy small {
-        display: block !important;
-    }
-}
