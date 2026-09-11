@@ -2092,61 +2092,6 @@ body {
     }
 }
 
-/* =========================================================
-   PERBAIKAN KONSISTENSI WIDGET CUACA (PORTRAIT & LANDSCAPE)
-   ========================================================= */
-
-/* Pengaturan dasar widget cuaca agar fleksibel */
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    padding: 6px 12px !important;
-    background: rgba(15, 35, 25, 0.7) !important;
-    border: 1px solid rgba(74, 222, 128, 0.3) !important;
-    border-radius: 20px !important;
-    backdrop-filter: blur(10px);
-    white-space: nowrap; /* Mencegah teks turun ke bawah secara berantakan */
-}
-
-/* 1. Kondisi Khusus HP Portrait (Tegak) */
-@media screen and (max-width: 768px) and (orientation: portrait) {
-    .header-inner {
-        padding: 10px 15px !important;
-        gap: 10px !important;
-    }
-
-    /* Ringkas ukuran teks cuaca di HP portrait agar muat tanpa terpotong */
-    .weather-widget {
-        padding: 4px 8px !important;
-        gap: 6px !important;
-    }
-
-    .weather-widget .weather-icon {
-        font-size: 1rem !important;
-    }
-
-    .weather-widget .temp {
-        font-size: 0.8rem !important;
-    }
-
-    .weather-widget .location {
-        font-size: 0.65rem !important;
-    }
-
-    /* Sembunyikan elemen header lain yang tidak terlalu penting jika layar terlalu sempit */
-    .brand-copy small {
-        display: none !important; 
-    }
-}
-
-/* 2. Kondisi Khusus HP Landscape (Miring) & Desktop */
-@media screen and (orientation: landscape) and (max-height: 600px), screen and (min-width: 769px) {
-    .weather-widget {
-        display: flex !important;
-        padding: 8px 15px !important;
-    }
-
     .brand-copy small {
         display: block !important;
     }
