@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perhutani KPH Pemalang - Pengumuman</title>
+    <title>Perhutani KPH Pemalang - Solusi Berbasis Alam</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
-  <header class="premium-header">
+<header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
             <span class="brand-logo-ring">
@@ -23,9 +23,8 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link">Beranda</a>
+            <a href="index.html" class="premium-link active">Beranda</a>
 
-            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
                     Tentang Kami <i class="fa-solid fa-angle-down"></i>
@@ -42,7 +41,6 @@
                 </div>
             </div>
 
-            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
             <div class="premium-dropdown">
                 <a href="unitbisnis.html" class="premium-link dropdown-trigger">
                     Unit Bisnis <i class="fa-solid fa-angle-down"></i>
@@ -58,7 +56,6 @@
                 </div>
             </div>
 
-            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
             <div class="premium-dropdown">
                 <a href="publikasi.html" class="premium-link dropdown-trigger">
                     Publikasi <i class="fa-solid fa-angle-down"></i>
@@ -66,7 +63,7 @@
                 <div class="premium-menu compact-menu">
                     <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
                     <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
-                    <a href="pengumuman.html" class="active"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
+                    <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
                 </div>
             </div>
 
@@ -75,14 +72,28 @@
         </nav>
 
         <div class="header-actions">
-            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <!-- Tombol Burger (Tampil di Layar HP) -->
+            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Tombol Kuis (Tunggal) -->
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
+                <i class="fa-solid fa-puzzle-piece"></i>
+            </button>
+
+            <!-- Search -->
             <div class="search-wrapper premium-search">
-                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="searchBtn" class="header-action" title="Cari">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <div class="search-box" id="searchBox">
                     <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
+
+            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -98,7 +109,6 @@
         </div>
     </div>
 </header>
- 
     <main class="main-content-full">
 
         <!-- Hero Banner Pengumuman -->
@@ -229,7 +239,7 @@
                 <div class="sidebar-widget calendar-widget" style="padding: 24px;">
                     <h4 style="font-size: 1.35rem; margin-bottom: 12px;">Tender Seleksi</h4>
                     <div class="photo-widget-container" style="margin-top: 15px; height: 420px; border-radius: 10px; overflow: hidden; border: 1px solid #e2e8f0; background-color: #ffffff; padding: 5px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                        <img src="pengumuman2.jpg" alt="Tender Seleksi" style="width: 100%; height: 100%; display: block; object-fit: contain;">
+                        <img src="assets/pengumuman2.jpg" alt="Tender Seleksi" style="width: 100%; height: 100%; display: block; object-fit: contain;">
                     </div>
                 </div>
 
