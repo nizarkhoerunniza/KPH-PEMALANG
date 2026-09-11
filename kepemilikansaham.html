@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,10 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="premium-header">
+<header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
             <span class="brand-logo-ring">
@@ -22,9 +23,8 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link">Beranda</a>
+            <a href="index.html" class="premium-link active">Beranda</a>
 
-            <!-- Dropdown tentang Kami (Link mengarah ke profil.html) -->
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
                     Tentang Kami <i class="fa-solid fa-angle-down"></i>
@@ -36,12 +36,11 @@
                     <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
                     <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
                     <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
-                    <a href="kepemilikansaham.html" class="active"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
+                    <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
                     <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
                 </div>
             </div>
 
-            <!-- Dropdown Unit Bisnis (Link mengarah ke pengelolaanhutan.html) -->
             <div class="premium-dropdown">
                 <a href="unitbisnis.html" class="premium-link dropdown-trigger">
                     Unit Bisnis <i class="fa-solid fa-angle-down"></i>
@@ -57,7 +56,6 @@
                 </div>
             </div>
 
-            <!-- Dropdown Publikasi (Link mengarah ke suararimba.html) -->
             <div class="premium-dropdown">
                 <a href="publikasi.html" class="premium-link dropdown-trigger">
                     Publikasi <i class="fa-solid fa-angle-down"></i>
@@ -74,14 +72,28 @@
         </nav>
 
         <div class="header-actions">
-            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan"><i class="fa-solid fa-puzzle-piece"></i></button>
+            <!-- Tombol Burger (Tampil di Layar HP) -->
+            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Tombol Kuis (Tunggal) -->
+            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
+                <i class="fa-solid fa-puzzle-piece"></i>
+            </button>
+
+            <!-- Search -->
             <div class="search-wrapper premium-search">
-                <button id="searchBtn" class="header-action" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button id="searchBtn" class="header-action" title="Cari">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
                 <div class="search-box" id="searchBox">
                     <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
+
+            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
