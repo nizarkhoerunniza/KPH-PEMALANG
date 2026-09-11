@@ -2091,3 +2091,58 @@ body {
         display: block !important; /* Teks KPH PEMALANG di logo muncul kembali */
     }
 }
+/* Styling Widget Cuaca Khusus HP (Potret & Lanskap) */
+@media screen and (max-width: 992px) {
+    /* Menjaga area aksi header tetap sejajar */
+    .header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    /* Memastikan widget cuaca tetap tampil & ringkas */
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 4px 8px !important;
+        gap: 6px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border: 1px solid rgba(250, 204, 21, 0.4) !important;
+        border-radius: 20px !important;
+        max-width: fit-content !important;
+        flex-shrink: 0 !important;
+    }
+
+    .weather-widget .weather-icon {
+        font-size: 0.85rem !important;
+        color: #facc15 !important;
+    }
+
+    .weather-widget .weather-info .temp {
+        font-size: 0.75rem !important;
+        font-weight: 700 !important;
+        color: #ffffff !important;
+    }
+
+    /* Sembunyikan teks deskripsi & lokasi agar muat di layar HP */
+    .weather-widget .weather-info small,
+    .weather-widget .weather-info .location {
+        display: none !important;
+    }
+}
+
+/* Penyesuaian khusus saat HP dimiringkan (Lanskap) */
+@media screen and (max-width: 992px) and (orientation: landscape) {
+    .premium-header {
+        padding: 5px 12px !important;
+    }
+
+    .weather-widget {
+        padding: 3px 6px !important;
+    }
+
+    .weather-widget .weather-info .temp {
+        font-size: 0.7rem !important;
+    }
+}
