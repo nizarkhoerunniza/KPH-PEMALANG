@@ -11,6 +11,108 @@
 </head>
 <body style="background: #06110b url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; color: #f0fdf4;">
 <style>
+    <style>
+/* --- Perbaikan Umum Responsif Android --- */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Pastikan semua gambar dan kontainer tidak keluar layar */
+img, iframe, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Penyesuaian Header & Widget Cuaca untuk HP --- */
+@media screen and (max-width: 768px) {
+    .premium-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 8px 12px !important;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 8px;
+    }
+
+    /* Mengatur logo agar tidak terlalu besar di HP */
+    .brand-premium {
+        gap: 6px;
+    }
+    .brand-logo-ring img {
+        width: 32px;
+        height: 32px;
+    }
+    .brand-copy strong {
+        font-size: 0.85rem !important;
+    }
+    .brand-copy small {
+        font-size: 0.65rem !important;
+    }
+
+    /* Mengatur area aksi header (Tombol menu, kuis, search, cuaca) */
+    .header-actions {
+        gap: 6px !important;
+        align-items: center;
+    }
+
+    /* Penyesuaian widget cuaca agar pas di layar HP kecil */
+    .weather-widget {
+        padding: 2px 6px !important;
+        border-radius: 8px !important;
+        font-size: 0.75rem !important;
+    }
+    
+    .weather-widget .temp span {
+        font-size: 0.75rem !important;
+    }
+
+    /* Jarak aman konten utama agar tidak tertutup header fixed */
+    main.main-content-full {
+        padding-top: 75px !important;
+    }
+}
+
+/* --- Penyesuaian Footer agar Tidak Terpotong di HP --- */
+@media screen and (max-width: 768px) {
+    .footer-section {
+        padding: 30px 15px 20px !important;
+    }
+
+    /* Mengubah grid footer menjadi satu kolom ke bawah agar rapi */
+    .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 25px !important;
+    }
+
+    .footer-col {
+        width: 100% !important;
+    }
+
+    /* Menyesuaikan ukuran iframe peta di footer untuk layar HP */
+    .embedded-map-container iframe {
+        height: 150px !important;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        padding-top: 15px;
+        font-size: 0.8rem;
+    }
+}
+</style>
 .weather-widget {
     display: flex !important;
     align-items: center !important;
