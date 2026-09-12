@@ -11,28 +11,35 @@
 </head>
 <body style="background: #06110b url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; color: #f0fdf4;">
 <style>
-/* --- Perbaikan Umum Responsif Android --- */
 html, body {
     max-width: 100%;
     overflow-x: hidden !important;
     -webkit-text-size-adjust: 100%;
 }
 
-/* Pastikan semua gambar dan kontainer tidak keluar layar */
 img, iframe, video {
     max-width: 100%;
     height: auto;
 }
 
-/* --- Penyesuaian Header & Widget Cuaca untuk HP --- */
-@media screen and (max-width: 768px) {
+/* --- Mengembalikan Logo Perhutani Seperti Semula (Tanpa Tambahan Lingkaran) --- */
+.brand-logo-ring {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* --- Perbaikan Header, Menu, & Widget Cuaca di HP (Responsif Landscape/Portrait) --- */
+@media screen and (max-width: 950px) {
     .premium-header {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
-        padding: 8px 12px !important;
+        padding: 6px 10px !important;
+        box-sizing: border-box;
     }
 
     .header-inner {
@@ -40,54 +47,71 @@ img, iframe, video {
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        gap: 8px;
+        gap: 4px;
     }
 
-    /* Mengatur logo agar tidak terlalu besar di HP */
     .brand-premium {
         gap: 6px;
+        flex-shrink: 1;
+        min-width: 0;
     }
+    
     .brand-logo-ring img {
         width: 32px;
         height: 32px;
-    }
-    .brand-copy strong {
-        font-size: 0.85rem !important;
-    }
-    .brand-copy small {
-        font-size: 0.65rem !important;
-    }
-
-    /* Mengatur area aksi header (Tombol menu, kuis, search, cuaca) */
-    .header-actions {
-        gap: 6px !important;
-        align-items: center;
-    }
-
-    /* Penyesuaian widget cuaca agar pas di layar HP kecil */
-    .weather-widget {
-        padding: 2px 6px !important;
-        border-radius: 8px !important;
-        font-size: 0.75rem !important;
+        border-radius: 0 !important; /* Menyesuaikan bentuk logo asli */
     }
     
-    .weather-widget .temp span {
+    .brand-copy strong {
+        font-size: 0.8rem !important;
+    }
+    
+    .brand-copy small {
+        font-size: 0.6rem !important;
+    }
+
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 4px !important;
+        flex-shrink: 0;
+    }
+
+    .weather-widget {
+        display: flex !important;
+        padding: 2px 6px !important;
+        border-radius: 8px !important;
+        gap: 4px !important;
+    }
+
+    .weather-widget .temp {
         font-size: 0.75rem !important;
     }
 
-    /* Jarak aman konten utama agar tidak tertutup header fixed */
     main.main-content-full {
-        padding-top: 75px !important;
+        padding-top: 70px !important;
     }
 }
 
-/* --- Penyesuaian Footer agar Tidak Terpotong di HP --- */
-@media screen and (max-width: 768px) {
+/* --- Memastikan Menu & Pilihan Karir Tampil Optimal di Semua HP (Mode Landscape/Normal) --- */
+@media screen and (max-width: 950px) {
+    /* Mengatur drawer menu agar bisa di-scroll dengan nyaman dalam posisi landscape HP */
+    .mobile-nav-drawer {
+        max-height: 100vh;
+        overflow-y: auto !important;
+    }
+    
+    .mobile-drawer-body {
+        padding-bottom: 40px;
+    }
+}
+
+/* --- Perbaikan Footer Agar Tidak Terpotong di HP --- */
+@media screen and (max-width: 950px) {
     .footer-section {
         padding: 30px 15px 20px !important;
     }
 
-    /* Mengubah grid footer menjadi satu kolom ke bawah agar rapi */
     .footer-grid {
         display: flex !important;
         flex-direction: column !important;
@@ -98,17 +122,16 @@ img, iframe, video {
         width: 100% !important;
     }
 
-    /* Menyesuaikan ukuran iframe peta di footer untuk layar HP */
     .embedded-map-container iframe {
-        height: 150px !important;
+        height: 140px !important;
     }
 
     .footer-bottom-bar {
         flex-direction: column;
         text-align: center;
-        gap: 10px;
+        gap: 8px;
         padding-top: 15px;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 }
 .weather-widget {
