@@ -43,42 +43,54 @@
         font-size: 0.85rem !important;
     }
 }
-.mobile-nav-drawer {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 280px;
-    height: 100dvh;
-    max-height: 100dvh;
-    background: #0d2115;
-    z-index: 100000;
-    transition: right 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
-    border-left: 1px solid rgba(74, 222, 128, 0.2);
-}
+@media screen and (max-width: 768px) {
+    /* Mencegah elemen meluber keluar layar */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
 
-.mobile-drawer-header {
-    flex-shrink: 0;
-    padding: 15px 20px;
-}
+    /* Mengubah grid Hero Section agar bertumpuk ke bawah di HP */
+    main section > div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 0 15px !important;
+    }
 
-.mobile-drawer-body {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 10px 20px 60px 20px;
-    -webkit-overflow-scrolling: touch;
-}
+    /* Menyesuaikan ukuran judul utama agar tidak terlalu besar di layar kecil */
+    h1[style*="font-size: 3.3rem"], 
+    main h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
 
-.mobile-nav-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding-bottom: 40px;
+    /* Penyesuaian padding section agar tidak terlalu memakan tempat */
+    main section {
+        padding: 40px 5% !important;
+    }
+
+    /* Menyesuaikan kartu statistik di beranda agar pas di layar HP */
+    section div[style*="grid-template-columns: repeat(auto-fit"] {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 20px !important;
+    }
+
+    /* Membuat gambar profil/konten responsif */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Menghilangkan elemen absolute yang sering keluar layar di mobile */
+    .profil-quote-card {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        margin-top: 20px;
+        max-width: 100% !important;
+    }
 }
-```[cite: 1]
 </style>
   <header class="premium-header">
     <div class="header-inner">
