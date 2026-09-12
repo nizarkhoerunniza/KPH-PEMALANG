@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
 
-    <!-- CSS UTAMA UNTUK SLIDER 6 CARD & MENCEGAH KEPOTONG DI HP -->
     <style>
         html, body {
             max-width: 100% !important;
@@ -39,7 +38,6 @@
                 margin: 0 !important;
             }
 
-            /* --- MENGUBAH GRID 6 PRODUK KAYU MENJADI SLIDER GESER KE SAMPING --- */
             .herbal-products-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -62,7 +60,7 @@
             }
 
             .product-card, .announcement-card {
-                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card selanjutnya terlihat sedikit sebagai petunjuk geser */
+                flex: 0 0 80% !important;
                 max-width: 280px !important;
                 scroll-snap-align: start !important;
                 margin: 0 !important;
@@ -92,6 +90,38 @@
                 padding-bottom: 8px !important;
             }
         }
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
     </style>
 </head>
 <body>
