@@ -91,6 +91,42 @@
         max-width: 100% !important;
     }
 }
+    @media screen and (max-width: 768px) {
+    /* Mengatur ukuran logo di dalam header atas */
+    .brand-logo-ring {
+        width: 36px !important;
+        height: 36px !important;
+        min-width: 36px !important;
+    }
+    .brand-logo-ring img {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    /* KHUSUS: Mengatur ukuran logo Perhutani di dalam Burger Menu / Drawer */
+    .mobile-brand img {
+        width: 32px !important;
+        height: 32px !important;
+        max-width: 32px !important;
+        max-height: 32px !important;
+        object-fit: contain !important;
+    }
+
+    .mobile-brand {
+        gap: 10px !important;
+        font-size: 0.95rem !important;
+    }
+
+    /* Penyesuaian khusus untuk mode Landscape (mendatar) */
+    @media screen and (orientation: landscape) {
+        .mobile-brand img {
+            width: 28px !important;
+            height: 28px !important;
+            max-width: 28px !important;
+            max-height: 28px !important;
+        }
+    }
+}
 </style>
   <header class="premium-header">
     <div class="header-inner">
