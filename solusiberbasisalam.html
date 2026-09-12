@@ -9,6 +9,40 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
 </head>
+<style>
+    .weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
+</style>
 <body>
 <header class="premium-header">
     <div class="header-inner">
@@ -23,7 +57,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link active">Beranda</a>
+            <a href="index.html" class="premium-link">Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
@@ -51,7 +85,7 @@
                     <a href="kayu.html"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
                     <a href="nonkayu.html"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
                     <a href="ekowisata.html"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
-                    <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
+                    <a href="solusiberbasisalam.html" class="active"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
                     <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
                 </div>
             </div>
@@ -526,7 +560,7 @@
     <nav class="mobile-nav-drawer" id="mobileNavDrawer">
         <div class="mobile-drawer-header">
             <div class="mobile-brand">
-                <img src="assets/perhutanii.png" alt="Logo">
+                <img src="assets/perhutanii.jpg" alt="Logo">
                 <span>KPH PEMALANG</span>
             </div>
             <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
@@ -570,7 +604,7 @@
                         <a href="kayu.html">Kayu</a>
                         <a href="nonkayu.html">Non Kayu</a>
                         <a href="ekowisata.html">Ekowisata</a>
-                        <a href="solusiberbasisalam.html">Solusi Berbasis Alam</a>
+                        <a href="solusiberbasisalam.html" class="active">Solusi Berbasis Alam</a>
                         <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
                     </div>
                 </li>
