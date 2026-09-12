@@ -70,6 +70,38 @@
             height: 280px !important;
         }
     }
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -86,7 +118,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link active">Beranda</a>
+            <a href="index.html" class="premium-link">Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
@@ -98,7 +130,7 @@
                     <a href="sejarah.html"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
                     <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
                     <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
-                    <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
+                    <a href="struktur.html" class="active"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
                     <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
                     <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
                 </div>
@@ -497,7 +529,7 @@
                         <a href="sejarah.html">Sejarah Perusahaan</a>
                         <a href="tugasfungsi.html">Tugas dan Fungsi</a>
                         <a href="visimisitatanilai.html">Visi Misi & Tata Nilai</a>
-                        <a href="struktur.html">Struktur Organisasi</a>
+                        <a href="struktur.html" class="active">Struktur Organisasi</a>
                         <a href="kepemilikansaham.html">Kepemilikan Saham</a>
                         <a href="program.html">Program Kerja</a>
                     </div>
