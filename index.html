@@ -11,18 +11,12 @@
 </head>
 <body style="background: #06110b url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; color: #f0fdf4;">
 <style>
-/* =========================================================
-   HANYA TAMPILKAN ANGKA & SUHU DI HP (PEMALANG DISEMBUNYIKAN)
-   ========================================================= */
-
-/* Tampilan di Komputer/Laptop: Tidak diubah */
 .weather-widget {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
 }
 
-/* Khusus Tampilan HP (Portrait & Landscape) */
 @media screen and (max-width: 950px) {
     .weather-widget {
         display: flex !important;
@@ -43,7 +37,6 @@
         display: none !important;
     }
 
-    /* 2. Paksa hanya Ikon dan Suhu (°C) yang tampil */
     .weather-widget .weather-icon,
     .weather-widget .temp {
         display: inline-block !important;
