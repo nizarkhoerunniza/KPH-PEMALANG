@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
 
-    <!-- CSS khusus untuk perbaikan tampilan HP Android Portrait -->
     <style>
         @media screen and (max-width: 768px) {
-            /* 1. Mencegah Elemen Keluar dari Layar HP */
             html, body {
                 overflow-x: hidden !important;
                 width: 100% !important;
@@ -24,7 +22,6 @@
                 box-sizing: border-box !important;
             }
 
-            /* 2. Mengubah Grid Utama Menjadi 1 Kolom Vertikal */
             .saham-hero,
             .saham-main-grid,
             .chart-flex-layout {
@@ -34,7 +31,6 @@
                 gap: 20px !important;
             }
 
-            /* 3. Menyesuaikan Card Box Agar Pas di Layar */
             .card-box, 
             .struktur-box, 
             .info-bar-box, 
@@ -46,7 +42,6 @@
                 padding: 15px !important;
             }
 
-            /* 4. Mencegah Tabel Komposisi Saham Terpotong */
             .table-box {
                 overflow-x: auto !important;
                 -webkit-overflow-scrolling: touch;
@@ -63,7 +58,6 @@
                 padding: 8px 6px !important;
             }
 
-            /* 5. Menyesuaikan Donut Chart & Legend */
             .donut-chart-container {
                 margin: 0 auto !important;
             }
@@ -74,7 +68,6 @@
                 gap: 10px !important;
             }
 
-            /* 6. Menyesuaikan Grid Prinsip Tata Kelola */
             .principles-grid {
                 display: flex !important;
                 flex-direction: column !important;
@@ -86,6 +79,38 @@
                 box-sizing: border-box !important;
             }
         }
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
     </style>
 </head>
 <body>
