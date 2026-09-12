@@ -11,6 +11,40 @@
 </head>
 <body style="background: #06110b url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat; color: #f0fdf4;">
 <style>
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+/* --- Pengaturan Dasar & Ketebalan Garis Lingkaran Logo yang Proporsional (Tidak Terlalu Tebal) --- */
 html, body {
     max-width: 100%;
     overflow-x: hidden !important;
@@ -22,15 +56,17 @@ img, iframe, video {
     height: auto;
 }
 
-/* --- Mengembalikan Logo Perhutani Seperti Semula (Tanpa Tambahan Lingkaran) --- */
 .brand-logo-ring {
-    border: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
+    border-width: 1.5px !important;
+    border-style: solid !important;
+    border-color: rgba(74, 222, 128, 0.4) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
 }
 
-/* --- Perbaikan Header, Menu, & Widget Cuaca di HP (Responsif Landscape/Portrait) --- */
 @media screen and (max-width: 950px) {
     .premium-header {
         position: fixed;
@@ -59,7 +95,6 @@ img, iframe, video {
     .brand-logo-ring img {
         width: 32px;
         height: 32px;
-        border-radius: 0 !important; /* Menyesuaikan bentuk logo asli */
     }
     
     .brand-copy strong {
@@ -91,11 +126,7 @@ img, iframe, video {
     main.main-content-full {
         padding-top: 70px !important;
     }
-}
 
-/* --- Memastikan Menu & Pilihan Karir Tampil Optimal di Semua HP (Mode Landscape/Normal) --- */
-@media screen and (max-width: 950px) {
-    /* Mengatur drawer menu agar bisa di-scroll dengan nyaman dalam posisi landscape HP */
     .mobile-nav-drawer {
         max-height: 100vh;
         overflow-y: auto !important;
@@ -104,10 +135,7 @@ img, iframe, video {
     .mobile-drawer-body {
         padding-bottom: 40px;
     }
-}
 
-/* --- Perbaikan Footer Agar Tidak Terpotong di HP --- */
-@media screen and (max-width: 950px) {
     .footer-section {
         padding: 30px 15px 20px !important;
     }
@@ -132,39 +160,6 @@ img, iframe, video {
         gap: 8px;
         padding-top: 15px;
         font-size: 0.75rem;
-    }
-}
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
-
-@media screen and (max-width: 950px) {
-    .weather-widget {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 12px !important;
-    }
-
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
-    }
-
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
     }
 }
 </style>
@@ -230,17 +225,14 @@ img, iframe, video {
         </nav>
 
         <div class="header-actions">
-            <!-- Tombol Burger (Tampil di Layar HP) -->
             <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Tombol Kuis (Tunggal) -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
 
-            <!-- Search -->
             <div class="search-wrapper premium-search">
                 <button id="searchBtn" class="header-action" title="Cari">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -251,7 +243,6 @@ img, iframe, video {
                 </div>
             </div>
 
-            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -728,7 +719,6 @@ img, iframe, video {
         </div>
     </nav>
 
-    <!-- Script JS ditaruh paling bawah di sini -->
     <script src="js/script.js"></script>
 </body>
 </html>
