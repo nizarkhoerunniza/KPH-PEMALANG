@@ -61,6 +61,38 @@
             grid-template-columns: 1fr !important;
         }
     }
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
 </style>
 </head>
 <body>
@@ -77,7 +109,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link active">Beranda</a>
+            <a href="index.html" class="premium-link">Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
@@ -116,7 +148,7 @@
                 </a>
                 <div class="premium-menu compact-menu">
                     <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
-                    <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
+                    <a href="suararimba.html" class="active"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
                     <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
                 </div>
             </div>
@@ -673,7 +705,7 @@
                     </button>
                     <div class="mobile-submenu">
                         <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
-                        <a href="suararimba.html">Suara Rimba</a>
+                        <a href="suararimba.html" class="active">Suara Rimba</a>
                         <a href="pengumuman.html">Pengumuman</a>
                     </div>
                 </li>
