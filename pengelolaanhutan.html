@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
 <style>
-        /* CSS Responsive Diperbaiki untuk HP Android & Layar Kecil */
         @media screen and (max-width: 992px) {
             main div[style*="grid-template-columns"],
             section div[style*="grid-template-columns"],
@@ -19,11 +18,9 @@
             .sba-hero h1 {
                 font-size: 2.3rem !important;
             }
-            /* Memperbaiki 4 Badge Hero agar turun ke bawah rapi di HP */
             .hero-badges-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
             }
-            /* Memperbaiki Section Fokus agar tidak melebar */
             #fokus div[style*="grid-template-columns: 2fr 1.1fr"] {
                 grid-template-columns: 1fr !important;
             }
@@ -39,6 +36,38 @@
                 grid-template-columns: 1fr !important;
             }
         }
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
     </style>
 </head>
 <body>
