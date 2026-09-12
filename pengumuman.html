@@ -9,6 +9,40 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
 </head>
+<style>
+    .weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
+
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
+</style>
 <body>
 <header class="premium-header">
     <div class="header-inner">
@@ -23,7 +57,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" >Beranda</a>
+            <a href="index.html" class="premium-link" >Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
@@ -421,7 +455,7 @@
     <nav class="mobile-nav-drawer" id="mobileNavDrawer">
         <div class="mobile-drawer-header">
             <div class="mobile-brand">
-                <img src="assets/perhutanii.png" alt="Logo">
+                <img src="assets/perhutanii.jpg" alt="Logo">
                 <span>KPH PEMALANG</span>
             </div>
             <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
