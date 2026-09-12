@@ -59,6 +59,78 @@
         max-width: 100% !important;
     }
 }
+/* Perbaikan Header untuk Semua Posisi Layar HP (Potret & Lanskap) */
+@media screen and (max-width: 950px) {
+    .premium-header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        z-index: 1000;
+    }
+
+    .header-inner {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 10px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Ukuran logo dan teks brand agar proporsional di layar HP */
+    .brand-premium {
+        gap: 8px !important;
+        max-width: 60% !important;
+    }
+
+    .brand-logo-ring img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    .brand-copy strong {
+        font-size: 0.9rem !important;
+    }
+
+    .brand-copy small {
+        font-size: 0.65rem !important;
+    }
+
+    /* Menyembunyikan navigasi desktop agar tidak bertabrakan */
+    .premium-nav {
+        display: none !important;
+    }
+
+    /* Mengatur area tombol aksi di kanan header (Quiz, Search, Weather, Burger) */
+    .header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+    }
+
+    /* Ukuran tombol-tombol aksi di header agar muat dalam mode lanskap yang lebih pendek */
+    .header-action, .mobile-menu-toggle {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.9rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Penyesuaian khusus mode Lanskap (Landscape) pada HP */
+    @media screen and (orientation: landscape) {
+        .premium-header {
+            padding: 5px 0 !important;
+        }
+        
+        /* Widget cuaca disembunyikan atau diringkas agar header tidak terlalu padat ke bawah */
+        .weather-widget {
+            display: none !important; 
+        }
+    }
+}
 .weather-widget {
     display: flex !important;
     align-items: center !important;
