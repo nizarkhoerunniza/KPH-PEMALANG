@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
 
-    <style>
+  <style>
+        /* Styling Dasar Nuansa Hutan Super Estetik & Sentuhan Soft White */
         html, body {
+            background: #0b1711 !important;
+            color: #edfaf1 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
             max-width: 100% !important;
             overflow-x: hidden !important;
             box-sizing: border-box !important;
@@ -20,51 +24,105 @@
             box-sizing: border-box !important;
         }
 
-        /* Styling Tambahan agar Foto Unik & Interaktif ala index.html */
-        .ann-img {
+        /* Header Premium dengan Efek Glassmorphism & Garis Cahaya Daun */
+        .premium-header {
+            background: rgba(11, 23, 17, 0.88) !important;
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(134, 239, 172, 0.25);
+        }
+        .premium-link {
+            color: #f3f4f6 !important;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .premium-link:hover, .premium-link.active {
+            color: #4ade80 !important;
+        }
+        .brand-copy strong {
+            color: #ffffff !important;
+            text-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+        }
+        .brand-copy small {
+            color: #86efac !important;
+        }
+        .header-action {
+            color: #4ade80 !important;
+            background: rgba(134, 239, 172, 0.12) !important;
+            border: 1px solid rgba(134, 239, 172, 0.3) !important;
+        }
+
+        /* Weather Widget */
+        .weather-widget {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            background: rgba(16, 37, 26, 0.85) !important;
+            border: 1px solid rgba(134, 239, 172, 0.35) !important;
+            border-radius: 12px !important;
+            padding: 4px 10px !important;
+        }
+        .weather-icon {
+            color: #fde047 !important;
+        }
+        .weather-info .temp {
+            color: #ffffff !important;
+        }
+        .weather-info small, .weather-info .location {
+            color: #d1d5db !important;
+        }
+
+        /* Hero Banner Khusus Ekowisata dengan Nuansa Hutan Keren */
+        .herbal-hero-banner {
             position: relative;
-            overflow: hidden;
-            cursor: pointer;
+            background: linear-gradient(135deg, rgba(6, 17, 11, 0.94) 0%, rgba(10, 31, 19, 0.82) 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat !important;
+            border-bottom: 3px solid #22c55e;
+            padding: 80px 5% !important;
+            text-align: center;
+        }
+        .herbal-hero-banner h1 {
+            color: #ffffff !important;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.5);
+        }
+        .herbal-hero-banner .hero-subtitle, .herbal-hero-banner .hero-desc {
+            color: #e5e7eb !important;
         }
 
-        .ann-img img {
-            width: 100% !important;
-            height: 180px !important;
-            object-fit: cover !important;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease !important;
+        /* Kotak & Kartu Konten Nuansa Hutan Elegan */
+        .announcement-card, .product-card, .sidebar-widget, .herbal-features-box {
+            background: rgba(18, 40, 28, 0.9) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(134, 239, 172, 0.28) !important;
+            color: #edfaf1 !important;
+            border-radius: 20px !important;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
 
-        .ann-img:hover img {
-            transform: scale(1.08) !important;
-            filter: brightness(1.05);
+        .announcement-card h4, .product-card h4, .sidebar-widget h4, .herbal-features-box h4, .herbal-features-box h5 {
+            color: #ffffff !important;
         }
 
-        /* Overlay ikon kaca pembesar / zoom saat hover foto */
-        .ann-img::after {
-            content: "\f00e";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            background: rgba(21, 128, 61, 0.85);
-            color: #ffffff;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            pointer-events: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        .announcement-card p, .product-card p, .sidebar-widget p, .herbal-features-box p, .sidebar-widget span {
+            color: #d1d5db !important;
         }
 
-        .ann-img:hover::after {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+        /* Pill Kategori Aktif / Hover */
+        .cat-pill {
+            background: rgba(18, 40, 28, 0.9) !important;
+            border: 1px solid rgba(134, 239, 172, 0.3) !important;
+            color: #e5e7eb !important;
+        }
+        .cat-pill.active, .cat-pill:hover {
+            background: #22c55e !important;
+            color: #061c10 !important;
+            font-weight: 700;
+        }
+
+        /* Footer Konsisten */
+        .footer-section {
+            background: rgba(8, 18, 13, 0.98) !important;
+            color: #edfaf1 !important;
+            border-top: 1px solid rgba(134, 239, 172, 0.25) !important;
         }
 
         @media screen and (max-width: 768px) {
@@ -85,7 +143,7 @@
                 margin: 0 !important;
             }
 
-            /* Mengubah grid menjadi slider geser ke samping di HP */
+            /* Slider Geser ke Samping untuk Mobile */
             .herbal-products-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -115,7 +173,9 @@
             }
 
             .ann-img img, .product-card img {
+                width: 100% !important;
                 height: 160px !important;
+                object-fit: cover !important;
             }
 
             h1, h2, h3, h4, p, span {
@@ -135,12 +195,6 @@
                 max-width: 100% !important;
                 padding-bottom: 8px !important;
             }
-        }
-
-        .weather-widget {
-            display: flex !important;
-            align-items: center !important;
-            gap: 8px !important;
         }
 
         @media screen and (max-width: 950px) {
