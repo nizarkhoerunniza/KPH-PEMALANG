@@ -8,115 +8,106 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
-</head>
-<body style="background: #06110b; color: #f0fdf4;">
 <style>
-  .weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
+    /* Styling Dasar Tema Terang & Segar ala Referensi */
+    body {
+        background: #f7f5ef !important;
+        color: #1c2d21 !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
 
-@media screen and (max-width: 950px) {
+    /* Penyesuaian Header agar Menyatu dengan Tema Terang */
+    .premium-header {
+        background: rgba(247, 245, 239, 0.95) !important;
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(28, 45, 33, 0.1);
+    }
+    .premium-link {
+        color: #1c2d21 !important;
+        font-weight: 600;
+    }
+    .premium-link:hover, .premium-link.active {
+        color: #15803d !important;
+    }
+    .brand-copy strong {
+        color: #1c2d21 !important;
+    }
+    .brand-copy small {
+        color: #15803d !important;
+    }
+    .header-action {
+        color: #1c2d21 !important;
+        background: rgba(28, 45, 33, 0.05) !important;
+        border: 1px solid rgba(28, 45, 33, 0.1) !important;
+    }
+
+    /* Weather Widget */
     .weather-widget {
         display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        align-items: center !important;
+        gap: 8px !important;
+        background: rgba(28, 45, 33, 0.05) !important;
+        border: 1px solid rgba(28, 45, 33, 0.1) !important;
         border-radius: 12px !important;
+        padding: 4px 10px !important;
+    }
+    .weather-icon {
+        color: #facc15 !important; /* Kuning cerah */
+    }
+    .weather-info .temp {
+        color: #1c2d21 !important;
+    }
+    .weather-info small, .weather-info .location {
+        color: #4b5563 !important;
     }
 
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
+    /* Hero Section dengan Gambar Pemandangan & Overlay Elegan */
+    .hero-section-custom {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(10, 26, 17, 0.85), rgba(10, 26, 17, 0.65)), url('https://images.unsplash.com/photo-1511497584788-876761142212?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        padding: 80px 5%;
+        overflow: hidden;
+        border-radius: 0 0 30px 30px;
     }
 
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
-    }
-}
-@media screen and (max-width: 768px) {
-    /* Mencegah elemen meluber keluar layar */
-    body, html {
-        overflow-x: hidden !important;
-        width: 100% !important;
+    /* Kartu Statistik & Fitur */
+    .stat-card-custom {
+        background: #ffffff !important;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+        border: 1px solid rgba(28, 45, 33, 0.08);
     }
 
-    /* Mengubah grid Hero Section agar bertumpuk ke bawah di HP */
-    main section > div[style*="grid-template-columns"] {
-        grid-template-columns: 1fr !important;
-        gap: 30px !important;
-        padding: 0 15px !important;
+    /* Bagian Konten Standar Tema Terang */
+    .light-section-box {
+        background: #ffffff;
+        border: 1px solid rgba(28, 45, 33, 0.08);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     }
 
-    /* Menyesuaikan ukuran judul utama agar tidak terlalu besar di layar kecil */
-    h1[style*="font-size: 3.3rem"], 
-    main h1 {
-        font-size: 2.2rem !important;
-        line-height: 1.2 !important;
-    }
-
-    /* Penyesuaian padding section agar tidak terlalu memakan tempat */
-    main section {
-        padding: 40px 5% !important;
-    }
-
-    /* Menyesuaikan kartu statistik di beranda agar pas di layar HP */
-    section div[style*="grid-template-columns: repeat(auto-fit"] {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-        padding: 20px !important;
-    }
-
-    /* Membuat gambar profil/konten responsif */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    /* Menghilangkan elemen absolute yang sering keluar layar di mobile */
-    .profil-quote-card {
-        position: relative !important;
-        bottom: auto !important;
-        right: auto !important;
-        margin-top: 20px;
-        max-width: 100% !important;
-    }
-}
-    @media screen and (max-width: 768px) {
-    /* KHUSUS: Hanya mengubah ukuran logo Perhutani di dalam Burger Menu / Drawer */
-    .mobile-brand img {
-        width: 32px !important;
-        height: 32px !important;
-        max-width: 32px !important;
-        max-height: 32px !important;
-        object-fit: contain !important;
-    }
-
-    .mobile-brand {
-        gap: 10px !important;
-        font-size: 0.95rem !important;
-    }
-
-    /* Penyesuaian khusus untuk mode Landscape (mendatar) pada Burger Menu */
-    @media screen and (orientation: landscape) {
-        .mobile-brand img {
-            width: 28px !important;
-            height: 28px !important;
-            max-width: 28px !important;
-            max-height: 28px !important;
+    @media screen and (max-width: 950px) {
+        .weather-widget span:not(.temp):not(.weather-icon),
+        .weather-widget div:not(.temp):not(.weather-icon),
+        .weather-widget p,
+        .weather-widget small {
+            display: none !important;
+        }
+        .weather-widget .weather-icon,
+        .weather-widget .temp {
+            display: inline-block !important;
+            visibility: visible !important;
+            font-size: 0.85rem !important;
         }
     }
-}
 </style>
+</head>
+<body>
   <header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
@@ -179,14 +170,17 @@
         </nav>
 
         <div class="header-actions">
+            <!-- Tombol Burger (Tampil di Layar HP) -->
             <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
+            <!-- Tombol Kuis (Tunggal) -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
 
+            <!-- Search -->
             <div class="search-wrapper premium-search">
                 <button id="searchBtn" class="header-action" title="Cari">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -197,6 +191,7 @@
                 </div>
             </div>
 
+            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -212,48 +207,50 @@
         </div>
     </div>
 </header>
-    <main class="main-content-full" style="padding-top: 90px; background: rgba(6, 17, 11, 0.92);">
 
-        <section style="position: relative; min-height: 85vh; display: flex; align-items: center; background: linear-gradient(135deg, rgba(6, 17, 11, 0.9), rgba(6, 17, 11, 0.8)), url('https://images.unsplash.com/photo-1511497584788-876761142212?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat; padding: 80px 5%; overflow: hidden;">
+    <main class="main-content-full" style="padding-top: 80px;">
+
+        <!-- Hero Section -->
+        <section class="hero-section-custom">
             <div style="max-width: 1200px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; position: relative; z-index: 2;">
                 <div>
-                    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(74, 222, 128, 0.08); backdrop-filter: blur(10px); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(74, 222, 128, 0.2); margin-bottom: 25px;">
+                    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.3); margin-bottom: 25px;">
                         <span style="width: 8px; height: 8px; background: #4ade80; border-radius: 50%; display: inline-block;"></span>
-                        <span style="color: #4ade80; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;" data-i18n="hero_badge">Perhutani KPH Pemalang</span>
+                        <span style="color: #ffffff; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;" data-i18n="hero_badge">Perhutani KPH Pemalang</span>
                     </div>
                     <h1 style="font-size: 3.3rem; font-weight: 800; color: #ffffff; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px;" data-i18n="hero_title">
                         Menjaga Hutan, <br><span style="color: #86efac;">Inspirasi Negeri</span>
                     </h1>
-                    <p style="font-size: 1.1rem; color: #bbf7d0; line-height: 1.7; margin-bottom: 35px; max-width: 580px; font-weight: 300;" data-i18n="hero_desc">
+                    <p style="font-size: 1.1rem; color: #f0fdf4; line-height: 1.7; margin-bottom: 35px; max-width: 580px; font-weight: 300;" data-i18n="hero_desc">
                         Mewujudkan pengelolaan hutan lestari berstandar tinggi yang menyelaraskan fungsi ekologis, pemberdayaan masyarakat, dan pertumbuhan ekonomi berkelanjutan.
                     </p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="tentangkami.html" style="background: rgba(74, 222, 128, 0.15); color: #ffffff; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid rgba(74, 222, 128, 0.3); backdrop-filter: blur(10px); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
+                        <a href="tentangkami.html" style="background: #15803d; color: #ffffff; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 10px 20px rgba(21, 128, 61, 0.3); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
                             <span data-i18n="btn_explore">Jelajahi Wilayah</span> <i class="fa-solid fa-arrow-right-long"></i>
                         </a>
-                        <a href="ekowisata.html" style="background: transparent; backdrop-filter: blur(10px); color: #ffffff; border: 1px solid rgba(74, 222, 128, 0.3); padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
+                        <a href="ekowisata.html" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px;">
                             <i class="fa-solid fa-compass"></i> <span data-i18n="btn_eco">Destinasi Ekowisata</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="hero-float-card-wrap">
-                    <div style="background: rgba(13, 33, 21, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 24px; padding: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.3);">
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid rgba(74, 222, 128, 0.2); padding-bottom: 15px;">
-                            <div style="width: 45px; height: 45px; background: rgba(74, 222, 128, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.2rem;">
+                    <div style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(28, 45, 33, 0.1); border-radius: 24px; padding: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.15);">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid rgba(28, 45, 33, 0.1); padding-bottom: 15px;">
+                            <div style="width: 45px; height: 45px; background: rgba(21, 128, 61, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #15803d; font-size: 1.2rem;">
                                 <i class="fa-solid fa-shield-halved"></i>
                             </div>
                             <div>
-                                <h4 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin: 0;" data-i18n="cert_title">Sertifikasi & Standar</h4>
-                                <span style="color: #86efac; font-size: 0.8rem;" data-i18n="cert_sub">Pengelolaan Hutan Lestari (PHL)</span>
+                                <h4 style="color: #1c2d21; font-size: 1rem; font-weight: 700; margin: 0;" data-i18n="cert_title">Sertifikasi & Standar</h4>
+                                <span style="color: #15803d; font-size: 0.8rem;" data-i18n="cert_sub">Pengelolaan Hutan Lestari (PHL)</span>
                             </div>
                         </div>
-                        <p style="color: #bbf7d0; font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px;" data-i18n="cert_desc">
+                        <p style="color: #4b5563; font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px;" data-i18n="cert_desc">
                             Komitmen penuh pada standar kualitas tinggi dalam perlindungan keanekaragaman hayati dan operasional ramah lingkungan.
                         </p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(6, 17, 11, 0.7); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.15);">
-                            <span style="color: #dcfce7; font-size: 0.85rem; font-weight: 600;" data-i18n="status_kawasan">Status Kawasan</span>
-                            <span style="color: #4ade80; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 5px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; background: #f0fdf4; padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(21, 128, 61, 0.2);">
+                            <span style="color: #1c2d21; font-size: 0.85rem; font-weight: 600;" data-i18n="status_kawasan">Status Kawasan</span>
+                            <span style="color: #15803d; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 5px;">
                                 <i class="fa-solid fa-circle-check"></i> <span data-i18n="status_aman">Produktif & Aman</span>
                             </span>
                         </div>
@@ -262,76 +259,78 @@
             </div>
         </section>
 
-        <section style="max-width: 1200px; margin: 60px auto; padding: 0 5%; position: relative; z-index: 10;">
-            <div style="background: rgba(13, 33, 21, 0.75); backdrop-filter: blur(12px); border-radius: 20px; padding: 35px 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid rgba(74, 222, 128, 0.2); display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+        <!-- Statistik Section -->
+        <section style="max-width: 1200px; margin: -40px auto 60px; padding: 0 5%; position: relative; z-index: 10;">
+            <div class="stat-card-custom" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
                 <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(74, 222, 128, 0.1); color: #4ade80; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(74, 222, 128, 0.2);">
+                    <div style="width: 60px; height: 60px; background: rgba(21, 128, 61, 0.1); color: #15803d; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(21, 128, 61, 0.2);">
                         <i class="fa-solid fa-earth-asia"></i>
                     </div>
                     <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px;">128.540 <small style="font-size: 1rem; font-weight: 600; color: #86efac;">Ha</small></h3>
-                        <span style="font-size: 0.82rem; color: #86efac; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_luas_label">Luas Wilayah Kerja</span>
+                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #1c2d21; margin: 0 0 2px;">128.540 <small style="font-size: 1rem; font-weight: 600; color: #15803d;">Ha</small></h3>
+                        <span style="font-size: 0.82rem; color: #4b5563; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_luas_label">Luas Wilayah Kerja</span>
                     </div>
                 </div>
 
                 <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(74, 222, 128, 0.1); color: #4ade80; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(74, 222, 128, 0.2);">
+                    <div style="width: 60px; height: 60px; background: rgba(21, 128, 61, 0.1); color: #15803d; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(21, 128, 61, 0.2);">
                         <i class="fa-solid fa-map-location-dot"></i>
                     </div>
                     <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px;">3 Kab.</h3>
-                        <span style="font-size: 0.82rem; color: #86efac; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_adm_label">Wilayah Administratif</span>
+                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #1c2d21; margin: 0 0 2px;">3 Kab.</h3>
+                        <span style="font-size: 0.82rem; color: #4b5563; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_adm_label">Wilayah Administratif</span>
                     </div>
                 </div>
 
                 <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(74, 222, 128, 0.1); color: #4ade80; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(74, 222, 128, 0.2);">
+                    <div style="width: 60px; height: 60px; background: rgba(21, 128, 61, 0.1); color: #15803d; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(21, 128, 61, 0.2);">
                         <i class="fa-solid fa-people-group"></i>
                     </div>
                     <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px;">LMDH</h3>
-                        <span style="font-size: 0.82rem; color: #86efac; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_lmdh_label">Mitra Masyarakat Desa Hutan</span>
+                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #1c2d21; margin: 0 0 2px;">LMDH</h3>
+                        <span style="font-size: 0.82rem; color: #4b5563; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_lmdh_label">Mitra Masyarakat Desa Hutan</span>
                     </div>
                 </div>
 
                 <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(74, 222, 128, 0.1); color: #4ade80; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(74, 222, 128, 0.2);">
+                    <div style="width: 60px; height: 60px; background: rgba(21, 128, 61, 0.1); color: #15803d; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(21, 128, 61, 0.2);">
                         <i class="fa-solid fa-seedling"></i>
                     </div>
                     <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px;">100%</h3>
-                        <span style="font-size: 0.82rem; color: #86efac; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_lestari_label">Komitmen Lestari</span>
+                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #1c2d21; margin: 0 0 2px;">100%</h3>
+                        <span style="font-size: 0.82rem; color: #4b5563; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_lestari_label">Komitmen Lestari</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Profil Section -->
         <section id="profil" style="max-width: 1200px; margin: 80px auto; padding: 0 5%;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
                 <div style="position: relative;">
-                    <div style="border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.4); border: 1px solid rgba(74, 222, 128, 0.2);">
+                    <div style="border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.1); border: 1px solid rgba(28, 45, 33, 0.1);">
                         <img src="assets/pohon.jpg" alt="Hutan Perhutani" style="width: 100%; height: 450px; object-fit: cover; display: block;">
                     </div>
-                    <div class="profil-quote-card" style="position: absolute; bottom: -25px; right: -25px; background: rgba(10, 26, 17, 0.95); backdrop-filter: blur(12px); color: #ffffff; padding: 25px; border-radius: 20px; box-shadow: 0 20px 30px rgba(0,0,0,0.4); max-width: 260px; border: 1px solid rgba(74, 222, 128, 0.3);">
-                        <div style="color: #4ade80; font-size: 1.8rem; margin-bottom: 10px;"><i class="fa-solid fa-quote-left"></i></div>
-                        <p style="font-size: 0.85rem; color: #bbf7d0; line-height: 1.5; margin: 0; font-weight: 400;" data-i18n="profil_quote">Hutan lestari mengamankan masa depan ekologi dan kesejahteraan bersama.</p>
+                    <div class="profil-quote-card" style="position: absolute; bottom: -25px; right: -25px; background: #ffffff; backdrop-filter: blur(12px); color: #1c2d21; padding: 25px; border-radius: 20px; box-shadow: 0 20px 30px rgba(0,0,0,0.08); max-width: 260px; border: 1px solid rgba(28, 45, 33, 0.1);">
+                        <div style="color: #15803d; font-size: 1.8rem; margin-bottom: 10px;"><i class="fa-solid fa-quote-left"></i></div>
+                        <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.5; margin: 0; font-weight: 400;" data-i18n="profil_quote">Hutan lestari mengamankan masa depan ekologi dan kesejahteraan bersama.</p>
                     </div>
                 </div>
 
                 <div>
-                    <span style="color: #4ade80; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.2); padding: 6px 14px; border-radius: 20px; display: inline-block; margin-bottom: 15px;" data-i18n="profil_tag">Tentang Perusahaan</span>
-                    <h2 style="font-size: 2.5rem; color: #ffffff; margin: 0 0 20px; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px;" data-i18n="profil_title">Sinergi Profesional Pengelolaan Hutan Modern</h2>
-                    <p style="color: #bbf7d0; font-size: 1rem; line-height: 1.7; margin-bottom: 20px; font-weight: 400;" data-i18n="profil_p1">
+                    <span style="color: #15803d; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; background: rgba(21, 128, 61, 0.1); border: 1px solid rgba(21, 128, 61, 0.2); padding: 6px 14px; border-radius: 20px; display: inline-block; margin-bottom: 15px;" data-i18n="profil_tag">Tentang Perusahaan</span>
+                    <h2 style="font-size: 2.5rem; color: #1c2d21; margin: 0 0 20px; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px;" data-i18n="profil_title">Sinergi Profesional Pengelolaan Hutan Modern</h2>
+                    <p style="color: #4b5563; font-size: 1rem; line-height: 1.7; margin-bottom: 20px; font-weight: 400;" data-i18n="profil_p1">
                         Perum Perhutani KPH Pemalang merupakan unit manajemen strategis di bawah Direktorat Regional Jawa Tengah yang berdedikasi tinggi mengelola sumber daya hutan negara secara mandiri dan profesional.
                     </p>
-                    <p style="color: #bbf7d0; font-size: 1rem; line-height: 1.7; margin-bottom: 30px; font-weight: 400;" data-i18n="profil_p2">
+                    <p style="color: #4b5563; font-size: 1rem; line-height: 1.7; margin-bottom: 30px; font-weight: 400;" data-i18n="profil_p2">
                         Kami mengoptimalkan potensi hasil hutan kayu maupun non-kayu, mengelola kawasan wisata alam, serta memperkuat kolaborasi bersama masyarakat melalui program sosial yang inklusif.
                     </p>
                     <div style="display: flex; gap: 20px; align-items: center;">
-                        <a href="profil.html" style="background: rgba(74, 222, 128, 0.15); color: #ffffff; padding: 12px 26px; border-radius: 10px; font-weight: 600; font-size: 0.9rem; text-decoration: none; border: 1px solid rgba(74, 222, 128, 0.3); backdrop-filter: blur(10px);">
+                        <a href="profil.html" style="background: #15803d; color: #ffffff; padding: 12px 26px; border-radius: 10px; font-weight: 600; font-size: 0.9rem; text-decoration: none; box-shadow: 0 8px 15px rgba(21, 128, 61, 0.2);">
                             <span data-i18n="btn_profil_lengkap">Profil Lengkap</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
                         </a>
-                        <a href="tugasfungsi.html" style="color: #4ade80; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+                        <a href="tugasfungsi.html" style="color: #15803d; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 6px;">
                             <span data-i18n="btn_tugas">Lihat Tugas & Fungsi</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
                         </a>
                     </div>
@@ -339,44 +338,45 @@
             </div>
         </section>
 
-        <section style="background: rgba(13, 33, 21, 0.6); border-top: 1px solid rgba(74, 222, 128, 0.15); border-bottom: 1px solid rgba(74, 222, 128, 0.15); padding: 90px 5%; margin: 60px 0;">
+        <!-- Unit Bisnis Section -->
+        <section style="background: #ffffff; border-top: 1px solid rgba(28, 45, 33, 0.08); border-bottom: 1px solid rgba(28, 45, 33, 0.08); padding: 90px 5%; margin: 60px 0;">
             <div style="max-width: 1200px; margin: 0 auto;">
                 <div style="text-align: center; max-width: 650px; margin: 0 auto 50px;">
-                    <span style="color: #4ade80; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;" data-i18n="pilar_tag">Pilar Strategis</span>
-                    <h2 style="font-size: 2.3rem; color: #ffffff; margin: 10px 0 15px; font-weight: 800; letter-spacing: -0.5px;" data-i18n="pilar_title">Unit Bisnis & Layanan Unggulan</h2>
-                    <p style="color: #bbf7d0; font-size: 1rem; line-height: 1.6;" data-i18n="pilar_desc">Pilar pengusahaan yang dikelola secara berkelanjutan untuk memberikan nilai tambah bagi ekonomi dan lingkungan.</p>
+                    <span style="color: #15803d; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;" data-i18n="pilar_tag">Pilar Strategis</span>
+                    <h2 style="font-size: 2.3rem; color: #1c2d21; margin: 10px 0 15px; font-weight: 800; letter-spacing: -0.5px;" data-i18n="pilar_title">Unit Bisnis & Layanan Unggulan</h2>
+                    <p style="color: #4b5563; font-size: 1rem; line-height: 1.6;" data-i18n="pilar_desc">Pilar pengusahaan yang dikelola secara berkelanjutan untuk memberikan nilai tambah bagi ekonomi dan lingkungan.</p>
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-                    <div style="background: rgba(13, 33, 21, 0.75); backdrop-filter: blur(10px); border-radius: 20px; padding: 35px 30px; border: 1px solid rgba(74, 222, 128, 0.2);">
-                        <div style="width: 55px; height: 55px; background: rgba(74, 222, 128, 0.15); color: #4ade80; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(74, 222, 128, 0.3);">
+                    <div style="background: #f7f5ef; border-radius: 20px; padding: 35px 30px; border: 1px solid rgba(28, 45, 33, 0.08);">
+                        <div style="width: 55px; height: 55px; background: rgba(21, 128, 61, 0.1); color: #15803d; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(21, 128, 61, 0.2);">
                             <i class="fa-solid fa-tree"></i>
                         </div>
-                        <h3 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;" data-i18n="biz1_title">Pengelolaan Kayu & Non-Kayu</h3>
-                        <p style="color: #bbf7d0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz1_desc">Penyediaan produk hasil hutan berkualitas tinggi yang diproduksi secara legal, bertanggung jawab, dan ramah lingkungan.</p>
-                        <a href="unitbisnis.html" style="color: #4ade80; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <h3 style="font-size: 1.25rem; color: #1c2d21; margin-bottom: 12px; font-weight: 700;" data-i18n="biz1_title">Pengelolaan Kayu & Non-Kayu</h3>
+                        <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz1_desc">Penyediaan produk hasil hutan berkualitas tinggi yang diproduksi secara legal, bertanggung jawab, dan ramah lingkungan.</p>
+                        <a href="unitbisnis.html" style="color: #15803d; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                             <span data-i18n="read_more">Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
 
-                    <div style="background: rgba(13, 33, 21, 0.75); backdrop-filter: blur(10px); border-radius: 20px; padding: 35px 30px; border: 1px solid rgba(74, 222, 128, 0.2);">
-                        <div style="width: 55px; height: 55px; background: rgba(74, 222, 128, 0.15); color: #4ade80; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(74, 222, 128, 0.3);">
+                    <div style="background: #f7f5ef; border-radius: 20px; padding: 35px 30px; border: 1px solid rgba(28, 45, 33, 0.08);">
+                        <div style="width: 55px; height: 55px; background: rgba(21, 128, 61, 0.1); color: #15803d; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(21, 128, 61, 0.2);">
                             <i class="fa-solid fa-mountain-sun"></i>
                         </div>
-                        <h3 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;" data-i18n="biz2_title">Ekowisata & Jasa Lingkungan</h3>
-                        <p style="color: #bbf7d0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz2_desc">Destinasi wisata alam pegunungan dan hutan pinus asri yang menawarkan pengalaman rekreasi edukatif berwawasan lingkungan.</p>
-                        <a href="ekowisata.html" style="color: #4ade80; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <h3 style="font-size: 1.25rem; color: #1c2d21; margin-bottom: 12px; font-weight: 700;" data-i18n="biz2_title">Ekowisata & Jasa Lingkungan</h3>
+                        <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz2_desc">Destinasi wisata alam pegunungan dan hutan pinus asri yang menawarkan pengalaman rekreasi edukatif berwawasan lingkungan.</p>
+                        <a href="ekowisata.html" style="color: #15803d; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                             <span data-i18n="read_more">Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
 
-                    <div style="background: rgba(13, 33, 21, 0.75); backdrop-filter: blur(10px); border-radius: 20px; padding: 35px 30px; border: 1px solid rgba(74, 222, 128, 0.2);">
-                        <div style="width: 55px; height: 55px; background: rgba(74, 222, 128, 0.15); color: #4ade80; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(74, 222, 128, 0.3);">
+                    <div style="background: #f7f5ef; border-radius: 20px; padding: 35px 30px; border: 1px solid rgba(28, 45, 33, 0.08);">
+                        <div style="width: 55px; height: 55px; background: rgba(21, 128, 61, 0.1); color: #15803d; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(21, 128, 61, 0.2);">
                             <i class="fa-solid fa-hands-holding-child"></i>
                         </div>
-                        <h3 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;" data-i18n="biz3_title">Kemitraan Masyarakat</h3>
-                        <p style="color: #bbf7d0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz3_desc">Pemberdayaan ekonomi melalui skema Perhutanan Sosial bersama LMDH demi kesejahteraan masyarakat sekitar kawasan hutan.</p>
-                        <a href="tentangkami.html" style="color: #4ade80; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <h3 style="font-size: 1.25rem; color: #1c2d21; margin-bottom: 12px; font-weight: 700;" data-i18n="biz3_title">Kemitraan Masyarakat</h3>
+                        <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz3_desc">Pemberdayaan ekonomi melalui skema Perhutanan Sosial bersama LMDH demi kesejahteraan masyarakat sekitar kawasan hutan.</p>
+                        <a href="tentangkami.html" style="color: #15803d; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                             <span data-i18n="read_more">Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
@@ -384,47 +384,48 @@
             </div>
         </section>
 
+        <!-- Publikasi Terbaru Section -->
         <section style="max-width: 1200px; margin: 80px auto; padding: 0 5%;">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
                 <div>
-                    <span style="color: #4ade80; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;" data-i18n="pub_tag">Publikasi Terkini</span>
-                    <h2 style="font-size: 2.3rem; color: #ffffff; margin: 8px 0 0; font-weight: 800; letter-spacing: -0.5px;" data-i18n="pub_title">Berita & Pengumuman Terbaru</h2>
+                    <span style="color: #15803d; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;" data-i18n="pub_tag">Publikasi Terkini</span>
+                    <h2 style="font-size: 2.3rem; color: #1c2d21; margin: 8px 0 0; font-weight: 800; letter-spacing: -0.5px;" data-i18n="pub_title">Berita & Pengumuman Terbaru</h2>
                 </div>
-                <a href="pengumuman.html" style="background: rgba(74, 222, 128, 0.1); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.25); padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
+                <a href="pengumuman.html" style="background: rgba(21, 128, 61, 0.1); color: #15803d; border: 1px solid rgba(21, 128, 61, 0.25); padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none;">
                     <span data-i18n="btn_all_pub">Lihat Semua Publikasi</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
                 </a>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-                <article style="background: rgba(13, 33, 21, 0.75); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+                <article style="background: #ffffff; border: 1px solid rgba(28, 45, 33, 0.08); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
                     <div style="height: 220px; overflow: hidden; position: relative;">
                         <img src="assets/pohonditanam.jpg" alt="Penanaman Pohon" style="width: 100%; height: 100%; object-fit: cover;">
-                        <span style="position: absolute; top: 15px; left: 15px; background: rgba(10, 26, 17, 0.85); backdrop-filter: blur(5px); color: #4ade80; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: 1px solid rgba(74,222,128,0.3);">Konservasi</span>
+                        <span style="position: absolute; top: 15px; left: 15px; background: #ffffff; color: #15803d; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: 1px solid rgba(21,128,61,0.2);">Konservasi</span>
                     </div>
                     <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <div style="display: flex; align-items: center; gap: 8px; color: #86efac; font-size: 0.8rem; margin-bottom: 12px; font-weight: 600;">
-                            <i class="fa-regular fa-calendar-days" style="color: #4ade80;"></i> 05 Agustus 2026
+                        <div style="display: flex; align-items: center; gap: 8px; color: #4b5563; font-size: 0.8rem; margin-bottom: 12px; font-weight: 600;">
+                            <i class="fa-regular fa-calendar-days" style="color: #15803d;"></i> 05 Agustus 2026
                         </div>
-                        <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 12px; font-weight: 700; line-height: 1.4;" data-i18n="news1_title">Gerakan Penanaman Pohon Bersama LMDH dan Stakeholder</h3>
-                        <p style="color: #bbf7d0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;" data-i18n="news1_desc">Perhutani KPH Pemalang melaksanakan kegiatan penanaman bersama guna memperkuat daya dukung daerah aliran sungai dan kelestarian ekosistem...</p>
-                        <a href="suararimba.html" style="color: #4ade80; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <h3 style="font-size: 1.2rem; color: #1c2d21; margin-bottom: 12px; font-weight: 700; line-height: 1.4;" data-i18n="news1_title">Gerakan Penanaman Pohon Bersama LMDH dan Stakeholder</h3>
+                        <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;" data-i18n="news1_desc">Perhutani KPH Pemalang melaksanakan kegiatan penanaman bersama guna memperkuat daya dukung daerah aliran sungai dan kelestarian ekosistem...</p>
+                        <a href="suararimba.html" style="color: #15803d; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
                             <span data-i18n="read_news">Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
                 </article>
 
-                <article style="background: rgba(13, 33, 21, 0.75); border: 1px solid rgba(74, 222, 128, 0.2); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+                <article style="background: #ffffff; border: 1px solid rgba(28, 45, 33, 0.08); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
                     <div style="height: 220px; overflow: hidden; position: relative;">
                         <img src="assets/pengunjung.jpg" alt="Ekowisata" style="width: 100%; height: 100%; object-fit: cover;">
-                        <span style="position: absolute; top: 15px; left: 15px; background: rgba(10, 26, 17, 0.85); backdrop-filter: blur(5px); color: #4ade80; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: 1px solid rgba(74,222,128,0.3);">Ekowisata</span>
+                        <span style="position: absolute; top: 15px; left: 15px; background: #ffffff; color: #15803d; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: 1px solid rgba(21,128,61,0.2);">Ekowisata</span>
                     </div>
                     <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <div style="display: flex; align-items: center; gap: 8px; color: #86efac; font-size: 0.8rem; margin-bottom: 12px; font-weight: 600;">
-                            <i class="fa-regular fa-calendar-days" style="color: #4ade80;"></i> 01 Agustus 2026
+                        <div style="display: flex; align-items: center; gap: 8px; color: #4b5563; font-size: 0.8rem; margin-bottom: 12px; font-weight: 600;">
+                            <i class="fa-regular fa-calendar-days" style="color: #15803d;"></i> 01 Agustus 2026
                         </div>
-                        <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 12px; font-weight: 700; line-height: 1.4;" data-i18n="news2_title">Peningkatan Fasilitas Kenyamanan Pengunjung Destinasi Wisata</h3>
-                        <p style="color: #bbf7d0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;" data-i18n="news2_desc">Menyambut liburan akhir pekan, kawasan wisata kelolaan mempercantik fasilitas spot swafoto dan area istirahat demi kenyamanan wisatawan...</p>
-                        <a href="suararimba.html" style="color: #4ade80; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <h3 style="font-size: 1.2rem; color: #1c2d21; margin-bottom: 12px; font-weight: 700; line-height: 1.4;" data-i18n="news2_title">Peningkatan Fasilitas Kenyamanan Pengunjung Destinasi Wisata</h3>
+                        <p style="color: #4b5563; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;" data-i18n="news2_desc">Menyambut liburan akhir pekan, kawasan wisata kelolaan mempercantik fasilitas spot swafoto dan area istirahat demi kenyamanan wisatawan...</p>
+                        <a href="suararimba.html" style="color: #15803d; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
                             <span data-i18n="read_news">Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
@@ -433,7 +434,8 @@
         </section>
     </main>
 
-    <footer class="footer-section" style="background: rgba(6, 17, 11, 0.95); border-top: 1px solid rgba(74, 222, 128, 0.2);">
+    <!-- Footer Konsisten -->
+    <footer class="footer-section" style="background: #0d2115; color: #f0fdf4; border-top: 1px solid rgba(255, 255, 255, 0.1);">
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-heading">
