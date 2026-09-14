@@ -9,252 +9,123 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
 
-<style>
-<style>
-    /* Styling Dasar Nuansa Hutan Super Estetik */
-    html, body {
-        background: #0b1711 !important;
-        color: #edfaf1 !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
-        margin: 0;
-        padding: 0;
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-
-    *, *:before, *:after {
-        box-sizing: border-box !important;
-    }
-
-    /* Header Navbar */
-    .premium-header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        background: rgba(11, 23, 17, 0.9) !important;
-        backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.2);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 5%;
-    }
-    .brand-logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand-copy strong { color: #ffffff !important; display: block; font-size: 1.1rem; }
-    .brand-copy small { color: #86efac !important; font-size: 0.75rem; letter-spacing: 1px; }
-    
-    .nav-menu { display: flex; gap: 25px; list-style: none; align-items: center; margin: 0; padding: 0; }
-    .premium-link { color: #d1d5db !important; text-decoration: none; font-weight: 500; transition: color 0.3s; }
-    .premium-link:hover, .premium-link.active { color: #4ade80 !important; }
-
-    /* Hero Banner Utama */
-    .herbal-hero-banner {
-        position: relative;
-        background: linear-gradient(135deg, rgba(6, 17, 11, 0.88) 0%, rgba(10, 31, 19, 0.75) 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat !important;
-        border-bottom: 3px solid #22c55e;
-        padding: 90px 8% !important;
-    }
-    .herbal-hero-banner h1 {
-        color: #ffffff !important;
-        font-family: 'Playfair Display', serif;
-        font-size: 3.2rem;
-        line-height: 1.2;
-        margin-bottom: 20px;
-    }
-    .herbal-hero-banner h1 span { color: #86efac; font-style: italic; font-weight: normal; }
-    .hero-desc { color: #cbd5e1 !important; max-width: 600px; font-size: 1.05rem; line-height: 1.6; margin-bottom: 30px; }
-    
-    .btn-primary-custom {
-        background: #22c55e;
-        color: #061c10;
-        padding: 12px 28px;
-        border-radius: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        transition: background 0.3s;
-    }
-    .btn-primary-custom:hover { background: #16a34a; color: #fff; }
-
-    /* Container Umum */
-    .section-container { padding: 70px 8%; }
-    .section-header-tag { color: #86efac; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; font-weight: 600; margin-bottom: 8px; display: block; }
-    .section-title { font-size: 2.2rem; color: #ffffff; font-family: 'Playfair Display', serif; margin-bottom: 15px; }
-
-    /* Grid Info Cards (Alamat, Jam Kerja, Kontak) seperti di Referensi */
-    .info-cards-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        margin-top: 40px;
-    }
-    .info-card {
-        background: rgba(18, 40, 28, 0.85);
-        border: 1px solid rgba(134, 239, 172, 0.25);
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    .info-card .icon-box {
-        width: 45px; height: 45px;
-        background: rgba(34, 197, 94, 0.15);
-        border-radius: 12px;
-        display: flex; align-items: center; justify-content: center;
-        color: #4ade80;
-        margin-bottom: 20px;
-        font-size: 1.2rem;
-    }
-    .info-card h4 { color: #fff; font-size: 1.2rem; margin-bottom: 10px; }
-    .info-card p { color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; margin: 0; }
-    .info-link { color: #4ade80; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: 15px; font-size: 0.9rem; }
-
-    /* Administrator / Pimpinan Banner Card */
-    .admin-banner-card {
-        background: rgba(18, 40, 28, 0.85);
-        border: 1px solid rgba(134, 239, 172, 0.25);
-        border-radius: 20px;
-        padding: 20px 30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 25px;
-    }
-    .admin-profile { display: flex; align-items: center; gap: 20px; }
-    .admin-profile img { width: 65px; height: 65px; border-radius: 12px; object-fit: cover; }
-    .admin-profile h5 { color: #fff; margin: 0 0 4px 0; font-size: 1.1rem; }
-    .admin-profile p { color: #86efac; margin: 0; font-size: 0.9rem; }
-    .admin-quote { color: #94a3b8; font-style: italic; font-size: 0.95rem; max-width: 400px; text-align: right; }
-
-    /* Potensi & Kontribusi Section (Background Gelap Gambar Hutan) */
-    .potensi-section {
-        position: relative;
-        background: linear-gradient(rgba(11, 23, 17, 0.9), rgba(11, 23, 17, 0.9)), url('https://images.unsplash.com/photo-1511497584788-876761142271?auto=format&fit=crop&w=1920&q=80') center/cover fixed;
-        padding: 80px 8%;
-        border-top: 1px solid rgba(134, 239, 172, 0.2);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.2);
-    }
-    .potensi-grid {
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 40px;
-        align-items: center;
-    }
-    .stats-boxes-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        margin-top: 30px;
-    }
-    .stat-box {
-        background: rgba(15, 35, 24, 0.9);
-        border: 1px solid rgba(134, 239, 172, 0.2);
-        padding: 20px 15px;
-        border-radius: 16px;
-        text-align: center;
-    }
-    .stat-box i { color: #4ade80; font-size: 1.5rem; margin-bottom: 10px; display: block; }
-    .stat-box h3 { color: #fff; font-size: 1.3rem; margin: 0 0 5px 0; }
-    .stat-box p { color: #94a3b8; font-size: 0.8rem; margin: 0; }
-
-    .video-card-preview {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 1px solid rgba(134, 239, 172, 0.3);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    }
-    .video-card-preview img { width: 100%; height: 280px; object-fit: cover; display: block; }
-    .video-card-overlay {
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        background: linear-gradient(to top, rgba(6,17,11,0.95), transparent);
-        padding: 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-    .play-btn-circle {
-        width: 50px; height: 50px; background: #22c55e; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center; color: #061c10; font-size: 1.2rem;
-        cursor: pointer; box-shadow: 0 0 20px rgba(34,197,94,0.6);
-    }
-
-    /* Unit Bisnis & Publikasi Grid Section */
-    .bottom-grids-section {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 30px;
-        padding: 70px 8%;
-    }
-    .business-cards-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin-top: 20px;
-    }
-    .card-item-box {
-        background: rgba(18, 40, 28, 0.85);
-        border: 1px solid rgba(134, 239, 172, 0.25);
-        border-radius: 16px;
-        overflow: hidden;
-        transition: transform 0.3s;
-    }
-    .card-item-box:hover { transform: translateY(-5px); }
-    .card-item-box img { width: 100%; height: 150px; object-fit: cover; }
-    .card-item-body { padding: 18px; }
-    .card-item-body h4 { color: #fff; margin: 0 0 5px 0; font-size: 1.05rem; }
-    .card-item-body p { color: #94a3b8; font-size: 0.85rem; margin: 0 0 15px 0; }
-
-    .publication-list-box {
-        background: rgba(18, 40, 28, 0.85);
-        border: 1px solid rgba(134, 239, 172, 0.25);
-        border-radius: 16px;
-        padding: 20px;
-        margin-top: 20px;
-    }
-    .pub-item {
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .pub-item:last-child { border-bottom: none; }
-    .pub-date { color: #86efac; font-size: 0.75rem; display: block; margin-bottom: 3px; }
-    .pub-title { color: #fff; font-size: 0.9rem; text-decoration: none; display: block; line-height: 1.4; }
-    .pub-title:hover { color: #4ade80; }
-
-    /* Footer Sesuai Desain */
-    .footer-section {
-        background: #08120d;
-        border-top: 1px solid rgba(134, 239, 172, 0.2);
-        padding: 40px 8%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #94a3b8;
-        font-size: 0.9rem;
-    }
-    .footer-socials { display: flex; gap: 15px; }
-    .footer-socials a {
-        color: #fff; background: rgba(255,255,255,0.08);
-        width: 36px; height: 36px; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center; text-decoration: none;
-        transition: background 0.3s;
-    }
-    .footer-socials a:hover { background: #22c55e; color: #061c10; }
-
-    /* Responsif Mobile */
-    @media (max-width: 992px) {
-        .info-cards-grid, .potensi-grid, .bottom-grids-section, .business-cards-grid {
-            grid-template-columns: 1fr !important;
+    <style>
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+            box-sizing: border-box !important;
         }
-        .admin-banner-card { flex-direction: column; align-items: flex-start; gap: 15px; text-align: left; }
-        .admin-quote { text-align: left; }
-        .herbal-hero-banner h1 { font-size: 2.3rem; }
+
+        *, *:before, *:after {
+            box-sizing: border-box !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            .content-grid-layout {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+                padding: 0 12px !important;
+                gap: 20px !important;
+                margin: 0 !important;
+            }
+
+            .announcement-main-column, 
+            .announcement-sidebar-column {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            /* --- MENGUBAH GRID MENJADI SLIDER GESER KESAMPING --- */
+            .herbal-products-grid {
+                display: flex !important;
+                flex-direction: row !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 15px !important;
+                padding: 10px 4px 20px 4px !important;
+                width: 100% !important;
+                margin: 0 !important;
+                /* Sembunyikan scrollbar bawaan agar rapi */
+                scrollbar-width: thin; 
+            }
+
+            .herbal-products-grid::-webkit-scrollbar {
+                height: 6px;
+            }
+
+            .herbal-products-grid::-webkit-scrollbar-thumb {
+                background: rgba(74, 222, 128, 0.4);
+                border-radius: 10px;
+            }
+
+            .product-card, .announcement-card {
+                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
+                max-width: 280px !important;
+                scroll-snap-align: start !important;
+                margin: 0 !important;
+            }
+
+            .ann-img img, .product-card img {
+                width: 100% !important;
+                height: 160px !important;
+                object-fit: cover !important;
+            }
+
+            h1, h2, h3, h4, p, span {
+                word-break: break-word !important;
+                overflow-wrap: break-word !important;
+            }
+
+            .section-filter-bar {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 10px !important;
+            }
+
+            .herbal-category-scroll {
+                white-space: nowrap !important;
+                overflow-x: auto !important;
+                max-width: 100% !important;
+                padding-bottom: 8px !important;
+            }
+        }
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
     }
-</style>
-</style>
+
+    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
+
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
+    </style>
 </head>
 <body>
  <header class="premium-header">
@@ -319,14 +190,17 @@
         </nav>
 
         <div class="header-actions">
+            <!-- Tombol Burger (Tampil di Layar HP) -->
             <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
+            <!-- Tombol Kuis (Tunggal) -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
 
+            <!-- Search -->
             <div class="search-wrapper premium-search">
                 <button id="searchBtn" class="header-action" title="Cari">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -337,6 +211,7 @@
                 </div>
             </div>
 
+            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -362,7 +237,7 @@
                 <h1 data-i18n="eco_hero_title">Ekowisata</h1>
                 <p class="hero-subtitle" data-i18n="eco_hero_subtitle">Menjelajah Keindahan Alam Lestari</p>
                 <div class="title-underline"><i class="fa-solid fa-leaf"></i></div>
-                <p class="hero-desc" data-i18n="eco_hero_desc">Perhutani menghadirkan destinasi ekowisata yang menawan, menyatu dengan keasrian hutan untuk pengalaman rekreasi yang edukatif dan menenangkan.</p>
+                <p class="hero-desc" data-i18n="eco_hero_desc" contenteditable="#ffffff">Perhutani menghadirkan destinasi ekowisata yang menawan, menyatu dengan keasrian hutan untuk pengalaman rekreasi yang edukatif dan menenangkan.</p>
             </div>
         </section>
 
@@ -374,15 +249,15 @@
                 
                 <!-- Filter Kategori Wisata -->
                 <div class="herbal-category-scroll">
-                     <a href="unitbisnis.html" class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
-                    <a href="herbal.html" class="cat-pill"><i class="fa-solid fa-mug-hot"></i> Herbal</a>
-                    <a href="kayu.html" class="cat-pill"><i class="fa-solid fa-cubes"></i> Kayu</a>
-                    <a href="nonkayu.html" class="cat-pill"><i class="fa-solid fa-box-open"></i> Nonkayu</a>
-                    <a href="ekowisata.html" class="cat-pill active"><i class="fa-solid fa-mountain"></i> Ekowisata</a>
+                     <a href="unitbisnis.html"class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
+                    <a href="herbal.html"class="cat-pill"><i class="fa-solid fa-mug-hot"></i>Herbal</a>
+                    <a href="kayu.html"class="cat-pill"><i class="fa-solid fa-cubes"></i>Kayu</a>
+                    <a href="nonkayu.html"class="cat-pill"><i class="fa-solid fa-box-open"></i>Nonkayu</a>
+                    <a href="ekowisata.html" class="cat-pill active"><i class="fa-solid fa-mountain" ></i>Ekowisata</a>
                 </div>
 
                 <div class="section-filter-bar">
-                    <h3 class="section-title"><i class="fa-solid fa-compass"></i> <span data-i18n="dest_title">Solusi Berbasis Alam</span></h3>
+                    <h3 class="section-title"><i class="fa-solid fa-compass"></i> <span data-i18n="dest_title">Solusi Berbasi Alam</span></h3>
                     <div class="header-buttons">
                         <a href="solusiberbasisalam.html" class="btn-top" data-i18n="btn_see_all">Lihat Semua →</a>
                     </div>
@@ -393,13 +268,13 @@
                     
                     <!-- Destinasi 1 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img" onclick="openFullImage('assets/bukitmendelem.jpg')">
+                        <div class="ann-img">
                             <img src="assets/bukitmendelem.jpg" alt="Bukit Mendelem (Gunung Jimat)">
                             <span class="product-badge" data-i18n="badge_mountain">Pegunungan</span>
                         </div>
                         <div class="ann-body">
                             <h4 data-i18n="dest1_name">Bukit Mendelem (Gunung Jimat)</h4>
-                            <p data-i18n="dest1_desc">Lokasi: Desa Mendelem, Kecamatan Belik. Ciri Khas Visual: Bukit batu yang sangat ikonik karena memiliki tulisan raksasa bertuliskan "PEMALANG" di lerengnya. Wahana Terkenal: Menawarkan jalur pendakian tangga besi vertikal yang menempel di tebing batu (Via Ferrata).</p>
+                            <p data-i18n="dest1_desc">Lokasi: Desa Mendelem, Kecamatan Belik.Ciri Khas Visual: Bukit batu yang sangat ikonik karena memiliki tulisan raksasa bertuliskan "PEMALANG" di lerengnya.Wahana Terkenal: Menawarkan jalur pendakian tangga besi vertikal yang menempel di tebing batu (Via Ferrata).</p>
                             <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 10.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (120)</span>
@@ -410,13 +285,13 @@
 
                     <!-- Destinasi 2 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img" onclick="openFullImage('assets/wippas.jpg')">
+                        <div class="ann-img">
                             <img src="assets/wippas.jpg" alt="Wippas">
                             <span class="product-badge" data-i18n="cat_waterfall">Wippas Surajaya</span>
                         </div>
                         <div class="ann-body">
                             <h4 data-i18n="dest2_name">Wippas Surajaya</h4>
-                            <p data-i18n="dest2_desc">Status: Aktif. Lokasi: Desa Surajaya, Kecamatan Pemalang. Mengapa Terkenal: Terkenal di kalangan warga Pemalang sebagai "Kerajaan Monyet". Tempat ini berupa cagar alam dan hutan lindung milik Perhutani yang menjadi rumah bagi ratusan koloni monyet ekor panjang yang jinak.</p>
+                            <p data-i18n="dest2_desc">Status: AktifLokasi: Desa Surajaya, Kecamatan Pemalang.Mengapa Terkenal: Terkenal di kalangan warga Pemalang sebagai "Kerajaan Monyet". Tempat ini berupa cagar alam dan hutan lindung milik Perhutani yang menjadi rumah bagi ratusan koloni monyet ekor panjang yang jinak. Wisatawan biasanya sengaja datang ke sini beramai-ramai untuk memberi makan monyet langsung menggunakan kacang atau pisang.</p>
                             <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 15.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (95)</span>
@@ -427,13 +302,13 @@
 
                     <!-- Destinasi 3 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img" onclick="openFullImage('assets/benowopark.jpg')">
+                        <div class="ann-img">
                             <img src="assets/benowopark.jpg" alt="Benowo Park">
                             <span class="product-badge" data-i18n="cat_camping">Benowo Park</span>
                         </div>
                         <div class="ann-body">
                             <h4 data-i18n="dest3_name">Benowo Park</h4>
-                            <p data-i18n="dest3_desc">Lokasi: Desa Penggarit, Kecamatan Taman. Mengapa Terkenal: Ini adalah flagship atau ikon utama wisata Perhutani Pemalang, memadukan unsur alam rindang, kawanan monyet liar, serta wisata religi ke Makam Pangeran Benowo[cite: 1].</p>
+                            <p data-i18n="dest3_desc">Lokasi: Desa Penggarit, Kecamatan Taman. Mengapa Terkenal: Ini adalah flagship atau ikon utama wisata Perhutani Pemalang. Tempat ini terkenal karena memadukan unsur alam rindang, kawanan monyet liar yang bisa diajak berinteraksi, serta wisata religi ke Makam Pangeran Benowo. [1] (https://www.perhutani.co.id/benowo-park-cita-rasa-wisata-alam-religi-dan-kuliner-di-pemalang/)Acara Ikonik: Setiap satu bulan sekali pada hari pasaran Jawa Kamis Wage, diadakan pasar kuliner tradisional super unik di mana pengunjung wajib menukar uang menjadi koin kayu untuk membeli makanan tradisional.</p>
                             <div class="product-price"><span data-i18n="starting_label">Mulai</span>: Rp 25.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.7 (78)</span>
@@ -444,13 +319,13 @@
 
                     <!-- Destinasi 4 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img" onclick="openFullImage('assets/tangkeban.jpg')">
+                        <div class="ann-img">
                             <img src="assets/tangkeban.jpg" alt="Jalur Hiking">
                             <span class="product-badge" data-i18n="cat_hiking">Jalur Hiking</span>
                         </div>
                         <div class="ann-body">
                             <h4 data-i18n="dest4_name">Bukit Tangkeban</h4>
-                            <p data-i18n="dest4_desc">Bukit Tangkeban adalah salah satu destinasi wisata alam unggulan di lereng Gunung Slamet yang terletak di Desa Nyalembeng, Kecamatan Pulosari, Kabupaten Pemalang, Jawa Tengah. Berada di ketinggian sekitar 1.250 MDPL.</p>
+                            <p data-i18n="dest4_desc">Bukit Tangkeban adalah salah satu destinasi wisata alam unggulan di lereng Gunung Slamet yang terletak di Desa Nyalembeng, Kecamatan Pulosari, Kabupaten Pemalang, Jawa Tengah. Berada di ketinggian sekitar 1.250 meter di atas permukaan laut (MDPL), tempat ini menawarkan udara yang sejuk dan pemandangan megah Gunung Slamet sebagai latar belakang utamanya.</p>
                             <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 10.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.6 (62)</span>
@@ -461,13 +336,13 @@
 
                     <!-- Destinasi 5 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img" onclick="openFullImage('assets/gununggajah.jpg')">
+                        <div class="ann-img">
                             <img src="assets/gununggajah.jpg" alt="Forest Resort Tretes">
                             <span class="product-badge" data-i18n="badge_water">Gunung Gajah Pml</span>
                         </div>
                         <div class="ann-body">
                             <h4 data-i18n="dest5_name">Gunung Gajah</h4>
-                            <p data-i18n="dest5_desc">Terletak di kawasan HAS (Hutan Alam Sekunder) BKPH Cipero. Meskipun aksesnya lebih sering dituju oleh pencinta alam bebas dan petualang/pendaki, areanya berada di bawah naungan Perhutani Pemalang.</p>
+                            <p data-i18n="dest5_desc"> Terletak di kawasan HAS (Hutan Alam Sekunder) BKPH Cipero. Meskipun aksesnya lebih sering dituju oleh pencinta alam bebas dan petualang/pendaki, areanya berada di bawah naungan Perhutani Pemalang.</p>
                             <div class="product-price"><span data-i18n="ticket_label">Tiket</span>: Rp 10.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (88)</span>
@@ -478,13 +353,13 @@
 
                     <!-- Destinasi 6 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img" onclick="openFullImage('assets/balegandrung.jpg')">
+                        <div class="ann-img">
                             <img src="assets/balegandrung.jpg" alt="Outbound">
                             <span class="product-badge" data-i18n="badge_outbound">Outbound</span>
                         </div>
                         <div class="ann-body">
                             <h4 data-i18n="dest6_name">Bale Gandrung</h4>
-                            <p data-i18n="dest6_desc">Lokasi: Desa Gambuhan, Kecamatan Pulosari (jalur raya menuju Guci). Karakteristik: Ini adalah wana wisata hutan pinus resmi kelolaan Perhutani di wilayah Pemalang selatan.</p>
+                            <p data-i18n="dest6_desc">Lokasi: Desa Gambuhan, Kecamatan Pulosari (jalur raya menuju Guci).Karakteristik: Ini adalah wana wisata hutan pinus resmi kelolaan Perhutani di wilayah Pemalang selatan. Tempat ini aktif digunakan sebagai area camping ground, tempat peristirahatan (rest area) yang sejuk karena berada di lereng Gunung Slamet, serta wisata swafoto bertema hutan pinus.</p>
                             <div class="product-price"><span data-i18n="starting_label">Mulai</span>: Rp 10.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (105)</span>
@@ -591,7 +466,7 @@
                     <h4 data-i18n="foot_contact_title">Kontak Kami</h4>
                 </div>
                 <ul class="contact-list">
-                    <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi, S.Hut</li>
+                     <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi, S.Hut</li>
                     <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
                     <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
                     <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
@@ -717,40 +592,40 @@
             </div>
         </div>
     </footer>
+<div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
+    <button class="image-modal-close">&times;</button>
+    <img id="fullImageDisplay" src="" alt="Full Preview">
+</div>
+<div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
+        
+        <!-- Header Modal -->
+        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+            </h3>
+            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
 
-    <!-- Modal Gambar Fullscreen -->
-    <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:999999; align-items:center; justify-content:center; cursor:pointer;">
-        <button class="image-modal-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;">&times;</button>
-        <img id="fullImageDisplay" src="" alt="Full Preview" style="max-width:90%; max-height:90vh; border-radius:8px; object-fit:contain; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
-    </div>
-
-    <!-- Modal Kuis -->
-    <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
-        <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
-            
-            <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-                <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
-                </h3>
-                <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
+        <!-- Konten Pertanyaan & Pilihan -->
+        <div style="padding: 20px;" id="quizBody">
+            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                Pertanyaan akan muncul di sini...
             </div>
-
-            <div style="padding: 20px;" id="quizBody">
-                <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
-                    Pertanyaan akan muncul di sini...
-                </div>
-                <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;"></div>
-            </div>
-
-            <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
-                Pertanyaan 1 dari 3
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
             </div>
         </div>
-    </div>
 
-    <!-- Drawer Mobile Menu -->
+        <!-- Footer Modal (Skor / Status) -->
+        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+            Pertanyaan 1 dari 3
+        </div>
+    </div>
+</div>
+     <!-- Drawer Mobile Menu -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <nav class="mobile-nav-drawer" id="mobileNavDrawer">
@@ -830,19 +705,6 @@
             </ul>
         </div>
     </nav>
-
-    <script>
-        // Fungsi Pendukung Modal Gambar
-        function openFullImage(src) {
-            const modal = document.getElementById('imageModal');
-            const display = document.getElementById('fullImageDisplay');
-            display.src = src;
-            modal.style.display = 'flex';
-        }
-        function closeFullImage() {
-            document.getElementById('imageModal').style.display = 'none';
-        }
-    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
