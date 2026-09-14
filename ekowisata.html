@@ -10,6 +10,74 @@
     <link rel="stylesheet" href="css/style3.css">
 
     <style>
+        /* Efek Hero Banner Gunung & Kabut Estetik */
+    .herbal-hero-banner {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(6, 17, 11, 0.75) 0%, rgba(11, 23, 17, 0.95) 100%), 
+                    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat !important;
+        border-bottom: 3px solid #22c55e;
+        padding: 110px 8% 130px 8% !important;
+    }
+
+    /* Siluet Pegunungan Dekoratif di Bawah Hero */
+    .mountain-silhouette {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1920&q=80') bottom/cover no-repeat;
+        opacity: 0.18;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+    }
+
+    /* Efek Cahaya Sunbeam / Fog Animasi Halus */
+    .herbal-hero-banner::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 60%);
+        animation: pulseGlow 8s ease-in-out infinite alternate;
+        pointer-events: none;
+    }
+
+    @keyframes pulseGlow {
+        0% { transform: scale(1); opacity: 0.4; }
+        100% { transform: scale(1.15); opacity: 0.8; }
+    }
+
+    /* Badge Label Kecil di Atas Judul */
+    .badge-mountain-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(34, 197, 94, 0.15);
+        border: 1px solid rgba(134, 239, 172, 0.35);
+        padding: 6px 14px;
+        border-radius: 20px;
+        color: #86efac;
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        backdrop-filter: blur(5px);
+    }
+
+    /* Efek Hover Spesial untuk Card Destinasi */
+    .card-item-box {
+        position: relative;
+        overflow: hidden;
+    }
+    .card-item-box img {
+        transition: transform 0.5s ease;
+    }
+    .card-item-box:hover img {
+        transform: scale(1.08);
+    }
         html, body {
             max-width: 100% !important;
             overflow-x: hidden !important;
@@ -231,15 +299,28 @@
     <!-- Main Content -->
     <main class="main-content-full" style="padding-top: 110px;">
 
-        <!-- Hero Banner Ekowisata -->
-        <section class="herbal-hero-banner">
-            <div class="hero-text-content">
-                <h1 data-i18n="eco_hero_title">Ekowisata</h1>
-                <p class="hero-subtitle" data-i18n="eco_hero_subtitle">Menjelajah Keindahan Alam Lestari</p>
-                <div class="title-underline"><i class="fa-solid fa-leaf"></i></div>
-                <p class="hero-desc" data-i18n="eco_hero_desc" contenteditable="#ffffff">Perhutani menghadirkan destinasi ekowisata yang menawan, menyatu dengan keasrian hutan untuk pengalaman rekreasi yang edukatif dan menenangkan.</p>
+      <!-- Hero Banner Utama Ekowisata dengan Nuansa Pegunungan & Hutan -->
+    <section class="herbal-hero-banner">
+        <div class="mountain-silhouette"></div>
+        
+        <div style="position: relative; z-index: 2;">
+            <div class="badge-mountain-tag">
+                <i class="fas fa-mountain"></i> Eksplorasi Dataran Tinggi & Hutan Pemalang
             </div>
-        </section>
+            <h1>Pesona Keindahan Alam & <br><span>Ekowisata Berkelanjutan</span></h1>
+            <p class="hero-desc">
+                Saksikan kemegahan lanskap pegunungan, sejuknya udara hutan pinus, dan keanekaragaman hayati yang dikelola secara lestari oleh Perhutani KPH Pemalang.
+            </p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="#destinasi" class="btn-primary-custom">
+                    Jelajahi Destinasi <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#galeri" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(134,239,172,0.3); color: #fff; padding: 12px 24px; border-radius: 30px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.3s;">
+                    <i class="fas fa-compass"></i> Lihat Peta Wisata
+                </a>
+            </div>
+        </div>
+    </section>
 
         <!-- LAYOUT UTAMA -->
         <div class="content-grid-layout">
