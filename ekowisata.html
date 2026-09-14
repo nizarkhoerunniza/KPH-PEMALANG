@@ -20,6 +20,53 @@
             box-sizing: border-box !important;
         }
 
+        /* Styling Tambahan agar Foto Unik & Interaktif ala index.html */
+        .ann-img {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .ann-img img {
+            width: 100% !important;
+            height: 180px !important;
+            object-fit: cover !important;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease !important;
+        }
+
+        .ann-img:hover img {
+            transform: scale(1.08) !important;
+            filter: brightness(1.05);
+        }
+
+        /* Overlay ikon kaca pembesar / zoom saat hover foto */
+        .ann-img::after {
+            content: "\f00e";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            background: rgba(21, 128, 61, 0.85);
+            color: #ffffff;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .ann-img:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
         @media screen and (max-width: 768px) {
             .content-grid-layout {
                 display: flex !important;
@@ -38,7 +85,7 @@
                 margin: 0 !important;
             }
 
-            /* --- MENGUBAH GRID MENJADI SLIDER GESER KESAMPING --- */
+            /* Mengubah grid menjadi slider geser ke samping di HP */
             .herbal-products-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -48,7 +95,6 @@
                 padding: 10px 4px 20px 4px !important;
                 width: 100% !important;
                 margin: 0 !important;
-                /* Sembunyikan scrollbar bawaan agar rapi */
                 scrollbar-width: thin; 
             }
 
@@ -62,16 +108,14 @@
             }
 
             .product-card, .announcement-card {
-                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
+                flex: 0 0 80% !important;
                 max-width: 280px !important;
                 scroll-snap-align: start !important;
                 margin: 0 !important;
             }
 
             .ann-img img, .product-card img {
-                width: 100% !important;
                 height: 160px !important;
-                object-fit: cover !important;
             }
 
             h1, h2, h3, h4, p, span {
@@ -92,39 +136,39 @@
                 padding-bottom: 8px !important;
             }
         }
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
 
-@media screen and (max-width: 950px) {
-    .weather-widget {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 12px !important;
-    }
+        .weather-widget {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
 
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
-    }
+        @media screen and (max-width: 950px) {
+            .weather-widget {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                padding: 3px 8px !important;
+                gap: 4px !important;
+                background: rgba(15, 35, 25, 0.85) !important;
+                border: 1px solid rgba(74, 222, 128, 0.4) !important;
+                border-radius: 12px !important;
+            }
 
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
-    }
-}
+            .weather-widget span:not(.temp):not(.weather-icon),
+            .weather-widget div:not(.temp):not(.weather-icon),
+            .weather-widget p,
+            .weather-widget small {
+                display: none !important;
+            }
+
+            .weather-widget .weather-icon,
+            .weather-widget .temp {
+                display: inline-block !important;
+                visibility: visible !important;
+                font-size: 0.85rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -190,17 +234,14 @@
         </nav>
 
         <div class="header-actions">
-            <!-- Tombol Burger (Tampil di Layar HP) -->
             <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Tombol Kuis (Tunggal) -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
 
-            <!-- Search -->
             <div class="search-wrapper premium-search">
                 <button id="searchBtn" class="header-action" title="Cari">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -211,7 +252,6 @@
                 </div>
             </div>
 
-            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -237,7 +277,7 @@
                 <h1 data-i18n="eco_hero_title">Ekowisata</h1>
                 <p class="hero-subtitle" data-i18n="eco_hero_subtitle">Menjelajah Keindahan Alam Lestari</p>
                 <div class="title-underline"><i class="fa-solid fa-leaf"></i></div>
-                <p class="hero-desc" data-i18n="eco_hero_desc" contenteditable="#ffffff">Perhutani menghadirkan destinasi ekowisata yang menawan, menyatu dengan keasrian hutan untuk pengalaman rekreasi yang edukatif dan menenangkan.</p>
+                <p class="hero-desc" data-i18n="eco_hero_desc">Perhutani menghadirkan destinasi ekowisata yang menawan, menyatu dengan keasrian hutan untuk pengalaman rekreasi yang edukatif dan menenangkan.</p>
             </div>
         </section>
 
@@ -249,11 +289,11 @@
                 
                 <!-- Filter Kategori Wisata -->
                 <div class="herbal-category-scroll">
-                     <a href="unitbisnis.html"class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
-                    <a href="herbal.html"class="cat-pill"><i class="fa-solid fa-mug-hot"></i>Herbal</a>
-                    <a href="kayu.html"class="cat-pill"><i class="fa-solid fa-cubes"></i>Kayu</a>
-                    <a href="nonkayu.html"class="cat-pill"><i class="fa-solid fa-box-open"></i>Nonkayu</a>
-                    <a href="ekowisata.html" class="cat-pill active"><i class="fa-solid fa-mountain" ></i>Ekowisata</a>
+                     <a href="unitbisnis.html" class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
+                    <a href="herbal.html" class="cat-pill"><i class="fa-solid fa-mug-hot"></i> Herbal</a>
+                    <a href="kayu.html" class="cat-pill"><i class="fa-solid fa-cubes"></i> Kayu</a>
+                    <a href="nonkayu.html" class="cat-pill"><i class="fa-solid fa-box-open"></i> Nonkayu</a>
+                    <a href="ekowisata.html" class="cat-pill active"><i class="fa-solid fa-mountain"></i> Ekowisata</a>
                 </div>
 
                 <div class="section-filter-bar">
@@ -268,7 +308,7 @@
                     
                     <!-- Destinasi 1 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img">
+                        <div class="ann-img" onclick="openFullImage('assets/bukitmendelem.jpg')">
                             <img src="assets/bukitmendelem.jpg" alt="Bukit Mendelem (Gunung Jimat)">
                             <span class="product-badge" data-i18n="badge_mountain">Pegunungan</span>
                         </div>
@@ -285,7 +325,7 @@
 
                     <!-- Destinasi 2 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img">
+                        <div class="ann-img" onclick="openFullImage('assets/wippas.jpg')">
                             <img src="assets/wippas.jpg" alt="Wippas">
                             <span class="product-badge" data-i18n="cat_waterfall">Wippas Surajaya</span>
                         </div>
@@ -302,7 +342,7 @@
 
                     <!-- Destinasi 3 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img">
+                        <div class="ann-img" onclick="openFullImage('assets/benowopark.jpg')">
                             <img src="assets/benowopark.jpg" alt="Benowo Park">
                             <span class="product-badge" data-i18n="cat_camping">Benowo Park</span>
                         </div>
@@ -319,7 +359,7 @@
 
                     <!-- Destinasi 4 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img">
+                        <div class="ann-img" onclick="openFullImage('assets/tangkeban.jpg')">
                             <img src="assets/tangkeban.jpg" alt="Jalur Hiking">
                             <span class="product-badge" data-i18n="cat_hiking">Jalur Hiking</span>
                         </div>
@@ -336,7 +376,7 @@
 
                     <!-- Destinasi 5 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img">
+                        <div class="ann-img" onclick="openFullImage('assets/gununggajah.jpg')">
                             <img src="assets/gununggajah.jpg" alt="Forest Resort Tretes">
                             <span class="product-badge" data-i18n="badge_water">Gunung Gajah Pml</span>
                         </div>
@@ -353,7 +393,7 @@
 
                     <!-- Destinasi 6 -->
                     <div class="announcement-card product-card">
-                        <div class="ann-img">
+                        <div class="ann-img" onclick="openFullImage('assets/balegandrung.jpg')">
                             <img src="assets/balegandrung.jpg" alt="Outbound">
                             <span class="product-badge" data-i18n="badge_outbound">Outbound</span>
                         </div>
@@ -566,7 +606,7 @@
                         <i class="fa-solid fa-building-shield"></i>
                         <div>
                             <span data-i18n="foot_ppid">PPID Perhutani</span>
-                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</i></a>
+                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
                         </div>
                     </li>
                 </ul>
@@ -593,15 +633,16 @@
         </div>
     </footer>
 
-    <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
-        <button class="image-modal-close">&times;</button>
-        <img id="fullImageDisplay" src="" alt="Full Preview">
+    <!-- Modal Gambar Fullscreen -->
+    <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:999999; align-items:center; justify-content:center; cursor:pointer;">
+        <button class="image-modal-close" style="position:absolute; top:20px; right:30px; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer;">&times;</button>
+        <img id="fullImageDisplay" src="" alt="Full Preview" style="max-width:90%; max-height:90vh; border-radius:8px; object-fit:contain; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
     </div>
 
+    <!-- Modal Kuis -->
     <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
         <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
             
-            <!-- Header Modal -->
             <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
                 <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
                     <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
@@ -611,17 +652,13 @@
                 </button>
             </div>
 
-            <!-- Konten Pertanyaan & Pilihan -->
             <div style="padding: 20px;" id="quizBody">
                 <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
                     Pertanyaan akan muncul di sini...
                 </div>
-                <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
-                    <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
-                </div>
+                <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;"></div>
             </div>
 
-            <!-- Footer Modal (Skor / Status) -->
             <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
                 Pertanyaan 1 dari 3
             </div>
@@ -708,6 +745,19 @@
             </ul>
         </div>
     </nav>
+
+    <script>
+        // Fungsi Pendukung Modal Gambar
+        function openFullImage(src) {
+            const modal = document.getElementById('imageModal');
+            const display = document.getElementById('fullImageDisplay');
+            display.src = src;
+            modal.style.display = 'flex';
+        }
+        function closeFullImage() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
