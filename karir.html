@@ -11,6 +11,42 @@
 </head>
 <body>
 <style>
+    /* Styling Form Kirim Lamaran Langsung */
+    .direct-apply-box {
+        background: rgba(15, 35, 25, 0.7);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+        border-radius: 16px;
+        padding: 30px;
+        margin-top: 40px;
+        backdrop-filter: blur(10px);
+    }
+    .form-group-custom {
+        margin-bottom: 20px;
+    }
+    .form-group-custom label {
+        display: block;
+        color: #e5e7eb;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    .form-group-custom input,
+    .form-group-custom textarea {
+        width: 100%;
+        padding: 12px 16px;
+        background: #111827;
+        border: 1px solid #374151;
+        border-radius: 8px;
+        color: #fff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 0.95rem;
+        transition: border-color 0.3s;
+    }
+    .form-group-custom input:focus,
+    .form-group-custom textarea:focus {
+        outline: none;
+        border-color: #4ade80;
+    }
     .weather-widget {
     display: flex !important;
     align-items: center !important;
@@ -206,6 +242,40 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!-- Kotak Form Kirim Lamaran Langsung di Web -->
+    <div class="direct-apply-box">
+        <div class="section-header text-center" style="margin-bottom: 20px;">
+            <h3 style="color: #4ade80; font-size: 1.3rem;"><i class="fa-solid fa-paper-plane"></i> Kirim Lamaran Cepat</h3>
+            <p style="font-size: 0.9rem; color: #9ca3af;">Isi data diri Anda di bawah ini, sistem akan otomatis merumuskan pesan lamaran siap kirim.</p>
+        </div>
+        
+        <form id="quickApplyForm" onsubmit="sendDirectEmail(event)">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+                <div class="form-group-custom">
+                    <label for="applicantName">Nama Lengkap</label>
+                    <input type="text" id="applicantName" placeholder="Contoh: Budi Santoso" required>
+                </div>
+                <div class="form-group-custom">
+                    <label for="applicantPosition">Posisi yang Dilamar</label>
+                    <input type="text" id="applicantPosition" value="Program Magang Generasi Hijau" required>
+                </div>
+            </div>
+
+            <div class="form-group-custom">
+                <label for="applicantEmail">Email Anda</label>
+                <input type="email" id="applicantEmail" placeholder="nama@email.com" required>
+            </div>
+
+            <div class="form-group-custom">
+                <label for="applicantMessage">Pesan / Motivasi Singkat</label>
+                <textarea id="applicantMessage" rows="4" placeholder="Tuliskan sedikit tentang latar belakang dan alasan Anda melamar..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary-custom" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+                <i class="fa-solid fa-envelope-circle-check"></i> Proses & Kirim ke Email Perhutani
+            </button>
+        </form>
     </div>
     <!-- Hero Section Karir dengan Foto -->
 <section class="career-hero">
