@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
-    <style>
-       /* Hero Banner Model 2 Kolom dengan Lengkungan Organik */
+     <style>
+   /* Hero Banner Model 2 Kolom dengan Lengkungan Organik */
         .herbal-hero-banner {
             position: relative;
             overflow: hidden;
@@ -83,12 +83,10 @@
             object-fit: cover;
             display: block;
         }
-       
         html, body {
             max-width: 100% !important;
             overflow-x: hidden !important;
             box-sizing: border-box !important;
-            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         *, *:before, *:after {
@@ -113,6 +111,7 @@
                 margin: 0 !important;
             }
 
+            /* --- MENGUBAH GRID MENJADI SLIDER GESER KESAMPING --- */
             .herbal-products-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -122,6 +121,7 @@
                 padding: 10px 4px 20px 4px !important;
                 width: 100% !important;
                 margin: 0 !important;
+                /* Sembunyikan scrollbar bawaan agar rapi */
                 scrollbar-width: thin; 
             }
 
@@ -135,7 +135,7 @@
             }
 
             .product-card, .announcement-card {
-                flex: 0 0 80% !important;
+                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
                 max-width: 280px !important;
                 scroll-snap-align: start !important;
                 margin: 0 !important;
@@ -165,39 +165,41 @@
                 padding-bottom: 8px !important;
             }
         }
-        .weather-widget {
-            display: flex !important;
-            align-items: center !important;
-            gap: 8px !important;
-        }
+.weather-widget {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
 
-        @media screen and (max-width: 950px) {
-            .weather-widget {
-                display: flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-                padding: 3px 8px !important;
-                gap: 4px !important;
-                background: rgba(15, 35, 25, 0.85) !important;
-                border: 1px solid rgba(74, 222, 128, 0.4) !important;
-                border-radius: 12px !important;
-            }
+@media screen and (max-width: 950px) {
+    .weather-widget {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
+    }
 
-            .weather-widget span:not(.temp):not(.weather-icon),
-            .weather-widget div:not(.temp):not(.weather-icon),
-            .weather-widget p,
-            .weather-widget small {
-                display: none !important;
-            }
+    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
+    }
 
-            .weather-widget .weather-icon,
-            .weather-widget .temp {
-                display: inline-block !important;
-                visibility: visible !important;
-                font-size: 0.85rem !important;
-            }
-        }
- .premium-header {
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
+    }
+}
+    /* Header Premium dengan Efek Glassmorphism & Garis Cahaya Daun */
+    .premium-header {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
@@ -207,7 +209,7 @@
         backdrop-filter: blur(18px);
         border-bottom: 1px solid rgba(134, 239, 172, 0.25);
     }
-    </style>
+</style>
 </head>
 <body>
  <header class="premium-header">
