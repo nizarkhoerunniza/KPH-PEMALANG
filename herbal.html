@@ -3,52 +3,526 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Perhutani KPH Pemalang - Herbal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Perhutani KPH Pemalang - Herbal Hutan Lestari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
     <style>
-        /* Hero Banner Ekowisata dengan Background Foto Gunung */
-    .herbal-hero-banner {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(180deg, rgba(6, 17, 11, 0.75) 0%, rgba(11, 23, 17, 0.92) 100%), 
-                    url('assets/rempah.jpg') center/cover no-repeat !important;
-        border-bottom: 3px solid #22c55e;
-        padding: 90px 20px;
-        text-align: center;
-        color: #fff;
-    }
+        :root {
+            --forest-deep: #06120b;
+            --forest-dark: #0b1f15;
+            --forest-card: #112a1d;
+            --forest-border: rgba(74, 222, 128, 0.25);
+            --accent-emerald: #22c55e;
+            --accent-glow: rgba(34, 197, 94, 0.4);
+            --text-main: #f0fdf4;
+            --text-muted: #94a3b8;
+        }
+
         html, body {
             max-width: 100% !important;
             overflow-x: hidden !important;
             box-sizing: border-box !important;
             font-family: 'Plus Jakarta Sans', sans-serif !important;
-}
+            background-color: var(--forest-deep) !important;
+            color: var(--text-main) !important;
+        }
 
         *, *:before, *:after {
             box-sizing: border-box !important;
         }
 
-        @media screen and (max-width: 768px) {
+        /* Hero Banner Hutan Lestari Ultra-Imersif */
+        .herbal-hero-banner {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(6, 18, 11, 0.95) 0%, rgba(11, 31, 21, 0.88) 100%), 
+                        url('assets/rempah.jpg') center/cover no-repeat !important;
+            border-bottom: 4px solid var(--accent-emerald);
+            padding: 130px 20px 100px 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: inset 0 -40px 60px rgba(0,0,0,0.8);
+        }
+
+        .herbal-hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, transparent 20%, rgba(4, 12, 8, 0.85) 90%);
+            pointer-events: none;
+        }
+
+        .hero-text-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .herbal-hero-banner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #86efac;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .title-underline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 3px;
+            background: var(--accent-emerald);
+            margin-bottom: 25px;
+            position: relative;
+            box-shadow: 0 0 10px var(--accent-emerald);
+        }
+
+        .title-underline i {
+            position: absolute;
+            color: var(--accent-emerald);
+            background: var(--forest-deep);
+            padding: 0 10px;
+            font-size: 1rem;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            max-width: 720px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Tata Letak Utama */
+        .content-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 35px;
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Filter Kategori Eksklusif Hutan */
+        .herbal-category-scroll {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            scrollbar-width: none;
+        }
+        .herbal-category-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            background: rgba(17, 42, 29, 0.9);
+            border: 1px solid var(--forest-border);
+            color: #cbd5e1;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cat-pill:hover, .cat-pill.active {
+            background: var(--accent-emerald);
+            color: #06120b;
+            border-color: var(--accent-emerald);
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-2px);
+            font-weight: 600;
+        }
+
+        .section-filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px dashed rgba(74, 222, 128, 0.3);
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--accent-emerald);
+        }
+
+        .btn-top {
+            color: #86efac;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .btn-top:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Grid Kartu Produk Hutan Unik */
+        .herbal-products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .announcement-card.product-card {
+            background: linear-gradient(145deg, #112a1d 0%, #0d2116 100%) !important;
+            border: 1px solid var(--forest-border) !important;
+            border-radius: 16px !important;
+            overflow: hidden !important;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .announcement-card.product-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-emerald), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .announcement-card.product-card:hover {
+            transform: translateY(-8px) scale(1.01) !important;
+            border-color: rgba(74, 222, 128, 0.6) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(34, 197, 94, 0.15) !important;
+        }
+
+        .announcement-card.product-card:hover::before {
+            opacity: 1;
+        }
+
+        .ann-img {
+            position: relative;
+            overflow: hidden;
+            height: 210px;
+        }
+
+        .ann-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .announcement-card.product-card:hover .ann-img img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(6, 18, 11, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--forest-border);
+            color: #86efac;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .ann-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .ann-body h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .ann-body p {
+            font-size: 0.88rem;
+            color: #a1a1aa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #4ade80;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .product-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .product-rating {
+            font-size: 0.82rem;
+            color: #facc15;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+        }
+
+        .btn-cart {
+            width: 40px;
+            height: 40px;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid var(--forest-border);
+            color: #4ade80;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cart:hover {
+            background: var(--accent-emerald);
+            color: #06120b;
+            box-shadow: 0 0 15px var(--accent-glow);
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* Kotak Keunggulan Hutan Bawah */
+        .herbal-features-box {
+            background: linear-gradient(135deg, #0b1f15 0%, #08170f 100%);
+            border: 1px solid var(--forest-border);
+            border-radius: 20px;
+            padding: 35px;
+            margin-top: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .herbal-features-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .herbal-features-box h4 i {
+            color: var(--accent-emerald);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            background: rgba(17, 42, 29, 0.6);
+            border: 1px solid rgba(74, 222, 128, 0.15);
+            padding: 20px;
+            border-radius: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-emerald);
+            background: rgba(17, 42, 29, 0.9);
+        }
+
+        .feat-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(34, 197, 94, 0.2);
+            color: #4ade80;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h5 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .feature-item p {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Sidebar Styling */
+        .announcement-sidebar-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .sidebar-widget {
+            background: linear-gradient(145deg, #0b1f15 0%, #08170f 100%);
+            border: 1px solid var(--forest-border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .sidebar-widget h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: #fff;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 12px;
+        }
+
+        .sidebar-widget h4 i {
+            color: var(--accent-emerald);
+        }
+
+        .sidebar-list-content {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-list-content div {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .sidebar-list-content strong {
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sidebar-list-content strong i {
+            color: #4ade80;
+            font-size: 0.85rem;
+        }
+
+        .sidebar-list-content span {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            padding-left: 20px;
+        }
+
+        .sidebar-info-box p {
+            font-size: 0.88rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .sidebar-banner-box {
+            background: linear-gradient(135deg, #15803d 0%, #0f5132 100%) !important;
+            border-color: #22c55e !important;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar-banner-box h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            border: none;
+            padding: 0;
+            margin-bottom: 15px;
+            justify-content: center;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .sidebar-banner-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #15803d;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .sidebar-banner-btn:hover {
+            background: #06120b;
+            color: #4ade80;
+            transform: translateY(-2px);
+        }
+
+        /* Responsif Media Queries */
+        @media screen and (max-width: 1024px) {
             .content-grid-layout {
-                display: flex !important;
-                flex-direction: column !important;
-                width: 100% !important;
-                padding: 0 12px !important;
-                gap: 20px !important;
-                margin: 0 !important;
+                grid-template-columns: 1fr;
             }
+        }
 
-            .announcement-main-column, 
-            .announcement-sidebar-column {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 0 !important;
-                margin: 0 !important;
+        @media screen and (max-width: 768px) {
+            .herbal-hero-banner {
+                padding: 100px 15px 70px 15px;
             }
-
             .herbal-products-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -58,128 +532,55 @@
                 padding: 10px 4px 20px 4px !important;
                 width: 100% !important;
                 margin: 0 !important;
-                scrollbar-width: thin; 
+                scrollbar-width: thin;
             }
-
             .herbal-products-grid::-webkit-scrollbar {
                 height: 6px;
             }
-
             .herbal-products-grid::-webkit-scrollbar-thumb {
                 background: rgba(74, 222, 128, 0.4);
                 border-radius: 10px;
             }
-
-            .product-card, .announcement-card {
-                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
-                max-width: 280px !important;
+            .announcement-card.product-card {
+                flex: 0 0 82% !important;
+                max-width: 300px !important;
                 scroll-snap-align: start !important;
-                margin: 0 !important;
             }
-
-            .ann-img img, .product-card img {
-                width: 100% !important;
-                height: 160px !important;
-                object-fit: cover !important;
-            }
-
-            h1, h2, h3, h4, p, span {
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-            }
-
-            .section-filter-bar {
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                gap: 10px !important;
-            }
-
-            .herbal-category-scroll {
-                white-space: nowrap !important;
-                overflow-x: auto !important;
-                max-width: 100% !important;
-                padding-bottom: 8px !important;
+            .content-grid-layout {
+                padding: 30px 12px;
             }
         }
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
-
-@media screen and (max-width: 950px) {
-    .weather-widget {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 12px !important;
-    }
-
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
-    }
-
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
-    }
-}
-    /* Header Premium dengan Efek Glassmorphism & Garis Cahaya Daun */
-    .premium-header {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        z-index: 9999 !important;
-        background: rgba(11, 23, 17, 0.88) !important;
-        backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.25);
-    }
-        /* --- ORNAMEN HUTAN & SATWA STATIS (DIAM, TIDAK MELAYANG/PUYENG) --- */
-    .herbal-hero-banner {
-        position: relative;
-        overflow: hidden;
-    }
-
-    .forest-static-ornament {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 30px;
-        pointer-events: none;
-        z-index: 1;
-        opacity: 0.25; /* Transparan agar tetap elegan dan tidak mencolok */
-        color: #fff;
-    }
-
-    .forest-static-ornament .animal-group {
-        display: flex;
-        gap: 15px;
-        font-size: 1.2rem;
-    }
-
-    @media screen and (max-width: 768px) {
-        .forest-static-ornament {
-            padding: 0 15px;
+        
+        .weather-widget {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
         }
-        .forest-static-ornament .animal-group {
-            font-size: 0.9rem;
-            gap: 10px;
+
+        @media screen and (max-width: 950px) {
+            .weather-widget {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                padding: 3px 8px !important;
+                gap: 4px !important;
+                background: rgba(15, 35, 25, 0.85) !important;
+                border: 1px solid rgba(74, 222, 128, 0.4) !important;
+                border-radius: 12px !important;
+            }
+            .weather-widget span:not(.temp):not(.weather-icon),
+            .weather-widget div:not(.temp):not(.weather-icon),
+            .weather-widget p,
+            .weather-widget small {
+                display: none !important;
+            }
+            .weather-widget .weather-icon,
+            .weather-widget .temp {
+                display: inline-block !important;
+                visibility: visible !important;
+                font-size: 0.85rem !important;
+            }
         }
-    }
     </style>
 </head>
 <body>
@@ -196,7 +597,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link" >Beranda</a>
+            <a href="index.html" class="premium-link">Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger">
@@ -250,7 +651,7 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Tombol Kuis (Tunggal) -->
+            <!-- Tombol Kuis -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
@@ -282,27 +683,13 @@
         </div>
     </div>
 </header>
-    <!-- Main Content dengan padding-top agar tidak tertutup navbar fixed/sticky -->
-    <main class="main-content-full" style="padding-top: 80px;">
 
-      <!-- Hero Banner Herbal -->
+    <!-- Main Content -->
+    <main class="main-content-full" style="padding-top: 110px;">
+
+        <!-- Hero Banner Herbal -->
         <section class="herbal-hero-banner">
-            <!-- Ornamen Hutan & Satwa Statis (Diam & Tenang) -->
-            <div class="forest-static-ornament">
-                <div class="animal-group">
-                    <i class="fa-solid fa-tree" title="Pohon Hutan"></i>
-                    <i class="fa-solid fa-paw" title="Jejak Satwa"></i>
-                </div>
-                <div class="animal-group">
-                    <span style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; align-self: center;">Kawasan Hutan Lestari</span>
-                </div>
-                <div class="animal-group">
-                    <i class="fa-solid fa-feather" title="Fauna"></i>
-                    <i class="fa-solid fa-tree" title="Pohon Hutan"></i>
-                </div>
-            </div>
-
-            <div class="hero-text-content" style="position: relative; z-index: 2;">
+            <div class="hero-text-content">
                 <h1>Herbal</h1>
                 <p class="hero-subtitle">Kebaikan Alam untuk Kesehatan Alami</p>
                 <div class="title-underline"><i class="fa-solid fa-feather"></i></div>
@@ -318,20 +705,21 @@
                 
                 <!-- Filter Kategori Produk Herbal -->
                 <div class="herbal-category-scroll">
-                    <a href="unitbisnis.html"class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
-                    <a href="herbal.html"class="cat-pill active"><i class="fa-solid fa-mug-hot"></i>Herbal</a>
-                    <a href="kayu.html"class="cat-pill"><i class="fa-solid fa-cubes"></i>Kayu</a>
-                    <a href="nonkayu.html"class="cat-pill"><i class="fa-solid fa-box-open"></i>Nonkayu</a>
-                    <a href="ekowisata.html" class="cat-pill"><i class="fa-solid fa-mountain" ></i>Ekowisata</a>
+                    <a href="unitbisnis.html" class="cat-pill"><i class="fa-solid fa-seedling"></i> Semua Produk</a>
+                    <a href="herbal.html" class="cat-pill active"><i class="fa-solid fa-mug-hot"></i> Herbal</a>
+                    <a href="kayu.html" class="cat-pill"><i class="fa-solid fa-cubes"></i> Kayu</a>
+                    <a href="nonkayu.html" class="cat-pill"><i class="fa-solid fa-box-open"></i> Nonkayu</a>
+                    <a href="ekowisata.html" class="cat-pill"><i class="fa-solid fa-mountain"></i> Ekowisata</a>
                 </div>
 
                 <div class="section-filter-bar">
-                    <h3 class="section-title"><i class="fa-solid fa-leaf"></i>Solusi Berbasis Alam</h3>
+                    <h3 class="section-title"><i class="fa-solid fa-leaf"></i> Solusi Berbasis Alam</h3>
                     <div class="header-buttons">
                         <a href="unitbisnis.html" class="btn-top">Lihat Semua →</a>
                     </div>
                 </div>
-<!-- Grid Kartu Produk (Total 6 Produk Ekstrak Herbal) -->
+
+                <!-- Grid Kartu Produk (Total 6 Produk Ekstrak Herbal) -->
                 <div class="herbal-products-grid">
                     
                     <!-- Produk 1 -->
@@ -342,11 +730,11 @@
                         </div>
                         <div class="ann-body">
                             <h4>Unit Bisnis : Herbal</h4>
-                            <p>Minyak kayu putih adalah hasil proses ekstraksi daun tanaman Kayu Putih. Daun dan ranting tanaman Kayu Putih didestilasi sehingga menghasilkan produk akhir berupa minyak.Manfaat kayu putih sebagai obat herbal alami untuk menyembuhkan masuk angin serta dapat digunakan untuk aromaterapi. </p>
-                            <div class="product-price">Rp 45.000</div>
+                            <p>Minyak kayu putih adalah hasil proses ekstraksi daun tanaman Kayu Putih. Daun dan ranting tanaman Kayu Putih didestilasi sehingga menghasilkan produk akhir berupa minyak. Manfaat kayu putih sebagai obat herbal alami untuk menyembuhkan masuk angin serta dapat digunakan untuk aromaterapi.</p>
+                            <div class="product-price"><i class="fa-solid fa-tag"></i> Rp 45.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.7 (64)</span>
-                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
                             </div>
                         </div>
                     </div>
@@ -359,21 +747,18 @@
                         </div>
                         <div class="ann-body">
                             <h4>Madu Kualitas Terbaik</h4>
-                            <p>Perhutani memproduksi madu murni serta derivat. Produk madu yang dihasilkan Perhutani:<br>
-1. Madu murni Kelengkeng (volume 650 ml, 220 ml, 390 ml, 215 ml, 120 ml).<br>
-2. Madu murni Randu (volume 650 ml, 220 ml, 390 ml, 215 ml, 120 ml).<br>
-3. Industri Kayu Gresik<br>
-4. Madu murni Bunga Liar (volume 650 ml, 220 ml, 390 ml, 215 ml, 120 ml).<br>
-5. Madu murni jenis lain (madu hutan, madu multiflra, madu mangga dsb) (volume 650 ml, 220 ml, 390 ml, 215 ml, 120 ml).<br>
-6. Madu plus 3 in 1 (madu, bee pollen, royal jelly) volume 220 ml.<br>
-7. Madu plus 4 in 1 (madu, bee pollen, royal jelly, propolis) volume 220 ml.<br>
-8. Sabun madu padat 80 gr.<br>
-9. Sabun madu cair “Honey Plus” 270 ml.<br>
-10. Sabun madu cair 100 ml</p>
-                            <div class="product-price">Rp 50.000</div>
+                            <p>Perhutani memproduksi madu murni serta derivat. Produk madu yang dihasilkan:<br>
+1. Madu murni Kelengkeng.<br>
+2. Madu murni Randu.<br>
+3. Industri Kayu Gresik.<br>
+4. Madu murni Bunga Liar.<br>
+5. Madu murni jenis lain.<br>
+6. Madu plus 3 in 1 & 4 in 1.<br>
+7. Sabun madu padat & cair.</p>
+                            <div class="product-price"><i class="fa-solid fa-tag"></i> Rp 50.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.8 (52)</span>
-                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
                             </div>
                         </div>
                     </div>
@@ -381,13 +766,13 @@
                     <!-- Produk 3 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
-                            <img src="assets/sereh.jpg" alt="Ekstrak Meniran">
+                            <img src="assets/sereh.jpg" alt="Serai Wangi">
                             <span class="product-badge">Serai Wangi</span>
                         </div>
                         <div class="ann-body">
-                            <h4>Serai Wangi</h4>
-                            <p><b>Bentuk : </b>Batang rumput-rumputan yang keras dan berlapis dengan aroma sitrus atau lemon yang segar.<br><b>Keterangan:</b> Sering dimemarkan lalu direbus atau dicampur ke dalam masakan.<br><b>Manfaat: </b> Memberikan efek tenang, meredakan flu, dan mengurangi kembung.</p>
-                            <div class="product-price">Rp 40.000</div>
+                            <h4>Serai Wangi Murni</h4>
+                            <p><b>Bentuk : </b> Batang rumput-rumputan yang keras dan berlapis dengan aroma sitrus atau lemon yang segar.<br><b>Keterangan:</b> Sering dimemarkan lalu direbus atau dicampur ke dalam masakan.<br><b>Manfaat: </b> Memberikan efek tenang, meredakan flu, dan mengurangi kembung.</p>
+                            <div class="product-price"><i class="fa-solid fa-tag"></i> Rp 40.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.6 (41)</span>
                                 <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -398,13 +783,13 @@
                     <!-- Produk 4 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
-                            <img src="assets/jahe.jpg" alt="Ekstrak Sambiloto">
+                            <img src="assets/jahe.jpg" alt="Jahe">
                             <span class="product-badge">Jahe</span>
                         </div>
                         <div class="ann-body">
                             <h4>Jahe Murni Premium</h4>
                             <p><b>Bentuk : </b> Rimpang akar dengan daging berwarna kuning atau putih dan aroma pedas khas.<br><b>Keterangan : </b> Mengandung senyawa gingerol.<br><b>Manfaat:</b> Menghangatkan badan, meredakan mual, serta mengurangi nyeri otot.</p>
-                            <div class="product-price">Rp 48.000</div>
+                            <div class="product-price"><i class="fa-solid fa-tag"></i> Rp 48.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (88)</span>
                                 <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
@@ -412,37 +797,36 @@
                         </div>
                     </div>
 
-                    <!-- Produk 5 (Baru) -->
+                    <!-- Produk 5 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
-                            <img src="assets/kapulaga.jpg" alt="Ekstrak Jahe Merah">
-                            <span class="product-badge">kapulaga</span>
+                            <img src="assets/kapulaga.jpg" alt="Kapulaga">
+                            <span class="product-badge">Kapulaga</span>
                         </div>
                         <div class="ann-body">
                             <h4>Kapulaga Pilihan</h4>
                             <p><b>Bentuk:</b> Biji buah kecil berbentuk bulat atau lonjong berwarna putih atau cokelat.<br><b>Keterangan : </b> Memberikan aroma harum dan rasa hangat yang kuat pada masakan berkuah.<br><b>Manfaat : </b> Membantu menurunkan tekanan darah, mengatasi peradangan, dan melancarkan pencernaan.</p>
-                            <div class="product-price">Rp 55.000</div>
+                            <div class="product-price"><i class="fa-solid fa-tag"></i> Rp 55.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.9 (110)</span>
-                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan">
-                           <i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Produk 6 (Baru) -->
+                    <!-- Produk 6 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
-                            <img src="assets/kunyit.jpg" alt="Ekstrak Mengkudu">
+                            <img src="assets/kunyit.jpg" alt="Kunyit">
                             <span class="product-badge">Kunyit</span>
                         </div>
                         <div class="ann-body">
-                            <h4> Kunyit Murni Organik</h4>
-                            <p><b>Bentuk : </b>Rimpang akar dengan warna daging kuning oranye yang cerah.<br><b>Keterangan :</b> Mengandung zat aktif kurkumin sebagai antioksidan alami.<br><b>Manfaat:</b> Bersifat antiradang, meningkatkan daya tahan tubuh, dan menjaga kesehatan lambung.</p>
-                            <div class="product-price">Rp 42.000</div>
+                            <h4>Kunyit Murni Organik</h4>
+                            <p><b>Bentuk : </b> Rimpang akar dengan warna daging kuning oranye yang cerah.<br><b>Keterangan :</b> Mengandung zat aktif kurkumin sebagai antioksidan alami.<br><b>Manfaat:</b> Bersifat antiradang, meningkatkan daya tahan tubuh, dan menjaga kesehatan lambung.</p>
+                            <div class="product-price"><i class="fa-solid fa-tag"></i> Rp 42.000</div>
                             <div class="product-card-footer">
                                 <span class="product-rating"><i class="fa-solid fa-star"></i> 4.7 (35)</span>
-                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart"  title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <a href="http://www.tokoperhutani.com" target="_blank" class="btn-cart" title="Beli / Pesan"><i class="fa-solid fa-cart-shopping"></i></a>
                             </div>
                         </div>
                     </div>
@@ -482,7 +866,7 @@
             <div class="announcement-sidebar-column">
 
                 <!-- Kualitas Terjamin Widget -->
-                <div class="sidebar-widget sidebar-dark-box">
+                <div class="sidebar-widget">
                     <h4><i class="fa-solid fa-shield-halved"></i> Kualitas Terjamin</h4>
                     <div class="sidebar-list-content">
                         <div>
@@ -519,22 +903,24 @@
                         </ul>
                     </div>
                 </div>
-<!-- Widget Layanan Pelanggan / Konsultasi Cepat -->
-<div class="sidebar-widget" style="margin-top: 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: left;">
-    <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-        <i class="fa-solid fa-headset" style="color: #15803d;"></i> Butuh Bantuan?
-    </h4>
-    <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 15px;">
-        Punya pertanyaan seputar ketersediaan stok produk herbal atau ingin bekerja sama? Hubungi tim layanan kami.
-    </p>
-    <a href="layanan.html" style="display: block; text-align: center; background: #f1f5f9; color: #15803d; padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#15803d'; this.style.color='#fff';" onmouseout="this.style.background='#f1f5f9'; this.style.color='#15803d';">
-        <i class="fa-solid fa-paper-plane"></i> Hubungi Layanan
-    </a>
-</div>
+
+                <!-- Widget Layanan Pelanggan -->
+                <div class="sidebar-widget" style="background: linear-gradient(145deg, #0b1f15 0%, #08170f 100%);">
+                    <h4 style="font-size: 1rem; color: #fff; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 10px;">
+                        <i class="fa-solid fa-headset" style="color: #4ade80;"></i> Butuh Bantuan?
+                    </h4>
+                    <p style="font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin-bottom: 15px;">
+                        Punya pertanyaan seputar ketersediaan stok produk herbal atau ingin bekerja sama? Hubungi tim layanan kami.
+                    </p>
+                    <a href="layanan.html" style="display: block; text-align: center; background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid var(--forest-border); padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#22c55e'; this.style.color='#06120b';" onmouseout="this.style.background='rgba(34, 197, 94, 0.15)'; this.style.color='#4ade80';">
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Layanan
+                    </a>
+                </div>
             </div>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="footer-section">
         <div class="footer-grid">
             <div class="footer-col">
@@ -549,26 +935,18 @@
                     <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
                 </ul>
                 <div class="social-links">
-                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X" style="background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
+                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
                         <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn" style="background: #ffffff; color: #0a66c2; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
+                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="https://instagram.com" class="social-btn" title="Instagram" style="background: #ffffff; color: #e1306c; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com" class="social-btn" title="Facebook" style="background: #ffffff; color: #1877f2; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube" style="background: #ffffff; color: #ff0000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok" style="background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
+                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
 
@@ -677,42 +1055,36 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modals & Drawers -->
     <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
-    <button class="image-modal-close">&times;</button>
-    <img id="fullImageDisplay" src="" alt="Full Preview">
-</div>
-<div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
-    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
-        
-        <!-- Header Modal -->
-        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
-            </h3>
-            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
+        <button class="image-modal-close">&times;</button>
+        <img id="fullImageDisplay" src="" alt="Full Preview">
+    </div>
 
-        <!-- Konten Pertanyaan & Pilihan -->
-        <div style="padding: 20px;" id="quizBody">
-            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
-                Pertanyaan akan muncul di sini...
+    <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+        <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden;">
+            <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+                </h3>
+                <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
-                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
+            <div style="padding: 20px;" id="quizBody">
+                <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                    Pertanyaan akan muncul di sini...
+                </div>
+                <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;"></div>
             </div>
-        </div>
-
-        <!-- Footer Modal (Skor / Status) -->
-        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
-            Pertanyaan 1 dari 3
+            <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+                Pertanyaan 1 dari 3
+            </div>
         </div>
     </div>
-</div>
- <!-- Drawer Mobile Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     <nav class="mobile-nav-drawer" id="mobileNavDrawer">
         <div class="mobile-drawer-header">
             <div class="mobile-brand">
@@ -723,7 +1095,6 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-
         <div class="mobile-drawer-body">
             <ul class="mobile-nav-list">
                 <li>
@@ -731,7 +1102,6 @@
                         <span><i class="fa-solid fa-house"></i> Beranda</span>
                     </a>
                 </li>
-
                 <li class="mobile-dropdown">
                     <button type="button" class="mobile-dropdown-btn">
                         <span><i class="fa-solid fa-building"></i> Tentang Kami</span>
@@ -748,7 +1118,6 @@
                         <a href="program.html">Program Kerja</a>
                     </div>
                 </li>
-
                 <li class="mobile-dropdown">
                     <button type="button" class="mobile-dropdown-btn">
                         <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
@@ -764,7 +1133,6 @@
                         <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
                     </div>
                 </li>
-
                 <li class="mobile-dropdown">
                     <button type="button" class="mobile-dropdown-btn">
                         <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
@@ -776,7 +1144,6 @@
                         <a href="pengumuman.html">Pengumuman</a>
                     </div>
                 </li>
-
                 <li>
                     <a href="layanan.html" class="mobile-link">
                         <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
