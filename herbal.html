@@ -119,7 +119,7 @@
         border-radius: 12px !important;
     }
 
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
+    /* Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
     .weather-widget span:not(.temp):not(.weather-icon),
     .weather-widget div:not(.temp):not(.weather-icon),
     .weather-widget p,
@@ -134,6 +134,32 @@
         font-size: 0.85rem !important;
     }
 }
+
+    /* Tambahan Styling Estetik & Nuansa Hutan pada Footer */
+    .footer-section {
+        position: relative;
+        background: linear-gradient(180deg, #0b1711 0%, #06110b 100%) !important;
+        border-top: 4px solid #22c55e;
+        overflow: hidden;
+    }
+
+    .footer-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px dashed rgba(74, 222, 128, 0.3);
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+    }
+
+    .footer-heading i {
+        color: #4ade80 !important;
+        font-size: 1.1rem;
+    }
+
+    .contact-list li i, .schedule-list strong {
+        color: #4ade80 !important;
+    }
     </style>
 </head>
 <body>
@@ -474,8 +500,18 @@
         </div>
     </main>
 
+    <!-- Footer Nuansa Hutan & Estetik -->
     <footer class="footer-section">
-        <div class="footer-grid">
+        <!-- Aksen Dekorasi Daun & Pohon Estetik di Atas Footer -->
+        <div style="text-align: center; padding-top: 15px; color: #4ade80; opacity: 0.85; font-size: 1.3rem; display: flex; justify-content: center; gap: 18px; letter-spacing: 5px;">
+            <i class="fa-solid fa-leaf" title="Daun Alami"></i>
+            <i class="fa-solid fa-tree" title="Pohon Hutan"></i>
+            <i class="fa-solid fa-seedling" title="Bibit Lestari"></i>
+            <i class="fa-solid fa-tree" title="Pohon Hutan"></i>
+            <i class="fa-solid fa-leaf" title="Daun Alami"></i>
+        </div>
+
+        <div class="footer-grid" style="padding-top: 15px;">
             <div class="footer-col">
                 <div class="footer-heading">
                     <i class="fa-solid fa-phone-volume"></i>
@@ -600,7 +636,7 @@
         </div>
 
         <div class="footer-bottom-bar">
-            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
+            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved &nbsp;|&nbsp; <i class="fa-solid fa-tree" style="color: #4ade80;"></i> Lestari Hutanku</p>
             <div class="policy-links">
                 <a href="#">Kebijakan Privasi</a>
                 <span>•</span>
@@ -608,40 +644,39 @@
             </div>
         </div>
     </footer>
+
     <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
-    <button class="image-modal-close">&times;</button>
-    <img id="fullImageDisplay" src="" alt="Full Preview">
-</div>
-<div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
-    <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
-        
-        <!-- Header Modal -->
-        <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
-            </h3>
-            <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
+        <button class="image-modal-close">&times;</button>
+        <img id="fullImageDisplay" src="" alt="Full Preview">
+    </div>
 
-        <!-- Konten Pertanyaan & Pilihan -->
-        <div style="padding: 20px;" id="quizBody">
-            <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
-                Pertanyaan akan muncul di sini...
+    <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
+        <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
+            
+            <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
+                </h3>
+                <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
-                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
-            </div>
-        </div>
 
-        <!-- Footer Modal (Skor / Status) -->
-        <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
-            Pertanyaan 1 dari 3
+            <div style="padding: 20px;" id="quizBody">
+                <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
+                    Pertanyaan akan muncul di sini...
+                </div>
+                <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
+                </div>
+            </div>
+
+            <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
+                Pertanyaan 1 dari 3
+            </div>
         </div>
     </div>
-</div>
- <!-- Drawer Mobile Menu -->
+
+    <!-- Drawer Mobile Menu -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <nav class="mobile-nav-drawer" id="mobileNavDrawer">
