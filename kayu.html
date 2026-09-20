@@ -10,17 +10,79 @@
     <link rel="stylesheet" href="css/style3.css">
 
     <style>
-        /* Hero Banner Ekowisata dengan Background Foto Gunung */
-    .herbal-hero-banner {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(180deg, rgba(6, 17, 11, 0.75) 0%, rgba(11, 23, 17, 0.92) 100%), 
-                    url('assets/kayu.jpg') center/cover no-repeat !important;
-        border-bottom: 3px solid #22c55e;
-        padding: 90px 20px;
-        text-align: center;
-        color: #fff;
-    }
+     .herbal-hero-banner {
+            position: relative;
+            overflow: hidden;
+            background: #f4f9f4;
+            border-bottom: 3px solid #15803d;
+            padding: 60px 20px;
+            color: #1e293b;
+        }
+
+        .hero-layout-flex {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-content-left h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .hero-content-left h1 span.highlight-green {
+            color: #15803d;
+            display: block;
+        }
+
+        .hero-content-left .hero-subtitle-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #b45309;
+            margin-bottom: 20px;
+        }
+
+        .hero-content-left .hero-desc-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        .hero-image-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Mengatur lengkungan organik persis seperti referensi (melengkung di sisi kiri-atas) */
+        .hero-image-card {
+            width: 100%;
+            max-width: 540px;
+            height: 360px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            /* Membuat sudut kiri atas melengkung besar menyerupai kubah */
+            border-radius: 180px 24px 24px 24px;
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
         html, body {
             max-width: 100% !important;
             overflow-x: hidden !important;
