@@ -145,6 +145,41 @@
         backdrop-filter: blur(18px);
         border-bottom: 1px solid rgba(134, 239, 172, 0.25);
     }
+        /* --- ORNAMEN HUTAN & SATWA STATIS (DIAM, TIDAK MELAYANG/PUYENG) --- */
+    .herbal-hero-banner {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .forest-static-ornament {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.25; /* Transparan agar tetap elegan dan tidak mencolok */
+        color: #fff;
+    }
+
+    .forest-static-ornament .animal-group {
+        display: flex;
+        gap: 15px;
+        font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+        .forest-static-ornament {
+            padding: 0 15px;
+        }
+        .forest-static-ornament .animal-group {
+            font-size: 0.9rem;
+            gap: 10px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -250,9 +285,24 @@
     <!-- Main Content dengan padding-top agar tidak tertutup navbar fixed/sticky -->
     <main class="main-content-full" style="padding-top: 80px;">
 
-        <!-- Hero Banner Herbal -->
+      <!-- Hero Banner Herbal -->
         <section class="herbal-hero-banner">
-            <div class="hero-text-content">
+            <!-- Ornamen Hutan & Satwa Statis (Diam & Tenang) -->
+            <div class="forest-static-ornament">
+                <div class="animal-group">
+                    <i class="fa-solid fa-tree" title="Pohon Hutan"></i>
+                    <i class="fa-solid fa-paw" title="Jejak Satwa"></i>
+                </div>
+                <div class="animal-group">
+                    <span style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; align-self: center;">Kawasan Hutan Lestari</span>
+                </div>
+                <div class="animal-group">
+                    <i class="fa-solid fa-feather" title="Fauna"></i>
+                    <i class="fa-solid fa-tree" title="Pohon Hutan"></i>
+                </div>
+            </div>
+
+            <div class="hero-text-content" style="position: relative; z-index: 2;">
                 <h1>Herbal</h1>
                 <p class="hero-subtitle">Kebaikan Alam untuk Kesehatan Alami</p>
                 <div class="title-underline"><i class="fa-solid fa-feather"></i></div>
