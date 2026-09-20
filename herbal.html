@@ -9,24 +9,104 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
     <style>
-        /* Hero Banner Ekowisata dengan Background Foto Gunung */
-    .herbal-hero-banner {
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(180deg, rgba(10, 40, 20, 0.85) 0%, rgba(5, 20, 10, 0.95) 100%), 
-                    url('assets/rempah.jpg') center/cover no-repeat !important;
-        border-bottom: 4px solid #15803d;
-        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-        padding: 100px 20px;
-        text-align: center;
-        color: #f0fdf4;
-    }
+        /* Hero Banner Model Baru (Sesuai Referensi Gambar) */
+        .herbal-hero-banner {
+            position: relative;
+            overflow: hidden;
+            background: #f4f9f4; /* Background terang bersih */
+            border-bottom: 3px solid #15803d;
+            padding: 60px 20px;
+            color: #1e293b;
+        }
+
+        .hero-layout-flex {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content-left {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-content-left h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .hero-content-left h1 span.highlight-green {
+            color: #15803d;
+            display: block;
+        }
+
+        .hero-content-left .hero-subtitle-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #b45309; /* Aksen warna herbal/kayu hangat */
+            margin-bottom: 20px;
+        }
+
+        .hero-content-left .hero-desc-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 0;
+        }
+
+        .hero-image-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image-card {
+            width: 100%;
+            max-width: 540px;
+            height: 340px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ffffff;
+        }
+
+        .hero-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media screen and (max-width: 968px) {
+            .hero-layout-flex {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+            .hero-content-left {
+                text-align: center;
+            }
+            .hero-image-right {
+                justify-content: center;
+                width: 100%;
+            }
+            .hero-content-left h1 {
+                font-size: 2.2rem;
+            }
+        }
+
         html, body {
             max-width: 100% !important;
             overflow-x: hidden !important;
             box-sizing: border-box !important;
             font-family: 'Plus Jakarta Sans', sans-serif !important;
-}
+        }
 
         *, *:before, *:after {
             box-sizing: border-box !important;
@@ -72,7 +152,7 @@
             }
 
             .product-card, .announcement-card {
-                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
+                flex: 0 0 80% !important;
                 max-width: 280px !important;
                 scroll-snap-align: start !important;
                 margin: 0 !important;
@@ -102,39 +182,38 @@
                 padding-bottom: 8px !important;
             }
         }
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
+        .weather-widget {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
 
-@media screen and (max-width: 950px) {
-    .weather-widget {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 12px !important;
-    }
+        @media screen and (max-width: 950px) {
+            .weather-widget {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                padding: 3px 8px !important;
+                gap: 4px !important;
+                background: rgba(15, 35, 25, 0.85) !important;
+                border: 1px solid rgba(74, 222, 128, 0.4) !important;
+                border-radius: 12px !important;
+            }
 
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
-    }
+            .weather-widget span:not(.temp):not(.weather-icon),
+            .weather-widget div:not(.temp):not(.weather-icon),
+            .weather-widget p,
+            .weather-widget small {
+                display: none !important;
+            }
 
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
-    }
-}
+            .weather-widget .weather-icon,
+            .weather-widget .temp {
+                display: inline-block !important;
+                visibility: visible !important;
+                font-size: 0.85rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -240,16 +319,19 @@
     <!-- Main Content dengan padding-top agar tidak tertutup navbar fixed/sticky -->
     <main class="main-content-full" style="padding-top: 110px;">
 
-        <!-- Hero Banner Herbal -->
+        <!-- Hero Banner Herbal (Model Baru 2 Kolom Tanpa Button) -->
         <section class="herbal-hero-banner">
-            <div class="hero-text-content">
-                <span style="display: inline-block; background: rgba(21, 128, 61, 0.85); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid rgba(74, 222, 128, 0.4);">
-                    <i class="fa-solid fa-tree"></i> Hasil Hutan Lestari
-                </span>
-                <h1 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Herbal</h1>
-                <p class="hero-subtitle" style="font-size: 1.25rem; font-weight: 600; color: #4ade80; margin-bottom: 15px; text-shadow: 0 1px 3px rgba(0,0,0,0.4);">Kebaikan Alam untuk Kesehatan Alami</p>
-                <div class="title-underline"><i class="fa-solid fa-seedling" style="color: #4ade80;"></i></div>
-                <p class="hero-desc" style="max-width: 700px; margin: 15px auto 0 auto; font-size: 1rem; line-height: 1.6; color: #e2e8f0;">Perhutani menghadirkan produk herbal berkualitas yang berasal dari hutan lestari dan dikelola secara berkelanjutan untuk kesehatan dan kesejahteraan Anda.</p>
+            <div class="hero-layout-flex">
+                <div class="hero-content-left">
+                    <h1>Herbal <span class="highlight-green">Perhutani</span></h1>
+                    <p class="hero-subtitle-text">Kebaikan Alam untuk Kesehatan Alami</p>
+                    <p class="hero-desc-text">Perhutani menghadirkan produk herbal berkualitas yang berasal dari hutan lestari dan dikelola secara berkelanjutan untuk kesehatan dan kesejahteraan Anda.</p>
+                </div>
+                <div class="hero-image-right">
+                    <div class="hero-image-card">
+                        <img src="assets/rempah.jpg" alt="Produk Herbal Hutan Lestari">
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -706,7 +788,7 @@
                         <i class="fa-solid fa-chevron-down arrow-icon"></i>
                     </button>
                     <div class="mobile-submenu">
-                        <p class="sub-main">Semua Publikasi</p>
+                        <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
                         <a href="suararimba.html">Suara Rimba</a>
                         <a href="pengumuman.html">Pengumuman</a>
                     </div>
