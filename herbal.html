@@ -198,7 +198,10 @@
         font-size: 0.85rem !important;
     }
 }
- /* Header Premium dengan Efek Gradasi, Gerigi Bawah, dan Menu Aktif */
+
+/* ==========================================================
+   HEADER PREMIUM DENGAN LATAR BELAKANG PUTIH & GERIGI DI BAWAH
+   ================================================---------- */
 .premium-header {
     position: fixed !important;
     top: 0 !important;
@@ -206,69 +209,76 @@
     width: 100% !important;
     z-index: 9999 !important;
     
-    /* Gradasi dari putih ke hijau tua sesuai gambar */
-    background: linear-gradient(to bottom, #ffffff 0%, #1c3829 50%, #0b1711 100%) !important;
-    backdrop-filter: blur(18px);
+    /* Warna latar belakang putih bersih sesuai permintaan */
+    background: #ffffff !important;
     
-    /* Menghilangkan border biasa dan membuat gerigi menghadap ke bawah */
+    /* Menghilangkan border bawah standar */
     border-bottom: none !important;
     
-    /* Masking CSS agar gerigi berada di bagian bawah kotak */
+    /* Masking presisi agar gerigi hanya muncul di bagian bawah kotak header */
     -webkit-mask-image: linear-gradient(#fff, #fff), 
-                        radial-gradient(circle at 10px 10px, transparent 10px, #fff 11px);
-    -webkit-mask-size: 100% 100%, 20px 20px;
-    -webkit-mask-position: 0 0, 0 100%;
-    -webkit-mask-repeat: no-repeat, repeat-x;
+                        conic-gradient(from -45deg at bottom, #0000, #fff 1deg 89deg, #0000 90deg);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
     
-    mask-image: linear-gradient(#fff, #fff), 
-                radial-gradient(circle at 10px 10px, transparent 10px, #fff 11px);
-    mask-size: 100% 100%, 20px 20px;
-    mask-position: 0 0, 0 100%;
+    /* Ukuran dan perulangan gerigi bawah */
+    -webkit-mask-size: 100% calc(100% - 10px), 16px 10px;
+    mask-size: 100% calc(100% - 10px), 16px 10px;
+    
+    -webkit-mask-repeat: no-repeat, repeat-x;
     mask-repeat: no-repeat, repeat-x;
     
-    /* Efek bayangan kotak agar timbul */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    -webkit-mask-position: top, bottom;
+    mask-position: top, bottom;
+    
+    /* Bayangan lembut agar header timbul di atas halaman */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Gaya untuk Navigasi / Menu di dalam Header */
-.premium-header nav {
+/* Penataan Layout Navigasi di dalam Header */
+.premium-header .header-inner {
     display: flex;
     align-items: center;
-    padding: 0 40px;
-    height: 60px;
-    position: relative;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 75px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Tombol / Item Menu */
-.premium-header a {
-    color: #1e293b;
+.premium-header .premium-link {
+    color: #1e293b !important;
     font-family: serif;
     font-weight: bold;
     text-decoration: none;
-    padding: 0 20px;
+    padding: 0 15px;
     font-size: 14px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    transition: color 0.2s;
 }
 
-/* Efek Tombol Aktif (Pita Merah yang Menjuntai ke Bawah)[cite: 2] */
+/* Efek Tombol Aktif / Hover (Pita Merah yang Menjuntai ke Bawah) */
 .premium-header a.active, 
-.premium-header a:hover {
+.premium-header .premium-dropdown:hover > a.premium-link,
+.premium-header .premium-link:hover {
     position: relative;
-    background-color: #b91c1c; /* Warna merah ala pita */
+    background-color: #b91c1c !important; /* Warna merah pita */
     color: #ffffff !important;
-    height: 85px; /* Membuat pita lebih panjang ke bawah melewati gerigi header */
-    display: flex;
+    height: 95px; /* Menjuntai ke bawah melewati batas bawah header */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 15px rgba(185, 28, 28, 0.35);
     border-radius: 0 0 4px 4px;
-    margin-top: -10px; /* Menarik bagian atas agar pas menyatu dengan header */
+    margin-top: -10px;
 }
 
 /* Potongan V di bagian bawah pita merah aktif */
 .premium-header a.active::after,
-.premium-header a:hover::after {
+.premium-header .premium-dropdown:hover > a.premium-link::after,
+.premium-header .premium-link:hover::after {
     content: "";
     position: absolute;
     bottom: -8px;
