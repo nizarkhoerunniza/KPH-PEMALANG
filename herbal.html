@@ -198,7 +198,8 @@
         font-size: 0.85rem !important;
     }
 }
-  /* Header Premium dengan Efek Glossy Card & Forest Aesthetic */
+ 
+ /* Header Premium dengan Efek Gelombang Bawah (Forest Aesthetic & Glassmorphism) */
     .premium-header {
         position: fixed !important;
         top: 0 !important;
@@ -206,27 +207,35 @@
         width: 100% !important;
         z-index: 9999 !important;
         
-        /* Nuansa hutan malam yang dalam dengan gradasi transparan */
+        /* Warna dasar hutan malam yang elegan */
         background: linear-gradient(
             135deg, 
-            rgba(11, 38, 24, 0.85) 0%, 
-            rgba(6, 20, 13, 0.92) 100%
+            rgba(11, 38, 24, 0.9) 0%, 
+            rgba(6, 20, 13, 0.95) 100%
         ) !important;
         
-        /* Efek blur kaca yang kuat */
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        /* Efek blur kaca */
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
         
-        /* Border bercahaya ala daun/tanaman menyala di dalam hutan */
-        border-bottom: 1px solid rgba(134, 239, 172, 0.35) !important;
-        
-        /* Efek kilau kaca (Glossy reflection) & bayangan lembut */
+        /* Kilau kaca di bagian atas */
         box-shadow: 
-            inset 0 1px 0 0 rgba(255, 255, 255, 0.15), /* Kilau garis atas kaca */
-            0 10px 30px -10px rgba(4, 15, 9, 0.7);    /* Bayangan dalam */
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
+            0 10px 25px -5px rgba(4, 15, 9, 0.6) !important;
+
+        /* Membuat pola gelombang/gerigi di bagian bawah menggunakan mask */
+        mask-image: radial-gradient(circle at 10px 100%, transparent 6px, black 7px);
+        mask-position: 0 100%;
+        mask-size: 20px 10px;
+        mask-repeat: repeat-x;
+        
+        -webkit-mask-image: radial-gradient(circle at 10px 100%, transparent 6px, black 7px);
+        -webkit-mask-position: 0 100%;
+        -webkit-mask-size: 20px 10px;
+        -webkit-mask-repeat: repeat-x;
     }
 
-    /* Tambahan efek kilau cahaya daun melintang di bagian atas */
+    /* Garis cahaya daun tambahan di tepi atas header */
     .premium-header::before {
         content: '';
         position: absolute;
@@ -240,6 +249,7 @@
             rgba(134, 239, 172, 0.8), 
             transparent
         );
+        pointer-events: none;
     }
 </style>
 </head>
