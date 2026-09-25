@@ -3,734 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perhutani KPH Pemalang - Beranda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style2.css">
-<style>
-    /* Styling Dasar Nuansa Hutan Super Estetik & Sentuhan Soft White */
-    body {
-        background: #0b1711 !important;
-        color: #edfaf1 !important;
-        font-family: 'Plus Jakarta Sans', sans-serif !important;
-        overflow-x: hidden;
-    }
-
-    /* Header Premium dengan Efek Glassmorphism & Garis Cahaya Daun */
-    .premium-header {
-        background: rgba(11, 23, 17, 0.88) !important;
-        backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.25);
-    }
-    .premium-link {
-        color: #f3f4f6 !important;
-        font-weight: 500;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-    .premium-link:hover, .premium-link.active {
-        color: #4ade80 !important;
-    }
-    .brand-copy strong {
-        color: #ffffff !important;
-        text-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
-    }
-    .brand-copy small {
-        color: #86efac !important;
-    }
-    .header-action {
-        color: #4ade80 !important;
-        background: rgba(134, 239, 172, 0.12) !important;
-        border: 1px solid rgba(134, 239, 172, 0.3) !important;
-    }
-
-    /* Weather Widget */
-    .weather-widget {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        background: rgba(16, 37, 26, 0.85) !important;
-        border: 1px solid rgba(134, 239, 172, 0.35) !important;
-        border-radius: 12px !important;
-        padding: 4px 10px !important;
-    }
-    .weather-icon {
-        color: #fde047 !important;
-    }
-    .weather-info .temp {
-        color: #ffffff !important;
-    }
-    .weather-info small, .weather-info .location {
-        color: #d1d5db !important;
-    }
-
-    /* Hero Section Hutan Keren Maksimal dengan Foggy Light & Aksen Daun */
-    .hero-section-custom {
-        position: relative;
-        min-height: 88vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(135deg, rgba(6, 17, 11, 0.94) 0%, rgba(10, 31, 19, 0.82) 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-        padding: 80px 5%;
-        overflow: hidden;
-        border-bottom: 3px solid #22c55e;
-    }
-
-    /* Efek Kabut Putih Hutan & Siluet Daun Estetik */
-    .hero-section-custom::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
-        pointer-events: none;
-    }
-
-    .hero-section-custom::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 380px;
-        height: 380px;
-        background: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80') no-repeat center/cover;
-        opacity: 0.18;
-        border-radius: 50% 0 0 0;
-        filter: drop-shadow(0 0 15px rgba(134, 239, 172, 0.5));
-        pointer-events: none;
-    }
-
-    /* Kartu Statistik Mewah dengan Garis Tepi Bercahaya Soft White */
-    .stat-card-custom {
-        background: rgba(16, 36, 25, 0.9) !important;
-        backdrop-filter: blur(12px);
-        border-radius: 24px;
-        padding: 35px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        border: 1px solid rgba(134, 239, 172, 0.3);
-    }
-
-    /* Kotak Seksi Konten Nuansa Hutan Elegan & Sentuhan Putih Estetik */
-    .forest-box {
-        background: rgba(18, 40, 28, 0.9);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(134, 239, 172, 0.28);
-        border-radius: 24px;
-        padding: 40px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .forest-box::before {
-        content: "";
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
-        border-radius: 50%;
-    }
-
-    @media screen and (max-width: 950px) {
-        .weather-widget span:not(.temp):not(.weather-icon),
-        .weather-widget div:not(.temp):not(.weather-icon),
-        .weather-widget p,
-        .weather-widget small {
-            display: none !important;
+    <title>KPH Pemalang</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --forest-dark: #1b3817;
+            --wood-brown: #8b5a2b;
+            --cream-light: #f5f2eb;
+            --text-dark: #333333;
+            --text-light: #ffffff;
         }
-        .weather-widget .weather-icon,
-        .weather-widget .temp {
-            display: inline-block !important;
-            visibility: visible !important;
-            font-size: 0.85rem !important;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-    }
-</style>
+
+        body {
+            background-color: var(--cream-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--forest-dark);
+            color: var(--text-light);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--wood-brown);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--cream-light);
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(27, 56, 23, 0.7), rgba(45, 90, 39, 0.7)), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .card {
+            background-color: var(--text-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-green);
+        }
+
+        .card h3 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background-color: var(--forest-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            border-top: 4px solid var(--wood-brown);
+        }
+    </style>
 </head>
 <body>
-  <header class="premium-header">
-    <div class="header-inner">
-        <a href="index.html" class="brand-premium">
-            <span class="brand-logo-ring">
-                <img src="assets/perhutanii.jpg" alt="Logo Perhutani">
-            </span>
-            <span class="brand-copy">
-                <strong>PERHUTANI</strong>
-                <small>KPH PEMALANG</small>
-            </span>
-        </a>
 
-        <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link active">Beranda</a>
-
-            <div class="premium-dropdown">
-                <a href="tentangkami.html" class="premium-link dropdown-trigger">
-                    Tentang Kami <i class="fa-solid fa-angle-down"></i>
-                </a>
-                <div class="premium-menu">
-                    <div class="menu-heading"><span>Eksplorasi</span><small>Informasi KPH Pemalang</small></div>
-                    <a href="profil.html"><i class="fa-solid fa-building"></i><span><b>Profil Perusahaan</b><small>Identitas & informasi perusahaan</small></span></a>
-                    <a href="sejarah.html"><i class="fa-solid fa-timeline"></i><span><b>Sejarah Perusahaan</b><small>Perjalanan Perhutani</small></span></a>
-                    <a href="tugasfungsi.html"><i class="fa-solid fa-list-check"></i><span><b>Tugas dan Fungsi</b><small>Peran & tanggung jawab</small></span></a>
-                    <a href="visimisitatanilai.html"><i class="fa-solid fa-compass"></i><span><b>Visi Misi & Tata Nilai</b><small>Arah dan nilai organisasi</small></span></a>
-                    <a href="struktur.html"><i class="fa-solid fa-sitemap"></i><span><b>Struktur Organisasi</b><small>Bagan organisasi KPH</small></span></a>
-                    <a href="kepemilikansaham.html"><i class="fa-solid fa-chart-pie"></i><span><b>Kepemilikan Saham</b><small>Informasi kepemilikan</small></span></a>
-                    <a href="program.html"><i class="fa-solid fa-seedling"></i><span><b>Program Kerja</b><small>Program & kegiatan</small></span></a>
-                </div>
-            </div>
-
-            <div class="premium-dropdown">
-                <a href="unitbisnis.html" class="premium-link dropdown-trigger">
-                    Unit Bisnis <i class="fa-solid fa-angle-down"></i>
-                </a>
-                <div class="premium-menu business-menu">
-                    <div class="menu-heading"><span>Unit Bisnis</span><small>Potensi & layanan berbasis hutan</small></div>
-                    <a href="herbal.html"><i class="fa-solid fa-leaf"></i><span><b>Herbal</b><small>Produk herbal hutan</small></span></a>
-                    <a href="kayu.html"><i class="fa-solid fa-tree"></i><span><b>Kayu</b><small>Hasil hutan kayu</small></span></a>
-                    <a href="nonkayu.html"><i class="fa-solid fa-spa"></i><span><b>Non Kayu</b><small>Hasil hutan bukan kayu</small></span></a>
-                    <a href="ekowisata.html"><i class="fa-solid fa-mountain-sun"></i><span><b>Ekowisata</b><small>Wisata alam berkelanjutan</small></span></a>
-                    <a href="solusiberbasisalam.html"><i class="fa-solid fa-water"></i><span><b>Solusi Berbasis Alam</b><small>Inovasi berbasis ekosistem</small></span></a>
-                    <a href="pengelolaanhutan.html"><i class="fa-solid fa-earth-asia"></i><span><b>Pengelolaan Hutan</b><small>Kelola hutan berkelanjutan</small></span></a>
-                </div>
-            </div>
-
-            <div class="premium-dropdown">
-                <a href="publikasi.html" class="premium-link dropdown-trigger">
-                    Publikasi <i class="fa-solid fa-angle-down"></i>
-                </a>
-                <div class="premium-menu compact-menu">
-                    <div class="menu-heading"><span>Publikasi</span><small>Kabar & informasi terbaru</small></div>
-                    <a href="suararimba.html"><i class="fa-solid fa-microphone-lines"></i><span><b>Suara Rimba</b><small>Cerita dan kabar rimba</small></span></a>
-                    <a href="pengumuman.html"><i class="fa-solid fa-bullhorn"></i><span><b>Pengumuman</b><small>Informasi resmi KPH</small></span></a>
-                </div>
-            </div>
-
-            <a href="layanan.html" class="premium-link">Layanan</a>
-            <a href="karir.html" class="premium-link">Karir</a>
-        </nav>
-
-        <div class="header-actions">
-            <!-- Tombol Burger (Tampil di Layar HP) -->
-            <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-
-            <!-- Tombol Kuis (Tunggal) -->
-            <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
-                <i class="fa-solid fa-puzzle-piece"></i>
-            </button>
-
-            <!-- Search -->
-            <div class="search-wrapper premium-search">
-                <button id="searchBtn" class="header-action" title="Cari">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <div class="search-box" id="searchBox">
-                    <input type="text" id="searchInput" placeholder="Cari menu atau informasi...">
-                    <div class="search-result" id="searchResult"></div>
-                </div>
-            </div>
-
-            <!-- Weather Widget -->
-            <div class="weather-widget" id="weatherWidget">
-                <div class="weather-icon">
-                    <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
-                </div>
-                <div class="weather-info">
-                    <span class="temp">
-                        <span id="temperature">--°C</span>
-                        <small id="weatherDescription" data-i18n="weather_loading">Memuat cuaca...</small>
-                    </span>
-                    <span class="location" data-i18n="weather_loc">Pemalang, Jawa Tengah</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-    <main class="main-content-full" style="padding-top: 80px;">
-
-        <!-- Hero Section Hutan Megah & Estetik dengan Aksen Soft White -->
-        <section class="hero-section-custom">
-            <div style="max-width: 1200px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; position: relative; z-index: 2;">
-                <div>
-                    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); padding: 8px 18px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.35); margin-bottom: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-                        <i class="fa-solid fa-leaf" style="color: #86efac; filter: drop-shadow(0 0 5px rgba(134,239,172,0.8));"></i>
-                        <span style="color: #f9fafb; font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;" data-i18n="hero_badge">Perhutani KPH Pemalang</span>
-                    </div>
-                    <h1 style="font-size: 3.4rem; font-weight: 800; color: #ffffff; line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; font-family: 'Playfair Display', serif; text-shadow: 0 3px 15px rgba(0,0,0,0.5);" data-i18n="hero_title">
-                        Kelestarian Hutan <br><span style="color: #86efac; font-style: italic; text-shadow: 0 0 20px rgba(134,239,172,0.6);">Untuk Masa Depan</span>
-                    </h1>
-                    <p style="font-size: 1.1rem; color: #e5e7eb; line-height: 1.7; margin-bottom: 35px; max-width: 580px; font-weight: 300;" data-i18n="hero_desc">
-                        Perhutani hadir untuk menjaga kelestarian hutan, menyejahterakan masyarakat, dan mendukung pembangunan berkelanjutan di bumi nusantara.
-                    </p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="tentangkami.html" style="background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); color: #061c10; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.4); transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;">
-                            <span data-i18n="btn_explore">Jelajahi Lebih Lanjut</span> <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
-                        <a href="ekowisata.html" style="background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.3); padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.2);">
-                            <i class="fa-solid fa-compass" style="color: #86efac;"></i> <span data-i18n="btn_eco">Destinasi Ekowisata</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-float-card-wrap">
-                    <div style="background: rgba(16, 36, 25, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 24px; padding: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2);">
-                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 15px;">
-                            <div style="width: 45px; height: 45px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #86efac; font-size: 1.2rem; border: 1px solid rgba(134, 239, 172, 0.4);">
-                                <i class="fa-solid fa-tree"></i>
-                            </div>
-                            <div>
-                                <h4 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin: 0;" data-i18n="cert_title">Hutan Lestari</h4>
-                                <span style="color: #86efac; font-size: 0.8rem;" data-i18n="cert_sub">Masa Depan Nusantara</span>
-                            </div>
-                        </div>
-                        <p style="color: #e5e7eb; font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px;" data-i18n="cert_desc">
-                            Komitmen penuh pada standar kualitas tinggi dalam perlindungan keanekaragaman hayati dan operasional ramah lingkungan.
-                        </p>
-                        <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(10, 25, 17, 0.9); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(134, 239, 172, 0.35);">
-                            <span style="color: #f3f4f6; font-size: 0.85rem; font-weight: 600;" data-i18n="status_kawasan">Status Kawasan</span>
-                            <span style="color: #86efac; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; gap: 5px; text-shadow: 0 0 10px rgba(134,239,172,0.5);">
-                                <i class="fa-solid fa-circle-check"></i> <span data-i18n="status_aman">Produktif & Aman</span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Statistik Section -->
-        <section style="max-width: 1200px; margin: -45px auto 60px; padding: 0 5%; position: relative; z-index: 10;">
-            <div class="stat-card-custom" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); color: #86efac; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(134, 239, 172, 0.35);">
-                        <i class="fa-solid fa-earth-asia"></i>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">128.540 <small style="font-size: 1rem; font-weight: 600; color: #86efac;">Ha</small></h3>
-                        <span style="font-size: 0.82rem; color: #d1d5db; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_luas_label">Luas Wilayah Kerja</span>
-                    </div>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); color: #86efac; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(134, 239, 172, 0.35);">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">3 Kab.</h3>
-                        <span style="font-size: 0.82rem; color: #d1d5db; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_adm_label">Wilayah Administratif</span>
-                    </div>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); color: #86efac; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(134, 239, 172, 0.35);">
-                        <i class="fa-solid fa-people-group"></i>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">LMDH</h3>
-                        <span style="font-size: 0.82rem; color: #d1d5db; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_lmdh_label">Mitra Masyarakat Desa Hutan</span>
-                    </div>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 20px;">
-                    <div style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.1); color: #86efac; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; border: 1px solid rgba(134, 239, 172, 0.35);">
-                        <i class="fa-solid fa-seedling"></i>
-                    </div>
-                    <div>
-                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 2px; text-shadow: 0 2px 8px rgba(0,0,0,0.4);">100%</h3>
-                        <span style="font-size: 0.82rem; color: #d1d5db; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="stat_lestari_label">Komitmen Lestari</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Profil Section -->
-        <section id="profil" style="max-width: 1200px; margin: 80px auto; padding: 0 5%;">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: center;">
-                <div style="position: relative;">
-                    <div style="border-radius: 24px; overflow: hidden; box-shadow: 0 25px 50px rgba(0,0,0,0.6); border: 1px solid rgba(134, 239, 172, 0.35);">
-                        <img src="assets/pohon.jpg" alt="Hutan Perhutani" style="width: 100%; height: 450px; object-fit: cover; display: block;">
-                    </div>
-                    <div class="profil-quote-card" style="position: absolute; bottom: -25px; right: -25px; background: rgba(16, 36, 25, 0.92); backdrop-filter: blur(14px); color: #ffffff; padding: 25px; border-radius: 20px; box-shadow: 0 20px 35px rgba(0,0,0,0.5); max-width: 260px; border: 1px solid rgba(255, 255, 255, 0.25);">
-                        <div style="color: #86efac; font-size: 1.8rem; margin-bottom: 10px;"><i class="fa-solid fa-quote-left"></i></div>
-                        <p style="font-size: 0.85rem; color: #e5e7eb; line-height: 1.5; margin: 0; font-weight: 400;" data-i18n="profil_quote">Hutan lestari mengamankan masa depan ekologi dan kesejahteraan bersama.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <span style="color: #ffffff; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.3); padding: 6px 14px; border-radius: 20px; display: inline-block; margin-bottom: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);" data-i18n="profil_tag">Tentang Perusahaan</span>
-                    <h2 style="font-size: 2.5rem; color: #ffffff; margin: 0 0 20px; font-weight: 800; line-height: 1.2; letter-spacing: -0.5px; font-family: 'Playfair Display', serif; text-shadow: 0 2px 10px rgba(0,0,0,0.3);" data-i18n="profil_title">Sinergi Profesional Pengelolaan Hutan Modern</h2>
-                    <p style="color: #e5e7eb; font-size: 1rem; line-height: 1.7; margin-bottom: 20px; font-weight: 400;" data-i18n="profil_p1">
-                        Perum Perhutani KPH Pemalang merupakan unit manajemen strategis di bawah Direktorat Regional Jawa Tengah yang berdedikasi tinggi mengelola sumber daya hutan negara secara mandiri dan profesional.
-                    </p>
-                    <p style="color: #e5e7eb; font-size: 1rem; line-height: 1.7; margin-bottom: 30px; font-weight: 400;" data-i18n="profil_p2">
-                        Kami mengoptimalkan potensi hasil hutan kayu maupun non-kayu, mengelola kawasan wisata alam, serta memperkuat kolaborasi bersama masyarakat melalui program sosial yang inklusif.
-                    </p>
-                    <div style="display: flex; gap: 20px; align-items: center;">
-                        <a href="profil.html" style="background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); color: #061c10; padding: 12px 26px; border-radius: 10px; font-weight: 700; font-size: 0.9rem; text-decoration: none; box-shadow: 0 8px 20px rgba(34, 197, 94, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);">
-                            <span data-i18n="btn_profil_lengkap">Profil Lengkap</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
-                        </a>
-                        <a href="tugasfungsi.html" style="color: #86efac; font-weight: 700; font-size: 0.9rem; text-decoration: none; display: flex; align-items: center; gap: 6px; text-shadow: 0 0 10px rgba(134,239,172,0.4);">
-                            <span data-i18n="btn_tugas">Lihat Tugas & Fungsi</span> <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Unit Bisnis Section -->
-        <section style="background: rgba(12, 28, 19, 0.95); border-top: 1px solid rgba(134, 239, 172, 0.25); border-bottom: 1px solid rgba(134, 239, 172, 0.25); padding: 90px 5%; margin: 60px 0; backdrop-filter: blur(10px);">
-            <div style="max-width: 1200px; margin: 0 auto;">
-                <div style="text-align: center; max-width: 650px; margin: 0 auto 50px;">
-                    <span style="color: #ffffff; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; background: rgba(255, 255, 255, 0.1); padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.25);" data-i18n="pilar_tag">Pilar Strategis</span>
-                    <h2 style="font-size: 2.3rem; color: #ffffff; margin: 15px 0 15px; font-weight: 800; letter-spacing: -0.5px; font-family: 'Playfair Display', serif; text-shadow: 0 2px 10px rgba(0,0,0,0.4);" data-i18n="pilar_title">Unit Bisnis & Layanan Unggulan</h2>
-                    <p style="color: #d1d5db; font-size: 1rem; line-height: 1.6;" data-i18n="pilar_desc">Pilar pengusahaan yang dikelola secara berkelanjutan untuk memberikan nilai tambah bagi ekonomi dan lingkungan.</p>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-                    <div class="forest-box" style="padding: 35px 30px;">
-                        <div style="width: 55px; height: 55px; background: rgba(255, 255, 255, 0.1); color: #86efac; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(134, 239, 172, 0.35);">
-                            <i class="fa-solid fa-tree"></i>
-                        </div>
-                        <h3 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;" data-i18n="biz1_title">Pengelolaan Kayu & Non-Kayu</h3>
-                        <p style="color: #e5e7eb; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz1_desc">Penyediaan produk hasil hutan berkualitas tinggi yang diproduksi secara legal, bertanggung jawab, dan ramah lingkungan.</p>
-                        <a href="unitbisnis.html" style="color: #86efac; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; text-shadow: 0 0 8px rgba(134,239,172,0.4);">
-                            <span data-i18n="read_more">Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                        </a>
-                    </div>
-
-                    <div class="forest-box" style="padding: 35px 30px;">
-                        <div style="width: 55px; height: 55px; background: rgba(255, 255, 255, 0.1); color: #86efac; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(134, 239, 172, 0.35);">
-                            <i class="fa-solid fa-mountain-sun"></i>
-                        </div>
-                        <h3 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;" data-i18n="biz2_title">Ekowisata & Jasa Lingkungan</h3>
-                        <p style="color: #e5e7eb; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz2_desc">Destinasi wisata alam pegunungan dan hutan pinus asri yang menawarkan pengalaman rekreasi edukatif berwawasan lingkungan.</p>
-                        <a href="ekowisata.html" style="color: #86efac; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; text-shadow: 0 0 8px rgba(134,239,172,0.4);">
-                            <span data-i18n="read_more">Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                        </a>
-                    </div>
-
-                    <div class="forest-box" style="padding: 35px 30px;">
-                        <div style="width: 55px; height: 55px; background: rgba(255, 255, 255, 0.1); color: #86efac; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 25px; border: 1px solid rgba(134, 239, 172, 0.35);">
-                            <i class="fa-solid fa-hands-holding-child"></i>
-                        </div>
-                        <h3 style="font-size: 1.25rem; color: #ffffff; margin-bottom: 12px; font-weight: 700;" data-i18n="biz3_title">Kemitraan Masyarakat</h3>
-                        <p style="color: #e5e7eb; font-size: 0.9rem; line-height: 1.6; margin-bottom: 25px;" data-i18n="biz3_desc">Pemberdayaan ekonomi melalui skema Perhutanan Sosial bersama LMDH demi kesejahteraan masyarakat sekitar kawasan hutan.</p>
-                        <a href="pengelolaanhutan.html" style="color: #86efac; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; text-shadow: 0 0 8px rgba(134,239,172,0.4);">
-                            <span data-i18n="read_more">Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Publikasi Terbaru Section -->
-        <section style="max-width: 1200px; margin: 80px auto; padding: 0 5%;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
-                <div>
-                    <span style="color: #ffffff; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; background: rgba(255, 255, 255, 0.1); padding: 5px 14px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.25);" data-i18n="pub_tag">Publikasi Terkini</span>
-                    <h2 style="font-size: 2.3rem; color: #ffffff; margin: 12px 0 0; font-weight: 800; letter-spacing: -0.5px; font-family: 'Playfair Display', serif; text-shadow: 0 2px 10px rgba(0,0,0,0.4);" data-i18n="pub_title">Berita & Pengumuman Terbaru</h2>
-                </div>
-                <a href="pengumuman.html" style="background: rgba(255, 255, 255, 0.1); color: #86efac; border: 1px solid rgba(134, 239, 172, 0.35); padding: 10px 20px; border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none; backdrop-filter: blur(8px);">
-                    <span data-i18n="btn_all_pub">Lihat Semua Publikasi</span> <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
-                </a>
-            </div>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-                <article class="forest-box" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-                    <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="assets/pohonditanam.jpg" alt="Penanaman Pohon" style="width: 100%; height: 100%; object-fit: cover;">
-                        <span style="position: absolute; top: 15px; left: 15px; background: rgba(11, 23, 17, 0.88); backdrop-filter: blur(10px); color: #86efac; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: 1px solid rgba(134,239,172,0.4);">Konservasi</span>
-                    </div>
-                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <div style="display: flex; align-items: center; gap: 8px; color: #d1d5db; font-size: 0.8rem; margin-bottom: 12px; font-weight: 600;">
-                            <i class="fa-regular fa-calendar-days" style="color: #86efac;"></i> 05 Agustus 2026
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 12px; font-weight: 700; line-height: 1.4;" data-i18n="news1_title">Gerakan Penanaman Pohon Bersama LMDH dan Stakeholder</h3>
-                        <p style="color: #e5e7eb; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;" data-i18n="news1_desc">Perhutani KPH Pemalang melaksanakan kegiatan penanaman bersama guna memperkuat daya dukung daerah aliran sungai dan kelestarian ekosistem...</p>
-                        <a href="suararimba.html" style="color: #86efac; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; text-shadow: 0 0 8px rgba(134,239,172,0.4);">
-                            <span data-i18n="read_news">Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="forest-box" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-                    <div style="height: 220px; overflow: hidden; position: relative;">
-                        <img src="assets/pengunjung.jpg" alt="Ekowisata" style="width: 100%; height: 100%; object-fit: cover;">
-                        <span style="position: absolute; top: 15px; left: 15px; background: rgba(11, 23, 17, 0.88); backdrop-filter: blur(10px); color: #86efac; padding: 5px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 6px; border: 1px solid rgba(134,239,172,0.4);">Ekowisata</span>
-                    </div>
-                    <div style="padding: 25px; flex-grow: 1; display: flex; flex-direction: column;">
-                        <div style="display: flex; align-items: center; gap: 8px; color: #d1d5db; font-size: 0.8rem; margin-bottom: 12px; font-weight: 600;">
-                            <i class="fa-regular fa-calendar-days" style="color: #86efac;"></i> 01 Agustus 2026
-                        </div>
-                        <h3 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 12px; font-weight: 700; line-height: 1.4;" data-i18n="news2_title">Peningkatan Fasilitas Kenyamanan Pengunjung Destinasi Wisata</h3>
-                        <p style="color: #e5e7eb; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex-grow: 1;" data-i18n="news2_desc">Menyambut liburan akhir pekan, kawasan wisata kelolaan mempercantik fasilitas spot swafoto dan area istirahat demi kenyamanan wisatawan...</p>
-                        <a href="suararimba.html" style="color: #86efac; font-weight: 700; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; text-shadow: 0 0 8px rgba(134,239,172,0.4);">
-                            <span data-i18n="read_news">Baca Selengkapnya</span> <i class="fa-solid fa-arrow-right" style="font-size: 0.75rem;"></i>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-  <footer class="footer-section">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <h4>Kontak Kami</h4>
-                </div>
-                <ul class="contact-list">
-                    <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi, S.Hut, M.Si</li>
-                    <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
-                    <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
-                    <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
-                </ul>
-                <div class="social-links">
-                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X" style="background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn" style="background: #ffffff; color: #0a66c2; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://instagram.com" class="social-btn" title="Instagram" style="background: #ffffff; color: #e1306c; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com" class="social-btn" title="Facebook" style="background: #ffffff; color: #1877f2; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube" style="background: #ffffff; color: #ff0000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok" style="background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-clock"></i>
-                    <h4>Jam Kerja</h4>
-                </div>
-                <ul class="schedule-list">
-                    <li>
-                        <span class="bullet active"></span>
-                        <div>
-                            <strong>Senin – Kamis</strong>
-                            <p>08.00 – 16.00 WIB</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="bullet active"></span>
-                        <div>
-                            <strong>Jumat</strong>
-                            <p>08.00 – 16.30 WIB</p>
-                        </div>
-                    </li>
-                    <li>
-                        <span class="bullet"></span>
-                        <div>
-                            <strong>Sabtu – Minggu</strong>
-                            <p>Tutup</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h4>Lokasi Kantor</h4>
-                </div>
-                <p class="office-address">
-                    Perhutani KPH Pemalang<br>
-                    Jl. Jenderal Sudirman Timur No. 3,<br>
-                    Wanarejan Selatan, Pemalang,<br>
-                    Jawa Tengah 52311
-                </p>
-                <div class="embedded-map-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8252271891516!2d109.3976230758784!3d-6.895089867500139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb9b95146c26b%3A0x6b0a88703a5b3a88!2sJl.%20Jend.%20Sudirman%20Timur%20No.3%2C%20Mulyoharjo%2C%20Kec.%20Pemalang%2C%20Kabupaten%20Pemalang%2C%20Jawa%20Tengah!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-                        width="100%" 
-                        height="120" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Peta Lokasi Perhutani KPH Pemalang">
-                    </iframe>
-                </div>
-            </div>
-
-            <div class="footer-col">
-                <div class="footer-heading">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <h4>Email & Layanan</h4>
-                </div>
-                <ul class="service-links-footer">
-                    <li>
-                        <i class="fa-solid fa-file-shield"></i>
-                        <div>
-                            <span>Laporan Pengaduan</span>
-                            <a href="mailto:pengaduan@perhutani.co.id">pengaduan@perhutani.co.id</a>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-circle-info"></i>
-                        <div>
-                            <span>Permohonan Informasi</span>
-                            <a href="mailto:informasi@perhutani.co.id">informasi@perhutani.co.id</a>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-building-shield"></i>
-                        <div>
-                            <span>PPID Perhutani</span>
-                            <a href="mailto:ppid@perhutani.co.id">ppid@perhutani.co.id</a>
-                        </div>
-                    </li>
-                </ul>
-
-                <div class="photo-wrapper-small" style="margin-top: 15px;">
-                    <div class="bumn-photo-card" style="background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-                        <img src="assets/bumn.jpg" alt="BUMN untuk Negeri" style="width: 100%; height: auto; max-height: 90px; object-fit: contain; display: block;">
-                        <div class="photo-caption" style="padding: 10px;">
-                            <span class="tag-bumn" style="font-size: 0.65rem; background: #15803d; color: #fff; padding: 2px 6px; border-radius: 3px;">BUMN Hadir</span>
-                            <p style="font-size: 0.75rem; color: #ccc; margin-top: 4px;">Komitmen nyata untuk negeri.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom-bar">
-            <p>© 2026 Perum Perhutani KPH Pemalang. All Rights Reserved.</p>
-            <div class="policy-links">
-                <a href="#">Kebijakan Privasi</a>
-                <span>•</span>
-                <a href="#">Syarat & Ketentuan</a>
-            </div>
-        </div>
-    </footer>
-    <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
-        <button class="image-modal-close">&times;</button>
-        <img id="fullImageDisplay" src="" alt="Full Preview">
-    </div>
-
-    <!-- Modal Kuis -->
-    <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(6px);">
-        <div style="background: #111827; border: 1px solid #374151; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.6); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
-            
-            <div style="background: linear-gradient(135deg, #15803d 0%, #166534 100%); color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
-                <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
-                    <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
-                </h3>
-                <button type="button" id="closeQuizBtn" style="background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer;">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <div style="padding: 20px;" id="quizBody">
-                <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #f3f4f6;">
-                    Pertanyaan akan muncul di sini...
-                </div>
-                <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;"></div>
-            </div>
-
-            <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
-                Pertanyaan 1 dari 3
-            </div>
-        </div>
-    </div>
-
-    <!-- Drawer Mobile Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-    <nav class="mobile-nav-drawer" id="mobileNavDrawer">
-        <div class="mobile-drawer-header">
-            <div class="mobile-brand">
-                <img src="assets/perhutanii.jpg" alt="Logo">
-                <span>KPH PEMALANG</span>
-            </div>
-            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </div>
-
-        <div class="mobile-drawer-body">
-            <ul class="mobile-nav-list">
-                <li>
-                    <a href="index.html" class="mobile-link">
-                        <span><i class="fa-solid fa-house"></i> Beranda</span>
-                    </a>
-                </li>
-
-                <li class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-building"></i> Tentang Kami</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="tentangkami.html" class="sub-main">Semua Tentang Kami</a>
-                        <a href="profil.html">Profil Perusahaan</a>
-                        <a href="sejarah.html">Sejarah Perusahaan</a>
-                        <a href="tugasfungsi.html">Tugas dan Fungsi</a>
-                        <a href="visimisitatanilai.html">Visi Misi & Tata Nilai</a>
-                        <a href="struktur.html">Struktur Organisasi</a>
-                        <a href="kepemilikansaham.html">Kepemilikan Saham</a>
-                        <a href="program.html">Program Kerja</a>
-                    </div>
-                </li>
-
-                <li class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="unitbisnis.html" class="sub-main">Semua Unit Bisnis</a>
-                        <a href="herbal.html">Herbal</a>
-                        <a href="kayu.html">Kayu</a>
-                        <a href="nonkayu.html">Non Kayu</a>
-                        <a href="ekowisata.html">Ekowisata</a>
-                        <a href="solusiberbasisalam.html">Solusi Berbasis Alam</a>
-                        <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
-                    </div>
-                </li>
-
-                <li class="mobile-dropdown">
-                    <button type="button" class="mobile-dropdown-btn">
-                        <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="mobile-submenu">
-                        <a href="publikasi.html" class="sub-main">Semua Publikasi</a>
-                        <a href="suararimba.html">Suara Rimba</a>
-                        <a href="pengumuman.html">Pengumuman</a>
-                    </div>
-                </li>
-
-                <li>
-                    <a href="layanan.html" class="mobile-link">
-                        <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="karir.html" class="mobile-link">
-                        <span><i class="fa-solid fa-user-tie"></i> Karir</span>
-                    </a>
-                </li>
+    <header>
+        <h1>KPH PEMALANG</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Informasi</a></li>
+                <li><a href="#">Kontak</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <script src="js/script.js"></script>
+    <section class="hero">
+        <h2>Kesatuan Pemangkuan Hutan Pemalang</h2>
+        <p>Pengelolaan hutan lestari untuk keseimbangan alam dan kesejahteraan masyarakat.</p>
+    </section>
+
+    <main class="content">
+        <div class="card">
+            <h3>Selamat Datang di Website Resmi</h3>
+            <p>Halaman ini dikelola oleh KPH Pemalang guna memberikan informasi transparan, akurat, dan terpercaya mengenai program pengelolaan kawasan hutan serta pelayanan publik di wilayah kerja kami.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KPH Pemalang. Hak Cipta Dilindungi.</p>
+    </footer>
+
 </body>
 </html>
