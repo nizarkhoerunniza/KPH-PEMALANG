@@ -198,77 +198,48 @@
         font-size: 0.85rem !important;
     }
 }
-    /* ==========================================================
-       HEADER PREMIUM DENGAN EFEK GELEMBUNG AIR (WATER BUBBLE)
-       ================================================---------- */
+  /* Header Premium dengan Efek Glossy Card & Forest Aesthetic */
     .premium-header {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
         z-index: 9999 !important;
-        background: linear-gradient(135deg, rgba(11, 35, 23, 0.92) 0%, rgba(15, 23, 42, 0.95) 100%) !important;
-        backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.3);
-        overflow: hidden; /* Menjaga agar gelembung tidak keluar batas header */
+        
+        /* Nuansa hutan malam yang dalam dengan gradasi transparan */
+        background: linear-gradient(
+            135deg, 
+            rgba(11, 38, 24, 0.85) 0%, 
+            rgba(6, 20, 13, 0.92) 100%
+        ) !important;
+        
+        /* Efek blur kaca yang kuat */
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        
+        /* Border bercahaya ala daun/tanaman menyala di dalam hutan */
+        border-bottom: 1px solid rgba(134, 239, 172, 0.35) !important;
+        
+        /* Efek kilau kaca (Glossy reflection) & bayangan lembut */
+        box-shadow: 
+            inset 0 1px 0 0 rgba(255, 255, 255, 0.15), /* Kilau garis atas kaca */
+            0 10px 30px -10px rgba(4, 15, 9, 0.7);    /* Bayangan dalam */
     }
 
-    /* Lapisan Efek Gelembung Air di dalam Header */
-    .premium-header::before,
-    .premium-header::after {
+    /* Tambahan efek kilau cahaya daun melintang di bagian atas */
+    .premium-header::before {
         content: '';
         position: absolute;
-        bottom: -30px;
-        width: 25px;
-        height: 25px;
-        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(134, 239, 172, 0.2) 60%, transparent 70%);
-        border-radius: 50%;
-        box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5), 0 0 8px rgba(74, 222, 128, 0.3);
-        opacity: 0;
-        animation: floatBubble 6s infinite ease-in-out;
-        pointer-events: none;
-    }
-
-    .premium-header::before {
-        left: 15%;
-        animation-delay: 0s;
-        animation-duration: 5s;
-        transform: scale(0.8);
-    }
-
-    .premium-header::after {
-        left: 75%;
-        animation-delay: 2.5s;
-        animation-duration: 7s;
-        transform: scale(1.2);
-    }
-
-    /* Menambahkan elemen gelembung tambahan secara dinamis via kelas/pseudo */
-    .premium-header .nav-container { /* Sesuaikan dengan container menu Anda jika ada */
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Animasi Mengapung Gelembung Air (Water Bubble Floating) */
-    @keyframes floatBubble {
-        0% {
-            transform: translateY(0) scale(0.6) translateX(0);
-            opacity: 0;
-        }
-        20% {
-            opacity: 0.8;
-        }
-        50% {
-            transform: translateY(-40px) scale(1) translateX(10px);
-            opacity: 0.5;
-        }
-        80% {
-            opacity: 0.3;
-        }
-        100% {
-            transform: translateY(-75px) scale(1.1) translateX(-10px);
-            opacity: 0;
-        }
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+            90deg, 
+            transparent, 
+            rgba(134, 239, 172, 0.8), 
+            transparent
+        );
     }
 </style>
 </head>
