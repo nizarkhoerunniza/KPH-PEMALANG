@@ -198,37 +198,87 @@
         font-size: 0.85rem !important;
     }
 }
- 
-/* Header Premium dengan Efek Bergerigi (Zig-Zag) */
+ /* Header Premium dengan Efek Gradasi, Gerigi Bawah, dan Menu Aktif */
 .premium-header {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
     z-index: 9999 !important;
-    background: rgba(11, 23, 17, 0.88) !important;
+    
+    /* Gradasi dari putih ke hijau tua sesuai gambar */
+    background: linear-gradient(to bottom, #ffffff 0%, #1c3829 50%, #0b1711 100%) !important;
     backdrop-filter: blur(18px);
     
-    /* Menghilangkan border bawah biasa dan menggantinya dengan efek gigi-gigi bergerigi di bawah */
+    /* Menghilangkan border biasa dan membuat gerigi menghadap ke bawah */
     border-bottom: none !important;
     
-    /* Menggunakan teknik CSS Mask untuk membuat gigi-gigi bergerigi presisi */
-    mask: linear-gradient(#fff, #fff), 
-          conic-gradient(from -45deg at bottom, #0000, #fff 1deg 89deg, #0000 90deg);
-    mask-composite: exclude;
-    -webkit-mask: -webkit-linear-gradient(#fff, #fff), 
-                  -webkit-conic-gradient(from -45deg at bottom, #0000, #fff 1deg 89deg, #0000 90deg);
-    -webkit-mask-composite: source-out;
+    /* Masking CSS agar gerigi berada di bagian bawah kotak */
+    -webkit-mask-image: linear-gradient(#fff, #fff), 
+                        radial-gradient(circle at 10px 10px, transparent 10px, #fff 11px);
+    -webkit-mask-size: 100% 100%, 20px 20px;
+    -webkit-mask-position: 0 0, 0 100%;
+    -webkit-mask-repeat: no-repeat, repeat-x;
     
-    /* Ukuran gigi-gigi bergerigi (atur angka 16px untuk memperbesar/memperkecil gerigi) */
-    mask-size: 100% 100%, 16px 10px;
-    -webkit-mask-size: 100% 100%, 16px 10px;
+    mask-image: linear-gradient(#fff, #fff), 
+                radial-gradient(circle at 10px 10px, transparent 10px, #fff 11px);
+    mask-size: 100% 100%, 20px 20px;
+    mask-position: 0 0, 0 100%;
+    mask-repeat: no-repeat, repeat-x;
     
-    mask-repeat: repeat, repeat-x;
-    -webkit-mask-repeat: repeat, repeat-x;
-    
-    mask-position: top, bottom;
-    -webkit-mask-position: top, bottom;
+    /* Efek bayangan kotak agar timbul */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Gaya untuk Navigasi / Menu di dalam Header */
+.premium-header nav {
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    height: 60px;
+    position: relative;
+}
+
+/* Tombol / Item Menu */
+.premium-header a {
+    color: #1e293b;
+    font-family: serif;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Efek Tombol Aktif (Pita Merah yang Menjuntai ke Bawah)[cite: 2] */
+.premium-header a.active, 
+.premium-header a:hover {
+    position: relative;
+    background-color: #b91c1c; /* Warna merah ala pita */
+    color: #ffffff !important;
+    height: 85px; /* Membuat pita lebih panjang ke bawah melewati gerigi header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 4px 4px;
+    margin-top: -10px; /* Menarik bagian atas agar pas menyatu dengan header */
+}
+
+/* Potongan V di bagian bawah pita merah aktif */
+.premium-header a.active::after,
+.premium-header a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(135deg, transparent 50%, #b91c1c 50%), 
+                linear-gradient(45deg, #b91c1c 50%, transparent 50%);
+    background-size: 10px 8px;
+    background-repeat: repeat-x;
 }
 </style>
 </head>
