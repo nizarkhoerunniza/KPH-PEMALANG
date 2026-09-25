@@ -80,25 +80,6 @@
         border: 1px solid rgba(134, 239, 172, 0.3) !important;
     }
 
-    /* Weather Widget */
-    .weather-widget {
-        display: flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        background: rgba(16, 37, 26, 0.85) !important;
-        border: 1px solid rgba(134, 239, 172, 0.35) !important;
-        border-radius: 12px !important;
-        padding: 4px 10px !important;
-    }
-    .weather-icon {
-        color: #fde047 !important;
-    }
-    .weather-info .temp {
-        color: #ffffff !important;
-    }
-    .weather-info small, .weather-info .location {
-        color: #d1d5db !important;
-    }
 
     /* Hero Section Hutan Keren Maksimal dengan Foggy Light & Aksen Daun */
     .hero-section-custom {
@@ -170,71 +151,39 @@
         background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
         border-radius: 50%;
     }
-
-  .weather-widget {
+.weather-widget {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
 }
-    /* Weather Widget Bergaya Herbal Hutan */
+
+@media screen and (max-width: 950px) {
     .weather-widget {
         display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-        background: rgba(18, 40, 28, 0.9) !important;
-        border: 1px solid rgba(134, 239, 172, 0.35) !important;
-        border-radius: 16px !important;
-        padding: 6px 14px !important;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-        transition: all 0.3s ease;
+        visibility: visible !important;
+        opacity: 1 !important;
+        padding: 3px 8px !important;
+        gap: 4px !important;
+        background: rgba(15, 35, 25, 0.85) !important;
+        border: 1px solid rgba(74, 222, 128, 0.4) !important;
+        border-radius: 12px !important;
     }
 
-    .weather-widget:hover {
-        border-color: rgba(134, 239, 172, 0.6) !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 15px rgba(34, 197, 94, 0.2) !important;
+    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
+    .weather-widget span:not(.temp):not(.weather-icon),
+    .weather-widget div:not(.temp):not(.weather-icon),
+    .weather-widget p,
+    .weather-widget small {
+        display: none !important;
     }
 
-    .weather-icon {
-        color: #fde047 !important; /* Kuning cerah ala sinar matahari sela dedaunan */
-        font-size: 1.1rem;
+    .weather-widget .weather-icon,
+    .weather-widget .temp {
+        display: inline-block !important;
+        visibility: visible !important;
+        font-size: 0.85rem !important;
     }
-
-    .weather-info {
-        display: flex;
-        flex-direction: column;
-        line-height: 1.2;
-    }
-
-    .weather-info .temp {
-        color: #ffffff !important;
-        font-weight: 700;
-        font-size: 0.95rem;
-    }
-
-    .weather-info small, .weather-info .location {
-        color: #86efac !important; /* Hijau muda lembut ala daun segar */
-        font-size: 0.75rem;
-    }
-
-    @media screen and (max-width: 950px) {
-        .weather-widget {
-            padding: 4px 10px !important;
-            gap: 6px !important;
-        }
-        .weather-widget span:not(.temp):not(.weather-icon),
-        .weather-widget div:not(.temp):not(.weather-icon),
-        .weather-widget p,
-        .weather-widget small {
-            display: none !important;
-        }
-        .weather-widget .weather-icon,
-        .weather-widget .temp {
-            display: inline-block !important;
-            visibility: visible !important;
-            font-size: 0.85rem !important;
-        }
-    }
+}
 </style>
 </head>
 <body>
