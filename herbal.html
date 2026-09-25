@@ -8,206 +8,236 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
-     <style>
-   /* Hero Banner Model 2 Kolom dengan Lengkungan Organik */
-        .herbal-hero-banner {
-            position: relative;
-            overflow: hidden;
-            background: #f4f9f4;
-            border-bottom: 3px solid #15803d;
-            padding: 60px 20px;
-            color: #1e293b;
-        }
-
-        .hero-layout-flex {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .hero-content-left {
-            flex: 1;
-            text-align: left;
-        }
-
-        .hero-content-left h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1.15;
-            color: #0f172a;
-            margin-bottom: 8px;
-        }
-
-        .hero-content-left h1 span.highlight-green {
-            color: #15803d;
-            display: block;
-        }
-
-        .hero-content-left .hero-subtitle-text {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #b45309;
-            margin-bottom: 20px;
-        }
-
-        .hero-content-left .hero-desc-text {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #475569;
-            margin-bottom: 0;
-        }
-
-        .hero-image-right {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        /* Mengatur lengkungan organik persis seperti referensi (melengkung di sisi kiri-atas) */
-        .hero-image-card {
-            width: 100%;
-            max-width: 540px;
-            height: 360px;
-            overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            /* Membuat sudut kiri atas melengkung besar menyerupai kubah */
-            border-radius: 180px 24px 24px 24px;
-        }
-
-        .hero-image-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        html, body {
-            max-width: 100% !important;
-            overflow-x: hidden !important;
-            box-sizing: border-box !important;
-        }
-
-        *, *:before, *:after {
-            box-sizing: border-box !important;
-        }
-
-        @media screen and (max-width: 768px) {
-            .content-grid-layout {
-                display: flex !important;
-                flex-direction: column !important;
-                width: 100% !important;
-                padding: 0 12px !important;
-                gap: 20px !important;
-                margin: 0 !important;
-            }
-
-            .announcement-main-column, 
-            .announcement-sidebar-column {
-                width: 100% !important;
-                max-width: 100% !important;
-                padding: 0 !important;
-                margin: 0 !important;
-            }
-
-            /* --- MENGUBAH GRID MENJADI SLIDER GESER KESAMPING --- */
-            .herbal-products-grid {
-                display: flex !important;
-                flex-direction: row !important;
-                overflow-x: auto !important;
-                scroll-snap-type: x mandatory !important;
-                gap: 15px !important;
-                padding: 10px 4px 20px 4px !important;
-                width: 100% !important;
-                margin: 0 !important;
-                /* Sembunyikan scrollbar bawaan agar rapi */
-                scrollbar-width: thin; 
-            }
-
-            .herbal-products-grid::-webkit-scrollbar {
-                height: 6px;
-            }
-
-            .herbal-products-grid::-webkit-scrollbar-thumb {
-                background: rgba(74, 222, 128, 0.4);
-                border-radius: 10px;
-            }
-
-            .product-card, .announcement-card {
-                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
-                max-width: 280px !important;
-                scroll-snap-align: start !important;
-                margin: 0 !important;
-            }
-
-            .ann-img img, .product-card img {
-                width: 100% !important;
-                height: 160px !important;
-                object-fit: cover !important;
-            }
-
-            h1, h2, h3, h4, p, span {
-                word-break: break-word !important;
-                overflow-wrap: break-word !important;
-            }
-
-            .section-filter-bar {
-                flex-direction: column !important;
-                align-items: flex-start !important;
-                gap: 10px !important;
-            }
-
-            .herbal-category-scroll {
-                white-space: nowrap !important;
-                overflow-x: auto !important;
-                max-width: 100% !important;
-                padding-bottom: 8px !important;
-            }
-        }
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
-
-@media screen and (max-width: 950px) {
-    .weather-widget {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 12px !important;
+    <style>
+    /* ==========================================
+       TEMA HIJAU MUDA CERAH & GLOSSY MODERN
+       ========================================== */
+    :root {
+        --bg-deep: #05160d;
+        --bg-card: #0d2818;
+        --green-bright: #4ade80;
+        --green-mint: #86efac;
+        --green-glow: rgba(74, 222, 128, 0.35);
+        --glossy-shine: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+        --border-neon: rgba(134, 239, 172, 0.4);
     }
 
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
+    body {
+        background: var(--bg-deep) !important;
+        color: #f0fdf4 !important;
+        font-family: 'Plus Jakarta Sans', sans-serif !important;
+        overflow-x: hidden;
     }
 
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
-    }
-}
-    /* Header Premium dengan Efek Glassmorphism & Garis Cahaya Daun */
+    /* ==========================================
+       HEADER GLOSSY PREMIUM
+       ========================================== */
     .premium-header {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
         z-index: 9999 !important;
-        background: rgba(11, 23, 17, 0.88) !important;
-        backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(134, 239, 172, 0.25);
+        background: linear-gradient(180deg, rgba(13, 40, 24, 0.95) 0%, rgba(7, 22, 13, 0.9) 100%) !important;
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border-neon);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .brand-logo-ring img {
+        border: 2px solid var(--green-bright);
+        box-shadow: 0 0 15px var(--green-glow);
+    }
+
+    .brand-copy strong {
+        color: #ffffff !important;
+    }
+    .brand-copy small {
+        color: var(--green-mint) !important;
+        text-shadow: 0 0 10px rgba(134, 239, 172, 0.5);
+    }
+
+    /* Navigasi Utama */
+    .premium-link {
+        color: #e2e8f0 !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .premium-link:hover, .premium-link.active {
+        color: var(--green-bright) !important;
+        background: rgba(74, 222, 128, 0.12);
+        box-shadow: inset 0 0 0 1px rgba(74, 222, 128, 0.3), 0 0 15px rgba(74, 222, 128, 0.15);
+    }
+
+    /* ==========================================
+       DROPDOWN MENU UNIK & BENTUK BERBEDA (GLOSSY)
+       ========================================== */
+    .premium-dropdown {
+        position: relative;
+    }
+
+    .premium-menu {
+        position: absolute;
+        top: 115%;
+        left: 0;
+        background: linear-gradient(145deg, #10321f 0%, #0a2114 100%);
+        border: 1px solid var(--border-neon);
+        border-radius: 20px; /* Bentuk sudut lebih organik dan modern */
+        padding: 12px;
+        width: 275px;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+        transform: translateY(10px);
+        animation: menuPopUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes menuPopUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .premium-dropdown:hover .premium-menu {
+        display: flex;
+    }
+
+    .premium-menu a {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        color: #e2e8f0;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 0.85rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid transparent;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Efek Kilau Glossy (Cahaya Lewat) saat di-hover */
+    .premium-menu a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--glossy-shine);
+        transition: transform 0.5s ease;
+    }
+
+    .premium-menu a:hover::before {
+        transform: translateX(100%);
+    }
+
+    .premium-menu a:hover {
+        background: rgba(74, 222, 128, 0.15);
+        border-color: rgba(74, 222, 128, 0.4);
+        color: var(--green-mint);
+        transform: translateX(4px);
+        box-shadow: 0 4px 15px rgba(74, 222, 128, 0.2);
+    }
+
+    .menu-heading {
+        padding: 8px 12px;
+        border-bottom: 1px dashed rgba(134, 239, 172, 0.2);
+        margin-bottom: 6px;
+    }
+    .menu-heading span {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: var(--green-bright);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .menu-heading small {
+        color: #94a3b8;
+        font-size: 0.68rem;
+    }
+
+    /* ==========================================
+       TOMBOL AKSI & WIDGET GLOSSY HIJAU MUDA
+       ========================================== */
+    .header-action {
+        background: linear-gradient(135deg, rgba(74, 222, 128, 0.15) 0%, rgba(13, 40, 24, 0.8) 100%) !important;
+        border: 1px solid var(--border-neon) !important;
+        color: var(--green-bright) !important;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .header-action:hover {
+        background: rgba(74, 222, 128, 0.3) !important;
+        border-color: var(--green-bright) !important;
+        box-shadow: 0 0 20px var(--green-glow), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .weather-widget {
+        background: linear-gradient(135deg, rgba(13, 40, 24, 0.9) 0%, rgba(6, 22, 13, 0.95) 100%) !important;
+        border: 1px solid var(--border-neon) !important;
+        border-radius: 14px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    }
+
+    .weather-icon {
+        color: #fde047 !important;
+        filter: drop-shadow(0 0 8px rgba(253, 224, 71, 0.6));
+    }
+
+    .weather-info .temp {
+        color: #ffffff !important;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    /* ==========================================
+       HERO BANNER & KOTAK KONTEN (EFEK GLOSSY)
+       ========================================== */
+    .herbal-hero-banner {
+        background: linear-gradient(135deg, #071f12 0%, #0c2d1b 100%) !important;
+        border-bottom: 3px solid var(--green-bright) !important;
+        color: #f0fdf4 !important;
+    }
+
+    .hero-content-left h1 span.highlight-green {
+        color: var(--green-bright) !important;
+        text-shadow: 0 0 25px rgba(74, 222, 128, 0.4);
+    }
+
+    .hero-content-left .hero-subtitle-text {
+        color: #fbbf24 !important; /* Kuning keemasan kontras elegan */
+        text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+    }
+
+    .hero-content-left .hero-desc-text {
+        color: #cbd5e1 !important;
+    }
+
+    .stat-card-custom, .forest-box, .product-card, .announcement-card {
+        background: linear-gradient(145deg, #0d2818 0%, #081a10) !important;
+        border: 1px solid var(--border-neon) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Responsif HP */
+    @media screen and (max-width: 950px) {
+        .weather-widget {
+            background: rgba(13, 40, 24, 0.95) !important;
+            border: 1px solid var(--border-neon) !important;
+            border-radius: 12px !important;
+        }
     }
 </style>
 </head>
