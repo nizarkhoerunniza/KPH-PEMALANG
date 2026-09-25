@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
-
     <style>
-   /* Hero Banner Model 2 Kolom dengan Lengkungan Organik */
         .herbal-hero-banner {
             position: relative;
             overflow: hidden;
@@ -67,14 +65,12 @@
             justify-content: flex-end;
         }
 
-        /* Mengatur lengkungan organik persis seperti referensi (melengkung di sisi kiri-atas) */
         .hero-image-card {
             width: 100%;
             max-width: 540px;
             height: 360px;
             overflow: hidden;
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            /* Membuat sudut kiri atas melengkung besar menyerupai kubah */
             border-radius: 180px 24px 24px 24px;
         }
 
@@ -111,8 +107,6 @@
                 padding: 0 !important;
                 margin: 0 !important;
             }
-
-            /* --- MENGUBAH GRID MENJADI SLIDER GESER KESAMPING --- */
             .herbal-products-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -122,7 +116,6 @@
                 padding: 10px 4px 20px 4px !important;
                 width: 100% !important;
                 margin: 0 !important;
-                /* Sembunyikan scrollbar bawaan agar rapi */
                 scrollbar-width: thin; 
             }
 
@@ -136,7 +129,7 @@
             }
 
             .product-card, .announcement-card {
-                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
+                flex: 0 0 80% !important;
                 max-width: 280px !important;
                 scroll-snap-align: start !important;
                 margin: 0 !important;
@@ -183,8 +176,6 @@
         border: 1px solid rgba(74, 222, 128, 0.4) !important;
         border-radius: 12px !important;
     }
-
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
     .weather-widget span:not(.temp):not(.weather-icon),
     .weather-widget div:not(.temp):not(.weather-icon),
     .weather-widget p,
@@ -206,31 +197,26 @@
     width: 100% !important;
     z-index: 9999 !important;
     
-    /* Gradasi warna lumut malam & kedalaman hutan */
     background: linear-gradient(180deg, rgba(8, 20, 13, 0.95) 0%, rgba(4, 12, 8, 0.88) 100%) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     
-    /* Bentuk sudut unik: memotong sisi kiri-atas dan kanan-bawah ala daun/papan futuristik */
     border-radius: 0px 0px 35px 35px !important;
     
-    /* Garis tepi bercahaya hijau zamrud berlapis */
     border-bottom: 2px solid rgba(74, 222, 128, 0.4) !important;
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
     
-    /* Efek cahaya menyala (Glow) di bawah header seperti bias kunang-kunang/bio-luminescent */
     box-shadow: 
         0 15px 35px rgba(2, 8, 5, 0.8),
-        0 5px 25px rgba(34, 197, 94, 0.2), /* Cahaya hijau hutan */
+        0 5px 25px rgba(34, 197, 94, 0.2),
         inset 0 -2px 10px rgba(74, 222, 128, 0.15) !important;
         
     padding: 10px 0 !important;
     transition: all 0.4s ease;
 }
 
-/* Efek menyala lebih kuat saat halaman di-scroll atau disorot */
 .premium-header::after {
     content: '';
     position: absolute;
@@ -382,10 +368,8 @@
                     </div>
                 </div>
 
-                <!-- Grid Kartu Wisata -->
                 <div class="herbal-products-grid">
-                    
-                    <!-- Destinasi 1 -->
+               
                     <div class="announcement-card product-card">
                         <div class="ann-img">
                             <img src="assets/bukitmendelem.jpg" alt="Bukit Mendelem (Gunung Jimat)">
@@ -402,7 +386,6 @@
                         </div>
                     </div>
 
-                    <!-- Destinasi 2 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
                             <img src="assets/wippas.jpg" alt="Wippas">
@@ -419,7 +402,6 @@
                         </div>
                     </div>
 
-                    <!-- Destinasi 3 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
                             <img src="assets/benowopark.jpg" alt="Benowo Park">
@@ -436,7 +418,6 @@
                         </div>
                     </div>
 
-                    <!-- Destinasi 4 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
                             <img src="assets/tangkeban.jpg" alt="Jalur Hiking">
@@ -453,7 +434,6 @@
                         </div>
                     </div>
 
-                    <!-- Destinasi 5 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
                             <img src="assets/gununggajah.jpg" alt="Forest Resort Tretes">
@@ -470,7 +450,6 @@
                         </div>
                     </div>
 
-                    <!-- Destinasi 6 -->
                     <div class="announcement-card product-card">
                         <div class="ann-img">
                             <img src="assets/balegandrung.jpg" alt="Outbound">
@@ -489,7 +468,6 @@
 
                 </div>
               
-                <!-- Bagian Keunggulan Bawah -->
                 <div class="herbal-features-box">
                     <h4 data-i18n="feat_main_title"><i class="fa-solid fa-circle-question"></i> Mengapa Memilih Ekowisata Perhutani?</h4>
                     <div class="features-grid">
@@ -517,11 +495,9 @@
                 </div>
 
             </div>
-
-            <!-- KOLOM KANAN (Sidebar Widget) -->
+            
             <div class="announcement-sidebar-column">
 
-                <!-- Informasi Keamanan Widget -->
                 <div class="sidebar-widget sidebar-dark-box">
                     <h4 data-i18n="side1_title"><i class="fa-solid fa-shield-halved"></i> Kenyamanan Anda</h4>
                     <div class="sidebar-list-content">
@@ -540,13 +516,11 @@
                     </div>
                 </div>
 
-                <!-- Tahukah Anda? Widget -->
                 <div class="sidebar-widget sidebar-info-box">
                     <h4 data-i18n="side2_title"><i class="fa-solid fa-circle-info"></i> Tahukah Anda?</h4>
                     <p data-i18n="side2_desc">Berwisata ke hutan terbukti efektif menurunkan tingkat stres dan meningkatkan kesehatan mental melalui terapi alam.</p>
                 </div>
 
-                <!-- Banner Promosi -->
                 <div class="sidebar-widget sidebar-banner-box">
                     <h4 data-i18n="side3_title">Jelajahi Hutan<br>Temukan Ketenangan</h4>
                     <a href="program.html" class="sidebar-banner-btn" data-i18n="side3_btn">Lihat Lokasi Lainnya →</a>
@@ -560,7 +534,6 @@
                     </div>
                 </div>
 
-                <!-- Widget Layanan Pelanggan -->
                 <div class="sidebar-widget" style="margin-top: 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; text-align: left;">
                     <h4 style="font-size: 1rem; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
                         <i class="fa-solid fa-headset" style="color: #15803d;"></i> <span data-i18n="side4_title">Perlu Bantuan?</span>
@@ -725,7 +698,6 @@
 <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
     <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
         
-        <!-- Header Modal -->
         <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
             <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
@@ -734,8 +706,7 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-
-        <!-- Konten Pertanyaan & Pilihan -->
+        
         <div style="padding: 20px;" id="quizBody">
             <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
                 Pertanyaan akan muncul di sini...
@@ -745,13 +716,12 @@
             </div>
         </div>
 
-        <!-- Footer Modal (Skor / Status) -->
         <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
             Pertanyaan 1 dari 3
         </div>
     </div>
 </div>
-     <!-- Drawer Mobile Menu -->
+
     <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <nav class="mobile-nav-drawer" id="mobileNavDrawer">
