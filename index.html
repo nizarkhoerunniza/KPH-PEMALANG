@@ -8,26 +8,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style2.css">
-<style>
-    /* Styling Dasar Nuansa Hutan Super Estetik & Sentuhan Soft White */
+
+   <style>
+    /* ==========================================
+       PENGATURAN UTAMA & TEMA HIJAU HUTAN MODERN
+       ========================================== */
+    :root {
+        --bg-deep: #050c08;
+        --bg-card: #0d1f16;
+        --bg-card-hover: #132d20;
+        --green-primary: #10b981;
+        --green-neon: #34d399;
+        --green-glow: rgba(52, 211, 153, 0.25);
+        --text-light: #f0fdf4;
+        --text-muted: #94a3b8;
+        --border-glass: rgba(52, 211, 153, 0.2);
+    }
+
     body {
-        background: #0b1711 !important;
-        color: #edfaf1 !important;
+        background: var(--bg-deep) !important;
+        color: var(--text-light) !important;
         font-family: 'Plus Jakarta Sans', sans-serif !important;
         overflow-x: hidden;
     }
 
-    /* Header Modern & Ringan (Anti-Lag: Menggunakan Solid Translucent tanpa Blur Berat) */
+    /* ==========================================
+       HEADER MODERN & ANTI-LAG
+       ========================================== */
     .premium-header {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
-        background: #0d1f16 !important;
-        border-bottom: 1px solid rgba(134, 239, 172, 0.15);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        transition: background 0.3s ease;
+        background: #07140e !important;
+        border-bottom: 1px solid var(--border-glass);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     }
 
     .header-inner {
@@ -47,65 +63,64 @@
     }
 
     .brand-logo-ring img {
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
         object-fit: cover;
-        border: 2px solid #4ade80;
+        border: 2px solid var(--green-neon);
+        box-shadow: 0 0 12px var(--green-glow);
     }
 
-    .brand-copy {
-        display: flex;
-        flex-direction: column;
-    }
     .brand-copy strong {
         color: #ffffff !important;
-        font-size: 0.95rem;
-        letter-spacing: 0.5px;
+        font-size: 1rem;
+        letter-spacing: 0.8px;
     }
     .brand-copy small {
-        color: #86efac !important;
-        font-size: 0.7rem;
-        letter-spacing: 1px;
+        color: var(--green-neon) !important;
+        font-size: 0.72rem;
+        letter-spacing: 1.5px;
+        font-weight: 700;
     }
 
-    /* Navigasi Modern Unik & Bersih */
+    /* Navigasi Utama */
     .premium-nav {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
     }
 
     .premium-link {
         color: #cbd5e1 !important;
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.88rem;
         padding: 8px 14px;
-        border-radius: 8px;
+        border-radius: 10px;
         text-decoration: none;
-        transition: all 0.2s ease;
+        transition: all 0.25s ease;
     }
 
     .premium-link:hover, .premium-link.active {
-        color: #4ade80 !important;
-        background: rgba(74, 222, 128, 0.08);
+        color: var(--green-neon) !important;
+        background: rgba(52, 211, 153, 0.1);
+        box-shadow: inset 0 0 0 1px var(--border-glass);
     }
 
-    /* Dropdown Menu yang Lebih Ringan & Responsif */
+    /* Dropdown Menu Unik */
     .premium-dropdown {
         position: relative;
     }
 
     .premium-menu {
         position: absolute;
-        top: 100%;
+        top: 110%;
         left: 0;
-        background: #102619;
-        border: 1px solid rgba(134, 239, 172, 0.2);
-        border-radius: 12px;
-        padding: 10px;
-        width: 260px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-radius: 16px;
+        padding: 12px;
+        width: 270px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
         display: none;
         flex-direction: column;
         gap: 4px;
@@ -119,34 +134,35 @@
     .premium-menu a {
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 8px 12px;
+        gap: 12px;
+        padding: 10px 12px;
         color: #e2e8f0;
-        border-radius: 8px;
+        border-radius: 10px;
         text-decoration: none;
         font-size: 0.85rem;
-        transition: background 0.2s;
+        transition: all 0.2s;
     }
 
     .premium-menu a:hover {
-        background: rgba(74, 222, 128, 0.12);
-        color: #4ade80;
+        background: rgba(52, 211, 153, 0.15);
+        color: var(--green-neon);
+        transform: translateX(4px);
     }
 
     .menu-heading {
         padding: 6px 12px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
         margin-bottom: 6px;
     }
     .menu-heading span {
         display: block;
         font-size: 0.75rem;
         font-weight: 700;
-        color: #4ade80;
+        color: var(--green-neon);
         text-transform: uppercase;
     }
     .menu-heading small {
-        color: #94a3b8;
+        color: var(--text-muted);
         font-size: 0.7rem;
     }
 
@@ -157,12 +173,12 @@
     }
 
     .header-action {
-        background: rgba(255, 255, 255, 0.06) !important;
-        border: 1px solid rgba(134, 239, 172, 0.2) !important;
-        color: #4ade80 !important;
-        width: 38px;
-        height: 38px;
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid var(--border-glass) !important;
+        color: var(--green-neon) !important;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -171,48 +187,49 @@
     }
 
     .header-action:hover {
-        background: rgba(74, 222, 128, 0.2) !important;
-        border-color: #4ade80 !important;
+        background: rgba(52, 211, 153, 0.2) !important;
+        box-shadow: 0 0 12px var(--green-glow);
     }
 
-    /* Weather Widget Ringan */
+    /* Widget Cuaca Unik */
     .weather-widget {
         display: flex !important;
         align-items: center !important;
-        gap: 8px !important;
-        background: rgba(16, 37, 26, 0.9) !important;
-        border: 1px solid rgba(134, 239, 172, 0.25) !important;
-        border-radius: 10px !important;
-        padding: 4px 10px !important;
+        gap: 10px !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-glass) !important;
+        border-radius: 12px !important;
+        padding: 6px 12px !important;
     }
     .weather-icon {
-        color: #fde047 !important;
-        font-size: 0.9rem;
+        color: #facc15 !important;
+        font-size: 1rem;
     }
     .weather-info .temp {
         color: #ffffff !important;
         font-size: 0.85rem;
-        font-weight: 600;
+        font-weight: 700;
     }
     .weather-info small, .weather-info .location {
-        color: #94a3b8 !important;
-        font-size: 0.7rem;
+        color: var(--text-muted) !important;
+        font-size: 0.68rem;
         display: block;
     }
 
-    /* Hero Section Hutan Keren Maksimal dengan Foggy Light & Aksen Daun */
+    /* ==========================================
+       HERO SECTION SUPER UNIK & ELEGAN
+       ========================================== */
     .hero-section-custom {
         position: relative;
-        min-height: 88vh;
+        min-height: 90vh;
         display: flex;
         align-items: center;
-        background: linear-gradient(135deg, rgba(6, 17, 11, 0.94) 0%, rgba(10, 31, 19, 0.82) 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-        padding: 120px 5% 80px; /* Ditambahkan padding-top agar tidak tertutup header fixed */
+        background: linear-gradient(135deg, rgba(3, 10, 7, 0.95) 0%, rgba(8, 26, 17, 0.88) 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        padding: 130px 5% 90px;
         overflow: hidden;
-        border-bottom: 3px solid #22c55e;
+        border-bottom: 2px solid var(--green-primary);
     }
 
-    /* Efek Kabut Putih Hutan & Siluet Daun Estetik */
     .hero-section-custom::before {
         content: "";
         position: absolute;
@@ -220,59 +237,104 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+        background: radial-gradient(circle at 75% 25%, rgba(52, 211, 153, 0.12) 0%, transparent 65%);
         pointer-events: none;
     }
 
-    .hero-section-custom::after {
+    /* ==========================================
+       KARTU STATISTIK & KOTAK KONTEN (FOREST BOX)
+       ========================================== */
+    .stat-card-custom {
+        background: var(--bg-card) !important;
+        border-radius: 28px;
+        padding: 40px;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        border: 1px solid var(--border-glass);
+        position: relative;
+    }
+
+    .stat-card-custom::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 380px;
-        height: 380px;
-        background: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80') no-repeat center/cover;
-        opacity: 0.18;
-        border-radius: 50% 0 0 0;
-        filter: drop-shadow(0 0 15px rgba(134, 239, 172, 0.5));
-        pointer-events: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--green-neon), transparent);
     }
 
-    /* Kartu Statistik Mewah dengan Garis Tepi Bercahaya Soft White */
-    .stat-card-custom {
-        background: rgba(16, 36, 25, 0.9) !important;
-        border-radius: 24px;
-        padding: 35px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        border: 1px solid rgba(134, 239, 172, 0.3);
-    }
-
-    /* Kotak Seksi Konten Nuansa Hutan Elegan & Sentuhan Putih Estetik */
     .forest-box {
-        background: rgba(18, 40, 28, 0.9);
-        border: 1px solid rgba(134, 239, 172, 0.28);
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
         border-radius: 24px;
         padding: 40px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
         position: relative;
         overflow: hidden;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .forest-box:hover {
+        transform: translateY(-5px);
+        border-color: var(--green-neon);
+        box-shadow: 0 25px 50px rgba(52, 211, 153, 0.15);
     }
 
     .forest-box::before {
         content: "";
         position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 150px;
-        height: 150px;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+        top: -60px;
+        right: -60px;
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, transparent 70%);
         border-radius: 50%;
+    }
+
+    /* Tombol Aksi Keren */
+    .btn-forest-primary {
+        background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+        color: #03100a !important;
+        padding: 14px 32px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 0.95rem;
+        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-forest-primary:hover {
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(52, 211, 153, 0.5);
+    }
+
+    .btn-forest-outline {
+        background: rgba(255, 255, 255, 0.04);
+        color: #ffffff !important;
+        border: 1px solid var(--border-glass);
+        padding: 14px 32px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .btn-forest-outline:hover {
+        background: rgba(52, 211, 153, 0.1);
+        border-color: var(--green-neon);
+        color: var(--green-neon) !important;
     }
 
     /* Responsive adjustments */
     @media screen and (max-width: 1024px) {
         .premium-nav {
-            display: none; /* Disembunyikan, diakses via mobile menu drawer */
+            display: none;
         }
     }
 
