@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style3.css">
-     <style>
-   /* Hero Banner Model 2 Kolom dengan Lengkungan Organik */
+    <style>
+       /* Hero Banner Model 2 Kolom dengan Lengkungan Organik */
         .herbal-hero-banner {
             position: relative;
             overflow: hidden;
@@ -83,10 +83,29 @@
             object-fit: cover;
             display: block;
         }
+        @media screen and (max-width: 968px) {
+            .hero-layout-flex {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+            .hero-content-left {
+                text-align: center;
+            }
+            .hero-image-right {
+                justify-content: center;
+                width: 100%;
+            }
+            .hero-content-left h1 {
+                font-size: 2.2rem;
+            }
+        }
+
         html, body {
             max-width: 100% !important;
             overflow-x: hidden !important;
             box-sizing: border-box !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         *, *:before, *:after {
@@ -111,7 +130,6 @@
                 margin: 0 !important;
             }
 
-            /* --- MENGUBAH GRID MENJADI SLIDER GESER KESAMPING --- */
             .herbal-products-grid {
                 display: flex !important;
                 flex-direction: row !important;
@@ -121,7 +139,6 @@
                 padding: 10px 4px 20px 4px !important;
                 width: 100% !important;
                 margin: 0 !important;
-                /* Sembunyikan scrollbar bawaan agar rapi */
                 scrollbar-width: thin; 
             }
 
@@ -135,7 +152,7 @@
             }
 
             .product-card, .announcement-card {
-                flex: 0 0 80% !important; /* Lebar card 80% dari layar HP agar card sebelah terlihat sedikit */
+                flex: 0 0 80% !important;
                 max-width: 280px !important;
                 scroll-snap-align: start !important;
                 margin: 0 !important;
@@ -165,83 +182,49 @@
                 padding-bottom: 8px !important;
             }
         }
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
+        .weather-widget {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
 
-@media screen and (max-width: 950px) {
-    .weather-widget {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 12px !important;
+        @media screen and (max-width: 950px) {
+            .weather-widget {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                padding: 3px 8px !important;
+                gap: 4px !important;
+                background: rgba(15, 35, 25, 0.85) !important;
+                border: 1px solid rgba(74, 222, 128, 0.4) !important;
+                border-radius: 12px !important;
+            }
+
+            .weather-widget span:not(.temp):not(.weather-icon),
+            .weather-widget div:not(.temp):not(.weather-icon),
+            .weather-widget p,
+            .weather-widget small {
+                display: none !important;
+            }
+
+            .weather-widget .weather-icon,
+            .weather-widget .temp {
+                display: inline-block !important;
+                visibility: visible !important;
+                font-size: 0.85rem !important;
+            }
+        }
+ .premium-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        z-index: 9999 !important;
+        background: rgba(11, 23, 17, 0.88) !important;
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(134, 239, 172, 0.25);
     }
-
-    /* 1. Sembunyikan elemen teks apapun yang mengandung kata lokasi/span/div di dalam widget */
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
-    }
-
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
-    }
-}
- 
-    .premium-header {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 9999 !important;
-    
-    /* Gradasi warna lumut malam & kedalaman hutan */
-    background: linear-gradient(180deg, rgba(8, 20, 13, 0.95) 0%, rgba(4, 12, 8, 0.88) 100%) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    
-    /* Bentuk sudut unik: memotong sisi kiri-atas dan kanan-bawah ala daun/papan futuristik */
-    border-radius: 0px 0px 35px 35px !important;
-    
-    /* Garis tepi bercahaya hijau zamrud berlapis */
-    border-bottom: 2px solid rgba(74, 222, 128, 0.4) !important;
-    border-left: none !important;
-    border-right: none !important;
-    border-top: none !important;
-    
-    /* Efek cahaya menyala (Glow) di bawah header seperti bias kunang-kunang/bio-luminescent */
-    box-shadow: 
-        0 15px 35px rgba(2, 8, 5, 0.8),
-        0 5px 25px rgba(34, 197, 94, 0.2), /* Cahaya hijau hutan */
-        inset 0 -2px 10px rgba(74, 222, 128, 0.15) !important;
-        
-    padding: 10px 0 !important;
-    transition: all 0.4s ease;
-}
-
-/* Efek menyala lebih kuat saat halaman di-scroll atau disorot */
-.premium-header::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 10%;
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.8), transparent);
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.8);
-}
-</style>
+    </style>
 </head>
 <body>
  <header class="premium-header">
@@ -345,23 +328,23 @@
 </header>
     <!-- Main Content dengan padding-top agar tidak tertutup navbar fixed/sticky -->
     <main class="main-content-full" style="padding-top: 80px;">
-        
-        <!-- Hero Banner Non Kayu 2 Kolom dengan Lengkungan Organik -->
+
+        <!-- Hero Banner Herbal (Model Baru 2 Kolom Tanpa Button) -->
         <section class="herbal-hero-banner">
             <div class="hero-layout-flex">
                 <div class="hero-content-left">
                     <h1>Herbal <span class="highlight-green">Perhutani</span></h1>
-                    <p class="hero-subtitle-text">Kebaikan Alam untuk Kesehatan Alami</p>
+                    <p class="hero-subtitle-text">Kebaikan Alam untuk Kesehatan Alami🫚</p>
                     <p class="hero-desc-text">Perhutani menghadirkan produk herbal berkualitas yang berasal dari hutan lestari dan dikelola secara berkelanjutan untuk kesehatan dan kesejahteraan Anda.</p>
                 </div>
                 <div class="hero-image-right">
                     <div class="hero-image-card">
-                        <img src="assets/rempah.jpg" alt="Hasil Hutan Bukan Kayu Perhutani">
+                        <img src="assets/rempah.jpg" alt="Produk Herbal Hutan Lestari">
                     </div>
                 </div>
             </div>
         </section>
-        
+
         <!-- LAYOUT UTAMA: KONTEN KIRI & SIDEBAR KANAN -->
         <div class="content-grid-layout">
             
@@ -587,7 +570,7 @@
         </div>
     </main>
 
-     <footer class="footer-section">
+    <footer class="footer-section">
         <div class="footer-grid">
             <div class="footer-col">
                 <div class="footer-heading">
@@ -595,32 +578,24 @@
                     <h4>Kontak Kami</h4>
                 </div>
                 <ul class="contact-list">
-                    <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi, S.Hut, M.Si</li>
+                    <li><i class="fa-solid fa-user-tie"></i>Nama Administratur : Heri Nur Afandi, S.Hut</li>
                     <li><i class="fa-solid fa-phone"></i> (0284) 321617</li>
                     <li><i class="fa-solid fa-envelope"></i> kphpemalang@perhutani.co.id</li>
                     <li><i class="fa-solid fa-globe"></i> www.perhutani.co.id/kph-pemalang</li>
                 </ul>
                 <div class="social-links">
-                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X" style="background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
+                    <a href="https://twitter.com/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di X">
                         <svg style="width: 15px; height: 15px; fill: currentColor;" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn" style="background: #ffffff; color: #0a66c2; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
+                    <a href="https://linkedin.com/company/your-perhutani" target="_blank" class="social-btn" title="Ikuti kami di LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i>
                     </a>
-                    <a href="https://instagram.com" class="social-btn" title="Instagram" style="background: #ffffff; color: #e1306c; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com" class="social-btn" title="Facebook" style="background: #ffffff; color: #1877f2; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube" style="background: #ffffff; color: #ff0000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok" style="background: #ffffff; color: #000000; display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%;">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
+                    <a href="https://instagram.com" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://youtube.com" class="social-btn youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://tiktok.com" class="social-btn tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
 
