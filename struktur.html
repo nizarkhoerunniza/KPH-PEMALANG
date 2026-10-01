@@ -473,12 +473,14 @@
                 <a href="#">Syarat & Ketentuan</a>
             </div>
         </div>
+    <div id="imageModal" class="image-modal-overlay" onclick="closeFullImage()">
+    <button class="image-modal-close">&times;</button>
+    <img id="fullImageDisplay" src="" alt="Full Preview">
+</div>
     </footer>
-    <!-- Modal / Pop-up Kuis Lingkungan -->
 <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
     <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
         
-        <!-- Header Modal -->
         <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
             <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
@@ -488,17 +490,14 @@
             </button>
         </div>
 
-        <!-- Konten Pertanyaan & Pilihan -->
         <div style="padding: 20px;" id="quizBody">
             <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
-                Pertanyaan akan muncul di sini...
             </div>
             <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
                 <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
             </div>
         </div>
 
-        <!-- Footer Modal (Skor / Status) -->
         <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
             Pertanyaan 1 dari 3
         </div>
