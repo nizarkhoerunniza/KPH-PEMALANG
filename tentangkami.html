@@ -10,18 +10,24 @@
     <link rel="stylesheet" href="css/style2.css">
     <style>
         /* CSS Responsive Diperbaiki khusus untuk Halaman Tentang Kami */
-        @media screen and (max-width: 992px) {
-            .hero-section > div:first-of-type {
-                grid-template-columns: 1fr !important;
-                gap: 30px !important;
-            }
-            .hero-section {
-                padding: 40px 20px !important;
-                min-height: auto !important;
-            }
-            .hero-content h1 {
-                font-size: 2.3rem !important;
-            }
+       @media screen and (max-width: 768px) {
+    /* Mengatur ulang grid hero section agar stack secara vertikal di HP */
+    .hero-section > div:first-of-type {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    /* Memastikan kontainer gambar kantor tampil penuh dan proporsional di HP */
+    .hero-section div[style*="position: relative; display: flex; justify-content: center;"] {
+        width: 100% !important;
+        display: block !important;
+    }
+
+    .hero-section div[style*="max-height: 420px;"] {
+        max-height: 280px !important; /* Sesuaikan tinggi gambar agar pas di layar HP */
+        width: 100% !important;
+    }
+}
             .stats-bar {
                 grid-template-columns: 1fr !important;
                 gap: 15px !important;
@@ -76,7 +82,7 @@
             .footer-grid {
                 grid-template-columns: 1fr !important;
             }
-        }
+        
         @media screen and (max-width: 768px) {
             .hero-image-container {
                 width: 100% !important;
@@ -225,24 +231,24 @@
                 </div>
                 <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: #fff; line-height: 1.2;">Profil KPH <br><span style="color: #4ade80;">Pemalang</span></h1>
                 <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
-                    Kesatuan Pemangkuan Hutan (KPH) Pemalang merupakan garda terdepan Perum Perhutani Divisi Regional Jawa Tengah dalam mengelola kawasan hutan negara secara lestari, berwawasan lingkungan, serta memberikan nilai tambah ekonomi dan sosial bagi masyarakat sekitar[cite: 5].
+                    Kesatuan Pemangkuan Hutan (KPH) Pemalang merupakan garda terdepan Perum Perhutani Divisi Regional Jawa Tengah dalam mengelola kawasan hutan negara secara lestari, berwawasan lingkungan, serta memberikan nilai tambah ekonomi dan sosial bagi masyarakat sekitar.
                 </p>
                 <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
-                    Di 2026, Perhutani memasuki usia ke-65. Terima kasih dan apresiasi setinggi-tingginya kepada seluruh Insan Perhutani atas dedikasi dan etos kerja yang luar biasa[cite: 5].
+                    Di 2026, Perhutani memasuki usia ke-65. Terima kasih dan apresiasi setinggi-tingginya kepada seluruh Insan Perhutani atas dedikasi dan etos kerja yang luar biasa.
                 </p>
             </div>
 
-            <div style="position: relative; display: flex; justify-content: center; align-items: center;">
-                <div style="width: 100%; max-height: 420px; border-radius: 20px; overflow: hidden; border: 2px solid rgba(74, 222, 128, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.6); position: relative;">
+          <!-- Bagian Gambar Kantor yang Dioptimalkan untuk HP -->
+            <div style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 100%; height: 260px; height: 350px; border-radius: 20px; overflow: hidden; border: 2px solid rgba(74, 222, 128, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.6); position: relative;">
                     <img src="assets/kantor.jpg" alt="Kantor Perum Perhutani KPH Pemalang" style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,24,18,0.8) 0%, transparent 60%);"></div>
                     <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; color: #fff;">
                         <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #4ade80; font-weight: 700;">Kawasan Lestari</span>
-                        <h4 style="font-size: 1.2rem; font-weight: 700; margin-top: 4px;">Kawasan Hutan Produksi & Lindung KPH Pemalang</h4>
+                        <h4 style="font-size: 1.1rem; font-weight: 700; margin-top: 4px;">Kawasan Hutan Produksi & Lindung KPH Pemalang</h4>
                     </div>
                 </div>
             </div>
-        </div>
 
         <div class="stats-bar" style="max-width: 1200px; margin: 50px auto 0 auto; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; background: rgba(18, 38, 28, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 25px; backdrop-filter: blur(10px);">
             <div class="stat-item" style="display: flex; align-items: center; gap: 20px; padding: 0 15px;">
@@ -286,13 +292,13 @@
         <!-- Kartu 1: Informasi Umum & Batas Wilayah -->
         <div class="content-card-box">
             <h2><i class="fa-solid fa-map-location-dot"></i> Luas dan Batas Wilayah Kerja</h2>
-            <p>Perum Perhutani Kesatuan Pemangkuan Hutan (KPH) Pemalang adalah salah satu unit manajemen di wilayah Perum Perhutani Divisi Regional Jawa Tengah. Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan Umum (Perum) Kehutanan Negara seluas : 24.389,40 Ha berada pada wilayah administrative pemerintahan kabupaten dan kota yaitu Kabupaten Pemalang (15.895,62 Ha) dan Kabupaten Tegal (8.494,23 Ha)[cite: 5].</p>
+            <p>Perum Perhutani Kesatuan Pemangkuan Hutan (KPH) Pemalang adalah salah satu unit manajemen di wilayah Perum Perhutani Divisi Regional Jawa Tengah. Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan Umum (Perum) Kehutanan Negara seluas : 24.389,40 Ha berada pada wilayah administrative pemerintahan kabupaten dan kota yaitu Kabupaten Pemalang (15.895,62 Ha) dan Kabupaten Tegal (8.494,23 Ha).</p>
             <p><strong>Batas-batas wilayah operasional:</strong></p>
             <ul style="list-style-type: none; padding-left: 0; line-height: 2;">
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Utara:</strong> Kab. Pemalang[cite: 5]</li>
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Timur:</strong> Kab. Pekalongan (KPH Pekalongan Timur)[cite: 5]</li>
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Selatan:</strong> Kab. Purbalingga (KPH Pekalongan Timur & Barat)[cite: 5]</li>
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Barat:</strong> Kab. Tegal (KPH Pekalongan Barat)[cite: 5]</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Utara:</strong> Kab. Pemalang</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Timur:</strong> Kab. Pekalongan (KPH Pekalongan Timur)</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Selatan:</strong> Kab. Purbalingga (KPH Pekalongan Timur & Barat)</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Barat:</strong> Kab. Tegal (KPH Pekalongan Barat)</li>
             </ul>
         </div>
 
@@ -301,7 +307,7 @@
             <div class="data-stat-box">
                 <h2><i class="fa-solid fa-layer-group"></i> Kawasan, Fungsi, dan Bagian Hutan</h2>
                 <p>
-                    Berdasarkan kesesuaian lahan kawasan hutan, fungsi hutan, serta pembagian Bagian Hutan (BH) berdasarkan PP 72 tahun 2010[cite: 5]:
+                    Berdasarkan kesesuaian lahan kawasan hutan, fungsi hutan, serta pembagian Bagian Hutan (BH) berdasarkan PP 72 tahun 2010:
                 </p>
                 <div class="standard-grid">
                     <div class="data-stat-box" style="flex: unset; min-width: unset;">
@@ -339,7 +345,7 @@
         <div class="content-card-box">
             <h2><i class="fa-solid fa-sitemap"></i> Rincian 6 BKPH dan 20 RPH</h2>
             <p>
-                Berdasarkan wilayah pengelolaan KPH Pemalang terdiri dari enam (6) Bagian Kesatuan Pemangkuan Hutan (BKPH) dan Dua Puluh (20) Resort Pemangkuan Hutan (RPH) dengan perincian lengkap di bawah ini[cite: 5]:
+                Berdasarkan wilayah pengelolaan KPH Pemalang terdiri dari enam (6) Bagian Kesatuan Pemangkuan Hutan (BKPH) dan Dua Puluh (20) Resort Pemangkuan Hutan (RPH) dengan perincian lengkap di bawah ini:
             </p>
             
             <div class="table-scroll-wrapper">
