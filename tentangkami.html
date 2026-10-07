@@ -3,73 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perhutani KPH Pemalang</title>
+    <title>Tentang Kami - Perhutani KPH Pemalang</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-<style>
-        @media screen and (max-width: 768px) {
+    <link rel="stylesheet" href="css/style2.css">
+    <style>
+        /* CSS Responsive Diperbaiki khusus untuk Halaman Tentang Kami */
+        @media screen and (max-width: 992px) {
+            .hero-section > div:first-of-type {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
             .hero-section {
+                padding: 40px 20px !important;
+                min-height: auto !important;
+            }
+            .hero-content h1 {
+                font-size: 2.3rem !important;
+            }
+            .stats-bar {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                padding: 20px !important;
+                margin-top: 30px !important;
+            }
+            .stat-item {
+                border: none !important;
+                padding: 10px 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+            }
+            .stat-item:last-child {
+                border-bottom: none !important;
+            }
+            .vm-bento-section, .akhlak-grid-wrap {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+            .akhlak-showcase-box, .akhlak-mini-cards {
+                width: 100% !important;
+            }
+            .akhlak-mini-cards {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 12px !important;
+            }
+            .grid-layout-complex {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
-                padding: 30px 15px !important;
+                gap: 20px !important;
                 width: 100% !important;
-                box-sizing: border-box !important;
-                overflow-x: hidden !important;
             }
-            .hero-content {
+            .left-cards, .right-cards, .stats-sidebar {
                 width: 100% !important;
-                min-width: 0 !important;
-                box-sizing: border-box !important;
-                word-break: break-word !important;
             }
-            .hero-content h1 {
-                font-size: 1.6rem !important;
-                line-height: 1.3 !important;
+            .center-hub {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                margin: 5px 0 !important;
             }
+            #profil-detail div[style*="grid-template-columns: repeat(3"] {
+                grid-template-columns: 1fr !important;
+            }
+            #profil-detail div[style*="grid-template-columns: 1.2fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                padding: 25px !important;
+                gap: 25px !important;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        @media screen and (max-width: 768px) {
             .hero-image-container {
                 width: 100% !important;
                 max-width: 320px !important;
-                flex: unset !important;
-                box-sizing: border-box !important;
             }
         }
-.weather-widget {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
-
-@media screen and (max-width: 950px) {
-    .weather-widget {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        padding: 3px 8px !important;
-        gap: 4px !important;
-        background: rgba(15, 35, 25, 0.85) !important;
-        border: 1px solid rgba(74, 222, 128, 0.4) !important;
-        border-radius: 12px !important;
-    }
-
-    .weather-widget span:not(.temp):not(.weather-icon),
-    .weather-widget div:not(.temp):not(.weather-icon),
-    .weather-widget p,
-    .weather-widget small {
-        display: none !important;
-    }
-
-    .weather-widget .weather-icon,
-    .weather-widget .temp {
-        display: inline-block !important;
-        visibility: visible !important;
-        font-size: 0.85rem !important;
-    }
-}
-</style>
+        body {
+            overflow-x: hidden;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .weather-widget {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+        @media screen and (max-width: 950px) {
+            .weather-widget {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                padding: 3px 8px !important;
+                gap: 4px !important;
+                background: rgba(15, 35, 25, 0.85) !important;
+                border: 1px solid rgba(74, 222, 128, 0.4) !important;
+                border-radius: 12px !important;
+            }
+            .weather-widget span:not(.temp):not(.weather-icon),
+            .weather-widget div:not(.temp):not(.weather-icon),
+            .weather-widget p,
+            .weather-widget small {
+                display: none !important;
+            }
+            .weather-widget .weather-icon,
+            .weather-widget .temp {
+                display: inline-block !important;
+                visibility: visible !important;
+                font-size: 0.85rem !important;
+            }
+        }
+    </style>
 </head>
 <body>
+
   <header class="premium-header">
     <div class="header-inner">
         <a href="index.html" class="brand-premium">
@@ -83,7 +136,7 @@
         </a>
 
         <nav class="premium-nav" aria-label="Navigasi utama">
-            <a href="index.html" class="premium-link" >Beranda</a>
+            <a href="index.html" class="premium-link">Beranda</a>
 
             <div class="premium-dropdown">
                 <a href="tentangkami.html" class="premium-link dropdown-trigger active">
@@ -132,17 +185,12 @@
         </nav>
 
         <div class="header-actions">
-            <!-- Tombol Burger (Tampil di Layar HP) -->
             <button type="button" id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Buka Menu">
                 <i class="fa-solid fa-bars"></i>
             </button>
-
-            <!-- Tombol Kuis (Tunggal) -->
             <button type="button" id="openQuizBtn" class="header-action" title="Kuis Edukasi Lingkungan">
                 <i class="fa-solid fa-puzzle-piece"></i>
             </button>
-
-            <!-- Search -->
             <div class="search-wrapper premium-search">
                 <button id="searchBtn" class="header-action" title="Cari">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -152,8 +200,6 @@
                     <div class="search-result" id="searchResult"></div>
                 </div>
             </div>
-
-            <!-- Weather Widget -->
             <div class="weather-widget" id="weatherWidget">
                 <div class="weather-icon">
                     <i id="weatherIcon" class="fa-solid fa-cloud-sun"></i>
@@ -170,41 +216,83 @@
     </div>
 </header>
       
-<section class="hero-section" style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; padding: 40px 5%; width: 100%; box-sizing: border-box; overflow-x: hidden;">
-        <div class="hero-content" style="flex: 1; min-width: 280px; text-align: left; word-wrap: break-word; overflow-wrap: break-word;">
-            <span class="hero-badge"><i class="fa-solid fa-seedling"></i> PROFIL 100% LENGKAP - KPH PEMALANG</span>
-            <h1>Data Wilayah & <span>Pengelolaan Hutan Komprehensif</span></h1>
-            <p>
-                Perum Perhutani Kesatuan Pemangkuan Hutan (KPH) Pemalang adalah salah satu unit manajemen di wilayah Perum Perhutani Divisi Regional Jawa Tengah. Di 2026, Perhutani memasuki usia ke-65, usia yang cukup matang sebagai sebuah perusahaan. Tidak terasa, kita telah bersama-sama menjalani periode enam tahun masa kerja korporasi (2020 – 2026). Sebelumnya izinkan kami menyampaikan terima kasih dan apresiasi setinggi-tingginya kepada seluruh rekan-rekan Insan Perhutani untuk setiap usaha, pengorbanan, dedikasi, semangat dan etos kerja yang luar biasa dari rekan-rekan semua.
-            </p>
+    <!-- Hero Section Gabungan Profil Perusahaan -->
+    <section class="hero-section" style="background: linear-gradient(135deg, rgba(10,24,18,0.92) 0%, rgba(5,15,10,0.96) 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=80') no-repeat center center/cover; padding: 80px 50px 60px 50px;">
+        <div style="max-width: 1200px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center;">
+            <div class="hero-content" style="max-width: 100%;">
+                <div class="hero-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(74, 222, 128, 0.15); color: #4ade80; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(74, 222, 128, 0.3);">
+                    <i class="fa-solid fa-tree"></i> Unit Manajemen Perhutani
+                </div>
+                <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 20px; color: #fff; line-height: 1.2;">Profil KPH <br><span style="color: #4ade80;">Pemalang</span></h1>
+                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+                    Kesatuan Pemangkuan Hutan (KPH) Pemalang merupakan garda terdepan Perum Perhutani Divisi Regional Jawa Tengah dalam mengelola kawasan hutan negara secara lestari, berwawasan lingkungan, serta memberikan nilai tambah ekonomi dan sosial bagi masyarakat sekitar[cite: 5].
+                </p>
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+                    Di 2026, Perhutani memasuki usia ke-65. Terima kasih dan apresiasi setinggi-tingginya kepada seluruh Insan Perhutani atas dedikasi dan etos kerja yang luar biasa[cite: 5].
+                </p>
+            </div>
+
+            <div style="position: relative; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 100%; max-height: 420px; border-radius: 20px; overflow: hidden; border: 2px solid rgba(74, 222, 128, 0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.6); position: relative;">
+                    <img src="assets/kantor.jpg" alt="Kantor Perum Perhutani KPH Pemalang" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,24,18,0.8) 0%, transparent 60%);"></div>
+                    <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; color: #fff;">
+                        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: #4ade80; font-weight: 700;">Kawasan Lestari</span>
+                        <h4 style="font-size: 1.2rem; font-weight: 700; margin-top: 4px;">Kawasan Hutan Produksi & Lindung KPH Pemalang</h4>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Wadah Gambar dengan Keterangan di Bawahnya (Dibuat Responsif untuk HP) -->
-        <div class="hero-image-container" style="flex: 1; width: 100%; max-width: 380px; min-width: 260px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 15px; box-sizing: border-box;">
-            <div style="position: relative; width: 100%; height: 320px; border-radius: 40px 20px 40px 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); border: 4px solid rgba(74, 222, 128, 0.4); background: #f0fdf4; display: flex; justify-content: center; align-items: center;">
-                <img src="assets/direktur.jpg" alt="Direktur Utama Pusat" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
+        <div class="stats-bar" style="max-width: 1200px; margin: 50px auto 0 auto; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; background: rgba(18, 38, 28, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; padding: 25px; backdrop-filter: blur(10px);">
+            <div class="stat-item" style="display: flex; align-items: center; gap: 20px; padding: 0 15px;">
+                <div class="stat-icon-wrap" style="width: 55px; height: 55px; background: rgba(74, 222, 128, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.4rem; border: 1px solid rgba(74, 222, 128, 0.3); flex-shrink: 0;">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="stat-desc">
+                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 2px;">Wilayah Strategis</h3>
+                    <span style="color: #4ade80; font-size: 0.85rem; font-weight: 600; display: block;">Kabupaten Pemalang & Tegal</span>
+                    <small style="color: var(--text-muted); font-size: 0.8rem;">Luas Total 24.389,40 Ha</small>
+                </div>
             </div>
-            <div style="text-align: center; color: #feffff; font-size: 1.1rem; padding: 4px 8px; width: 100%;">
-                <strong style="display: block; font-size: 1.1rem; word-break: break-word;">Nama TIO HANDOKO</strong>
-                <span style="font-size: 0.9rem; color: #b2c0d3;">Direktur Utama Perum Perhutani</span>
+
+            <div class="stat-item" style="display: flex; align-items: center; gap: 20px; padding: 0 15px; border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
+                <div class="stat-icon-wrap" style="width: 55px; height: 55px; background: rgba(74, 222, 128, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.4rem; border: 1px solid rgba(74, 222, 128, 0.3); flex-shrink: 0;">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+                <div class="stat-desc">
+                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 2px;">Fungsi Ekologis</h3>
+                    <span style="color: #4ade80; font-size: 0.85rem; font-weight: 600; display: block;">Produksi & Lindung</span>
+                    <small style="color: var(--text-muted); font-size: 0.8rem;">Tata air & kelestarian alam</small>
+                </div>
+            </div>
+
+            <div class="stat-item" style="display: flex; align-items: center; gap: 20px; padding: 0 15px;">
+                <div class="stat-icon-wrap" style="width: 55px; height: 55px; background: rgba(74, 222, 128, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #4ade80; font-size: 1.4rem; border: 1px solid rgba(74, 222, 128, 0.3); flex-shrink: 0;">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                </div>
+                <div class="stat-desc">
+                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 2px;">Pemberdayaan</h3>
+                    <span style="color: #4ade80; font-size: 0.85rem; font-weight: 600; display: block;">Kolaborasi Masyarakat</span>
+                    <small style="color: var(--text-muted); font-size: 0.8rem;">Mitra pengelola desa hutan</small>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Konten Detail Rinci Wilayah Kerja & Administrasi -->
-    <main class="profile-detail-container">
+    <main class="profile-detail-container" style="padding: 40px 5%; max-width: 1400px; margin: 0 auto;">
         
         <!-- Kartu 1: Informasi Umum & Batas Wilayah -->
         <div class="content-card-box">
             <h2><i class="fa-solid fa-map-location-dot"></i> Luas dan Batas Wilayah Kerja</h2>
-            <p>Perum Perhutani Kesatuan Pemangkuan Hutan (KPH) Pemalang adalah salah satu unit manajemen di wilayah Perum Perhutani Divisi Regional Jawa Tengah.
-Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan Umun (Perum) Kehutanan Negara seluas : 24.389,40 Ha berada pada wilayah administrative pemerintahan kabupaten dan kota yaitu Kabupaten Pemalang (15.895,62 Ha) dan Kabupaten Tegal (8.494,23 Ha)</p>
+            <p>Perum Perhutani Kesatuan Pemangkuan Hutan (KPH) Pemalang adalah salah satu unit manajemen di wilayah Perum Perhutani Divisi Regional Jawa Tengah. Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan Umum (Perum) Kehutanan Negara seluas : 24.389,40 Ha berada pada wilayah administrative pemerintahan kabupaten dan kota yaitu Kabupaten Pemalang (15.895,62 Ha) dan Kabupaten Tegal (8.494,23 Ha)[cite: 5].</p>
             <p><strong>Batas-batas wilayah operasional:</strong></p>
             <ul style="list-style-type: none; padding-left: 0; line-height: 2;">
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Utara:</strong> Kab. Pemalang</li>
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Timur:</strong> Kab. Pekalongan (KPH Pekalongan Timur)</li>
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Selatan:</strong> Kab. Purbalingga (KPH Pekalongan Timur & Barat)</li>
-                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Barat:</strong> Kab. Tegal (KPH Pekalongan Barat)</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Utara:</strong> Kab. Pemalang[cite: 5]</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Timur:</strong> Kab. Pekalongan (KPH Pekalongan Timur)[cite: 5]</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Selatan:</strong> Kab. Purbalingga (KPH Pekalongan Timur & Barat)[cite: 5]</li>
+                <li><i class="fa-solid fa-arrow-right text-success" style="color: #16a34a; margin-right: 8px;"></i><strong>Barat:</strong> Kab. Tegal (KPH Pekalongan Barat)[cite: 5]</li>
             </ul>
         </div>
 
@@ -213,7 +301,7 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
             <div class="data-stat-box">
                 <h2><i class="fa-solid fa-layer-group"></i> Kawasan, Fungsi, dan Bagian Hutan</h2>
                 <p>
-                    Berdasarkan kesesuaian lahan kawasan hutan, fungsi hutan, serta pembagian Bagian Hutan (BH) berdasarkan PP 72 tahun 2010:
+                    Berdasarkan kesesuaian lahan kawasan hutan, fungsi hutan, serta pembagian Bagian Hutan (BH) berdasarkan PP 72 tahun 2010[cite: 5]:
                 </p>
                 <div class="standard-grid">
                     <div class="data-stat-box" style="flex: unset; min-width: unset;">
@@ -251,7 +339,7 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
         <div class="content-card-box">
             <h2><i class="fa-solid fa-sitemap"></i> Rincian 6 BKPH dan 20 RPH</h2>
             <p>
-                Berdasarkan wilayah pengelolaan KPH Pemalang terdiri dari enam (6) Bagian Kesatuan Pemangkuan Hutan (BKPH) dan Dua Puluh (20) Resort Pemangkuan Hutan (RPH) dengan perincian lengkap di bawah ini (geser ke samping untuk melihat seluruh BKPH):
+                Berdasarkan wilayah pengelolaan KPH Pemalang terdiri dari enam (6) Bagian Kesatuan Pemangkuan Hutan (BKPH) dan Dua Puluh (20) Resort Pemangkuan Hutan (RPH) dengan perincian lengkap di bawah ini[cite: 5]:
             </p>
             
             <div class="table-scroll-wrapper">
@@ -327,7 +415,215 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
             </div>
         </div>
 
+        <!-- 1. BAGIAN VISI, MISI & TATA NILAI -->
+        <section class="vm-bento-section" style="margin-top: 50px;">
+            <div class="vm-card">
+                <div class="vm-icon-title">
+                    <div class="icon-wrap"><i class="fa-solid fa-eye"></i></div>
+                    <div>
+                        <span class="sub-heading">GOAL</span>
+                        <h2>Visi Kami</h2>
+                    </div>
+                </div>
+                <div class="vision-quote-box">
+                    <p>"Menjadi Perusahaan Pengelola Hutan Berkelanjutan dan Bermanfaat Bagi Masyarakat"</p>
+                </div>
+            </div>
+
+            <div class="vm-card">
+                <div class="vm-icon-title">
+                    <div class="icon-wrap"><i class="fa-solid fa-rocket"></i></div>
+                    <div>
+                        <span class="sub-heading">STRATEGY</span>
+                        <h2>Misi Kami</h2>
+                    </div>
+                </div>
+                <ul class="mission-pro-list">
+                    <li><div class="list-bullet-icon"><i class="fa-solid fa-check"></i></div> Mengelola Sumberdaya Hutan Secara Lestari.</li>
+                    <li><div class="list-bullet-icon"><i class="fa-solid fa-check"></i></div> Peduli Kepada Kepentingan Masyarakat dan Lingkungan.</li>
+                    <li><div class="list-bullet-icon"><i class="fa-solid fa-check"></i></div> Mengoptimalkan Bisnis Kehutanan dengan Prinsip Good Corporate Governance.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- AKHLAK Section -->
+        <section class="akhlak-corporate-section" style="margin-top: 50px;">
+            <div class="akhlak-header-content">
+                <span class="section-tag">CORE VALUES</span>
+                <h2>Budaya Kerja AKHLAK</h2>
+                <p>Fondasi karakter sumber daya manusia Perhutani dalam memberikan pelayanan prima.</p>
+            </div>
+
+            <div class="akhlak-grid-wrap">
+                <div class="akhlak-showcase-box">
+                    <div class="akhlak-image-frame">
+                        <img src="assets/a.jpg" alt="Budaya AKHLAK" class="akhlak-main-img">
+                    </div>
+                    <p class="akhlak-photo-caption">Komitmen SDM KPH Pemalang dalam melayani.</p>
+                </div>
+                <div class="akhlak-mini-cards">
+                    <div class="mini-card"><i class="fa-solid fa-hand-holding-heart"></i><span>Amanah</span></div>
+                    <div class="mini-card"><i class="fa-solid fa-graduation-cap"></i><span>Kompeten</span></div>
+                    <div class="mini-card"><i class="fa-solid fa-handshake-angle"></i><span>Harmonis</span></div>
+                    <div class="mini-card"><i class="fa-solid fa-shield-halved"></i><span>Loyal</span></div>
+                    <div class="mini-card"><i class="fa-solid fa-arrows-rotate"></i><span>Adaptif</span></div>
+                    <div class="mini-card"><i class="fa-solid fa-users"></i><span>Kolaboratif</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. BAGIAN TUGAS DAN FUNGSI -->
+        <section class="tugas-grid-section" style="margin-top: 60px;">
+            <div class="section-heading">
+                <i class="fa-solid fa-seedling"></i>
+                <h2>Tugas & Fungsi Perusahaan</h2>
+                <div class="heading-line"></div>
+            </div>
+            <p style="text-align: center; color: #cbd5e1; margin-bottom: 30px; font-size: 0.95rem;">
+                Berdasarkan Peraturan Pemerintah Republik Indonesia Nomor 72 Tahun 2010 tentang Perusahaan Umum (Perum) Kehutanan Negara.
+            </p>
+
+            <div class="grid-layout-complex">
+                <div class="left-cards">
+                    <div class="t-card shape-type-1">
+                        <div class="t-icon"><i class="fa-solid fa-tree"></i></div>
+                        <div class="t-text">
+                            <h3>1. Tata hutan dan rencana pengelolaan</h3>
+                            <p>Mengelola hutan negara secara lestari dengan memperhatikan aspek ekologis, ekonomi, dan sosial budaya secara terpadu.</p>
+                        </div>
+                    </div>
+                    <div class="t-card shape-type-2">
+                        <div class="t-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                        <div class="t-text">
+                            <h3>2. Pemanfaatan hutan</h3>
+                            <p>Meliputi pemanfaatan kawasan, jasa lingkungan, hasil hutan kayu & bukan kayu, serta pemungutannya.</p>
+                        </div>
+                    </div>
+                    <div class="t-card shape-type-3">
+                        <div class="t-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div class="t-text">
+                            <h3>3. Perlindungan & konservasi</h3>
+                            <p>Memelihara fungsi ekologis hutan untuk melindungi keanekaragaman hayati dan keseimbangan siklus air.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-hub">
+                    <div class="hub-circle">
+                        <i class="fa-solid fa-tree hub-center-icon"></i>
+                    </div>
+                </div>
+
+                <div class="right-cards">
+                    <div class="t-card shape-type-4">
+                        <div class="t-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <div class="t-text">
+                            <h3>4. Rehabilitasi dan reklamasi</h3>
+                            <p>Melakukan pemulihan lahan kritis serta inovasi pengelolaan berbasis ekosistem lingkungan.</p>
+                        </div>
+                    </div>
+                    <div class="t-card shape-type-5">
+                        <div class="t-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="t-text">
+                            <h3>5. Kolaborasi & pemberdayaan</h3>
+                            <p>Mengembangkan kerjasama aktif dengan masyarakat melalui program perhutanan sosial dan pendampingan.</p>
+                        </div>
+                    </div>
+                    <div class="t-card shape-type-6">
+                        <div class="t-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <div class="t-text">
+                            <h3>6. Pengolahan hasil hutan</h3>
+                            <p>Menjalankan prosedur pengolahan bahan baku kayu dan non-kayu sesuai standar tata kelola perusahaan yang baik (GCG).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BAGIAN STRUKTUR ORGANISASI -->
+        <section class="content-card-box" style="margin-top: 60px; background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 30px;">
+            <h2><i class="fa-solid fa-sitemap"></i> Struktur Organisasi KPH</h2>
+            <p style="color: #9ca3af; margin-bottom: 25px;">Bagan hierarki manajemen dan fungsional Perum Perhutani KPH Pemalang:</p>
+
+            <div class="org-chart-wrapper so-kph-chart" style="overflow-x: auto;">
+                <div class="so-title">STRUKTUR ORGANISASI KPH</div>
+                
+                <div class="so-level so-top">
+                    <div class="so-node so-wide">Kepala<br>Divisi Regional</div>
+                </div>
+                <div class="so-line-v"></div>
+
+                <div class="so-level">
+                    <div class="so-node so-admin">Administratur / KPH</div>
+                </div>
+
+                <div class="so-main-wrapper">
+                    <div class="so-center-spine"></div>
+
+                    <div class="so-level so-command">
+                        <div class="so-node">Wakil<br>Administratur / KSPH</div>
+                        <div class="so-node">PABIN</div>
+                    </div>
+
+                    <div class="so-main-grid">
+                        <div class="so-polmob">
+                            <div class="so-node">Danru<br>Polmob</div>
+                            <div class="so-branch"></div>
+                            <div class="so-node small">Anggota<br>Polmob</div>
+                        </div>
+
+                        <div class="so-department">
+                            <div class="so-node so-dept">Seksi Madya<br>Perencanaan SDH &amp;<br>Pengembangan Bisnis</div>
+                            <div class="so-sub-list">
+                                <div class="so-node small">Sub Seksi Perencanaan SDH</div>
+                                <div class="so-node small">Sub Seksi Pengembangan Bisnis</div>
+                                <div class="so-node small">Sub Seksi Hukum, Kepatuhan, Agraria &amp; Komunikasi</div>
+                                <div class="so-node small">Urusan Pelaporan &amp; Kesisteman</div>
+                            </div>
+                        </div>
+
+                        <div class="so-department">
+                            <div class="so-node so-dept">Seksi Madya<br>Pembinaan SDH</div>
+                            <div class="so-sub-list">
+                                <div class="so-node small">Sub Seksi Pembinaan SDH</div>
+                                <div class="so-node small">Sub Seksi Kemitraan Produktif</div>
+                                <div class="so-node small">Sub Seksi K3 &amp; Lingkungan</div>
+                            </div>
+                        </div>
+
+                        <div class="so-department">
+                            <div class="so-node so-dept">Seksi Madya<br>Produksi &amp; Ekowisata</div>
+                            <div class="so-sub-list">
+                                <div class="so-node small">Sub Seksi Produksi &amp; TPK</div>
+                                <div class="so-node small">Sub Seksi Agroforestri &amp; Ekowisata</div>
+                                <div class="so-node small">Penguji TK I &amp; II</div>
+                            </div>
+                        </div>
+
+                        <div class="so-department">
+                            <div class="so-node so-dept">Seksi Madya<br>Keuangan, SDM,<br>Umum &amp; IT</div>
+                            <div class="so-sub-list">
+                                <div class="so-node small">Sub Seksi Keuangan, Perpajakan &amp; TJSL</div>
+                                <div class="so-node small">Sub Seksi SDM &amp; Umum</div>
+                                <div class="so-node small">Sub Seksi Sarpras, Aset &amp; IT</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="so-bottom-wrapper">
+                        <div class="so-bottom-line-h"></div>
+                        <div class="so-bottom">
+                            <div class="so-node">BKPH</div>
+                            <div class="so-node">TPK</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="so-reference" style="margin-top: 15px; text-align: center; font-size: 0.8rem; color: #9ca3af;">Sumber: SO KPH Perhutani — No. 06/PER/DIR/02/2022</div>
+            </div>
+        </section>
+
     </main>
+
   <footer class="footer-section">
         <div class="footer-grid">
             <div class="footer-col">
@@ -474,7 +770,6 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
 <div id="quizModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 99999; align-items: center; justify-content: center; padding: 15px; backdrop-filter: blur(4px);">
     <div style="background: #111827; border: 1px solid #1f2937; color: #f3f4f6; width: 100%; max-width: 450px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); overflow: hidden; animation: fadeInQuiz 0.3s ease;">
         
-        <!-- Header Modal -->
         <div style="background: #15803d; color: white; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;">
             <h3 style="margin: 0; font-size: 1rem; display: flex; align-items: center; gap: 8px;">
                 <i class="fa-solid fa-seedling"></i> Kuis Kilat Lingkungan & Hutan
@@ -484,25 +779,20 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
             </button>
         </div>
 
-        <!-- Konten Pertanyaan & Pilihan -->
         <div style="padding: 20px;" id="quizBody">
             <div id="quizQuestion" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 16px; color: #e5e7eb;">
                 Pertanyaan akan muncul di sini...
             </div>
-            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;">
-                <!-- Tombol pilihan jawaban akan dimuat otomatis oleh JavaScript -->
-            </div>
+            <div id="quizOptions" style="display: flex; flex-direction: column; gap: 10px;"></div>
         </div>
 
-        <!-- Footer Modal (Skor / Status) -->
         <div id="quizFooter" style="background: #1f2937; padding: 12px 20px; text-align: center; font-size: 0.85rem; color: #9ca3af;">
             Pertanyaan 1 dari 3
         </div>
     </div>
 </div>
-     <!-- Drawer Mobile Menu -->
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
     <nav class="mobile-nav-drawer" id="mobileNavDrawer">
         <div class="mobile-drawer-header">
             <div class="mobile-brand">
@@ -521,14 +811,13 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
                         <span><i class="fa-solid fa-house"></i> Beranda</span>
                     </a>
                 </li>
-
                 <li class="mobile-dropdown">
                     <button type="button" class="mobile-dropdown-btn">
                         <span><i class="fa-solid fa-building"></i> Tentang Kami</span>
                         <i class="fa-solid fa-chevron-down arrow-icon"></i>
                     </button>
                     <div class="mobile-submenu">
-                        <a href="tentangkami.html" class="sub-main">Semua Tentang Kami</a>
+                        <a href="tentangkami.html" class="sub-main active">Semua Tentang Kami</a>
                         <a href="profil.html">Profil Perusahaan</a>
                         <a href="sejarah.html">Sejarah Perusahaan</a>
                         <a href="tugasfungsi.html">Tugas dan Fungsi</a>
@@ -538,7 +827,6 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
                         <a href="program.html">Program Kerja</a>
                     </div>
                 </li>
-
                 <li class="mobile-dropdown">
                     <button type="button" class="mobile-dropdown-btn">
                         <span><i class="fa-solid fa-briefcase"></i> Unit Bisnis</span>
@@ -554,7 +842,6 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
                         <a href="pengelolaanhutan.html">Pengelolaan Hutan</a>
                     </div>
                 </li>
-
                 <li class="mobile-dropdown">
                     <button type="button" class="mobile-dropdown-btn">
                         <span><i class="fa-solid fa-newspaper"></i> Publikasi</span>
@@ -566,7 +853,6 @@ Luas wilayah kerja KPH Pemalang berdasarkan PP 72 tahun 2010 tentang Perusahaan 
                         <a href="pengumuman.html">Pengumuman</a>
                     </div>
                 </li>
-
                 <li>
                     <a href="layanan.html" class="mobile-link">
                         <span><i class="fa-solid fa-handshake-angle"></i> Layanan</span>
